@@ -1,0 +1,739 @@
+{
+  "metadata": {
+    "persona_id": "egotailor_usa_enfp",
+    "day_index": 13,
+    "calendar_date": "2026-01-18",
+    "day_of_week": "Sunday",
+    "is_weekend": true,
+    "target_seconds": 28800,
+    "location": "USA",
+    "day_theme": "sunday_cozy_home",
+    "anomaly_events": [],
+    "time_variations": {
+      "wake_jitter_min": -13,
+      "commute_jitter_min": 0,
+      "exercise_jitter_min": 16
+    }
+  },
+  "daily_plan": [
+    "Bake bread and prepare elaborate lunch (13:00-14:30)",
+    "Slow morning with pour-over coffee and podcast (09:00-10:00)",
+    "Crafting project and organizing bookshelf (10:30-12:30)",
+    "Early night routine: skincare, journal, sleep by 9:30 (19:30-21:00)",
+    "Nap, browse phone, play with pet (15:00-17:00)",
+    "Meal prep for the coming work week (17:30-18:30)"
+  ],
+  "memory_content": [
+    {
+      "video_uid": "61767972-9303-4f55-980c-832d7a454d6e",
+      "slot_id": "indoor_relax",
+      "plan_chunk": "Nap, browse phone, play with pet",
+      "matched_scenarios": [
+        "Playing with pets",
+        "On a screen (phone/laptop)",
+        "Sleeping"
+      ],
+      "video_scenarios": [
+        "Cleaning / laundry",
+        "Playing with pets"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character walks around an apartment, feeds two dogs, and drinks tea.",
+      "start_time": "07:00:00",
+      "end_time": "07:07:31",
+      "start_timestamp": "2026-01-18T07:00:00",
+      "end_timestamp": "2026-01-18T07:07:31",
+      "duration": 451.57,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "5c3be03c-07a5-4427-a2fe-449f16e8017b",
+      "slot_id": "home_hobby",
+      "plan_chunk": "Crafting project and organizing bookshelf",
+      "matched_scenarios": [
+        "Crafting/knitting/sewing/drawing/painting",
+        "Reading books"
+      ],
+      "video_scenarios": [
+        "Crafting/knitting/sewing/drawing/painting"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character draws and interacts with art supplies in a house.",
+      "start_time": "07:12:31",
+      "end_time": "07:25:45",
+      "start_timestamp": "2026-01-18T07:12:31",
+      "end_timestamp": "2026-01-18T07:25:45",
+      "duration": 794.07,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "9c5e1a43-6836-4b8d-a4e9-d80aa7b4b62a",
+      "slot_id": "leisure_early_sleep",
+      "plan_chunk": "Early night routine: skincare, journal, sleep by 9:30",
+      "matched_scenarios": [
+        "Daily hygiene",
+        "Sleeping",
+        "Reading books"
+      ],
+      "video_scenarios": [
+        "Crafting/knitting/sewing/drawing/painting"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character paints on paper in the sitting room.",
+      "start_time": "07:30:45",
+      "end_time": "07:47:07",
+      "start_timestamp": "2026-01-18T07:30:45",
+      "end_timestamp": "2026-01-18T07:47:07",
+      "duration": 982.23,
+      "video_source": "USA",
+      "time_period": "nighttime"
+    },
+    {
+      "video_uid": "69190e7c-457f-489d-9071-c2a9185e4853",
+      "slot_id": "home_cooking",
+      "plan_chunk": "Bake bread and prepare elaborate lunch",
+      "matched_scenarios": [
+        "Cooking",
+        "Baker"
+      ],
+      "video_scenarios": [
+        "Cooking"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character sets up fruits on a table and interacts with a woman in a room.",
+      "start_time": "07:52:07",
+      "end_time": "07:58:13",
+      "start_timestamp": "2026-01-18T07:52:07",
+      "end_timestamp": "2026-01-18T07:58:13",
+      "duration": 366.83,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "2a2fe5ed-20b4-4081-9ced-23f44340df16",
+      "slot_id": "wake_home",
+      "plan_chunk": "Slow morning with pour-over coffee and podcast",
+      "matched_scenarios": [
+        "Making coffee",
+        "Listening to music",
+        "Daily hygiene"
+      ],
+      "video_scenarios": [
+        "Making coffee"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character interacts with others in a house/apartment, talking, making coffee, and playing cards.",
+      "start_time": "08:03:13",
+      "end_time": "08:28:13",
+      "start_timestamp": "2026-01-18T08:03:13",
+      "end_timestamp": "2026-01-18T08:28:13",
+      "duration": 1500.39,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "7b7ad253-60d3-4649-9d52-41279a1adb7c",
+      "slot_id": "home_hobby",
+      "plan_chunk": "Crafting project and organizing bookshelf",
+      "matched_scenarios": [
+        "Crafting/knitting/sewing/drawing/painting",
+        "Reading books"
+      ],
+      "video_scenarios": [
+        "Crafting/knitting/sewing/drawing/painting"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character paints a wall in a house using a paint brush, roller, and glue gun.",
+      "start_time": "08:33:13",
+      "end_time": "08:50:04",
+      "start_timestamp": "2026-01-18T08:33:13",
+      "end_timestamp": "2026-01-18T08:50:04",
+      "duration": 1011.47,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "6edb5c87-ae95-4185-807f-06d37124d2b7",
+      "slot_id": "indoor_relax",
+      "plan_chunk": "Nap, browse phone, play with pet",
+      "matched_scenarios": [
+        "Playing with pets",
+        "On a screen (phone/laptop)",
+        "Sleeping"
+      ],
+      "video_scenarios": [
+        "Cleaning / laundry",
+        "Playing with pets",
+        "Washing the dog / pet, grooming horse"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character prepares a meal, interacts with pets (a water dragon, chameleon, and cat), and bathes a bearded dragon lizard in an apartment kitchen.",
+      "start_time": "08:55:04",
+      "end_time": "09:13:39",
+      "start_timestamp": "2026-01-18T08:55:04",
+      "end_timestamp": "2026-01-18T09:13:39",
+      "duration": 1115.77,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "93652400-a3b2-4626-857a-7c1720911873",
+      "slot_id": "leisure_early_sleep",
+      "plan_chunk": "Early night routine: skincare, journal, sleep by 9:30",
+      "matched_scenarios": [
+        "Daily hygiene",
+        "Sleeping",
+        "Reading books"
+      ],
+      "video_scenarios": [
+        "Crafting/knitting/sewing/drawing/painting"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character operates a tablet and knits thread in the house, eventually moving to the bed.",
+      "start_time": "09:18:39",
+      "end_time": "09:32:17",
+      "start_timestamp": "2026-01-18T09:18:39",
+      "end_timestamp": "2026-01-18T09:32:17",
+      "duration": 818.7,
+      "video_source": "USA",
+      "time_period": "nighttime"
+    },
+    {
+      "video_uid": "e8042e06-ceee-4b97-8e89-16a3879b2386",
+      "slot_id": "home_cooking",
+      "plan_chunk": "Bake bread and prepare elaborate lunch",
+      "matched_scenarios": [
+        "Cooking",
+        "Baker"
+      ],
+      "video_scenarios": [
+        "Cooking"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character cooks in an apartment kitchen, interacts with a dog and a woman, washes dishes, cleans, and uses the microwave.",
+      "start_time": "09:37:17",
+      "end_time": "10:02:18",
+      "start_timestamp": "2026-01-18T09:37:17",
+      "end_timestamp": "2026-01-18T10:02:18",
+      "duration": 1501.3,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "15223229-8273-4f28-9bc0-1266e7c210d8",
+      "slot_id": "wake_home",
+      "plan_chunk": "Slow morning with pour-over coffee and podcast",
+      "matched_scenarios": [
+        "Making coffee",
+        "Listening to music",
+        "Daily hygiene"
+      ],
+      "video_scenarios": [
+        "Making coffee"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character interacts with others, plays cards, makes snacks and coffee, and consumes a drink in a house.",
+      "start_time": "10:07:18",
+      "end_time": "10:33:51",
+      "start_timestamp": "2026-01-18T10:07:18",
+      "end_timestamp": "2026-01-18T10:33:51",
+      "duration": 1593.77,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "70d92a4c-6ca5-49ec-92ad-e7a005c39205",
+      "slot_id": "home_hobby",
+      "plan_chunk": "Crafting project and organizing bookshelf",
+      "matched_scenarios": [
+        "Crafting/knitting/sewing/drawing/painting",
+        "Reading books"
+      ],
+      "video_scenarios": [
+        "Crafting/knitting/sewing/drawing/painting"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character paints on acrylic paper, mixes colors, and looks at paintings on a laptop.",
+      "start_time": "10:38:51",
+      "end_time": "10:55:25",
+      "start_timestamp": "2026-01-18T10:38:51",
+      "end_timestamp": "2026-01-18T10:55:25",
+      "duration": 994.83,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "e926a2d5-d909-4e07-a534-6fac17ef9b04",
+      "slot_id": "leisure_early_sleep",
+      "plan_chunk": "Early night routine: skincare, journal, sleep by 9:30",
+      "matched_scenarios": [
+        "Daily hygiene",
+        "Sleeping",
+        "Reading books"
+      ],
+      "video_scenarios": [
+        "Crafting/knitting/sewing/drawing/painting"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character sews a chair in the living room.",
+      "start_time": "11:00:25",
+      "end_time": "11:13:56",
+      "start_timestamp": "2026-01-18T11:00:25",
+      "end_timestamp": "2026-01-18T11:13:56",
+      "duration": 811.27,
+      "video_source": "USA",
+      "time_period": "nighttime"
+    },
+    {
+      "video_uid": "e9187885-8ba4-4d12-aa01-0ebca75c30bf",
+      "slot_id": "indoor_relax",
+      "plan_chunk": "Nap, browse phone, play with pet",
+      "matched_scenarios": [
+        "Playing with pets",
+        "On a screen (phone/laptop)",
+        "Sleeping"
+      ],
+      "video_scenarios": [
+        "Cleaning / laundry",
+        "Crafting/knitting/sewing/drawing/painting",
+        "On a screen (phone/laptop)",
+        "Playing with pets"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character interacts with a dog, uses the phone, makes the bed, folds clothes and bedsheets, discards trash, and organizes items in the bedroom.",
+      "start_time": "11:18:56",
+      "end_time": "11:48:56",
+      "start_timestamp": "2026-01-18T11:18:56",
+      "end_timestamp": "2026-01-18T11:48:56",
+      "duration": 1800.0,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "b17ff269-ec2d-4ad8-88aa-b00b75921427",
+      "slot_id": "home_chores",
+      "plan_chunk": "Meal prep for the coming work week",
+      "matched_scenarios": [
+        "Cooking",
+        "Cleaning / laundry"
+      ],
+      "video_scenarios": [
+        "Cleaning / laundry"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character cleans a coffeemaker and washes dishes in a kitchen, prepares a meal, lays flatbreads on a plate, and fetches eggs from the basement, while X operates a laptop in the dinette of an apartment.",
+      "start_time": "11:53:56",
+      "end_time": "11:59:36",
+      "start_timestamp": "2026-01-18T11:53:56",
+      "end_timestamp": "2026-01-18T11:59:36",
+      "duration": 340.8,
+      "video_source": "USA",
+      "time_period": "twilight"
+    },
+    {
+      "video_uid": "ba2402fb-fe9a-40ea-bd0c-1eb5e5f747d5",
+      "slot_id": "home_cooking",
+      "plan_chunk": "Bake bread and prepare elaborate lunch",
+      "matched_scenarios": [
+        "Cooking",
+        "Baker"
+      ],
+      "video_scenarios": [
+        "Cooking"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character performs various activities in the house and kitchen, including putting an item in the fridge, using a blender, arranging glasses, and cooking.",
+      "start_time": "12:04:36",
+      "end_time": "12:32:02",
+      "start_timestamp": "2026-01-18T12:04:36",
+      "end_timestamp": "2026-01-18T12:32:02",
+      "duration": 1646.3,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "3c9c9412-cdab-4d59-b035-2a94cfa06902",
+      "slot_id": "wake_home",
+      "plan_chunk": "Slow morning with pour-over coffee and podcast",
+      "matched_scenarios": [
+        "Making coffee",
+        "Listening to music",
+        "Daily hygiene"
+      ],
+      "video_scenarios": [
+        "Fixing something in the home",
+        "Listening to music"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character paints a floor in an apartment.",
+      "start_time": "12:37:02",
+      "end_time": "12:44:47",
+      "start_timestamp": "2026-01-18T12:37:02",
+      "end_timestamp": "2026-01-18T12:44:47",
+      "duration": 465.57,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "8f0ef0f4-c46a-4284-b142-add6a5d09fa3",
+      "slot_id": "home_hobby",
+      "plan_chunk": "Crafting project and organizing bookshelf",
+      "matched_scenarios": [
+        "Crafting/knitting/sewing/drawing/painting",
+        "Reading books"
+      ],
+      "video_scenarios": [
+        "Crafting/knitting/sewing/drawing/painting"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character paints and draws in a room.",
+      "start_time": "12:49:47",
+      "end_time": "13:02:43",
+      "start_timestamp": "2026-01-18T12:49:47",
+      "end_timestamp": "2026-01-18T13:02:43",
+      "duration": 776.43,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "7c9e2ead-0b7b-470d-809b-a520daa6ac77",
+      "slot_id": "leisure_early_sleep",
+      "plan_chunk": "Early night routine: skincare, journal, sleep by 9:30",
+      "matched_scenarios": [
+        "Daily hygiene",
+        "Sleeping",
+        "Reading books"
+      ],
+      "video_scenarios": [
+        "Crafting/knitting/sewing/drawing/painting"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character draws in a room, sometimes with others who also engage in art activities.",
+      "start_time": "13:07:43",
+      "end_time": "13:23:41",
+      "start_timestamp": "2026-01-18T13:07:43",
+      "end_timestamp": "2026-01-18T13:23:41",
+      "duration": 958.2,
+      "video_source": "USA",
+      "time_period": "nighttime"
+    },
+    {
+      "video_uid": "211b46a3-4d20-4896-82ed-d56f41d90ab3",
+      "slot_id": "indoor_relax",
+      "plan_chunk": "Nap, browse phone, play with pet",
+      "matched_scenarios": [
+        "Playing with pets",
+        "On a screen (phone/laptop)",
+        "Sleeping"
+      ],
+      "video_scenarios": [
+        "Playing with pets"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character opens the fridge and feeds her dog in a kitchen.",
+      "start_time": "13:28:41",
+      "end_time": "13:31:20",
+      "start_timestamp": "2026-01-18T13:28:41",
+      "end_timestamp": "2026-01-18T13:31:20",
+      "duration": 159.57,
+      "video_source": "USA",
+      "time_period": "not know"
+    },
+    {
+      "video_uid": "65a76574-ef3e-4aa0-b1b0-7df9e5f34296",
+      "slot_id": "home_chores",
+      "plan_chunk": "Meal prep for the coming work week",
+      "matched_scenarios": [
+        "Cooking",
+        "Cleaning / laundry"
+      ],
+      "video_scenarios": [
+        "Cooking"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character interacts with a woman and chops potatoes in the house.",
+      "start_time": "13:36:20",
+      "end_time": "13:42:33",
+      "start_timestamp": "2026-01-18T13:36:20",
+      "end_timestamp": "2026-01-18T13:42:33",
+      "duration": 373.77,
+      "video_source": "USA",
+      "time_period": "not know"
+    },
+    {
+      "video_uid": "1655f1ca-cada-4b2d-895d-a23ca2b0238c",
+      "slot_id": "home_cooking",
+      "plan_chunk": "Bake bread and prepare elaborate lunch",
+      "matched_scenarios": [
+        "Cooking",
+        "Baker"
+      ],
+      "video_scenarios": [
+        "Cooking",
+        "Talking with friends/housemates"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character interacts with people inside a house.",
+      "start_time": "13:47:33",
+      "end_time": "13:53:08",
+      "start_timestamp": "2026-01-18T13:47:33",
+      "end_timestamp": "2026-01-18T13:53:08",
+      "duration": 335.13,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "450be7d0-16bc-484a-9086-d0b5427c285c",
+      "slot_id": "wake_home",
+      "plan_chunk": "Slow morning with pour-over coffee and podcast",
+      "matched_scenarios": [
+        "Making coffee",
+        "Listening to music",
+        "Daily hygiene"
+      ],
+      "video_scenarios": [
+        "Making coffee"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character walks around a house/apartment, talks to a man, and uses a coffee maker.",
+      "start_time": "13:58:08",
+      "end_time": "14:25:09",
+      "start_timestamp": "2026-01-18T13:58:08",
+      "end_timestamp": "2026-01-18T14:25:09",
+      "duration": 1621.59,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "433d0fc0-f6e9-46aa-8ec7-a6633cba6932",
+      "slot_id": "home_hobby",
+      "plan_chunk": "Crafting project and organizing bookshelf",
+      "matched_scenarios": [
+        "Crafting/knitting/sewing/drawing/painting",
+        "Reading books"
+      ],
+      "video_scenarios": [
+        "Crafting/knitting/sewing/drawing/painting"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character creates art on a board.",
+      "start_time": "14:30:09",
+      "end_time": "14:43:51",
+      "start_timestamp": "2026-01-18T14:30:09",
+      "end_timestamp": "2026-01-18T14:43:51",
+      "duration": 822.1,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "6af777f6-e427-4a77-bd0f-86be09a8372b",
+      "slot_id": "leisure_early_sleep",
+      "plan_chunk": "Early night routine: skincare, journal, sleep by 9:30",
+      "matched_scenarios": [
+        "Daily hygiene",
+        "Sleeping",
+        "Reading books"
+      ],
+      "video_scenarios": [
+        "Cooking"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character interacts with others and does dishes in a kitchen/apartment.",
+      "start_time": "14:48:51",
+      "end_time": "15:02:32",
+      "start_timestamp": "2026-01-18T14:48:51",
+      "end_timestamp": "2026-01-18T15:02:32",
+      "duration": 821.13,
+      "video_source": "USA",
+      "time_period": "nighttime"
+    },
+    {
+      "video_uid": "8f05300f-1200-4c18-937b-b8e23dc92505",
+      "slot_id": "indoor_relax",
+      "plan_chunk": "Nap, browse phone, play with pet",
+      "matched_scenarios": [
+        "Playing with pets",
+        "On a screen (phone/laptop)",
+        "Sleeping"
+      ],
+      "video_scenarios": [
+        "Camp setup/pack-up/chores",
+        "Playing with pets"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character unpacks a box, arranges a bedroom, and pets a dog in an apartment.",
+      "start_time": "15:07:32",
+      "end_time": "15:13:05",
+      "start_timestamp": "2026-01-18T15:07:32",
+      "end_timestamp": "2026-01-18T15:13:05",
+      "duration": 333.63,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "062f1e55-67d8-4cdc-89c6-7fb361a9b0f9",
+      "slot_id": "home_chores",
+      "plan_chunk": "Meal prep for the coming work week",
+      "matched_scenarios": [
+        "Cooking",
+        "Cleaning / laundry"
+      ],
+      "video_scenarios": [
+        "Cleaning / laundry"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character arranges and adjusts picture frames in an art room.",
+      "start_time": "15:18:05",
+      "end_time": "15:43:06",
+      "start_timestamp": "2026-01-18T15:18:05",
+      "end_timestamp": "2026-01-18T15:43:06",
+      "duration": 1501.8,
+      "video_source": "USA",
+      "time_period": "twilight"
+    },
+    {
+      "video_uid": "3a158275-c4c2-4bde-a186-788341e43ed4",
+      "slot_id": "home_cooking",
+      "plan_chunk": "Bake bread and prepare elaborate lunch",
+      "matched_scenarios": [
+        "Cooking",
+        "Baker"
+      ],
+      "video_scenarios": [
+        "Cooking",
+        "Talking with family members"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character interacts with others, prepares food, makes repairs, and works on baby items within an apartment.",
+      "start_time": "15:48:06",
+      "end_time": "16:12:39",
+      "start_timestamp": "2026-01-18T15:48:06",
+      "end_timestamp": "2026-01-18T16:12:39",
+      "duration": 1473.7,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "9e839a17-75b3-4525-9646-804a6f260f35",
+      "slot_id": "wake_home",
+      "plan_chunk": "Slow morning with pour-over coffee and podcast",
+      "matched_scenarios": [
+        "Making coffee",
+        "Listening to music",
+        "Daily hygiene"
+      ],
+      "video_scenarios": [
+        "Making coffee"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character converses with others, makes coffee, and plays jenga in a house.",
+      "start_time": "16:17:39",
+      "end_time": "16:42:37",
+      "start_timestamp": "2026-01-18T16:17:39",
+      "end_timestamp": "2026-01-18T16:42:37",
+      "duration": 1498.0,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "26fe8233-f4b0-449a-ae4a-10492a7b0d62",
+      "slot_id": "home_hobby",
+      "plan_chunk": "Crafting project and organizing bookshelf",
+      "matched_scenarios": [
+        "Crafting/knitting/sewing/drawing/painting",
+        "Reading books"
+      ],
+      "video_scenarios": [
+        "Crafting/knitting/sewing/drawing/painting"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character paints a room in an apartment using a brush and roller.",
+      "start_time": "16:47:37",
+      "end_time": "17:04:39",
+      "start_timestamp": "2026-01-18T16:47:37",
+      "end_timestamp": "2026-01-18T17:04:39",
+      "duration": 1022.43,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "a267b011-b1db-4e3c-aa49-438e2afdd6dc",
+      "slot_id": "leisure_early_sleep",
+      "plan_chunk": "Early night routine: skincare, journal, sleep by 9:30",
+      "matched_scenarios": [
+        "Daily hygiene",
+        "Sleeping",
+        "Reading books"
+      ],
+      "video_scenarios": [
+        "Cooking",
+        "Talking with family members"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character cooks food in the apartment, walks around, and serves food.",
+      "start_time": "17:09:39",
+      "end_time": "17:26:19",
+      "start_timestamp": "2026-01-18T17:09:39",
+      "end_timestamp": "2026-01-18T17:26:19",
+      "duration": 1000.5,
+      "video_source": "USA",
+      "time_period": "nighttime"
+    }
+  ],
+  "statistics": {
+    "clip_count": 30,
+    "total_duration": 28892.85,
+    "total_duration_hours": 8.03,
+    "scene_distribution": {
+      "indoor": 30
+    },
+    "selected_videos": [
+      "61767972-9303-4f55-980c-832d7a454d6e",
+      "5c3be03c-07a5-4427-a2fe-449f16e8017b",
+      "9c5e1a43-6836-4b8d-a4e9-d80aa7b4b62a",
+      "69190e7c-457f-489d-9071-c2a9185e4853",
+      "2a2fe5ed-20b4-4081-9ced-23f44340df16",
+      "7b7ad253-60d3-4649-9d52-41279a1adb7c",
+      "6edb5c87-ae95-4185-807f-06d37124d2b7",
+      "93652400-a3b2-4626-857a-7c1720911873",
+      "e8042e06-ceee-4b97-8e89-16a3879b2386",
+      "15223229-8273-4f28-9bc0-1266e7c210d8",
+      "70d92a4c-6ca5-49ec-92ad-e7a005c39205",
+      "e926a2d5-d909-4e07-a534-6fac17ef9b04",
+      "e9187885-8ba4-4d12-aa01-0ebca75c30bf",
+      "b17ff269-ec2d-4ad8-88aa-b00b75921427",
+      "ba2402fb-fe9a-40ea-bd0c-1eb5e5f747d5",
+      "3c9c9412-cdab-4d59-b035-2a94cfa06902",
+      "8f0ef0f4-c46a-4284-b142-add6a5d09fa3",
+      "7c9e2ead-0b7b-470d-809b-a520daa6ac77",
+      "211b46a3-4d20-4896-82ed-d56f41d90ab3",
+      "65a76574-ef3e-4aa0-b1b0-7df9e5f34296",
+      "1655f1ca-cada-4b2d-895d-a23ca2b0238c",
+      "450be7d0-16bc-484a-9086-d0b5427c285c",
+      "433d0fc0-f6e9-46aa-8ec7-a6633cba6932",
+      "6af777f6-e427-4a77-bd0f-86be09a8372b",
+      "8f05300f-1200-4c18-937b-b8e23dc92505",
+      "062f1e55-67d8-4cdc-89c6-7fb361a9b0f9",
+      "3a158275-c4c2-4bde-a186-788341e43ed4",
+      "9e839a17-75b3-4525-9646-804a6f260f35",
+      "26fe8233-f4b0-449a-ae4a-10492a7b0d62",
+      "a267b011-b1db-4e3c-aa49-438e2afdd6dc"
+    ],
+    "unique_scenarios": [
+      "Camp setup/pack-up/chores",
+      "Cleaning / laundry",
+      "Cooking",
+      "Crafting/knitting/sewing/drawing/painting",
+      "Fixing something in the home",
+      "Listening to music",
+      "Making coffee",
+      "On a screen (phone/laptop)",
+      "Playing with pets",
+      "Talking with family members",
+      "Talking with friends/housemates",
+      "Washing the dog / pet, grooming horse"
+    ]
+  }
+}

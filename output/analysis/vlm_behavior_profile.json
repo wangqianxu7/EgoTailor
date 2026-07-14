@@ -1,0 +1,1181 @@
+{
+  "registry_summary": {
+    "total_clips": 610,
+    "clips_with_local_video": 178,
+    "coverage_ratio": 0.2918
+  },
+  "stats": {
+    "total_clips": 610,
+    "top_scenarios": [
+      [
+        "Cleaning / laundry",
+        104
+      ],
+      [
+        "Cooking",
+        104
+      ],
+      [
+        "Crafting/knitting/sewing/drawing/painting",
+        75
+      ],
+      [
+        "Eating",
+        57
+      ],
+      [
+        "Car - commuting, road trip",
+        51
+      ],
+      [
+        "jobs related to construction/renovation company\n(Director of work, tiler, plumber, Electrician, Handyman, etc)",
+        51
+      ],
+      [
+        "Talking with family members",
+        49
+      ],
+      [
+        "On a screen (phone/laptop)",
+        47
+      ],
+      [
+        "Walking on street",
+        40
+      ],
+      [
+        "Car mechanic",
+        36
+      ],
+      [
+        "Talking with friends/housemates",
+        22
+      ],
+      [
+        "Making coffee",
+        22
+      ],
+      [
+        "Playing with pets",
+        21
+      ],
+      [
+        "Going to the park",
+        15
+      ],
+      [
+        "Indoor Navigation (walking)",
+        15
+      ]
+    ],
+    "scene_distribution": {
+      "outdoor": 54,
+      "mixed": 139,
+      "indoor": 417
+    },
+    "top_slots": [
+      [
+        "wake_home",
+        74
+      ],
+      [
+        "commute_morning",
+        59
+      ],
+      [
+        "commute_evening",
+        38
+      ],
+      [
+        "work_morning",
+        35
+      ],
+      [
+        "home_evening",
+        34
+      ],
+      [
+        "work_focus",
+        33
+      ],
+      [
+        "work_afternoon",
+        32
+      ],
+      [
+        "lunch_out",
+        30
+      ],
+      [
+        "errand_outdoor",
+        28
+      ],
+      [
+        "home_cooking",
+        17
+      ]
+    ]
+  },
+  "queries": [
+    "outdoor activities exercise sports preferences",
+    "food cooking eating dining habits",
+    "work desk office meeting professional routines",
+    "social interaction friends family communication",
+    "commute transportation travel patterns",
+    "home leisure entertainment hobbies relaxation",
+    "shopping errands consumer behavior"
+  ],
+  "query_results": [
+    {
+      "query": "outdoor activities exercise sports preferences",
+      "rag_context": "## Multi-day patterns\n- [period|score=0.096] Period weekends (2026-01-10 to 2026-01-25): clips=164, scenes={'mixed': 19, 'indoor': 123, 'outdoor': 22}, top_scenarios=[('Cooking', 46), ('Cleaning / laundry', 29), ('Crafting/knitting/sewing/drawing/painting', 27), ('Car - commuting, road trip', 11), ('On a screen (phone/laptop)', 10), ('Playing games / video games', 10), ('Talking with family members', 9), ('Eating', 9), ('Playing with pets', 7), ('Playing board games', 7), ('Walking on street', 5), ('Outdoor social (includes campfire)', 5)]\n- [period|score=0.051] Period week1 (2026-01-05 to 2026-01-11): clips=207, scenes={'outdoor': 16, 'mixed': 49, 'indoor': 142}, top_scenarios=[('Cooking', 43), ('Cleaning / laundry', 41), ('Car - commuting, road trip', 36), ('Walking on street', 25), ('On a screen (phone/laptop)', 25), ('Crafting/knitting/sewing/drawing/painting', 23), ('Eating', 22), ('Talking with family members', 20), ('Watching tv', 8), ('Grocery shopping indoors', 7), ('jobs related to construction/renovation company\\n(Director of work, tiler, plu\n\n## Daily summaries\n- [day|score=0.132] Date 2026-01-24 (Saturday), weekend=True, scenes={'mixed': 6, 'outdoor': 6, 'indoor': 8}, top_scenarios=[('Cooking', 8), ('Cleaning / laundry', 5), ('On a screen (phone/laptop)', 4), ('Eating', 3), ('Indoor Navigation (walking)', 2), ('Walking the dog / pet', 2), ('Hiking', 2), ('Talking with friends/housemates', 2)], plan=Prepare for full-day outdoor expedition (07:30-08:30) | Full-day outdoor adventure: hiking and nature photography (09:00-12:00) | Eat at outdoor hawker center (12:15-13:00) | \n- [day|score=0.095] Date 2026-01-17 (Saturday), weekend=True, scenes={'outdoor': 11, 'indoor': 17, 'mixed': 2}, top_scenarios=[('Playing board games', 6), ('Cooking', 5), ('Outdoor social (includes campfire)', 4), ('Crafting/knitting/sewing/drawing/painting', 4), ('Walking on street', 3), ('Clothes, other shopping', 3), ('Going to the park', 3), ('Outdoor technical climbing/belaying/rappelling (includes ropework)', 2)], plan=Browse farmers market, buy fresh produce (12:30-13:30) | Leisurely brunch at home (08:30-09\n- [day|score=0.092] Date 2026-01-09 (Friday), weekend=False, scenes={'mixed': 8, 'indoor': 17, 'outdoor': 2}, top_scenarios=[('Car - commuting, road trip', 7), ('Cleaning / laundry', 6), ('Cooking', 4), ('On a screen (phone/laptop)', 3), ('jobs related to construction/renovation company\\n(Director of work, tiler, plumber, Electrician, Handyman, etc)', 3), ('Walking on street', 3), ('Talking with family members', 2), ('Working in outdoor store', 2)], plan=Wake up, daily hygiene, prepare breakfast and coffee at home \n\n## Hour blocks\n- [hour|score=0.170] Hour block 2026-01-20T10:00 on 2026-01-20, clips=2, scenes=Counter({'mixed': 1, 'indoor': 1}), scenarios=[('Cycling / jogging', 1), ('Going to the gym - exercise machine, class, weights', 1), ('jobs related to construction/renovation company\\n(Director of work, tiler, plumber, Electrician, Handyman, etc)', 1)]\n- [hour|score=0.098] Hour block 2026-01-17T11:00 on 2026-01-17, clips=2, scenes=Counter({'outdoor': 1, 'mixed': 1}), scenarios=[('Outdoor social (includes campfire)', 1), ('Outdoor technical climbing/belaying/rappelling (includes ropework)', 1), ('Clothes, other shopping', 1)]\n- [hour|score=0.095] Hour block 2026-01-17T17:00 on 2026-01-17, clips=2, scenes=Counter({'outdoor': 2}), scenarios=[('Outdoor social (includes campfire)', 1), ('Walking on street', 1)]\n- [hour|score=0.091] Hour block 2026-01-10T11:00 on 2026-01-10, clips=3, scenes=Counter({'outdoor': 2, 'mixed': 1}), scenarios=[('Car - commuting, road trip', 1), ('Talking with family members', 1), ('Walking on street', 1), ('Outdoor cooking', 1)]\n\n## Clip-level evidence\n- [clip|score=0.150] [2026-01-20T10:23:54 - 2026-01-20T10:44:59] scene=mixed slot=commute_morning scenarios=Cycling / jogging, Going to the gym - exercise machine, class, weights plan=Commute to office summary=the character interacts with a dog, exercises, and performs household activities.\n- [clip|score=0.086] [2026-01-12T10:41:13 - 2026-01-12T11:11:13] scene=mixed slot=travel_airport scenarios=BasketBall, Car - commuting, road trip, Going to the park plan=Taxi to airport, check in and wait at gate summary=the character plays basketball at a sports park and briefly interacts with others in a car and on the phone.\n- [clip|score=0.066] [2026-01-10T11:57:44 - 2026-01-10T12:26:13] scene=outdoor slot=trail_lunch scenarios=Outdoor cooking plan=Picnic lunch on the trail summary=the character prepares and cooks food in outdoor locations, sometimes with assistance from Person X.\n- [clip|score=0.064] [2026-01-19T15:43:41 - 2026-01-19T16:13:41] scene=outdoor slot=errand_outdoor scenarios=Going to the park, Playing with pets, Talking with family members plan=Short walk outside or quick errand in the park summary=the character plays with a woman and a dog in a park or field, engaging in activities like fetch with a tennis ball.\n- [clip|score=0.062] [2026-01-24T12:26:54 - 2026-01-24T12:54:07] scene=outdoor slot=outdoor_lunch scenarios=Eating, Outdoor social (includes campfire) plan=Eat at outdoor hawker center summary=the character prepares sausages at a campsite with a woman and a dog.\n- [clip|score=0.059] [2026-01-20T09:55:31 - 2026-01-20T10:18:54] scene=indoor slot=wake_home scenarios=Cooking, Talking with family members plan=Normal morning routine summary=the character interacts with others, walks around a house, and performs various activities in a room.\n- [clip|score=0.052] [2026-01-17T07:12:43 - 2026-01-17T07:27:46] scene=outdoor slot=social_outdoor scenarios=Outdoor social (includes campfire), Outdoor technical climbing/belaying/rappelling (includes ropework) plan=Meet friends at park for frisbee and chat summary=the character prepares for rock climbing in the mountains, interacts with others, and climbs.\n- [clip|score=0.052] [2026-01-06T09:52:35 - 2026-01-06T10:09:31] scene=mixed slot=commute_morning scenarios=Car - commuting, road trip, Eating plan=Commute to office by car or bus summary=the character drives a car, interacts with passengers, and performs brief indoor activities like opening a fridge and walking around a house.\n- [clip|score=0.000] [2026-01-20T10:49:59 - 2026-01-20T11:06:44] scene=indoor slot=work_morning scenarios=jobs related to construction/renovation company\n(Director of work, tiler, plumber, Electrician, Handyman, etc) plan=Regular work morning summary=the character fixes a car engine in the garage and later fixes a car wheel in a room.\n- [clip|score=0.000] [2026-01-17T11:20:42 - 2026-01-17T11:32:36] scene=outdoor slot=social_outdoor scenarios=Outdoor social (includes campfire), Outdoor technical climbing/belaying/rappelling (includes ropework) plan=Meet friends at park for frisbee and chat summary=the character explores a mountain range, adjusts climbing ropes, and observes another person climbing.\n- [clip|score=0.000] [2026-01-17T11:37:36 - 2026-01-17T12:01:50] scene=mixed slot=farmers_market scenarios=Clothes, other shopping plan=Browse farmers market, buy fresh produce summary=the character interacts with people, uses a phone, shops at a supermarket and store, and walks between a boutique, store, and supermarket.\n- [clip|score=0.000] [2026-01-17T17:10:52 - 2026-01-17T17:15:00] scene=outdoor slot=social_outdoor scenarios=Outdoor social (includes campfire) plan=Meet friends at park for frisbee and chat summary=the character and others eat at a campsite.\n- [clip|score=0.000] [2026-01-17T17:20:00 - 2026-01-17T17:41:23] scene=outdoor slot=farmers_market scenarios=Walking on street plan=Browse farmers market, buy fresh produce summary=the character walks outdoors and converses with others.\n- [clip|score=0.000] [2026-01-10T11:04:06 - 2026-01-10T11:34:06] scene=mixed slot=drive_trailhead scenarios=Car - commuting, road trip, Talking with family members plan=Drive to trailhead for day hike summary=the character drives a car, uses a phone, and briefly interacts with someone.\n- [clip|score=0.000] [2026-01-10T11:39:06 - 2026-01-10T11:52:44] scene=outdoor slot=hiking scenarios=Walking on street plan=Long hiking on mountain trail with scenic views summary=the character takes a walk outdoors, interacting with others and sometimes pushing a stroller or using a phone.",
+      "rag_hits": {
+        "period": 2,
+        "day": 3,
+        "hour": 4,
+        "clip": 15
+      },
+      "text_levels": {
+        "period": "**Summary of Outdoor Activities, Exercise, and Sports Preferences (2026-01-05 to 2026-01-25)**\n\n**Overall Pattern (Weekends + Week 1):**\n- **Outdoor engagement is low and sporadic** — only 22 outdoor clips across the weekend period (Jan 10–25), and 16 outdoor clips during Week 1 (Jan 5–11). Outdoor scenes make up just **~10% of total clips** (164 + 207 = 371 total clips).\n- **Indoor activities dominate** — 123 + 142 = 265 indoor clips (~71% of total).\n- **Mixed scenes** (indoor/outdoor blend) account for ~25% of clips — suggesting transitional or hybrid activities (e.g., cooking outdoors, walking while on phone).\n\n**Outdoor Activity Breakdown:**\n- **Top outdoor scenarios:**\n  - *Walking on street* (5 clips — appears in both periods)\n  - *Outdoor social (includes campfire)* (5 clips — weekend only)\n  - *Car - commuting, road trip* (11 clips — Week 1 only, suggests travel may involve outdoor exposure)\n- **No explicit sports, exercise, or structured outdoor recreation** (e.g., cycling, hiking, team sports, running, yoga outdoors) detected.\n- **Outdoor scenes are mostly passive or social** — e.g., campfire, walking, socializing — not vigorous exercise or sports.\n\n**Exercise/Sports Preferences:**\n- **No evidence of active exercise or sports** — no clips tagged with running, biking, swimming, gym, sports, or fitness activities.\n- **No structured physical activity** detected — even “walking on street” is minimal and not quantified as exercise.\n- **Indoor activities dominate physical activity** — cooking, cleaning, crafting, and screen time are the most frequent, suggesting sedentary or low-intensity movement.\n\n**Behavioral Insights:**\n- **Low outdoor engagement** — suggests preference for indoor or mixed environments.\n- **Outdoor activities are limited to casual, social, or transit-related contexts** — not recreational or fitness-oriented.\n- **No clear sports or exercise preference** — behavior leans toward domestic, screen-based, or social indoor activities.\n- **Week 1 shows slightly higher outdoor exposure** (16 clips) — possibly due to commuting or short walks — but still minimal.\n\n**Conclusion:**\nThe user’s behavior during this period shows **minimal interest in outdoor sports or exercise**. Outdoor activities are **infrequent, passive, and social** (e.g., walking, campfire, commuting). **Indoor activities dominate**, with a strong preference for domestic tasks, screen time, and socializing indoors. **No active sports or fitness preferences** are evident.\n\n**Recommendation (if applicable):**\nTo increase outdoor activity or exercise, consider introducing structured outdoor routines (e.g., daily walks, weekend sports, or nature-based hobbies) — even small changes could shift behavior toward more active, outdoor engagement.",
+        "day": "**Daily-Level Behavior Patterns for “Outdoor Activities, Exercise, Sports Preferences” (2026-01-09 to 2026-01-24)**\n\n---\n\n### 📊 **Overall Trends**\n\n- **Weekend vs. Weekday Preference**:  \n  Outdoor activities and exercise are **significantly more frequent and intentional on weekends**, especially Saturdays. Weekdays show minimal outdoor engagement, dominated by indoor work, commuting, and chores.\n\n- **Outdoor Engagement**:  \n  - **Weekends**: High outdoor activity (avg. 11–12 outdoor scenes/day on Sat, 2 on Fri).  \n  - **Weekdays**: Very low outdoor scenes (avg. 2), mostly incidental (e.g., short walks, errands).\n\n- **Exercise & Sports**:  \n  - **Weekends**: Active, goal-oriented outdoor exercise (hiking, cycling, nature photography, walking neighborhoods).  \n  - **Weekdays**: No structured exercise or sports; physical activity is incidental or work-related (e.g., walking to errands).\n\n- **Scene Mix**:  \n  - Weekends: Balanced mix of outdoor + indoor (e.g., outdoor adventure + indoor cooking/socializing).  \n  - Weekdays: Predominantly indoor (17/20 scenes), with minimal outdoor context.\n\n---\n\n### 📅 **Weekend Patterns (Saturday)**\n\n#### **2026-01-24 (Outdoor-Focused Weekend)**  \n- **Primary Behavior**: Full-day outdoor expedition (hiking, nature photography, neighborhood exploration).  \n- **Outdoor Scenes**: 6 (mixed with indoor scenes).  \n- **Exercise/Sports**: Hiking (2 scenes), walking (2 scenes), outdoor navigation.  \n- **Social/Recreational**: Eating outdoors, talking with friends, sharing photos.  \n- **Pattern**: **Highly intentional, active, nature-oriented weekend** — outdoor activities are planned, structured, and social.\n\n#### **2026-01-17 (Balanced Outdoor + Indoor Weekend)**  \n- **Primary Behavior**: Outdoor social (campfire), cycling, farmers market, cooking with outdoor finds.  \n- **Outdoor Scenes**: 11 (highest of the three days).  \n- **Exercise/Sports**: Cycling (10:00–12:00), walking (3 scenes), outdoor climbing (2 scenes).  \n- **Social/Recreational**: Board games, dining out, crafting, shopping.  \n- **Pattern**: **Active, social, and exploratory weekend** — outdoor activities are integrated with social and creative pursuits.\n\n---\n\n### 📅 **Weekday Pattern (2026-01-09, Friday)**\n\n- **Primary Behavior**: Workday (desk job, commuting, indoor chores).  \n- **Outdoor Scenes**: Only 2 (short walk, quick errand).  \n- **Exercise/Sports**: None.  \n- **Scene Mix**: 17 indoor, 8 mixed, 2 outdoor.  \n- **Pattern**: **Minimal outdoor engagement** — physical activity is incidental, not intentional or recreational.\n\n---\n\n### 🎯 **Key Insights**\n\n1. **Outdoor Preference is Weekend-Driven**:  \n   Outdoor activities are **not a daily habit** — they are reserved for weekends and are **planned, active, and often social**.\n\n2. **Exercise/Sports are Low on Weekdays**:  \n   No structured exercise or sports on weekdays — physical activity is incidental or work-related.\n\n3. **Outdoor Activities are Social & Exploratory**:  \n   On weekends, outdoor activities are paired with socializing, photography, exploration, and dining — indicating a **recreational, experiential preference**.\n\n4. **Indoor Activities Dominate Weekdays**:  \n   Weekdays are dominated by work, commuting, and chores — with minimal outdoor context.\n\n5. **Outdoor Scenes are Often Mixed with Indoor**:  \n   On weekends, outdoor scenes are often paired with indoor activities (e.g., cooking after hiking, reviewing photos indoors).\n\n---\n\n### 🧭 **Recommendations**\n\n- **For Weekdays**: Introduce **short, structured outdoor breaks** (e.g., 15–30 min walks, stretching, or light sports) to increase physical activity without disrupting work.\n- **For Weekends**: Continue **planned, active, social outdoor adventures** — consider adding more sports (e.g., hiking, cycling, climbing) to diversify exercise.\n- **For Social Engagement**: Leverage outdoor activities as **social connectors** — group hikes, photography walks, or neighborhood exploration with friends.\n\n---\n\n### ✅ **Summary**\n\n> **Outdoor activities, exercise, and sports are weekend-centric, social, and exploratory — with minimal weekday engagement. The user prefers active, nature-based, and social outdoor experiences, especially on Saturdays. Weekdays are dominated by indoor work and chores, with no intentional exercise or sports.**\n\n--- \n\nLet me know if you’d like to visualize this or generate a weekly behavior calendar!",
+        "hour": "**Summary of Hour-Block Behavior Patterns for “Outdoor Activities, Exercise, Sports Preferences”**\n\nAcross the provided hour blocks, the user demonstrates a **strong preference for outdoor activities**, with consistent engagement in both **physical exercise** and **social/outdoor recreation**. Here’s a breakdown by pattern:\n\n---\n\n### 🌞 **1. Outdoor Preference Dominates**\n- **Outdoor scenes** appear in **3 out of 4 hour blocks** (17:00, 11:00, 11:00, 10:00), often as the **primary or co-primary activity**.\n- **Mixed scenes** (indoor/outdoor) appear in 2 blocks, suggesting flexibility or transitional behavior.\n- **Indoor scenes** appear only once (10:00), indicating **low indoor preference** for this query context.\n\n---\n\n### 🏃‍♂️ **2. Exercise & Sports Engagement**\n- **Physical exercise** is present in **two blocks**:\n  - *2026-01-20T10:00*: “Cycling / jogging” and “Going to the gym” — **active, structured exercise**.\n  - *2026-01-17T17:00*: “Walking on street” — **low-intensity, daily movement**.\n- **Technical sports/climbing** appear in *2026-01-17T11:00*: “Outdoor technical climbing/belaying/rappelling” — **high-skill, adventure-oriented**.\n- **No gym or structured sports** in other blocks, suggesting **variability** in exercise type.\n\n---\n\n### 🏕️ **3. Social & Recreational Outdoor Activities**\n- **Outdoor social** appears in **two blocks**:\n  - *2026-01-17T11:00*: “Outdoor social (includes campfire)” — **social + nature**.\n  - *2026-01-17T17:00*: “Outdoor social (includes campfire)” — **repeated preference**.\n- **Campfire** and **walking** suggest **relaxed, community-oriented** outdoor behavior.\n\n---\n\n### 🚗 **4. Contextual Variability**\n- **Commuting** and **shopping** appear in *2026-01-10T11:00*, indicating **outdoor activities are often embedded in daily routines**.\n- **No clear pattern of indoor exercise or sports** — user leans toward **active, outdoor, or mixed environments**.\n\n---\n\n### 📊 **Key Patterns Summary**\n| Category               | Frequency | Notes |\n|------------------------|-----------|-------|\n| **Outdoor Scenes**     | 3/4 blocks | Dominant preference |\n| **Exercise/Sports**    | 2/4 blocks | Includes cycling, gym, climbing, walking |\n| **Social Outdoor**     | 2/4 blocks | Campfire, walking, talking |\n| **Indoor Scenes**      | 1/4 blocks | Low occurrence |\n| **Mixed Scenes**       | 2/4 blocks | Often transitional or hybrid |\n\n---\n\n### ✅ **Conclusion**\nThe user exhibits a **consistent preference for outdoor activities**, blending **exercise, social interaction, and recreation**. They engage in **both structured (gym, cycling) and unstructured (walking, campfire)** activities, with a **clear bias toward nature and social settings**. The presence of **technical sports** and **commuting-related outdoor exposure** suggests **versatility and adaptability** in their outdoor behavior.\n\n**Recommendation**: Tailor suggestions toward **outdoor fitness, adventure sports, or social outdoor events** — especially those combining **movement, nature, and community**."
+      },
+      "clip_analyses": [
+        {
+          "video_uid": "ff15140a-4747-4c45-b95f-ff2bd36ef178",
+          "node_id": "clip_15_009",
+          "video_available": true,
+          "video_path": "/mnt/data_oss/raw_data/Ego4d/v2/full_scale/ff15140a-4747-4c45-b95f-ff2bd36ef178.mp4",
+          "frame_count": 16,
+          "duration_min": 21.1,
+          "sampling": "adaptive",
+          "analysis": {
+            "observed_activities": [
+              "walking outdoors",
+              "exercising with weights",
+              "interacting with dog",
+              "moving between indoor and outdoor spaces"
+            ],
+            "objects_and_places": [
+              "dog",
+              "weight bar",
+              "gym equipment",
+              "garage",
+              "forest path",
+              "gravel driveway",
+              "blue truck",
+              "window",
+              "mirror",
+              "exercise bench"
+            ],
+            "social_interaction": "none",
+            "behavior_tags": [
+              "commuting",
+              "exercise",
+              "pet care",
+              "outdoor activity"
+            ],
+            "preference_hypotheses": [
+              {
+                "topic": "outdoor exercise and nature",
+                "evidence": "multiple frames show walking in forest and on gravel paths, suggesting preference for natural environments during physical activity",
+                "confidence": "high"
+              },
+              {
+                "topic": "home gym usage",
+                "evidence": "presence of weight bar, bench, and gym equipment in indoor frames",
+                "confidence": "high"
+              },
+              {
+                "topic": "pet companionship",
+                "evidence": "dog visible in multiple frames, including walking and being near the user",
+                "confidence": "medium"
+              }
+            ],
+            "plan_vs_observation": "The scheduled plan was 'Commute to office', but the observed activities suggest the user is engaging in personal exercise and outdoor walks, indicating a deviation from the planned commute.",
+            "notable_details": [
+              "The user is wearing gloves during exercise",
+              "The dog is prominently featured in several frames",
+              "The setting includes both indoor gym and outdoor natural environments",
+              "A blue truck is visible on a gravel path",
+              "The video appears to be recorded during early morning or late afternoon based on lighting"
+            ]
+          },
+          "vision_used": true
+        },
+        {
+          "video_uid": "13d7173f-e8d1-4124-a66b-2ae648da9dbd",
+          "node_id": "clip_15_008",
+          "video_available": true,
+          "video_path": "/mnt/data_oss/raw_data/Ego4d/v2/full_scale/13d7173f-e8d1-4124-a66b-2ae648da9dbd.mp4",
+          "frame_count": 16,
+          "duration_min": 23.39,
+          "sampling": "adaptive",
+          "analysis": {
+            "observed_activities": [
+              "walking through kitchen",
+              "opening cabinets",
+              "looking at window",
+              "moving between rooms",
+              "preparing food (chopping blue items)",
+              "interacting with ring light setup",
+              "adjusting camera or headwear"
+            ],
+            "objects_and_places": [
+              "blue cabinets",
+              "kitchen sink",
+              "windows",
+              "ring light",
+              "blender",
+              "cutting board",
+              "bowl with blue cubes",
+              "refrigerator",
+              "living room with TV",
+              "bookshelf",
+              "plant",
+              "baby bouncer",
+              "dining table"
+            ],
+            "social_interaction": "none",
+            "behavior_tags": [
+              "cooking",
+              "indoor navigation",
+              "crafting/knitting/sewing/drawing/painting",
+              "on a screen (phone/laptop)"
+            ],
+            "preference_hypotheses": [
+              {
+                "topic": "blue-themed decor",
+                "evidence": "blue cabinets, blue flooring, blue bowls, blue cutting mat",
+                "confidence": "high"
+              },
+              {
+                "topic": "home crafting or food preparation",
+                "evidence": "chopping blue items, blender, ring light setup",
+                "confidence": "medium"
+              },
+              {
+                "topic": "indoor activities during winter",
+                "evidence": "snow visible outside window, indoor lighting",
+                "confidence": "medium"
+              }
+            ],
+            "plan_vs_observation": "Observed activities align with 'Normal morning routine' as the user is moving through the house, preparing food, and setting up a ring light (possibly for content creation or video call).",
+            "notable_details": [
+              "The user is wearing a checkered blue and white blanket or garment.",
+              "A baby bouncer is visible in the kitchen.",
+              "The ring light setup suggests potential content creation or video recording."
+            ]
+          },
+          "vision_used": true
+        }
+      ]
+    },
+    {
+      "query": "food cooking eating dining habits",
+      "rag_context": "## Multi-day patterns\n- [period|score=0.072] Period week1 (2026-01-05 to 2026-01-11): clips=207, scenes={'outdoor': 16, 'mixed': 49, 'indoor': 142}, top_scenarios=[('Cooking', 43), ('Cleaning / laundry', 41), ('Car - commuting, road trip', 36), ('Walking on street', 25), ('On a screen (phone/laptop)', 25), ('Crafting/knitting/sewing/drawing/painting', 23), ('Eating', 22), ('Talking with family members', 20), ('Watching tv', 8), ('Grocery shopping indoors', 7), ('jobs related to construction/renovation company\\n(Director of work, tiler, plu\n- [period|score=0.070] Period week3 (2026-01-19 to 2026-01-25): clips=191, scenes={'mixed': 47, 'indoor': 127, 'outdoor': 17}, top_scenarios=[('Cooking', 31), ('Cleaning / laundry', 28), ('jobs related to construction/renovation company\\n(Director of work, tiler, plumber, Electrician, Handyman, etc)', 22), ('Car mechanic', 21), ('Eating', 19), ('Talking with family members', 18), ('Crafting/knitting/sewing/drawing/painting', 15), ('Making coffee', 11), ('On a screen (phone/laptop)', 10), ('Talking with friends/housema\n\n## Daily summaries\n- [day|score=0.097] Date 2026-01-25 (Sunday), weekend=True, scenes={'mixed': 1, 'indoor': 22}, top_scenarios=[('Cooking', 9), ('Playing games / video games', 9), ('Cleaning / laundry', 6), ('Listening to music', 4), ('On a screen (phone/laptop)', 2), ('Camp setup/pack-up/chores', 2), ('Eating', 1), ('Talking with family members', 1)], plan=Continue gaming, try new game mode (19:00-21:00) | Cook comfort food for dinner (17:00-18:30) | Online multiplayer with friends (14:30-16:30) | Wind down with music playlist (21:\n- [day|score=0.032] Date 2026-01-08 (Thursday), weekend=False, scenes={'outdoor': 4, 'mixed': 6, 'indoor': 19}, top_scenarios=[('Walking on street', 6), ('Eating', 6), ('Cooking', 6), ('Car - commuting, road trip', 3), ('Crafting/knitting/sewing/drawing/painting', 3), ('Cleaning / laundry', 3), ('Grocery shopping indoors', 3), ('Talking with friends/housemates', 2)], plan=Wake up, daily hygiene, prepare breakfast and coffee at home (07:00-07:45) | Commute to office by car or bus (08:00-08:40) | Work at desk, read e\n- [day|score=0.032] Date 2026-01-14 (Wednesday), weekend=False, scenes={'outdoor': 3, 'mixed': 8, 'indoor': 24}, top_scenarios=[('Cleaning / laundry', 7), ('jobs related to construction/renovation company\\n(Director of work, tiler, plumber, Electrician, Handyman, etc)', 7), ('Crafting/knitting/sewing/drawing/painting', 6), ('Cooking', 4), ('Talking with family members', 3), ('Eating', 3), ('On a screen (phone/laptop)', 3), ('Walking on street', 2)], plan=Wake up, daily hygiene, prepare breakfast and coffee at home \n\n## Hour blocks\n- [hour|score=0.261] Hour block 2026-01-11T08:00 on 2026-01-11, clips=4, scenes=Counter({'indoor': 4}), scenarios=[('Cleaning / laundry', 2), ('Cooking', 2), ('Eating', 1)]\n- [hour|score=0.214] Hour block 2026-01-21T16:00 on 2026-01-21, clips=3, scenes=Counter({'indoor': 3}), scenarios=[('Cooking', 1), ('Eating', 1), ('Crafting/knitting/sewing/drawing/painting', 1), ('Car - commuting, road trip', 1)]\n- [hour|score=0.213] Hour block 2026-01-19T16:00 on 2026-01-19, clips=3, scenes=Counter({'indoor': 2, 'mixed': 1}), scenarios=[('Crafting/knitting/sewing/drawing/painting', 1), ('Car mechanic', 1), ('Cleaning / laundry', 1), ('Cooking', 1), ('Eating', 1)]\n- [hour|score=0.192] Hour block 2026-01-16T08:00 on 2026-01-16, clips=3, scenes=Counter({'indoor': 3}), scenarios=[('Cooking', 1), ('Eating', 1), ('jobs related to construction/renovation company\\n(Director of work, tiler, plumber, Electrician, Handyman, etc)', 1)]\n\n## Clip-level evidence\n- [clip|score=0.240] [2026-01-21T16:04:16 - 2026-01-21T16:31:21] scene=indoor slot=home_evening scenarios=Cooking, Eating plan=Cook light dinner, rest after appointment summary=the character interacts with others, prepares and eats food, and plays cards in an apartment and dining room.\n- [clip|score=0.153] [2026-01-06T14:50:44 - 2026-01-06T15:07:14] scene=indoor slot=lunch_out scenarios=Cooking, Eating plan=Lunch break at cafeteria or nearby restaurant summary=the character fries dough, walks around the house, interacts with others, and eats.\n- [clip|score=0.148] [2026-01-06T13:14:45 - 2026-01-06T13:29:18] scene=indoor slot=wake_home scenarios=Cleaning / laundry, Cooking plan=Wake up, daily hygiene, prepare breakfast and coffee at home summary=the character interacts with X in the kitchen and dining room, preparing food and drinks.\n- [clip|score=0.146] [2026-01-19T16:54:47 - 2026-01-19T17:24:47] scene=indoor slot=home_evening scenarios=Cleaning / laundry, Cooking, Eating plan=Cook dinner, talk with housemates, clean kitchen summary=the character interacts with others, cooks, does dishes, and eats in an apartment.\n- [clip|score=0.142] [2026-01-12T16:13:16 - 2026-01-12T16:29:23] scene=indoor slot=solo_dinner scenarios=Eating plan=Solo dinner at hotel restaurant summary=the character interacts with a man and a child while eating in an apartment dining area.\n- [clip|score=0.134] [2026-01-24T11:42:49 - 2026-01-24T12:09:48] scene=indoor slot=wake_home scenarios=Cleaning / laundry, Cooking, Eating plan=Prepare for full-day outdoor expedition summary=the character cooks meals, interacts with others, and moves between rooms in a house/apartment.\n- [clip|score=0.120] [2026-01-08T09:06:18 - 2026-01-08T09:23:22] scene=indoor slot=lunch_out scenarios=Eating plan=Lunch break at cafeteria or nearby restaurant summary=the character eats with a woman and feeds a baby in a dining room.\n- [clip|score=0.110] [2026-01-08T10:51:14 - 2026-01-08T11:06:11] scene=indoor slot=work_focus scenarios=Camp setup/pack-up/chores, Cooking, Eating, Listening to music, Playing with pets plan=Focused desk work and collaboration summary=the character performs household activities like changing clothes, getting jam, drinking water, and walking around the house.\n- [clip|score=0.000] [2026-01-11T08:06:20 - 2026-01-11T08:20:23] scene=indoor slot=home_chores scenarios=Cleaning / laundry plan=Light laundry and tidying up apartment summary=the character cleans the apartment and sorts books.\n- [clip|score=0.000] [2026-01-11T08:25:23 - 2026-01-11T08:33:58] scene=indoor slot=wake_home scenarios=Cooking plan=Sleep in, lazy breakfast in pajamas summary=the character cooks in a house.\n- [clip|score=0.000] [2026-01-11T08:38:58 - 2026-01-11T08:54:26] scene=indoor slot=movie_afternoon scenarios=Eating plan=Continue movie series, take short breaks summary=the character interacts with people, eats a meal, and performs household tasks like cleaning and washing dishes in an apartment.\n- [clip|score=0.000] [2026-01-11T08:59:26 - 2026-01-11T09:12:17] scene=indoor slot=wake_home scenarios=Cleaning / laundry, Cooking plan=Sleep in, lazy breakfast in pajamas summary=the character washes dishes, prepares a snack, and watches television.\n- [clip|score=0.000] [2026-01-21T16:36:21 - 2026-01-21T16:49:06] scene=indoor slot=exercise_home scenarios=Crafting/knitting/sewing/drawing/painting plan=Gentle home stretching, skip intense workout summary=the character paints a picture and dials a phone.\n- [clip|score=0.000] [2026-01-21T16:54:06 - 2026-01-21T17:07:21] scene=indoor slot=leisure_tv scenarios=Car - commuting, road trip plan=Watch TV and relax summary=the character drives a car.\n- [clip|score=0.000] [2026-01-19T16:18:41 - 2026-01-19T16:35:05] scene=indoor slot=work_afternoon scenarios=Crafting/knitting/sewing/drawing/painting plan=Afternoon work session and async collaboration summary=the character interacts with a girl X while clamping a wooden frame, mixing paint, arranging a workshop, and cleaning paint.",
+      "rag_hits": {
+        "period": 2,
+        "day": 3,
+        "hour": 4,
+        "clip": 15
+      },
+      "text_levels": {
+        "period": "**Summary of Food Cooking Eating Dining Habits (Week 1 vs. Week 3):**\n\nAcross both weeks, **cooking** and **eating** are consistent, recurring activities — indicating a regular pattern of food preparation and consumption. However, there are notable shifts in context and frequency:\n\n---\n\n### 🍳 **Cooking:**\n- **Week 1**: 43 clips — *highest activity* — suggests frequent meal prep, possibly home-cooked meals or batch cooking.\n- **Week 3**: 31 clips — *slight decline* — may indicate less time spent cooking or more reliance on prepared/ready meals.\n- **Context**: Both weeks show cooking as a top scenario, but Week 3 includes more work-related activities (construction, car mechanic), suggesting possible time constraints or shift in priorities.\n\n---\n\n### 🍽️ **Eating:**\n- **Week 1**: 22 clips — moderate frequency.\n- **Week 3**: 19 clips — slight decrease.\n- **Context**: Eating remains a consistent habit, but less frequent than cooking — possibly indicating meals are consumed quickly, or eating is more casual or on-the-go.\n\n---\n\n### 📊 **Trends & Patterns:**\n\n1. **Cooking > Eating** — The user spends more time preparing food than consuming it, suggesting a preference for home-cooked meals or meal planning.\n\n2. **Indoor Scenes Dominant** — Both weeks show high indoor activity (Week 1: 142/207, Week 3: 127/191), indicating that cooking and eating occur primarily at home.\n\n3. **Decline in Cooking/Eating in Week 3** — Possibly due to:\n   - Increased work-related activities (construction, car mechanic).\n   - More outdoor or mixed scenes (Week 3: 17 outdoor vs. 16 in Week 1).\n   - Possibly less time for meal prep or more eating out or on-the-go.\n\n4. **Social Interaction Still Present** — “Talking with family” and “friends/housemates” remain in top scenarios, suggesting meals may be social events, even if less frequent.\n\n---\n\n### 🧭 **Behavioral Insight:**\nThe user is **home-based, food-oriented, and socially engaged** — cooking and eating are central to their routine. However, **Week 3 shows a shift toward work and mobility**, which may be reducing time for meal prep and consumption. This could indicate a transition to a busier schedule or a change in lifestyle (e.g., job demands, commuting).\n\n---\n\n### ✅ **Recommendation:**\nIf the goal is to maintain or enhance food/dining habits, consider:\n- Meal prepping in advance to reduce cooking time.\n- Incorporating quick/easy meals or eating out occasionally to balance time.\n- Scheduling social eating moments to maintain connection despite busier weeks.\n\n---\n\n**Overall**: The user is a home cook with consistent dining habits, but Week 3 shows signs of time pressure or lifestyle shift — cooking and eating are still present but less frequent.",
+        "day": "**Daily-Level Behavior Patterns for Food, Cooking, Eating, and Dining Habits (2026-01-08 to 2026-01-25)**\n\n---\n\n### 📊 **Overall Trends**\n\n- **Cooking** is a consistent, intentional activity, occurring on **all three days**, with frequency ranging from **3 to 9 occurrences**.\n- **Eating** is less frequent but still present — **1–6 occurrences** per day — often tied to meals or snacks.\n- **Dining habits** are **context-dependent**: \n  - **Weekdays (non-weekend)**: Eating often happens **outside the home** (cafeteria, restaurant) during lunch, with cooking limited to breakfast or pre-work prep.\n  - **Weekends**: Cooking becomes **more intentional and leisurely**, often tied to comfort food or social dining (e.g., brunch, dinner).\n- **Indoor scenes dominate** (especially on weekends), suggesting **home-based food preparation and consumption**.\n- **Outdoor scenes** are more prominent on **weekdays**, especially during lunch breaks or short walks — often **not directly tied to eating**, but sometimes **adjacent** (e.g., eating outdoors or walking to a café).\n\n---\n\n### 🗓️ **Day-by-Day Patterns**\n\n#### **2026-01-08 (Thursday, Weekday)**\n- **Cooking**: 6x — likely breakfast/coffee prep + lunch prep (possibly quick meals).\n- **Eating**: 6x — includes lunch at cafeteria/restaurant, possibly snacks or breakfast.\n- **Dining context**: **Workday routine** — eating is **external** (cafeteria, nearby restaurant), cooking is **minimal** (mostly breakfast/coffee).\n- **Scene**: Mostly **indoor** (work, home) with **outdoor** for lunch/errands.\n\n#### **2026-01-14 (Wednesday, Weekday)**\n- **Cooking**: 4x — likely breakfast/coffee + lunch prep (possibly quick meals).\n- **Eating**: 3x — includes lunch (possibly cafeteria or quick meal).\n- **Dining context**: **Workday routine** — eating is **external** (cafeteria, nearby restaurant), cooking is **minimal** (mostly breakfast/coffee).\n- **Scene**: Mostly **indoor** (work, home) with **outdoor** for lunch/errands.\n\n#### **2026-01-25 (Sunday, Weekend)**\n- **Cooking**: 9x — **high frequency**, likely **comfort food** or **meal prep** for dinner.\n- **Eating**: 1x — possibly **dinner** or **snack**.\n- **Dining context**: **Leisurely, home-based** — cooking is **intentional and social** (e.g., “Cook comfort food for dinner”).\n- **Scene**: **Indoor-heavy**, with **mixed** scenes (e.g., gaming, music, cleaning) — cooking is **part of a relaxed weekend routine**.\n\n---\n\n### 🎯 **Key Behavioral Patterns**\n\n1. **Cooking is more frequent and intentional on weekends** — tied to comfort food, socializing, or leisure.\n2. **Eating is more external on weekdays** — lunch at work or nearby, with minimal home cooking.\n3. **Weekend dining is home-based** — cooking and eating occur together, often in the evening or during leisure time.\n4. **Cooking is often paired with other activities** — e.g., cooking while gaming, cooking before gaming, or cooking as part of a “wind-down” routine.\n5. **Dining habits are influenced by schedule** — weekdays = work/lunch = external eating; weekends = home = cooking + eating + leisure.\n\n---\n\n### 📈 **Summary**\n\n> **On weekdays**, eating is **external** (cafeteria, restaurant), cooking is **minimal** (mostly breakfast/coffee).  \n> **On weekends**, cooking is **frequent and intentional** (comfort food, dinner), eating is **home-based**, and often **paired with leisure activities** (gaming, music, socializing).\n\nThis suggests a **flexible, context-driven** approach to food and dining — **workday efficiency** vs. **weekend indulgence**.\n\n--- \n\n✅ **Pattern Summary**:  \n**Cooking → Weekend = Leisurely, Home-Based, Social**  \n**Eating → Weekday = External, Work-Related**  \n**Dining Habits → Context-Driven, Flexible, Social on weekends**",
+        "hour": "**Summary of Hour-Block Behavior Patterns for “Food Cooking Eating Dining Habits”**\n\nAcross the provided hour-blocks, the following patterns emerge regarding food-related activities (cooking, eating, dining):\n\n---\n\n### 📅 **1. Morning Hours (08:00) — Cooking & Eating Often Combined**\n- **2026-01-16T08:00** — Cooking + Eating occur together, alongside work-related construction tasks.\n- **2026-01-11T08:00** — Cooking and Eating are present, with Cleaning also prominent.\n- **Pattern**: Morning hours (especially 08:00) are associated with **cooking and eating**, often as part of a routine start to the day. Cooking is frequently paired with eating, suggesting meal prep or breakfast consumption.\n\n---\n\n### 🕖 **2. Afternoon Hours (16:00) — Cooking & Eating Occur, But Often Mixed with Other Activities**\n- **2026-01-21T16:00** — Cooking + Eating + Crafting + Commuting — Cooking and Eating are secondary to other activities.\n- **2026-01-19T16:00** — Cooking + Eating appear alongside crafting, car mechanic, and cleaning — again, not the primary focus.\n- **Pattern**: In the afternoon, cooking and eating are **not dominant** but still occur. They are often **interwoven with other tasks** (crafting, commuting, maintenance), suggesting a flexible or multitasking lifestyle.\n\n---\n\n### 🧩 **3. Activity Co-occurrence Patterns**\n- **Cooking + Eating** frequently appear together — especially in the morning.\n- **Cooking** is more common than **Eating** in the afternoon, but **Eating** still occurs.\n- **Indoor scenes** dominate all blocks — suggesting food activities happen at home or in controlled environments.\n- **No clear evening pattern** — all data points are morning or afternoon.\n\n---\n\n### 📊 **4. Frequency & Distribution**\n- **Cooking**: Appears in **all 4 blocks** — consistent daily activity.\n- **Eating**: Appears in **all 4 blocks** — but less frequent than cooking (1–2 times per block).\n- **Scenarios**: Cooking and Eating are often paired with **cleaning**, **crafting**, or **commuting** — indicating **multitasking or time-constrained routines**.\n\n---\n\n### 🧭 **5. Behavioral Insight**\n- **Morning**: Cooking and eating are **core routines**, possibly breakfast or meal prep.\n- **Afternoon**: Cooking and eating are **secondary**, often interrupted or combined with other responsibilities.\n- **Environment**: All activities occur **indoors**, suggesting home-based or controlled settings.\n- **Lifestyle**: Indicates a **practical, multitasking individual** who integrates food activities into daily chores or work routines.\n\n---\n\n### ✅ **Conclusion**\nFood-related behaviors (cooking and eating) are **consistent daily activities**, most prominent in the **morning**, and often **combined with other tasks** in the afternoon. The individual appears to **integrate meals into their routine**, whether for nourishment, preparation, or multitasking — with a strong indoor, home-based context.\n\n**Key takeaway**: Cooking and eating are **routine, not leisurely**, and often **embedded in broader daily responsibilities**."
+      },
+      "clip_analyses": [
+        {
+          "video_uid": "7481d622-2f87-4216-a6c2-53cadcd8f6e4",
+          "node_id": "clip_16_025",
+          "video_available": true,
+          "video_path": "/mnt/data_oss/raw_data/Ego4d/v2/full_scale/7481d622-2f87-4216-a6c2-53cadcd8f6e4.mp4",
+          "frame_count": 16,
+          "duration_min": 27.1,
+          "sampling": "adaptive",
+          "analysis": {
+            "observed_activities": [
+              "preparing food",
+              "eating",
+              "playing cards"
+            ],
+            "objects_and_places": [
+              "kitchen counter",
+              "dining table",
+              "living room",
+              "window with curtains",
+              "bookshelves",
+              "TV",
+              "potted plants",
+              "card game materials",
+              "bowl",
+              "bottle",
+              "chair"
+            ],
+            "social_interaction": "moderate",
+            "behavior_tags": [
+              "cooking",
+              "eating",
+              "playing cards",
+              "relaxing"
+            ],
+            "preference_hypotheses": [
+              {
+                "topic": "card games",
+                "evidence": "multiple frames show card game materials on table and person actively playing",
+                "confidence": "high"
+              },
+              {
+                "topic": "cooking at home",
+                "evidence": "frames show kitchen counter with food prep items and dining table with food",
+                "confidence": "high"
+              },
+              {
+                "topic": "indoor relaxation",
+                "evidence": "setting is home, dim lighting, presence of TV and comfortable furniture",
+                "confidence": "high"
+              }
+            ],
+            "plan_vs_observation": "Observed activities (cooking, eating, playing cards) align with scheduled plan to cook dinner and rest after appointment, indicating successful transition to leisure time.",
+            "notable_details": [
+              "Person is wearing glasses",
+              "TV is on with orange screen",
+              "Multiple potted plants visible",
+              "Card game box labeled 'Rapid Beat' is visible",
+              "Lighting is dim, suggesting evening or night"
+            ]
+          },
+          "vision_used": true
+        },
+        {
+          "video_uid": "2f4f353e-0cdd-4ce5-85fa-c734f7e83645",
+          "node_id": "clip_01_023",
+          "video_available": true,
+          "video_path": "/mnt/data_oss/raw_data/Ego4d/v2/full_scale/2f4f353e-0cdd-4ce5-85fa-c734f7e83645.mp4",
+          "frame_count": 14,
+          "duration_min": 16.51,
+          "sampling": "adaptive",
+          "analysis": {
+            "observed_activities": [
+              "frying dough on stove",
+              "walking around kitchen",
+              "opening refrigerator",
+              "eating at dining table",
+              "interacting with another person at table"
+            ],
+            "objects_and_places": [
+              "stove",
+              "microwave",
+              "refrigerator",
+              "dining table",
+              "baby high chair",
+              "blue dish rack",
+              "maple syrup bottle",
+              "plates",
+              "fork",
+              "phone",
+              "window"
+            ],
+            "social_interaction": "moderate",
+            "behavior_tags": [
+              "cooking",
+              "eating",
+              "household routine",
+              "family interaction"
+            ],
+            "preference_hypotheses": [
+              {
+                "topic": "home-cooked meals",
+                "evidence": "frying dough on stove, eating at home table",
+                "confidence": "high"
+              },
+              {
+                "topic": "family-oriented meals",
+                "evidence": "person eating with child in high chair, interaction at table",
+                "confidence": "high"
+              },
+              {
+                "topic": "comfort food",
+                "evidence": "frying dough, eating with maple syrup",
+                "confidence": "medium"
+              }
+            ],
+            "plan_vs_observation": "Observed activity (cooking and eating at home) aligns with scheduled plan 'Lunch break at cafeteria or nearby restaurant' — but instead of going out, user opted for a homemade meal, indicating a preference for home-cooked food or a spontaneous decision to cook.",
+            "notable_details": [
+              "Child is present in high chair during meal",
+              "Maple syrup bottle visible on table",
+              "User wears gloves while eating, possibly for hygiene or food preparation",
+              "Dining area has blue-themed decor"
+            ]
+          },
+          "vision_used": true
+        }
+      ]
+    },
+    {
+      "query": "work desk office meeting professional routines",
+      "rag_context": "## Multi-day patterns\n- [period|score=0.059] Period week1 (2026-01-05 to 2026-01-11): clips=207, scenes={'outdoor': 16, 'mixed': 49, 'indoor': 142}, top_scenarios=[('Cooking', 43), ('Cleaning / laundry', 41), ('Car - commuting, road trip', 36), ('Walking on street', 25), ('On a screen (phone/laptop)', 25), ('Crafting/knitting/sewing/drawing/painting', 23), ('Eating', 22), ('Talking with family members', 20), ('Watching tv', 8), ('Grocery shopping indoors', 7), ('jobs related to construction/renovation company\\n(Director of work, tiler, plu\n- [period|score=0.057] Period week3 (2026-01-19 to 2026-01-25): clips=191, scenes={'mixed': 47, 'indoor': 127, 'outdoor': 17}, top_scenarios=[('Cooking', 31), ('Cleaning / laundry', 28), ('jobs related to construction/renovation company\\n(Director of work, tiler, plumber, Electrician, Handyman, etc)', 22), ('Car mechanic', 21), ('Eating', 19), ('Talking with family members', 18), ('Crafting/knitting/sewing/drawing/painting', 15), ('Making coffee', 11), ('On a screen (phone/laptop)', 10), ('Talking with friends/housema\n\n## Daily summaries\n- [day|score=0.130] Date 2026-01-05 (Monday), weekend=False, scenes={'outdoor': 3, 'mixed': 8, 'indoor': 20}, top_scenarios=[('Cooking', 8), ('Car - commuting, road trip', 7), ('Talking with family members', 5), ('Cleaning / laundry', 5), ('Watching tv', 4), ('Walking on street', 3), ('Eating', 3), ('On a screen (phone/laptop)', 3)], plan=Wake up, daily hygiene, prepare breakfast and coffee at home (07:00-07:45) | Commute to office by car or bus (08:00-08:40) | Weekly all-hands team meeting and sprint planning (09:\n- [day|score=0.125] Date 2026-01-19 (Monday), weekend=False, scenes={'mixed': 8, 'indoor': 17, 'outdoor': 3}, top_scenarios=[('Car mechanic', 5), ('Talking with friends/housemates', 3), ('Doing yardwork / shoveling snow', 3), ('Cooking', 3), ('Cleaning / laundry', 3), ('Eating', 3), ('Playing with pets', 3), ('Talking with family members', 3)], plan=Wake up, daily hygiene, prepare breakfast and coffee at home (07:00-07:45) | Commute to office by car or bus (08:00-08:40) | Weekly all-hands team meeting and sprint pl\n- [day|score=0.114] Date 2026-01-22 (Thursday), weekend=False, scenes={'outdoor': 3, 'mixed': 7, 'indoor': 21}, top_scenarios=[('Crafting/knitting/sewing/drawing/painting', 6), ('jobs related to construction/renovation company\\n(Director of work, tiler, plumber, Electrician, Handyman, etc)', 4), ('Car mechanic', 4), ('Cleaning / laundry', 4), ('Talking with family members', 4), ('Eating', 3), ('Making coffee', 3), ('Walking on street', 2)], plan=Wake up, daily hygiene, prepare breakfast and coffee at home (07:00-07\n\n## Hour blocks\n- [hour|score=0.212] Hour block 2026-01-15T11:00 on 2026-01-15, clips=2, scenes=Counter({'indoor': 2}), scenarios=[('Crafting/knitting/sewing/drawing/painting', 1), ('Cleaning / laundry', 1), ('Working at desk', 1)]\n- [hour|score=0.195] Hour block 2026-01-05T10:00 on 2026-01-05, clips=2, scenes=Counter({'indoor': 2}), scenarios=[('Cleaning / laundry', 1), ('Talking with family members', 1), ('Working at desk', 1), ('Labwork', 1)]\n- [hour|score=0.171] Hour block 2026-01-15T15:00 on 2026-01-15, clips=3, scenes=Counter({'indoor': 2, 'mixed': 1}), scenarios=[('Cleaning / laundry', 1), ('Crafting/knitting/sewing/drawing/painting', 1), ('Working at desk', 1), ('Outdoor social (includes campfire)', 1), ('Eating', 1)]\n- [hour|score=0.149] Hour block 2026-01-05T08:00 on 2026-01-05, clips=3, scenes=Counter({'indoor': 2, 'mixed': 1}), scenarios=[('Talking with family members', 2), ('Car - commuting, road trip', 1), ('Drive-thru food', 1), ('Watching tv', 1), ('Indoor Navigation (walking)', 1), ('Working at desk', 1)]\n\n## Clip-level evidence\n- [clip|score=0.122] [2026-01-05T13:28:54 - 2026-01-05T13:43:06] scene=indoor slot=wake_home scenarios=Cooking plan=Wake up, daily hygiene, prepare breakfast and coffee at home summary=the character interacts with others, prepares food and drink, and performs hygiene routines in an apartment.\n- [clip|score=0.087] [2026-01-05T10:22:28 - 2026-01-05T10:39:46] scene=indoor slot=work_morning scenarios=Cleaning / laundry, Talking with family members, Working at desk plan=Weekly all-hands team meeting and sprint planning summary=the character washes a utensil, arranges cloth, folds clothes, writes, and moves hands in a room.\n- [clip|score=0.076] [2026-01-19T14:58:45 - 2026-01-19T15:12:24] scene=indoor slot=work_focus scenarios=jobs related to construction/renovation company\n(Director of work, tiler, plumber, Electrician, Handyman, etc) plan=Focused desk work and collaboration summary=the character paints a wall in the house.\n- [clip|score=0.076] [2026-01-23T15:06:57 - 2026-01-23T15:24:20] scene=indoor slot=work_focus scenarios=jobs related to construction/renovation company\n(Director of work, tiler, plumber, Electrician, Handyman, etc) plan=Focused desk work and collaboration summary=the character paints a room.\n- [clip|score=0.073] [2026-01-12T11:37:11 - 2026-01-12T11:52:41] scene=indoor slot=client_meeting scenarios=Crafting/knitting/sewing/drawing/painting plan=Client site visit and product demo meeting summary=the character paints a room.\n- [clip|score=0.073] [2026-01-19T14:37:17 - 2026-01-19T14:53:45] scene=indoor slot=work_morning scenarios=Car mechanic plan=Weekly all-hands team meeting and sprint planning summary=the character repairs a lawn mower in a workshop.\n- [clip|score=0.071] [2026-01-14T10:16:31 - 2026-01-14T10:32:14] scene=indoor slot=work_focus scenarios=jobs related to construction/renovation company\n(Director of work, tiler, plumber, Electrician, Handyman, etc) plan=Focused desk work and collaboration summary=the character paints a wall in a house/room.\n- [clip|score=0.070] [2026-01-05T08:58:23 - 2026-01-05T09:02:35] scene=indoor slot=work_focus scenarios=Indoor Navigation (walking), Talking with family members, Working at desk plan=Focused desk work and collaboration summary=the character writes in a book, leaves a note at another apartment, and enters an apartment with a woman and her dog.\n- [clip|score=0.000] [2026-01-15T11:16:09 - 2026-01-15T11:30:08] scene=indoor slot=project_presentation scenarios=Crafting/knitting/sewing/drawing/painting plan=High-stakes project presentation to leadership summary=the character paints inside the house.\n- [clip|score=0.000] [2026-01-15T11:35:08 - 2026-01-15T12:05:08] scene=indoor slot=overtime_work scenarios=Cleaning / laundry, Working at desk plan=Overtime: patch issues found during review, team stays late summary=the character is in a room, operates a UPS, uses a laptop, and handles a cake.\n- [clip|score=0.000] [2026-01-05T10:44:46 - 2026-01-05T10:57:45] scene=indoor slot=work_focus scenarios=Labwork plan=Focused desk work and collaboration summary=the character plays bowling with others.\n- [clip|score=0.000] [2026-01-15T15:05:05 - 2026-01-15T15:16:32] scene=indoor slot=overtime_work scenarios=Cleaning / laundry, Crafting/knitting/sewing/drawing/painting, Working at desk plan=Overtime: patch issues found during review, team stays late summary=the character paints wooden boards in a workshop and does laundry.\n- [clip|score=0.000] [2026-01-15T15:21:32 - 2026-01-15T15:30:29] scene=mixed slot=late_commute scenarios=Outdoor social (includes campfire) plan=Late night commute home, city lights summary=the character lights fireworks in a field with another person.\n- [clip|score=0.000] [2026-01-15T15:35:29 - 2026-01-15T15:59:31] scene=indoor slot=takeout_dinner scenarios=Eating plan=Exhausted, order takeout and eat on couch summary=the character walks around a store, shops, has a drink, and converses.\n- [clip|score=0.000] [2026-01-05T08:03:40 - 2026-01-05T08:18:23] scene=mixed slot=commute_evening scenarios=Car - commuting, road trip, Drive-thru food, Talking with family members plan=Commute home, optionally stop by grocery store summary=the character drives a car with various passengers, stopping at traffic signals and intersections.",
+      "rag_hits": {
+        "period": 2,
+        "day": 3,
+        "hour": 4,
+        "clip": 15
+      },
+      "text_levels": {
+        "period": "**Summary of Multi-Day Behavior Patterns (Week 1 & Week 3) — Work Desk, Office, Meeting, Professional Routines**\n\nWhile the provided data does not explicitly mention “work desk,” “office,” or “professional meetings,” we can infer **professional routines** from the context of **job-related activities**, **indoor scenes**, and **scenario frequency**. Here’s a synthesized behavioral pattern:\n\n---\n\n### 📊 **Key Observations:**\n\n#### 1. **Dominant Indoor Activity (Work-Related Inference)**\n- **Week 1**: 142 indoor clips (78% of total clips)  \n- **Week 3**: 127 indoor clips (66% of total clips)  \n→ Suggests **consistent time spent indoors**, likely at home or office. Given the presence of job-related scenarios, this likely includes **work-from-home or hybrid office routines**.\n\n#### 2. **Professional Routines Inferred from Scenarios**\n- **Week 1**:  \n  - *“jobs related to construction/renovation company”* (7 clips) — suggests **project coordination or oversight** (Director of work).  \n  - *“On a screen (phone/laptop)”* (25 clips) — likely **remote work, video calls, or digital tasks**.  \n  - *“Talking with family members”* (20) — may indicate **work-life overlap**, e.g., managing work while caring for family.\n\n- **Week 3**:  \n  - *“jobs related to construction/renovation company”* (22 clips) — **increased professional engagement**.  \n  - *“Car mechanic”* (21 clips) — possibly **side job or hobby**, or **work-related task** (e.g., managing vehicle logistics for work).  \n  - *“On a screen (phone/laptop)”* (10 clips) — **reduced screen time**, suggesting **less remote work or more hands-on tasks**.\n\n#### 3. **Work-Related Patterns**\n- **Consistent job-related activity** across both weeks, especially in **construction/renovation roles**.  \n- **No explicit “office meeting” or “work desk” clips**, but **“On a screen (phone/laptop)”** and **“Talking with family members”** suggest **virtual meetings or collaborative work**.  \n- **“Making coffee”** (Week 3) and **“Eating”** (both weeks) indicate **routine breaks**, possibly during work hours.\n\n#### 4. **Behavioral Shifts Between Weeks**\n- **Week 1**: More **domestic activities** (cooking, cleaning, eating) — possibly **pre-work or post-work routines**.  \n- **Week 3**: **Increased job-related activity** (construction roles, car mechanic) — suggests **more active professional engagement**.  \n- **Screen time decreased** in Week 3 — may indicate **less remote work or more field-based tasks**.\n\n---\n\n### 🧭 **Inferred Professional Routines**\n\n| Activity | Week 1 | Week 3 | Interpretation |\n|----------|--------|--------|----------------|\n| **Work-related tasks** | Low (7 clips) | High (22 clips) | Increased professional focus |\n| **Remote work / screen time** | High (25 clips) | Moderate (10 clips) | Shift from virtual to hands-on work |\n| **Office/Desk Work** | Not explicitly shown | Not explicitly shown | Likely inferred from screen time and job scenarios |\n| **Meetings** | Not explicitly shown | Not explicitly shown | Possibly via “On a screen” or “Talking with family” (collaborative work) |\n| **Work-Life Balance** | High domestic activity | Slight increase in job activity | Work may be more integrated into daily life |\n\n---\n\n### ✅ **Conclusion:**\n\nThe user exhibits **consistent professional routines** centered around **construction/renovation work**, likely **hybrid or remote** (inferred from screen time and indoor scenes). While **no explicit office or meeting data** is present, the **“On a screen”** and **job-related scenarios** strongly suggest **professional engagement**. The **shift toward more hands-on work** in Week 3 indicates **increased field-based or project-oriented activity**.\n\n**Recommendation**: If “work desk” or “office meeting” is a goal, consider **increasing screen time or scheduling virtual meetings** to align with professional routines. Alternatively, **reduce domestic activities** during work hours to enhance focus.\n\n--- \n\nLet me know if you’d like to analyze **Week 2** or **other weeks** for deeper patterns!",
+        "day": "**Daily-Level Behavior Patterns for “Work Desk Office Meeting Professional Routines” (2026-01-05 to 2026-01-22)**\n\n---\n\n### 📅 **Consistent Daily Structure (Across All Dates)**\n\nDespite variations in scenes and top scenarios, the **core professional routine remains highly consistent**:\n\n1. **Morning Routine (07:00–07:45)**  \n   - Wake up, daily hygiene, prepare breakfast and coffee at home.  \n   → *Indoor, domestic setting — consistent across all days.*\n\n2. **Commute (08:00–08:40)**  \n   - Travel to office via car or bus.  \n   → *Mixed/indoor/outdoor transition — consistent.*\n\n3. **Team Meeting & Planning (09:00–10:30)**  \n   - Weekly all-hands team meeting and sprint planning.  \n   → *Indoor office setting — core professional ritual.*\n\n4. **Focused Desk Work (10:45–12:00)**  \n   - Collaborative or individual desk work.  \n   → *Indoor office — professional productivity block.*\n\n5. **Lunch Break (12:15–13:00)**  \n   - Eat at cafeteria or nearby restaurant.  \n   → *Mixed/indoor/outdoor — consistent social/food break.*\n\n6. **Afternoon Activity (13:15–14:00)**  \n   - Short walk outside or quick errand in park.  \n   → *Outdoor activity — consistent post-lunch reset.*\n\n---\n\n### 🧭 **Key Behavioral Patterns**\n\n#### 1. **Routine Stability**\n- The **same 6-step daily structure** is followed on all three Mondays (Jan 5, 19) and Thursday (Jan 22), indicating **strong adherence to professional routines**.\n- Even on Jan 22 — when scenes shifted toward construction/renovation work — the **office-based routine remains unchanged**, suggesting this is a **core professional identity**.\n\n#### 2. **Scene Distribution**\n- **Indoor scenes dominate** (20–21/30 total), reflecting office and home-based activities.\n- **Outdoor scenes are minimal** (3–3/30), consistent with short walks or errands — not core to professional work.\n- **Mixed scenes** (8–8/30) reflect transitions (e.g., commuting, lunch, errands).\n\n#### 3. **Top Scenarios — Professional vs. Personal**\n- **Professional scenarios**:  \n  - Team meetings, desk work, commuting — **highly consistent**.\n- **Personal scenarios**:  \n  - Cooking, cleaning, talking with family — **present but secondary**.\n  - On Jan 22, **crafting and construction-related work** appear — suggesting **side projects or role flexibility** (possibly director of a construction company), but **professional office routine remains unchanged**.\n\n#### 4. **Time Allocation**\n- **Work hours**: 09:00–12:00 (3 hours) — consistent.\n- **Commute + lunch + walk**: ~2.5 hours — consistent.\n- **Morning prep**: 45 min — consistent.\n- **Afternoon flexibility**: 45 min — used for walks/errands — consistent.\n\n---\n\n### 🧩 **Insights**\n\n- **Professional identity is anchored in office routines**, even when personal or side work (e.g., construction, crafting) is present.\n- **Work-life balance is maintained** — personal activities (cooking, family, walks) are integrated around the core professional schedule.\n- **No weekend variation** — all dates are weekdays, so patterns reflect **standard workweek behavior**.\n- **Minimal deviation** — even on Jan 22 (with construction work), the **office routine remains unchanged**, suggesting **professional role is primary**.\n\n---\n\n### ✅ **Summary**\n\n> **The individual follows a highly consistent, structured professional routine centered around office-based work, team meetings, and desk collaboration. Personal activities are integrated around this core structure, with minimal deviation. The pattern reflects a disciplined, routine-driven professional lifestyle — even when side projects or personal interests (e.g., crafting, construction) emerge, the office routine remains unchanged.**\n\nThis behavior pattern is **predictable, stable, and professional-oriented**, with strong adherence to time-bound, location-based activities.",
+        "hour": "**Summary of Hour-Block Behavior Patterns for “Work Desk Office Meeting Professional Routines”**\n\nThe provided data reflects **professional work routines** that intersect with **domestic and social activities**, suggesting a hybrid work-life pattern. Below is a synthesized summary of behavior patterns across the hour blocks:\n\n---\n\n### 📅 **Key Observations**\n\n1. **“Working at desk” is a recurring professional activity**  \n   - Appears in **all 4 hour blocks**, indicating it’s a consistent part of the daily routine.\n   - Often co-occurs with **indoor scenes**, suggesting work is done in home or office-like environments.\n\n2. **Work is not isolated — it blends with domestic and social tasks**  \n   - **Cleaning / laundry** appears in 3 out of 4 blocks — likely indicating multitasking or a home-based work environment.\n   - **Crafting / artistic activities** appear in 2 blocks — possibly indicating creative or hybrid professional roles (e.g., design, writing, remote freelancing).\n   - **Talking with family members** appears in 2 blocks — suggests work is integrated into family life, possibly remote or flexible hours.\n\n3. **Work routines vary by time of day**  \n   - **Morning (08:00)**: Work is paired with **commuting, eating, TV, and family interaction** — suggests a transitional or hybrid start to the day.\n   - **Midday (11:00)**: Work is paired with **crafting or cleaning** — possibly a midday break or multitasking.\n   - **Afternoon (15:00)**: Work is paired with **outdoor socializing and eating** — suggests a more relaxed or social end to the workday.\n\n4. **Scene diversity indicates flexible or hybrid work environments**  \n   - **Indoor scenes dominate** (2 out of 4 blocks have 2+ indoor scenes), but **mixed scenes** (indoor/outdoor) appear in 2 blocks — indicating mobility or flexible workspaces.\n   - **Outdoor social (campfire)** at 15:00 suggests a break or social component to the workday.\n\n5. **Professional routines are not confined to “office” settings**  \n   - No explicit “office” or “meeting” scenarios are listed — but “working at desk” implies professional tasks.\n   - “Labwork” at 10:00 suggests a technical or scientific professional role — possibly remote or hybrid.\n\n---\n\n### 🎯 **Behavioral Patterns Summary**\n\n| Time Block | Key Professional Activity | Supporting Activities | Environment |\n|------------|---------------------------|------------------------|-------------|\n| 08:00      | Working at desk           | Commuting, family talk, TV, drive-thru | Mixed (indoor/outdoor) |\n| 10:00      | Working at desk + Labwork | Cleaning, family talk | Indoor |\n| 11:00      | Working at desk           | Crafting, cleaning | Indoor |\n| 15:00      | Working at desk           | Cleaning, crafting, outdoor social, eating | Mixed |\n\n---\n\n### ✅ **Conclusion**\n\nThe “work desk office meeting professional routines” are **flexible, hybrid, and integrated into daily life**. Work is often done at a desk in an indoor setting, but frequently overlaps with domestic chores, family interaction, and social activities — suggesting a **remote or hybrid work model**. The absence of explicit “office” or “meeting” scenarios implies that professional tasks are performed in non-traditional settings, possibly due to remote work or flexible schedules.\n\n**Pattern**: Professional work is **multitasking, context-dependent, and socially integrated**, with a strong emphasis on **indoor environments** and **domestic flexibility**.\n\n--- \n\nLet me know if you’d like to visualize this or extract trends over time!"
+      },
+      "clip_analyses": [
+        {
+          "video_uid": "4e0f3560-0a0b-4952-b5d7-1e98c3734f0b",
+          "node_id": "clip_00_019",
+          "video_available": true,
+          "video_path": "/mnt/data_oss/raw_data/Ego4d/v2/full_scale/4e0f3560-0a0b-4952-b5d7-1e98c3734f0b.mp4",
+          "frame_count": 13,
+          "duration_min": 14.2,
+          "sampling": "adaptive",
+          "analysis": {
+            "observed_activities": [
+              "moving through apartment",
+              "interacting with kitchen appliances",
+              "handling a cup",
+              "viewing dining/living area",
+              "entering bathroom",
+              "washing hands at sink"
+            ],
+            "objects_and_places": [
+              "kitchen cabinets",
+              "stove",
+              "microwave",
+              "dining table",
+              "living room sofa",
+              "paper towel roll",
+              "flower arrangement",
+              "bathroom sink",
+              "mirror",
+              "bedroom bed"
+            ],
+            "social_interaction": "none",
+            "behavior_tags": [
+              "commuting",
+              "cooking",
+              "hygiene"
+            ],
+            "preference_hypotheses": [
+              {
+                "topic": "cozy home environment",
+                "evidence": "presence of decorative flowers, patterned tablecloth, and comfortable furniture in living/dining area",
+                "confidence": "medium"
+              },
+              {
+                "topic": "personal hygiene routine",
+                "evidence": "user enters bathroom and washes hands, wearing a 'BE COZY' sweatshirt suggesting comfort-oriented habits",
+                "confidence": "high"
+              },
+              {
+                "topic": "morning routine",
+                "evidence": "sequence starts with moving through apartment, ends with hygiene, aligns with 'Wake up, daily hygiene' plan",
+                "confidence": "high"
+              }
+            ],
+            "plan_vs_observation": "Observed activities (moving through apartment, kitchen interaction, bathroom hygiene) directly align with the scheduled plan: 'Wake up, daily hygiene, prepare breakfast and coffee at home'. The user is likely performing morning hygiene and preparing for breakfast/coffee.",
+            "notable_details": [
+              "User wears a purple sweatshirt with 'EAT, DRINK & BE COZY' text, indicating comfort-oriented lifestyle.",
+              "Strong blue color cast in frames suggests either lighting condition or camera filter.",
+              "User briefly obscures camera view with hand, possibly adjusting position or interacting with objects."
+            ]
+          },
+          "vision_used": true
+        },
+        {
+          "video_uid": "458b9f39-85ee-4d6f-82ec-9d219cbe31cd",
+          "node_id": "clip_00_010",
+          "video_available": true,
+          "video_path": "/mnt/data_oss/raw_data/Ego4d/v2/full_scale/458b9f39-85ee-4d6f-82ec-9d219cbe31cd.mp4",
+          "frame_count": 15,
+          "duration_min": 17.31,
+          "sampling": "adaptive",
+          "analysis": {
+            "observed_activities": [
+              "washing dishes",
+              "folding clothes",
+              "writing at a desk",
+              "interacting with another person"
+            ],
+            "objects_and_places": [
+              "kitchen sink",
+              "laundry basket",
+              "desk",
+              "bedroom",
+              "window with snowy view",
+              "refrigerator",
+              "cabinetry",
+              "wall art"
+            ],
+            "social_interaction": "minimal",
+            "behavior_tags": [
+              "cleaning",
+              "laundry",
+              "writing",
+              "commuting"
+            ],
+            "preference_hypotheses": [
+              {
+                "topic": "home organization",
+                "evidence": "systematic movement between kitchen and laundry areas, folding clothes, writing at desk",
+                "confidence": "high"
+              },
+              {
+                "topic": "preference for quiet work environment",
+                "evidence": "writing at desk with minimal interruptions, moving to bedroom for focused task",
+                "confidence": "medium"
+              },
+              {
+                "topic": "routine morning tasks",
+                "evidence": "sequence of cleaning, laundry, and writing aligns with 'work_morning' slot",
+                "confidence": "high"
+              }
+            ],
+            "plan_vs_observation": "Observed activities (cleaning, laundry, writing) align with the scheduled plan of 'Weekly all-hands team meeting and sprint planning' as preparatory tasks before work.",
+            "notable_details": [
+              "Snow visible outside window suggests winter season",
+              "Presence of a laundry basket and dishwashing indicates household chores are being managed",
+              "Writing at desk with papers suggests planning or note-taking related to work"
+            ]
+          },
+          "vision_used": true
+        }
+      ]
+    },
+    {
+      "query": "social interaction friends family communication",
+      "rag_context": "## Multi-day patterns\n- [period|score=0.105] Period weekends (2026-01-10 to 2026-01-25): clips=164, scenes={'mixed': 19, 'indoor': 123, 'outdoor': 22}, top_scenarios=[('Cooking', 46), ('Cleaning / laundry', 29), ('Crafting/knitting/sewing/drawing/painting', 27), ('Car - commuting, road trip', 11), ('On a screen (phone/laptop)', 10), ('Playing games / video games', 10), ('Talking with family members', 9), ('Eating', 9), ('Playing with pets', 7), ('Playing board games', 7), ('Walking on street', 5), ('Outdoor social (includes campfire)', 5)]\n- [period|score=0.051] Period week1 (2026-01-05 to 2026-01-11): clips=207, scenes={'outdoor': 16, 'mixed': 49, 'indoor': 142}, top_scenarios=[('Cooking', 43), ('Cleaning / laundry', 41), ('Car - commuting, road trip', 36), ('Walking on street', 25), ('On a screen (phone/laptop)', 25), ('Crafting/knitting/sewing/drawing/painting', 23), ('Eating', 22), ('Talking with family members', 20), ('Watching tv', 8), ('Grocery shopping indoors', 7), ('jobs related to construction/renovation company\\n(Director of work, tiler, plu\n\n## Daily summaries\n- [day|score=0.064] Date 2026-01-17 (Saturday), weekend=True, scenes={'outdoor': 11, 'indoor': 17, 'mixed': 2}, top_scenarios=[('Playing board games', 6), ('Cooking', 5), ('Outdoor social (includes campfire)', 4), ('Crafting/knitting/sewing/drawing/painting', 4), ('Walking on street', 3), ('Clothes, other shopping', 3), ('Going to the park', 3), ('Outdoor technical climbing/belaying/rappelling (includes ropework)', 2)], plan=Browse farmers market, buy fresh produce (12:30-13:30) | Leisurely brunch at home (08:30-09\n- [day|score=0.061] Date 2026-01-24 (Saturday), weekend=True, scenes={'mixed': 6, 'outdoor': 6, 'indoor': 8}, top_scenarios=[('Cooking', 8), ('Cleaning / laundry', 5), ('On a screen (phone/laptop)', 4), ('Eating', 3), ('Indoor Navigation (walking)', 2), ('Walking the dog / pet', 2), ('Hiking', 2), ('Talking with friends/housemates', 2)], plan=Prepare for full-day outdoor expedition (07:30-08:30) | Full-day outdoor adventure: hiking and nature photography (09:00-12:00) | Eat at outdoor hawker center (12:15-13:00) | \n- [day|score=0.056] Date 2026-01-19 (Monday), weekend=False, scenes={'mixed': 8, 'indoor': 17, 'outdoor': 3}, top_scenarios=[('Car mechanic', 5), ('Talking with friends/housemates', 3), ('Doing yardwork / shoveling snow', 3), ('Cooking', 3), ('Cleaning / laundry', 3), ('Eating', 3), ('Playing with pets', 3), ('Talking with family members', 3)], plan=Wake up, daily hygiene, prepare breakfast and coffee at home (07:00-07:45) | Commute to office by car or bus (08:00-08:40) | Weekly all-hands team meeting and sprint pl\n\n## Hour blocks\n- [hour|score=0.195] Hour block 2026-01-17T14:00 on 2026-01-17, clips=4, scenes=Counter({'indoor': 2, 'outdoor': 1, 'mixed': 1}), scenarios=[('Crafting/knitting/sewing/drawing/painting', 1), ('Outdoor social (includes campfire)', 1), ('Clothes, other shopping', 1), ('Talking with friends/housemates', 1), ('Cooking', 1)]\n- [hour|score=0.156] Hour block 2026-01-17T17:00 on 2026-01-17, clips=2, scenes=Counter({'outdoor': 2}), scenarios=[('Outdoor social (includes campfire)', 1), ('Walking on street', 1)]\n- [hour|score=0.143] Hour block 2026-01-24T12:00 on 2026-01-24, clips=3, scenes=Counter({'outdoor': 3}), scenarios=[('Hiking', 1), ('Eating', 1), ('Outdoor social (includes campfire)', 1), ('Car mechanic', 1)]\n- [hour|score=0.132] Hour block 2026-01-15T15:00 on 2026-01-15, clips=3, scenes=Counter({'indoor': 2, 'mixed': 1}), scenarios=[('Cleaning / laundry', 1), ('Crafting/knitting/sewing/drawing/painting', 1), ('Working at desk', 1), ('Outdoor social (includes campfire)', 1), ('Eating', 1)]\n\n## Clip-level evidence\n- [clip|score=0.140] [2026-01-17T17:10:52 - 2026-01-17T17:15:00] scene=outdoor slot=social_outdoor scenarios=Outdoor social (includes campfire) plan=Meet friends at park for frisbee and chat summary=the character and others eat at a campsite.\n- [clip|score=0.122] [2026-01-17T14:20:20 - 2026-01-17T14:40:25] scene=outdoor slot=social_outdoor scenarios=Outdoor social (includes campfire) plan=Meet friends at park for frisbee and chat summary=the character plays with children and converses with them in various locations, including an apartment, carpark, yard, and a building.\n- [clip|score=0.114] [2026-01-24T16:34:23 - 2026-01-24T17:04:23] scene=indoor slot=home_evening scenarios=Cooking, Talking with friends/housemates plan=Cook hearty dinner, share photos with friends summary=the character cooks, converses with others, and prepares ingredients in a house.\n- [clip|score=0.112] [2026-01-17T07:12:43 - 2026-01-17T07:27:46] scene=outdoor slot=social_outdoor scenarios=Outdoor social (includes campfire), Outdoor technical climbing/belaying/rappelling (includes ropework) plan=Meet friends at park for frisbee and chat summary=the character prepares for rock climbing in the mountains, interacts with others, and climbs.\n- [clip|score=0.106] [2026-01-24T13:54:08 - 2026-01-24T13:58:07] scene=indoor slot=home_evening scenarios=Cooking, Talking with friends/housemates plan=Cook hearty dinner, share photos with friends summary=the character is in the house with D, looks around, and arranges pastries.\n- [clip|score=0.105] [2026-01-17T11:20:42 - 2026-01-17T11:32:36] scene=outdoor slot=social_outdoor scenarios=Outdoor social (includes campfire), Outdoor technical climbing/belaying/rappelling (includes ropework) plan=Meet friends at park for frisbee and chat summary=the character explores a mountain range, adjusts climbing ropes, and observes another person climbing.\n- [clip|score=0.089] [2026-01-14T12:33:54 - 2026-01-14T12:52:58] scene=indoor slot=leisure_music scenarios=Cleaning / laundry, On a screen (phone/laptop) plan=Listen to music and browse social media summary=the character arranges items in a study, uses a phone, and walks around an apartment.\n- [clip|score=0.088] [2026-01-15T15:21:32 - 2026-01-15T15:30:29] scene=mixed slot=late_commute scenarios=Outdoor social (includes campfire) plan=Late night commute home, city lights summary=the character lights fireworks in a field with another person.\n- [clip|score=0.000] [2026-01-17T14:02:02 - 2026-01-17T14:15:20] scene=indoor slot=home_cooking scenarios=Crafting/knitting/sewing/drawing/painting plan=Experiment with new recipes using market finds summary=the character draws a portrait indoors, using a photograph as a reference.\n- [clip|score=0.000] [2026-01-17T14:45:25 - 2026-01-17T14:53:06] scene=mixed slot=farmers_market scenarios=Clothes, other shopping, Talking with friends/housemates plan=Browse farmers market, buy fresh produce summary=the character interacts with people and objects in a store and a car.\n- [clip|score=0.000] [2026-01-17T14:58:06 - 2026-01-17T15:22:49] scene=indoor slot=wake_home scenarios=Cooking plan=Leisurely brunch at home summary=the character prepares a meal and interacts with a man in a kitchen.\n- [clip|score=0.000] [2026-01-17T17:20:00 - 2026-01-17T17:41:23] scene=outdoor slot=farmers_market scenarios=Walking on street plan=Browse farmers market, buy fresh produce summary=the character walks outdoors and converses with others.\n- [clip|score=0.000] [2026-01-24T12:14:48 - 2026-01-24T12:21:54] scene=outdoor slot=outdoor_activity scenarios=Hiking plan=Full-day outdoor adventure: hiking and nature photography summary=the character climbs a rocky mountain and hikes with others, taking pictures.\n- [clip|score=0.000] [2026-01-24T12:26:54 - 2026-01-24T12:54:07] scene=outdoor slot=outdoor_lunch scenarios=Eating, Outdoor social (includes campfire) plan=Eat at outdoor hawker center summary=the character prepares sausages at a campsite with a woman and a dog.",
+      "rag_hits": {
+        "period": 2,
+        "day": 3,
+        "hour": 4,
+        "clip": 14
+      },
+      "text_levels": {
+        "period": "**Summary of Social Interaction, Friends, Family, and Communication Patterns (2026-01-05 to 2026-01-25)**\n\n---\n\n### 📅 **Overall Weekend Behavior (Jan 10–25, 2026)**  \n- **Total clips**: 164  \n- **Scene distribution**:  \n  - *Indoor*: 123 (75%) — dominant environment for social and domestic activities.  \n  - *Mixed*: 19 (12%) — transitional or hybrid settings (e.g., kitchen + living room).  \n  - *Outdoor*: 22 (13%) — limited but includes social outings.  \n- **Top scenarios**:  \n  - **Cooking (46)** — central activity, often involves family/friends.  \n  - **Cleaning/Laundry (29)** — routine, possibly collaborative.  \n  - **Crafting/Creative (27)** — solitary or shared, may involve social bonding.  \n  - **Outdoor social (5)** — includes campfires — suggests occasional group gatherings.  \n  - **Talking with family (9)** — notable, but not dominant.  \n  - **Eating (9)** — likely social meals, possibly family or small group.  \n  - **Playing with pets (7)** — may indicate companionship or shared time.  \n\n> **Key Insight**: Weekend behavior is **dominated by indoor domestic activities**, with **cooking and cleaning** as primary tasks. Social interaction is **low-key and embedded in routine** — mostly family-focused, with minimal outdoor or friend-based socializing.\n\n---\n\n### 📅 **Week 1 (Jan 5–11, 2026)**  \n- **Total clips**: 207  \n- **Scene distribution**:  \n  - *Indoor*: 142 (69%)  \n  - *Mixed*: 49 (24%)  \n  - *Outdoor*: 16 (8%) — includes commuting and walking.  \n- **Top scenarios**:  \n  - **Cooking (43)** — again, central.  \n  - **Cleaning/Laundry (41)** — high volume, possibly work-related or household management.  \n  - **Car commuting (36)** — significant travel, possibly to work or errands.  \n  - **Walking on street (25)** — outdoor activity, possibly social or routine.  \n  - **On screen (25)** — digital communication or entertainment.  \n  - **Talking with family (20)** — consistent presence.  \n  - **Talking with friends/housemates (6)** — minimal but present.  \n  - **Jobs-related (7)** — suggests work or professional responsibilities.  \n\n> **Key Insight**: Week 1 is **highly structured**, with **commuting and work-related activities** dominating. Social interaction is **moderate**, with **family communication** being more frequent than friend interaction. Digital screen time is high — possibly for communication or work.\n\n---\n\n### 🧩 **Cross-Period Comparison & Social Interaction Patterns**\n\n| Category               | Weekend (Jan 10–25) | Week 1 (Jan 5–11) | Notes |\n|------------------------|---------------------|-------------------|-------|\n| **Social Interaction** | Low-key, family-focused | Moderate, work + family | Friends appear less prominent. |\n| **Family Communication** | 9 clips (Eating, Talking) | 20 clips (Talking) | Family interaction is consistent, but more frequent in Week 1. |\n| **Friend Interaction**  | Not explicitly tracked | 6 clips (Talking with friends/housemates) | Minimal, possibly limited to housemates or casual chats. |\n| **Outdoor Social**      | 5 clips (campfire) | 16 clips (walking, commuting) | Week 1 has more outdoor exposure, but not necessarily social. |\n| **Digital Communication** | 10 clips (On screen) | 25 clips (On screen) | Screen time increases in Week 1 — possibly work or social media. |\n| **Shared Activities**   | Cooking, Crafting, Eating | Cooking, Cleaning, Commuting | Cooking remains central; Week 1 adds work and commuting. |\n\n---\n\n### 📊 **Behavioral Trends**\n\n1. **Family is the primary social unit** — communication and shared activities (cooking, eating) are consistent across both periods.\n2. **Friends/friends/housemates are underrepresented** — only 6 clips in Week 1, suggesting limited or informal socializing.\n3. **Digital communication is high in Week 1** — possibly due to work or remote communication.\n4. **Outdoor socializing is minimal** — only 5 clips in the weekend, suggesting limited social outings.\n5. **Weekend is more domestic and relaxed** — focused on cooking, cleaning, and creative activities.\n6. **Week 1 is more structured and task-driven** — commuting, work, and chores dominate.\n\n---\n\n### 🎯 **Conclusion**\n\nThe individual’s social interaction is **primarily family-oriented**, with **minimal friend-based or outdoor socializing**. Communication is **embedded in daily routines** — cooking, cleaning, and screen time. The **weekend is more relaxed and domestic**, while **Week 1 is more structured and work-focused**. Friends appear to play a **minor role**, possibly limited to housemates or casual interactions.\n\n> **Recommendation**: If expanding social circles, consider scheduling more outdoor or friend-based activities during weekends — current patterns suggest potential for more social engagement beyond family and digital communication.",
+        "day": "**Daily-Level Behavior Patterns for “Social Interaction, Friends, Family, Communication” (2026-01-17 to 2026-01-19)**\n\n---\n\n### 📅 **Overall Pattern Summary**\n\nAcross the three days, social interaction is **highly context-dependent**, with **strong weekend-driven social engagement** and **moderate weekday interaction**, primarily centered around **shared meals, games, outdoor activities, and digital communication**. Communication tends to be **relational and experiential**, blending in-person bonding with digital sharing.\n\n---\n\n### 🗓️ **Day-by-Day Breakdown**\n\n---\n\n#### **📅 2026-01-17 (Saturday) — High Social Engagement**\n\n- **Social Interaction Level**: ⭐⭐⭐⭐⭐ (Very High)\n- **Key Themes**: \n  - **In-person socializing** dominates: board games, cooking, outdoor gatherings.\n  - **Friends-focused**: Board games at friend’s home, dinner out, cycling with companions.\n  - **Family interaction**: Cooking, crafting, and shared meals suggest family involvement.\n  - **Communication**: Likely verbal and tactile (games, cooking, walking) — minimal screen-based interaction.\n- **Scene Mix**: 60% indoor, 30% outdoor, 10% mixed — ideal for social bonding.\n- **Plan Highlights**:\n  - Brunch at home → cooking + family bonding.\n  - Board games → structured social play with friends.\n  - Dinner out → social dining + conversation.\n  - Farmers market + recipe experimentation → shared activity with potential social sharing.\n\n> **Pattern**: **Weekend social rhythm** — structured, relaxed, and centered around **shared experiences** with friends and family.\n\n---\n\n#### **📅 2026-01-24 (Saturday) — Mixed Social & Solo Activities**\n\n- **Social Interaction Level**: ⭐⭐⭐⭐ (High, but more distributed)\n- **Key Themes**:\n  - **Friends/housemates**: Talking, sharing photos, cooking together.\n  - **Family**: Less direct, but implied through shared meals and photo-sharing.\n  - **Communication**: Digital (phone photos) + in-person (hawker center, walking, talking).\n  - **Outdoor adventure**: Social bonding through shared activity (hiking, photography).\n- **Scene Mix**: 30% indoor, 30% outdoor, 40% mixed — balanced, active social engagement.\n- **Plan Highlights**:\n  - Outdoor expedition → group activity with friends or housemates.\n  - Hawker center → casual social eating.\n  - Neighborhood exploration → informal social interaction.\n  - Photo-sharing → digital communication with friends.\n  - Cooking + sharing photos → family/friend bonding.\n\n> **Pattern**: **Social interaction is activity-driven**, often **digital-enhanced** (photos) and **shared experience-based** (hiking, cooking). Less structured than previous Saturday.\n\n---\n\n#### **📅 2026-01-19 (Monday) — Low Social Engagement, Work-Centric**\n\n- **Social Interaction Level**: ⭐⭐ (Low to Moderate)\n- **Key Themes**:\n  - **Friends/housemates**: Brief interactions (talking, walking, pet play).\n  - **Family**: Talking with family members — likely during meals or downtime.\n  - **Communication**: Mostly verbal, low digital interaction.\n  - **Work-related**: Team meetings, focused work — limits social time.\n- **Scene Mix**: 60% indoor, 30% mixed, 10% outdoor — work-focused environment.\n- **Plan Highlights**:\n  - Office work → minimal social interaction.\n  - Commute → limited social contact.\n  - Lunch break → brief social interaction.\n  - Short walk/errand → light socializing.\n  - Evening: Cooking + family talk → relaxed social time.\n\n> **Pattern**: **Workday social rhythm** — social interaction is **fragmented**, **contextual**, and **relaxed**. Communication is mostly **verbal and familial**, with minimal digital or group interaction.\n\n---\n\n### 📊 **Cross-Day Patterns**\n\n| Category               | Weekend (Sat)                     | Weekday (Mon)                     |\n|------------------------|-----------------------------------|-----------------------------------|\n| **Social Frequency**   | High (structured, shared)         | Low (fragmented, work-focused)    |\n| **Primary Social Type**| Friends + Family (in-person)      | Friends + Family (brief, verbal)  |\n| **Communication Mode** | Verbal + tactile (games, cooking) | Verbal + occasional digital       |\n| **Scene Preference**   | Indoor + outdoor (mixed)          | Indoor (work + home)              |\n| **Key Activities**     | Board games, cooking, dining out  | Work, commuting, short walks      |\n\n---\n\n### 🧭 **Behavioral Insights**\n\n1. **Weekends = Social Peaks** — Social interaction is **planned, intentional, and experiential** — board games, cooking, outdoor adventures, dining out.\n2. **Weekdays = Social Gaps** — Social interaction is **passive, fragmented, and work-interrupted** — brief chats, family meals, digital sharing.\n3. **Communication Style**:\n   - Weekend: **Verbal + tactile** (games, cooking, walking).\n   - Weekday: **Verbal + occasional digital** (photos, quick chats).\n4. **Family vs. Friends**:\n   - Weekend: **Balanced** — both friends and family are central.\n   - Weekday: **Family-focused** — friends are secondary or absent.\n5. **Digital Communication**:\n   - Weekend: **Minimal** — socializing is in-person.\n   - Weekday: **Occasional** — used for sharing photos or quick updates.\n\n---\n\n### ✅ **Summary**\n\n> **Social interaction is most vibrant on weekends**, centered around **shared activities with friends and family**, often **in-person and tactile**. Weekdays are **low-key**, with **brief, work-interrupted social moments**. Communication is **relational and experiential**, with **digital use limited to weekends** (photos, sharing). The pattern suggests a **balanced, intentional social life** — rich on weekends, grounded on weekdays.\n\n--- \n\nLet me know if you’d like to visualize this or compare with other dates!",
+        "hour": "**Summary of Social Interaction, Friends, Family, and Communication Behavior Patterns (by Hour Block):**\n\nAcross the provided hour blocks, the data reveals a consistent pattern of **social interaction occurring primarily outdoors**, often centered around **campfire-style gatherings or casual outdoor meetups**, with **some indoor communication** and **occasional mixed environments**. The behavior suggests a preference for **socializing in natural or communal outdoor settings**, with **lighter, recreational or leisurely activities** accompanying these interactions.\n\n---\n\n### **Key Patterns:**\n\n#### **1. Outdoor Socialization Dominates**\n- **Most frequent social scenario**: *Outdoor social (includes campfire)* appears in **3 out of 4 hour blocks**.\n- **Outdoor scenes** are consistently present — **3/4 blocks** show exclusively outdoor scenes, and **1/4** show mixed or indoor-outdoor.\n- **Outdoor activities** often include **hiking, walking, eating, and campfire gatherings** — suggesting **social bonding through nature or shared meals**.\n\n#### **2. Indoor Social Interaction is Less Frequent**\n- Only **one hour block (15:00 on 1/15/2026)** includes **indoor scenes** (2 out of 3 clips), with **mixed scenes** also present.\n- Indoor activities like *cleaning, crafting, working at desk* suggest **less social focus** — possibly **transition or solitary time** before/after socializing.\n\n#### **3. Communication Contexts**\n- **Talking with friends/housemates** appears in **one block (14:00 on 1/17/2026)** — indicating **direct interpersonal communication** is not the primary mode, but **occurs in relaxed, informal settings**.\n- **Eating and cooking** often accompany social interaction — suggesting **food as a social catalyst**.\n- **No explicit mention of family interaction** — though “friends/housemates” may imply close-knit social circles (possibly including family).\n\n#### **4. Time of Day Patterns**\n- **Afternoon (14:00–17:00)**: Social interaction peaks — **crafting, cooking, outdoor socializing**.\n- **Midday (12:00)**: Outdoor socialization continues, with **hiking and car mechanic** — possibly **work-related socializing** or **transition between activities**.\n- **Late afternoon (15:00)**: Mix of indoor and outdoor — **cleaning, crafting, working** — possibly **preparing for or winding down from social time**.\n\n#### **5. Activity Clusters**\n- **Social + Leisure**: *Outdoor social + campfire + eating + hiking* — suggests **relaxed, recreational socializing**.\n- **Social + Practical**: *Outdoor social + car mechanic* — indicates **socializing even during practical tasks**.\n- **Social + Creative**: *Crafting + outdoor social* — implies **social bonding through shared hobbies**.\n\n---\n\n### **Conclusion:**\nThe user’s social interaction behavior is **strongly oriented toward outdoor, informal, and recreational settings**, often involving **friends or housemates**. **Communication is embedded in shared activities** (eating, crafting, hiking) rather than direct conversation. **Indoor interaction is less frequent and more task-oriented**, suggesting **socializing is a priority during daylight hours, especially in the afternoon**. There is **no clear family-focused interaction**, but “housemates” may imply **close-knit social circles**.\n\n**Overall Pattern**:  \n> **Outdoor socializing with friends/housemates during daylight hours, often centered around food, nature, or shared hobbies — with indoor time used for solitary or task-based activities.**\n\nThis suggests a **socially active, nature-oriented, and community-focused lifestyle**, with communication woven into daily routines rather than isolated interactions."
+      },
+      "clip_analyses": [
+        {
+          "video_uid": "b8b4fc74-e036-4731-ae03-4bfab7fd47b9",
+          "node_id": "clip_12_028",
+          "video_available": true,
+          "video_path": "/mnt/data_oss/raw_data/Ego4d/v2/full_scale/b8b4fc74-e036-4731-ae03-4bfab7fd47b9.mp4",
+          "frame_count": 7,
+          "duration_min": 4.14,
+          "sampling": "adaptive",
+          "analysis": {
+            "observed_activities": [
+              "eating",
+              "preparing food",
+              "socializing at campsite",
+              "unpacking car"
+            ],
+            "objects_and_places": [
+              "campfire pit",
+              "camp chairs",
+              "picnic table",
+              "yellow water jugs",
+              "tents",
+              "car",
+              "plates with blue food",
+              "BUSH LIGHT beer boxes",
+              "portable stove"
+            ],
+            "social_interaction": "moderate",
+            "behavior_tags": [
+              "outdoor_social",
+              "camping",
+              "eating",
+              "commuting",
+              "cooking"
+            ],
+            "preference_hypotheses": [
+              {
+                "topic": "outdoor social gatherings",
+                "evidence": "multiple people present, campsite setup, scheduled plan matches",
+                "confidence": "high"
+              },
+              {
+                "topic": "camping and nature",
+                "evidence": "desert canyon backdrop, tents, campfire pit, portable gear",
+                "confidence": "high"
+              },
+              {
+                "topic": "crafting or artistic activity",
+                "evidence": "blue textured food on plate, possible dyeing or art project",
+                "confidence": "medium"
+              },
+              {
+                "topic": "beer consumption",
+                "evidence": "BUSH LIGHT beer boxes visible",
+                "confidence": "medium"
+              }
+            ],
+            "plan_vs_observation": "Observed activity (campsite eating/socializing) aligns with scheduled plan (meet friends at park for frisbee and chat) — though frisbee is not visible, the social outdoor context matches.",
+            "notable_details": [
+              "blue-colored food on plate suggests non-traditional meal or art project",
+              "car with open trunk and doors indicates recent arrival or departure",
+              "multiple people present, including one taking a photo",
+              "desert canyon environment with tents and camp chairs"
+            ]
+          },
+          "vision_used": true
+        },
+        {
+          "video_uid": "dddce8ac-09b0-4b13-b0fa-eb18e1f27b21",
+          "node_id": "clip_19_019",
+          "video_available": true,
+          "video_path": "/mnt/data_oss/raw_data/Ego4d/v2/full_scale/dddce8ac-09b0-4b13-b0fa-eb18e1f27b21.mp4",
+          "frame_count": 16,
+          "duration_min": 30.0,
+          "sampling": "adaptive",
+          "analysis": {
+            "observed_activities": [
+              "cooking",
+              "drinking",
+              "interacting with another person",
+              "walking around the kitchen",
+              "checking refrigerator"
+            ],
+            "objects_and_places": [
+              "stove",
+              "refrigerator",
+              "sink",
+              "kitchen counter",
+              "lamp",
+              "plates",
+              "pots",
+              "jars",
+              "window",
+              "wooden walls",
+              "bed"
+            ],
+            "social_interaction": "moderate",
+            "behavior_tags": [
+              "cooking",
+              "relaxing",
+              "socializing",
+              "indoor"
+            ],
+            "preference_hypotheses": [
+              {
+                "topic": "cooking in a cozy, rustic setting",
+                "evidence": "multiple frames show cooking activities in a small kitchen with wooden walls and blue lighting, suggesting a preference for intimate, homey environments",
+                "confidence": "high"
+              },
+              {
+                "topic": "evening socializing with housemates",
+                "evidence": "person is seen interacting with another individual while holding drinks, and the scene includes multiple people in the background",
+                "confidence": "high"
+              },
+              {
+                "topic": "comfortable lighting for evening activities",
+                "evidence": "blue ambient lighting is consistently present, indicating a preference for low-light, relaxing atmospheres",
+                "confidence": "medium"
+              }
+            ],
+            "plan_vs_observation": "The scheduled plan was to cook a hearty dinner and share photos with friends. The observed video shows the person cooking and interacting with others, which aligns with the plan. However, there is no visible evidence of sharing photos, suggesting this part of the plan may not have been completed or was not captured in the video.",
+            "notable_details": [
+              "The kitchen is small and rustic with wooden walls and blue lighting.",
+              "The person is seen drinking from a glass and interacting with another individual.",
+              "There are multiple cooking items visible, including pots on the stove and ingredients on the counter.",
+              "The scene appears to be set in the evening, as indicated by the dim lighting and the person's relaxed demeanor."
+            ]
+          },
+          "vision_used": true
+        }
+      ]
+    },
+    {
+      "query": "commute transportation travel patterns",
+      "rag_context": "## Multi-day patterns\n- [period|score=0.000] Period week1 (2026-01-05 to 2026-01-11): clips=207, scenes={'outdoor': 16, 'mixed': 49, 'indoor': 142}, top_scenarios=[('Cooking', 43), ('Cleaning / laundry', 41), ('Car - commuting, road trip', 36), ('Walking on street', 25), ('On a screen (phone/laptop)', 25), ('Crafting/knitting/sewing/drawing/painting', 23), ('Eating', 22), ('Talking with family members', 20), ('Watching tv', 8), ('Grocery shopping indoors', 7), ('jobs related to construction/renovation company\\n(Director of work, tiler, plu\n- [period|score=0.000] Period week2 (2026-01-12 to 2026-01-18): clips=212, scenes={'mixed': 43, 'indoor': 148, 'outdoor': 21}, top_scenarios=[('Crafting/knitting/sewing/drawing/painting', 37), ('Cleaning / laundry', 35), ('Cooking', 30), ('jobs related to construction/renovation company\\n(Director of work, tiler, plumber, Electrician, Handyman, etc)', 22), ('Eating', 16), ('On a screen (phone/laptop)', 12), ('Car mechanic', 12), ('Walking on street', 11), ('Talking with family members', 11), ('Car - commuting, road tr\n\n## Daily summaries\n- [day|score=0.081] Date 2026-01-20 (Tuesday), weekend=False, scenes={'mixed': 9, 'outdoor': 3, 'indoor': 20}, top_scenarios=[('jobs related to construction/renovation company\\n(Director of work, tiler, plumber, Electrician, Handyman, etc)', 7), ('Carpenter', 5), ('Talking with family members', 4), ('Cleaning / laundry', 3), ('Cooking', 3), ('Crafting/knitting/sewing/drawing/painting', 3), ('Car mechanic', 3), ('Car - commuting, road trip', 2)], plan=Normal morning routine (07:05-07:50) | Commute to office (08:05-0\n- [day|score=0.051] Date 2026-01-08 (Thursday), weekend=False, scenes={'outdoor': 4, 'mixed': 6, 'indoor': 19}, top_scenarios=[('Walking on street', 6), ('Eating', 6), ('Cooking', 6), ('Car - commuting, road trip', 3), ('Crafting/knitting/sewing/drawing/painting', 3), ('Cleaning / laundry', 3), ('Grocery shopping indoors', 3), ('Talking with friends/housemates', 2)], plan=Wake up, daily hygiene, prepare breakfast and coffee at home (07:00-07:45) | Commute to office by car or bus (08:00-08:40) | Work at desk, read e\n- [day|score=0.050] Date 2026-01-22 (Thursday), weekend=False, scenes={'outdoor': 3, 'mixed': 7, 'indoor': 21}, top_scenarios=[('Crafting/knitting/sewing/drawing/painting', 6), ('jobs related to construction/renovation company\\n(Director of work, tiler, plumber, Electrician, Handyman, etc)', 4), ('Car mechanic', 4), ('Cleaning / laundry', 4), ('Talking with family members', 4), ('Eating', 3), ('Making coffee', 3), ('Walking on street', 2)], plan=Wake up, daily hygiene, prepare breakfast and coffee at home (07:00-07\n\n## Hour blocks\n- [hour|score=0.000] Hour block 2026-01-24T12:00 on 2026-01-24, clips=3, scenes=Counter({'outdoor': 3}), scenarios=[('Hiking', 1), ('Eating', 1), ('Outdoor social (includes campfire)', 1), ('Car mechanic', 1)]\n- [hour|score=0.000] Hour block 2026-01-24T13:00 on 2026-01-24, clips=2, scenes=Counter({'mixed': 1, 'indoor': 1}), scenarios=[('Car - commuting, road trip', 1), ('Indoor Navigation (walking)', 1), ('On a screen (phone/laptop)', 1), ('Cooking', 1), ('Talking with friends/housemates', 1)]\n- [hour|score=0.000] Hour block 2026-01-24T14:00 on 2026-01-24, clips=3, scenes=Counter({'indoor': 1, 'outdoor': 1, 'mixed': 1}), scenarios=[('Cooking', 1), ('Hiking', 1), ('Cleaning / laundry', 1), ('Eating', 1)]\n- [hour|score=0.000] Hour block 2026-01-24T15:00 on 2026-01-24, clips=1, scenes=Counter({'outdoor': 1}), scenarios=[('Talking with family members', 1), ('Walking the dog / pet', 1)]\n\n## Clip-level evidence\n- [clip|score=0.086] [2026-01-05T07:24:20 - 2026-01-05T07:38:43] scene=mixed slot=commute_morning scenarios=Car - commuting, road trip plan=Commute to office by car or bus summary=the character drives a car on the road.\n- [clip|score=0.084] [2026-01-08T13:43:15 - 2026-01-08T14:06:38] scene=mixed slot=commute_morning scenarios=Grocery shopping indoors, Walking on street plan=Commute to office by car or bus summary=the character walks outdoors and shops in a supermarket.\n- [clip|score=0.083] [2026-01-13T08:31:27 - 2026-01-13T08:44:48] scene=mixed slot=commute_morning scenarios=Car mechanic plan=Commute to office by car or bus summary=the character repairs a car in the garage.\n- [clip|score=0.083] [2026-01-06T07:30:36 - 2026-01-06T07:41:59] scene=mixed slot=commute_morning scenarios=Walking on street plan=Commute to office by car or bus summary=the character walks on the road and talks with someone.\n- [clip|score=0.081] [2026-01-06T17:19:13 - 2026-01-06T17:41:52] scene=mixed slot=commute_morning scenarios=Car - commuting, road trip plan=Commute to office by car or bus summary=the character drives a car, interacts with a person, and uses a phone.\n- [clip|score=0.081] [2026-01-09T08:10:00 - 2026-01-09T08:40:00] scene=mixed slot=commute_morning scenarios=Car - commuting, road trip plan=Commute to office by car or bus summary=the character drives a car on the road.\n- [clip|score=0.081] [2026-01-19T16:40:05 - 2026-01-19T16:49:47] scene=mixed slot=commute_evening scenarios=Car mechanic plan=Commute home, optionally stop by grocery store summary=the character repairs a car engine in a garage.\n- [clip|score=0.080] [2026-01-23T12:25:04 - 2026-01-23T12:49:38] scene=mixed slot=commute_evening scenarios=Carpenter plan=Commute to downtown for team gathering summary=the character tiles a floor in an apartment.\n- [clip|score=0.000] [2026-01-24T12:14:48 - 2026-01-24T12:21:54] scene=outdoor slot=outdoor_activity scenarios=Hiking plan=Full-day outdoor adventure: hiking and nature photography summary=the character climbs a rocky mountain and hikes with others, taking pictures.\n- [clip|score=0.000] [2026-01-24T12:26:54 - 2026-01-24T12:54:07] scene=outdoor slot=outdoor_lunch scenarios=Eating, Outdoor social (includes campfire) plan=Eat at outdoor hawker center summary=the character prepares sausages at a campsite with a woman and a dog.\n- [clip|score=0.000] [2026-01-24T12:59:07 - 2026-01-24T13:14:08] scene=outdoor slot=outdoor_afternoon scenarios=Car mechanic plan=Explore new neighborhood on foot, visit local shops summary=the character repairs a car in a garage.\n- [clip|score=0.000] [2026-01-24T13:19:08 - 2026-01-24T13:49:08] scene=mixed slot=commute_home scenarios=Car - commuting, road trip, Indoor Navigation (walking), On a screen (phone/laptop) plan=Bus ride home, review photos on phone summary=the character walks around buildings, including a university and a hospital, drives a car, and uses a phone.\n- [clip|score=0.000] [2026-01-24T13:54:08 - 2026-01-24T13:58:07] scene=indoor slot=home_evening scenarios=Cooking, Talking with friends/housemates plan=Cook hearty dinner, share photos with friends summary=the character is in the house with D, looks around, and arranges pastries.\n- [clip|score=0.000] [2026-01-24T14:03:07 - 2026-01-24T14:33:07] scene=indoor slot=wake_home scenarios=Cooking plan=Prepare for full-day outdoor expedition summary=the character and a woman X prepare a meal together in a kitchen, including preparing ingredients, cooking, and barbecuing meat in the front yard.\n- [clip|score=0.000] [2026-01-24T14:38:07 - 2026-01-24T14:42:31] scene=outdoor slot=outdoor_activity scenarios=Hiking plan=Full-day outdoor adventure: hiking and nature photography summary=the character slides down a rocky mountain in a desert with others.\n- [clip|score=0.000] [2026-01-24T14:47:31 - 2026-01-24T15:40:59] scene=mixed slot=outdoor_lunch scenarios=Cleaning / laundry, Eating plan=Eat at outdoor hawker center summary=the character uses a phone, exercises, cleans, decorates, plays video games, and reads a book inside a house or room.",
+      "rag_hits": {
+        "period": 2,
+        "day": 3,
+        "hour": 4,
+        "clip": 16
+      },
+      "text_levels": {
+        "period": "**Commute & Transportation Travel Patterns Summary (Weeks 1–2, 2026-01-05 to 2026-01-18)**\n\n---\n\n### 📊 **Overall Behavior Trends**\n\n- **Total clips**: 419 (207 + 212) — consistent daily activity levels.\n- **Scene distribution**:\n  - **Indoor**: 290 clips (69%)\n  - **Mixed**: 86 clips (20%)\n  - **Outdoor**: 47 clips (11%)\n  - *Indoor dominance suggests mostly home-based or stationary activities.*\n\n---\n\n### 🚗 **Commute & Transportation Patterns**\n\n#### ✅ **Week 1 (Jan 5–11)**\n- **Top transportation scenario**:  \n  → **“Car - commuting, road trip” (36 clips)** — strong indication of regular or long-distance driving.\n- **Outdoor scenes**: 16 clips — includes walking and outdoor activities, but not dominant.\n- **Other transport-related**:  \n  → “Walking on street” (25) — moderate walking activity.\n  → “On a screen” (25) — likely includes commuting via transit or car while using devices.\n\n#### ✅ **Week 2 (Jan 12–18)**\n- **“Car - commuting, road trip” drops to 9 clips** — significant decline.\n- **New transport-related activity**:  \n  → “Car mechanic” (12 clips) — suggests vehicle maintenance or repair during this period.\n- **Walking on street**: 11 clips — slightly reduced.\n- **Outdoor scenes**: 21 clips — slight increase, possibly due to “Going to the park” (8 clips).\n\n---\n\n### 📈 **Pattern Shifts Between Weeks**\n\n| Category                  | Week 1                     | Week 2                     | Change             |\n|--------------------------|----------------------------|----------------------------|--------------------|\n| **Car commuting**        | 36 clips                   | 9 clips                    | ⬇️ 75% decrease    |\n| **Walking**              | 25 clips                   | 11 clips                   | ⬇️ 56% decrease    |\n| **Outdoor activity**     | 16 clips                   | 21 clips                   | ⬆️ 31% increase    |\n| **Car mechanic**         | 0                          | 12 clips                   | ⬆️ New activity    |\n| **Park visits**          | 0                          | 8 clips                    | ⬆️ New activity    |\n\n---\n\n### 🧭 **Interpretation: Commute Behavior Shift**\n\n- **Week 1**: Strong reliance on **car commuting** — likely daily or long-distance travel to work, errands, or road trips.\n- **Week 2**: **Significant reduction in car commuting**, possibly due to:\n  - Vehicle maintenance (“Car mechanic” activity).\n  - Shift to **walking or outdoor activities** (“Going to the park”).\n  - Possibly **remote work or flexible schedule** (less screen time, more indoor crafting/cooking).\n- **Outdoor activity increased slightly** — suggests more movement outside, possibly leisure or errands.\n\n---\n\n### 📌 **Key Takeaways**\n\n1. **Commute mode shifted from car to walking or outdoor activities** — possibly due to vehicle maintenance or lifestyle change.\n2. **Indoor activities dominate** — suggests home-based routines or remote work.\n3. **New activities emerged** — “Car mechanic” and “Going to the park” — indicating maintenance or leisure shifts.\n4. **Transportation patterns are flexible** — not rigidly tied to one mode; adaptable to needs or circumstances.\n\n---\n\n### 📅 **Recommendation for Future Tracking**\n\n- Monitor **“Car mechanic”** and **“Going to the park”** — may indicate lifestyle or schedule changes.\n- Track **“Car - commuting”** vs. **“Walking on street”** to understand mode shift trends.\n- Correlate with **“On a screen”** and **“Indoor”** scenes to assess remote work or home-based routines.\n\n---\n\n✅ **Conclusion**: The user’s commute and transportation patterns show a **notable shift from car commuting to more walking and outdoor activities**, possibly due to vehicle maintenance or lifestyle adjustments. Indoor activities remain dominant, suggesting a home-centered routine.",
+        "day": "**Daily Commute & Transportation Travel Patterns Summary (2026-01-20, 2026-01-08, 2026-01-22)**\n\n---\n\n### 🚗 **Commute Mode Consistency**\n- **Primary Mode**: **Car** is the dominant commute method across all three days.\n  - *2026-01-20*: Explicitly mentioned as “Car - commuting, road trip” (2 occurrences).\n  - *2026-01-08 & 2026-01-22*: “Commute to office by car or bus” — car is the preferred or assumed mode.\n- **Bus** is an alternative, but not the primary mode.\n- **No public transit or cycling** is mentioned in any of the days.\n\n---\n\n### 📅 **Commute Timing Patterns**\n- **Morning Commute Window**: Consistently between **07:00–08:45**.\n  - *2026-01-08 & 2026-01-22*: 08:00–08:40\n  - *2026-01-20*: 08:05–08:45\n- **Duration**: ~40–45 minutes, consistent with typical urban commute.\n- **No evening commute** is explicitly tracked in the provided data — focus is on morning only.\n\n---\n\n### 🏢 **Workday Context & Commute Trigger**\n- Commute is **strongly tied to workday routines**:\n  - All days follow a **“Normal morning routine → Commute → Work”** structure.\n  - Work begins at **09:00** or later, with **no variation** in start time.\n- **No remote work** or flexible schedule noted — commute is a fixed part of daily routine.\n\n---\n\n### 📍 **Location & Destination Patterns**\n- **Office** is the primary destination for morning commute.\n- **Evening travel** is **not tracked** in the provided data — no evening commute or return trip is mentioned.\n- **2026-01-20** includes an **afternoon commute to downtown restaurant** (17:15–17:45), indicating **occasional evening travel** for social or leisure purposes — but this is **not part of the daily commute pattern** and is an exception.\n\n---\n\n### 🧭 **Scene & Scenario Correlation**\n- **Indoor scenes dominate** (20–21 of 30 total scenes), suggesting **work and home-based activities** are primary.\n- **Outdoor scenes** are minimal (3–4), but include:\n  - Walking on street (2026-01-08 & 2026-01-22)\n  - Short walks or errands (13:15–14:00)\n  - Outdoor scenes are **not tied to commute** — they are **post-work or lunch breaks**.\n- **Mixed scenes** (9–7) include work-related roles (construction, carpentry) — suggesting **commute may be to/from job sites**, not just office.\n\n---\n\n### 📊 **Key Behavioral Patterns**\n1. **Reliable Morning Routine**: Wake up, hygiene, breakfast/coffee → commute → work.\n2. **Car-Dependent Commute**: Consistent use of car for morning travel.\n3. **Work-Focused Schedule**: Structured work hours (09:00–17:00), with lunch breaks and occasional social events.\n4. **Minimal Evening Travel**: Only one day (2026-01-20) includes evening travel — likely social, not work-related.\n5. **Indoor Activity Dominance**: Most time spent indoors — work, cooking, crafting, cleaning.\n6. **No Weekend Variation**: All three days are weekdays — no weekend travel or flexible schedule observed.\n\n---\n\n### 📌 **Summary**\nThe user follows a **highly structured, car-dependent, office-bound daily routine** with consistent morning commute times and indoor-heavy activities. **Evening travel is rare and situational**. The commute is **predictable, reliable, and work-driven**, with **no significant variation** across the three days. The user’s lifestyle suggests a **professional, possibly construction/renovation-related job**, with **limited flexibility** in travel or schedule.\n\n---\n\n**Recommendation**: If optimizing commute, focus on **car efficiency** or **alternative modes** (e.g., bus, bike) for potential cost/time savings. Evening travel should be planned for social events — not part of the core commute pattern.",
+        "hour": "**Summary of Commute Transportation Travel Patterns (2026-01-24)**\n\nThe day’s commute and transportation patterns show a mix of active, vehicle-based, and indoor activities, with notable transitions between mobility and stationary behaviors. Here’s a breakdown by hour block:\n\n---\n\n**12:00–13:00 (Lunch/Transition Block)**  \n- **Transportation/Travel**: *No direct commute activity* — instead, the user engages in **outdoor** activities (hiking, eating, socializing, car mechanic).  \n- **Notable**: “Car mechanic” suggests a vehicle-related stop — possibly a short commute-related detour or maintenance break.  \n- **Scene**: All clips are outdoors — implies mobility or outdoor-based travel is dominant during this hour.\n\n---\n\n**13:00–14:00 (Afternoon Transition)**  \n- **Transportation/Travel**:  \n  - *Car - commuting, road trip* (1) — indicates a vehicle-based commute or travel.  \n  - *Indoor Navigation (walking)* (1) — suggests walking within a building or neighborhood, possibly a short commute or transition between locations.  \n- **Scene Mix**: Mixed (indoor/outdoor) — implies movement between environments.  \n- **Notable**: “On a screen (phone/laptop)” and “Cooking” suggest the user is multitasking or transitioning from travel to stationary activities.\n\n---\n\n**14:00–15:00 (Core Activity Block)**  \n- **Transportation/Travel**: *No direct commute activity* — activities are **indoor/outdoor mixed**, including cooking, hiking, cleaning, and eating.  \n- **Scene**: Mixed — indicates movement between locations (e.g., hiking outdoors, then returning indoors to cook/clean).  \n- **Notable**: “Hiking” appears again — possibly a return to outdoor activity after a break or a planned afternoon outing.\n\n---\n\n**15:00–16:00 (Evening Wind-Down)**  \n- **Transportation/Travel**: *No commute activity* — activities are **outdoor** and social (talking with family, walking the dog).  \n- **Scene**: All outdoor — suggests a return to leisure or routine outdoor activity after work or travel.  \n- **Notable**: No vehicle-based travel — implies the user is likely at home or in a familiar outdoor space.\n\n---\n\n**Overall Commute Pattern Summary**:\n\n- **Commute Activity**:  \n  - **13:00** shows the *only clear vehicle-based commute* (“Car - commuting, road trip”).  \n  - Other hours lack direct commute indicators — suggesting either no commute or short, non-recorded travel segments.  \n  - “Indoor Navigation (walking)” at 13:00 may indicate a short walk to/from a location (e.g., office, store, or home).\n\n- **Travel Behavior Trends**:  \n  - **Outdoor dominance** in 12:00–15:00 — suggests active or recreational travel (hiking, walking, socializing outdoors).  \n  - **Indoor transitions** at 13:00–14:00 — indicate movement between locations (possibly commuting or transitioning between home/work).  \n  - **No commute in 15:00** — suggests the user has likely settled into a routine or is winding down.\n\n- **Key Insight**:  \n  The user’s travel patterns are **not strictly commute-oriented** — they blend active outdoor travel, vehicle use (13:00), and indoor transitions. The “car mechanic” scenario at 12:00 may indicate a **non-commute vehicle-related stop**, possibly for maintenance or errands.\n\n---\n\n**Conclusion**:  \nThe user’s transportation behavior on 2026-01-24 is **mixed**, with **one clear commute activity** (13:00) and **multiple outdoor and indoor transitions**. The overall pattern suggests a **flexible, activity-driven lifestyle** rather than a rigid commute schedule. Future analysis could explore whether the “car mechanic” or “Indoor Navigation” scenarios are commute-related or incidental.\n\n--- \n\n*Note: All timestamps are on 2026-01-24 — future date, so patterns are hypothetical.*"
+      },
+      "clip_analyses": [
+        {
+          "video_uid": "e837708f-8276-4d2b-88b3-319cddabbf74",
+          "node_id": "clip_03_020",
+          "video_available": true,
+          "video_path": "/mnt/data_oss/raw_data/Ego4d/v2/full_scale/e837708f-8276-4d2b-88b3-319cddabbf74.mp4",
+          "frame_count": 16,
+          "duration_min": 23.39,
+          "sampling": "adaptive",
+          "analysis": {
+            "observed_activities": [
+              "walking outdoors",
+              "entering Walmart",
+              "shopping in grocery aisles",
+              "purchasing items",
+              "checking out at register",
+              "exiting store"
+            ],
+            "objects_and_places": [
+              "Walmart parking lot",
+              "Walmart store interior",
+              "grocery aisles",
+              "checkout counter",
+              "shopping cart",
+              "Walmart sign",
+              "fire hydrant",
+              "street",
+              "apartment complex",
+              "car"
+            ],
+            "social_interaction": "minimal",
+            "behavior_tags": [
+              "commuting",
+              "grocery shopping",
+              "walking",
+              "purchasing"
+            ],
+            "preference_hypotheses": [
+              {
+                "topic": "Walmart as preferred grocery store",
+                "evidence": "User enters Walmart and spends significant time shopping, indicating familiarity or preference for this location.",
+                "confidence": "high"
+              },
+              {
+                "topic": "Budget-conscious shopping",
+                "evidence": "User browses 'Low Price' sections and selects items with visible price tags, suggesting price sensitivity.",
+                "confidence": "medium"
+              },
+              {
+                "topic": "Casual attire for daily errands",
+                "evidence": "User wears a casual jacket and bandana, consistent with everyday activities rather than formal or special occasions.",
+                "confidence": "medium"
+              }
+            ],
+            "plan_vs_observation": "The scheduled plan was to commute to office by car or bus, but the observed activity shows the user walking to Walmart for grocery shopping, indicating a deviation from the original plan.",
+            "notable_details": [
+              "User is wearing a blue jacket with 'Bolt' written on the back.",
+              "User is seen holding a small container, possibly a snack or product purchased.",
+              "The video shows a transition from outdoor walking to indoor shopping, then back to outdoor walking.",
+              "The time of day appears to be late afternoon or early evening, based on lighting conditions."
+            ]
+          },
+          "vision_used": true
+        },
+        {
+          "video_uid": "dfd0bc0c-28fc-4302-9a75-77df6c53ab31",
+          "node_id": "clip_01_001",
+          "video_available": true,
+          "video_path": "/mnt/data_oss/raw_data/Ego4d/v2/full_scale/dfd0bc0c-28fc-4302-9a75-77df6c53ab31.mp4",
+          "frame_count": 11,
+          "duration_min": 11.4,
+          "sampling": "adaptive",
+          "analysis": {
+            "observed_activities": [
+              "Walking on snow-covered sidewalk",
+              "Crossing street at intersection",
+              "Entering Walmart parking lot",
+              "Entering Walmart store"
+            ],
+            "objects_and_places": [
+              "Snow-covered sidewalk",
+              "Cars parked in lot",
+              "Walmart store",
+              "Traffic lights",
+              "Crosswalk",
+              "Retail parking lot"
+            ],
+            "social_interaction": "none",
+            "behavior_tags": [
+              "commuting",
+              "grocery_shopping"
+            ],
+            "preference_hypotheses": [
+              {
+                "topic": "Prefers walking over driving in winter",
+                "evidence": "User walks on snowy sidewalk despite winter conditions, and scheduled plan was 'Commute to office by car or bus' — suggests deviation from plan.",
+                "confidence": "medium"
+              },
+              {
+                "topic": "Frequent grocery shopping",
+                "evidence": "User enters Walmart, a major retail store, indicating routine shopping behavior.",
+                "confidence": "high"
+              }
+            ],
+            "plan_vs_observation": "User deviated from the scheduled commute plan (car or bus) by walking to Walmart, suggesting an unplanned stop for shopping.",
+            "notable_details": [
+              "Snow on ground and sidewalks",
+              "Walmart store visible",
+              "User walks past parked cars and crosses street",
+              "No visible social interaction"
+            ]
+          },
+          "vision_used": true
+        }
+      ]
+    },
+    {
+      "query": "home leisure entertainment hobbies relaxation",
+      "rag_context": "## Multi-day patterns\n- [period|score=0.000] Period week1 (2026-01-05 to 2026-01-11): clips=207, scenes={'outdoor': 16, 'mixed': 49, 'indoor': 142}, top_scenarios=[('Cooking', 43), ('Cleaning / laundry', 41), ('Car - commuting, road trip', 36), ('Walking on street', 25), ('On a screen (phone/laptop)', 25), ('Crafting/knitting/sewing/drawing/painting', 23), ('Eating', 22), ('Talking with family members', 20), ('Watching tv', 8), ('Grocery shopping indoors', 7), ('jobs related to construction/renovation company\\n(Director of work, tiler, plu\n- [period|score=0.000] Period week2 (2026-01-12 to 2026-01-18): clips=212, scenes={'mixed': 43, 'indoor': 148, 'outdoor': 21}, top_scenarios=[('Crafting/knitting/sewing/drawing/painting', 37), ('Cleaning / laundry', 35), ('Cooking', 30), ('jobs related to construction/renovation company\\n(Director of work, tiler, plumber, Electrician, Handyman, etc)', 22), ('Eating', 16), ('On a screen (phone/laptop)', 12), ('Car mechanic', 12), ('Walking on street', 11), ('Talking with family members', 11), ('Car - commuting, road tr\n\n## Daily summaries\n- [day|score=0.071] Date 2026-01-11 (Sunday), weekend=True, scenes={'indoor': 35}, top_scenarios=[('Cooking', 10), ('Crafting/knitting/sewing/drawing/painting', 9), ('Cleaning / laundry', 7), ('Eating', 5), ('jobs related to construction/renovation company\\n(Director of work, tiler, plumber, Electrician, Handyman, etc)', 3), ('Watching tv', 2), ('Car mechanic', 2), ('Talking with family members', 1)], plan=Light laundry and tidying up apartment (11:00-12:00) | Simple home-cooked dinner (19:30-20:30) | Continue movi\n- [day|score=0.063] Date 2026-01-17 (Saturday), weekend=True, scenes={'outdoor': 11, 'indoor': 17, 'mixed': 2}, top_scenarios=[('Playing board games', 6), ('Cooking', 5), ('Outdoor social (includes campfire)', 4), ('Crafting/knitting/sewing/drawing/painting', 4), ('Walking on street', 3), ('Clothes, other shopping', 3), ('Going to the park', 3), ('Outdoor technical climbing/belaying/rappelling (includes ropework)', 2)], plan=Browse farmers market, buy fresh produce (12:30-13:30) | Leisurely brunch at home (08:30-09\n- [day|score=0.049] Date 2026-01-08 (Thursday), weekend=False, scenes={'outdoor': 4, 'mixed': 6, 'indoor': 19}, top_scenarios=[('Walking on street', 6), ('Eating', 6), ('Cooking', 6), ('Car - commuting, road trip', 3), ('Crafting/knitting/sewing/drawing/painting', 3), ('Cleaning / laundry', 3), ('Grocery shopping indoors', 3), ('Talking with friends/housemates', 2)], plan=Wake up, daily hygiene, prepare breakfast and coffee at home (07:00-07:45) | Commute to office by car or bus (08:00-08:40) | Work at desk, read e\n\n## Hour blocks\n- [hour|score=0.202] Hour block 2026-01-21T11:00 on 2026-01-21, clips=2, scenes=Counter({'indoor': 2}), scenarios=[('Eating', 1), ('Fixing something in the home', 1), ('Talking with family members', 1)]\n- [hour|score=0.186] Hour block 2026-01-17T13:00 on 2026-01-17, clips=2, scenes=Counter({'outdoor': 1, 'indoor': 1}), scenarios=[('Going to the park', 1), ('Fixing something in the home', 1)]\n- [hour|score=0.183] Hour block 2026-01-13T15:00 on 2026-01-13, clips=3, scenes=Counter({'indoor': 2, 'outdoor': 1}), scenarios=[('Fixing something in the home', 1), ('Eating', 1), ('Going to the park', 1)]\n- [hour|score=0.178] Hour block 2026-01-18T12:00 on 2026-01-18, clips=3, scenes=Counter({'indoor': 3}), scenarios=[('Cooking', 1), ('Fixing something in the home', 1), ('Listening to music', 1), ('Crafting/knitting/sewing/drawing/painting', 1)]\n\n## Clip-level evidence\n- [clip|score=0.119] [2026-01-24T07:51:47 - 2026-01-24T08:14:24] scene=mixed slot=commute_home scenarios=Indoor Navigation (walking), On a screen (phone/laptop), Walking the dog / pet plan=Bus ride home, review photos on phone summary=the character walks the dog outdoors, goes home, and sleeps.\n- [clip|score=0.112] [2026-01-19T07:54:57 - 2026-01-19T08:15:01] scene=mixed slot=commute_evening scenarios=Walking the dog / pet plan=Commute home, optionally stop by grocery store summary=the character walks the dogs, starting from the house, then on the sidewalk, pavement, and park, and finally returning home to feed them.\n- [clip|score=0.106] [2026-01-20T12:21:51 - 2026-01-20T12:35:17] scene=indoor slot=leisure_early_sleep scenarios=Carpenter, Fixing something in the home, Talking with family members plan=Return home happy, get ready for bed summary=the character measures furniture and walls, converses with others, pulls an item in a garage, and drills a wooden bar.\n- [clip|score=0.088] [2026-01-17T07:58:53 - 2026-01-17T08:22:55] scene=indoor slot=wake_home scenarios=Cooking plan=Leisurely brunch at home summary=the character prepares food and interacts with others in a kitchen.\n- [clip|score=0.087] [2026-01-17T14:58:06 - 2026-01-17T15:22:49] scene=indoor slot=wake_home scenarios=Cooking plan=Leisurely brunch at home summary=the character prepares a meal and interacts with a man in a kitchen.\n- [clip|score=0.085] [2026-01-06T09:16:30 - 2026-01-06T09:28:58] scene=indoor slot=wake_home scenarios=Cooking plan=Wake up, daily hygiene, prepare breakfast and coffee at home summary=the character prepares a meal in a kitchen.\n- [clip|score=0.081] [2026-01-17T12:06:50 - 2026-01-17T12:31:44] scene=indoor slot=wake_home scenarios=Cooking plan=Leisurely brunch at home summary=the character interacts with a woman and prepares food in a kitchen.\n- [clip|score=0.079] [2026-01-09T14:42:46 - 2026-01-09T14:52:00] scene=indoor slot=wake_home scenarios=Cooking plan=Wake up, daily hygiene, prepare breakfast and coffee at home summary=the character interacts with others and prepares a meal in a kitchen.\n- [clip|score=0.000] [2026-01-21T11:18:33 - 2026-01-21T11:40:13] scene=indoor slot=lunch_out scenarios=Eating plan=Grab lunch near clinic summary=the character shops at a shop, sometimes with others, and then goes home.\n- [clip|score=0.000] [2026-01-21T11:45:13 - 2026-01-21T11:58:10] scene=indoor slot=work_afternoon scenarios=Fixing something in the home, Talking with family members plan=Return to office for afternoon work summary=the character works on a skull model in a workshop, fixing its cover, cutting fabric, applying glue, and compressing cloth around it.\n- [clip|score=0.000] [2026-01-17T13:08:20 - 2026-01-17T13:38:20] scene=outdoor slot=cycling scenarios=Going to the park plan=Cycling along riverside bike path summary=the character plays handball and frisbee with others in a field or playground.\n- [clip|score=0.000] [2026-01-17T13:43:20 - 2026-01-17T13:57:02] scene=indoor slot=dining_out scenarios=Fixing something in the home plan=Dinner at a new restaurant downtown summary=the character works on a car, metals, pipes, and woods in an apartment garage.\n- [clip|score=0.000] [2026-01-13T15:14:01 - 2026-01-13T15:29:39] scene=indoor slot=work_focus scenarios=Fixing something in the home plan=Deep focus: coding, design docs, no meetings summary=the character fixes a white mask in a workshop.\n- [clip|score=0.000] [2026-01-13T15:34:39 - 2026-01-13T15:54:56] scene=indoor slot=lunch_out scenarios=Eating plan=Lunch break at cafeteria or nearby restaurant summary=the character shops in a store, walks around, makes a purchase, and watches videos on the phone.\n- [clip|score=0.000] [2026-01-13T15:59:56 - 2026-01-13T16:08:33] scene=outdoor slot=errand_outdoor scenarios=Going to the park plan=Short walk outside or quick errand in the park summary=the character throws and catches balls in a field.\n- [clip|score=0.000] [2026-01-18T12:04:36 - 2026-01-18T12:32:02] scene=indoor slot=home_cooking scenarios=Cooking plan=Bake bread and prepare elaborate lunch summary=the character performs various activities in the house and kitchen, including putting an item in the fridge, using a blender, arranging glasses, and cooking.",
+      "rag_hits": {
+        "period": 2,
+        "day": 3,
+        "hour": 4,
+        "clip": 16
+      },
+      "text_levels": {
+        "period": "**Summary of Multi-Day Behavior Patterns (Week 1 & Week 2) for “Home Leisure, Entertainment, Hobbies, Relaxation”**\n\n---\n\n### 🎯 **Core Themes Observed:**\nThe user’s behavior revolves around **domestic routines blended with creative, social, and relaxing activities** — indicating a lifestyle that balances productivity (especially home-based or job-related tasks) with personal enjoyment and self-care.\n\n---\n\n### 📊 **Key Patterns Across Both Weeks:**\n\n#### 1. **Indoor Dominance (Highly Consistent)**\n- **Week 1**: 142/207 clips = ~69% indoor\n- **Week 2**: 148/212 clips = ~69.8% indoor\n- **Pattern**: Strong preference for indoor activities — likely due to comfort, safety, or weather (implied by outdoor being only 16+21 clips).\n\n#### 2. **Creative & Relaxing Hobbies (Top Hobbies)**\n- **Crafting/Knitting/Art**:\n  - Week 1: 23 clips\n  - Week 2: 37 clips → **↑ 61% increase**\n  - **Pattern**: Strong growth in creative expression — likely a core relaxation/hobby activity.\n\n- **Cooking**:\n  - Week 1: 43 clips → Week 2: 30 clips → **↓ 30%**\n  - **Pattern**: Still significant, but slightly less dominant in Week 2 — possibly replaced by other hobbies or social activities.\n\n#### 3. **Social Interaction & Leisure**\n- **Talking with family/friends/housemates**:\n  - Week 1: 20+6 = 26 clips\n  - Week 2: 11+6 = 17 clips → **↓ 35%**\n  - **Pattern**: Slight decline — possibly due to increased focus on solo hobbies or work.\n\n- **Watching TV**:\n  - Week 1: 8 clips → Week 2: 0 (not listed) → **↓ 100%**\n  - **Pattern**: TV consumption dropped — replaced by more active or creative leisure.\n\n#### 4. **Work/Job-Related Activities (Not Leisure, but Contextual)**\n- **Construction/Renovation Jobs**:\n  - Week 1: 7 clips\n  - Week 2: 22 clips → **↑ 214%**\n  - **Pattern**: Significant increase — suggests possible project ramp-up or job-related home improvement. *Not leisure, but may be integrated into relaxation (e.g., DIY as hobby).*\n\n#### 5. **Outdoor & Mixed Scenes (Low but Present)**\n- **Outdoor**: 16 → 21 clips → **↑ 25%**\n- **Mixed**: 49 → 43 clips → **↓ 12%**\n- **Pattern**: Slight increase in outdoor activity — possibly weekend outings or park visits (e.g., “Going to the park” in Week 2).\n\n#### 6. **Screen Time (Passive Entertainment)**\n- **On screen (phone/laptop)**:\n  - Week 1: 25 → Week 2: 12 → **↓ 52%**\n  - **Pattern**: Decline suggests reduced passive screen time — possibly replaced by active hobbies or social interaction.\n\n---\n\n### 🧩 **Behavioral Shifts & Insights:**\n\n- **Week 2 shows a clear pivot toward creative hobbies and DIY/home projects** — especially crafting and construction-related activities.\n- **Social interaction decreased slightly**, suggesting more solitary, self-directed leisure.\n- **TV consumption dropped significantly**, indicating a move away from passive entertainment toward more engaging, hands-on activities.\n- **Outdoor activity increased slightly**, possibly indicating weekend relaxation or social outings.\n- **Work-related scenes surged in Week 2** — may be part of a “home-based work + leisure” hybrid lifestyle.\n\n---\n\n### 🎨 **Relaxation & Leisure Profile:**\n- **Primary relaxation methods**: Crafting, cooking, socializing (family/friends), and possibly DIY/home projects.\n- **Secondary**: Eating, walking, screen time (declining), TV (declining).\n- **Trend**: Increasingly **active, creative, and self-directed** — less passive, more hands-on.\n\n---\n\n### ✅ **Conclusion:**\nThe user is **deepening their engagement with creative and hands-on hobbies** (crafting, DIY, cooking) while **reducing passive entertainment** (TV, screen time). Social interaction remains present but less frequent, suggesting a more solitary, self-focused leisure pattern. The rise in construction-related activities may indicate a **blending of work and leisure** — perhaps home improvement as a form of relaxation or personal fulfillment.\n\nThis behavior reflects a **balanced, evolving lifestyle** that prioritizes **personal expression, creativity, and domestic comfort** over passive entertainment.",
+        "day": "**Daily-Level Behavior Patterns for “Home Leisure, Entertainment, Hobbies, Relaxation” (2026-01-08 to 2026-01-17)**\n\n---\n\n### 📊 **Overall Pattern Summary**\n\nThe user exhibits a **strong preference for indoor, relaxed, and creative leisure activities**, especially on weekends. On weekdays, their behavior is more structured around work and routine, but still includes pockets of relaxation and personal hobbies. The weekends are clearly reserved for **entertainment, socializing, and self-care**, with a noticeable shift toward **home-based comfort and creative expression**.\n\n---\n\n### 🎯 **Weekend vs. Weekday Behavior**\n\n#### ✅ **Weekends (Saturday & Sunday)**  \n- **Dominant Scene**: Indoor (70%+ of time) — ideal for relaxation, hobbies, and entertainment.  \n- **Top Activities**:  \n  - **Creative & Crafting** (Cooking, Crafting, Drawing, etc.) — core hobby focus.  \n  - **Social & Entertainment** (Board games, Movie marathons, Watching TV, Talking with family).  \n  - **Comfort & Self-Care** (Light laundry, tidying, home-cooked meals, reading).  \n- **Outdoor Activity**: Present but limited (e.g., cycling, farmers market, park visits) — often integrated into leisure, not the main focus.  \n- **Plan Structure**:  \n  - **Morning**: Light chores or creative projects.  \n  - **Afternoon**: Entertainment (movies, board games, cooking experiments).  \n  - **Evening**: Socializing, dining out, or quiet relaxation (reading, movie marathons).  \n\n#### ⚙️ **Weekdays (Thursday)**  \n- **Dominant Scene**: Indoor (60%) + Mixed (outdoor errands, short walks).  \n- **Top Activities**:  \n  - **Work & Routine** (commuting, desk work, emails) — primary focus.  \n  - **Leisure is fragmented**: Short walks, quick meals, errands, and brief creative moments (cooking, crafting).  \n  - **Hobbies are secondary** — often squeezed into breaks or lunchtime.  \n- **Plan Structure**:  \n  - **Morning**: Work prep + commute.  \n  - **Midday**: Work + short walk/errand.  \n  - **Evening**: Minimal leisure — mostly winding down after work.  \n\n---\n\n### 🎨 **Key Hobbies & Relaxation Patterns**\n\n1. **Creative Expression**  \n   - **Cooking** (top activity on weekends) — often paired with socializing or movie nights.  \n   - **Crafting/Knitting/Drawing** — frequent on weekends, sometimes during work breaks.  \n   - **Reading** — consistent evening wind-down activity.  \n\n2. **Entertainment & Media**  \n   - **Movie marathons** — weekend staple (often 2–3 hours).  \n   - **TV watching** — low frequency but present.  \n   - **Board games** — social, weekend-focused.  \n\n3. **Social & Family Interaction**  \n   - **Talking with family/friends** — appears in both weekend and weekday plans (though less frequent on weekdays).  \n   - **Dining out** — weekend activity, often paired with socializing.  \n\n4. **Home-Based Relaxation**  \n   - **Tidying, laundry, home-cooked meals** — recurring weekend rituals.  \n   - **Comfort zones** — couch, kitchen, home office — central to leisure.  \n\n---\n\n### 📅 **Temporal Patterns**\n\n- **Weekend Afternoons**: Peak leisure time — movies, crafting, cooking experiments.  \n- **Evenings**: Transition to relaxation — reading, movie marathons, socializing.  \n- **Weekdays**: Leisure is **fragmented** — mostly during lunch breaks or after work.  \n- **Weekend Mornings**: Light chores + creative projects (e.g., cooking, crafting).  \n\n---\n\n### 🧭 **Behavioral Insights**\n\n- **Weekend = Leisure Mode**: User intentionally allocates time for hobbies, entertainment, and socializing.  \n- **Weekday = Work Mode with Micro-Leisure**: Leisure is integrated into routine but not dominant.  \n- **Home is the Hub**: Most relaxation and hobbies occur indoors — comfort and control are key.  \n- **Social Interaction is Optional but Valued**: Appears in both weekend and weekday plans, but more prominent on weekends.  \n- **Creative & Culinary Hobbies are Core**: Cooking and crafting are recurring, often paired with relaxation or socializing.  \n\n---\n\n### 📌 **Recommendations for Optimization**\n\n- **Weekdays**: Add 1–2 “micro-leisure” blocks (e.g., 15–30 min crafting, reading, or cooking) to reduce burnout.  \n- **Weekends**: Extend creative time (e.g., dedicated crafting or cooking session) and consider outdoor socializing if desired.  \n- **Consistency**: Maintain weekend leisure rituals (e.g., movie nights, board games) for mental health.  \n- **Balance**: If weekday leisure is too fragmented, consider scheduling a “relaxation hour” post-work.  \n\n---\n\n**Conclusion**: The user is a **home-oriented, creative, and socially engaged individual** who prioritizes relaxation and hobbies on weekends. Weekdays are structured around work, but still include pockets of personal time. The key is to **preserve weekend leisure rituals** and **integrate micro-leisure into weekday routines** for better balance and well-being.",
+        "hour": "**Summary of Hour-Block Behavior Patterns for “Home Leisure, Entertainment, Hobbies, Relaxation”**\n\nAcross the observed hour blocks, the behavior patterns reflect a blend of **indoor relaxation/hobbies** and **occasional outdoor leisure**, with a strong emphasis on **domestic activities** and **personal expression**. Here’s a synthesized summary:\n\n---\n\n### 🏠 **Indoor Focus (Primary Setting)**\n- **Most frequent setting**: Indoor activities dominate across all blocks (e.g., 2/3 or 3/3 clips in indoor scenes).\n- **Common indoor scenarios**:\n  - **Fixing something in the home** (appears in 3/4 blocks — recurring practical/creative task)\n  - **Cooking** (appears in 1 block — leisure + domestic skill)\n  - **Listening to music** (appears in 1 block — relaxation)\n  - **Crafting/knitting/sewing/drawing/painting** (appears in 1 block — creative hobby)\n  - **Eating** (appears in 2/4 blocks — social or self-care)\n  - **Talking with family members** (appears in 1 block — social relaxation)\n\n> ✅ *Pattern*: Indoor activities are consistently tied to **relaxation, creativity, and domestic comfort** — aligning with “home leisure” and “hobbies.”\n\n---\n\n### 🌳 **Outdoor Occasional Engagement**\n- Appears in **2/4 blocks** (13:00 and 15:00), suggesting **balanced lifestyle**.\n- **Scenario**: “Going to the park” — implies **light physical activity or social leisure**.\n- Often paired with indoor activities (e.g., 15:00 block has both outdoor and indoor scenes).\n\n> ✅ *Pattern*: Outdoor engagement is **intermittent and complementary**, not central — likely for refreshment or social interaction.\n\n---\n\n### 🎨 **Hobbies & Creative Expression**\n- **Crafting/knitting/sewing/drawing/painting** — appears once, but is a strong indicator of **hobby-driven leisure**.\n- **Fixing something in the home** — may be a **hobby or practical hobby** (DIY/repair).\n- **Cooking** — can be both functional and creative/relaxing.\n\n> ✅ *Pattern*: Hobbies are **integrated into daily routines**, often indoors, and serve as **stress-relief or self-expression**.\n\n---\n\n### 🍽️ **Relaxation & Social Elements**\n- **Eating** — appears in 2 blocks — likely **comfort food or social dining**.\n- **Talking with family members** — appears once — indicates **emotional connection** as part of relaxation.\n\n> ✅ *Pattern*: Relaxation is **multifaceted** — includes **physical comfort, social interaction, and mental calm**.\n\n---\n\n### 📅 **Temporal Trends**\n- **Afternoon hours (12:00–15:00)** are most active for leisure/hobbies.\n- **15:00 block** has the most variety (3 clips, 2 indoor, 1 outdoor) — suggests **peak leisure/hobby time**.\n- **13:00 block** shows **transition between indoor and outdoor** — possibly a midday break.\n\n---\n\n### 🧩 **Overall Behavioral Pattern Summary**\n\n> **“Home-based leisure and hobbies are the core of relaxation, with occasional outdoor breaks for variety. Activities are often domestic, creative, or social — blending practicality with enjoyment. The afternoon is the most active leisure period, with a strong emphasis on indoor comfort, crafting, and family interaction.”**\n\nThis pattern aligns well with the query: **home leisure, entertainment, hobbies, relaxation** — showing a **balanced, comfortable, and personally fulfilling lifestyle** centered around the home environment.\n\n--- \n\n✅ **Key Takeaway**:  \n**Indoor hobbies + domestic tasks + occasional outdoor breaks = optimal home-based relaxation.**"
+      },
+      "clip_analyses": [
+        {
+          "video_uid": "201af2e0-72dd-466c-8280-8c3dc00a7981",
+          "node_id": "clip_12_004",
+          "video_available": true,
+          "video_path": "/mnt/data_oss/raw_data/Ego4d/v2/full_scale/201af2e0-72dd-466c-8280-8c3dc00a7981.mp4",
+          "frame_count": 16,
+          "duration_min": 24.05,
+          "sampling": "adaptive",
+          "analysis": {
+            "observed_activities": [
+              "preparing food",
+              "moving around kitchen",
+              "interacting with another person",
+              "using oven",
+              "cleaning up"
+            ],
+            "objects_and_places": [
+              "blue kitchen counter",
+              "white cabinets",
+              "stainless steel oven",
+              "sink",
+              "tray with foil",
+              "white plate",
+              "blue bottle",
+              "knife",
+              "window",
+              "hallway",
+              "doorways"
+            ],
+            "social_interaction": "moderate",
+            "behavior_tags": [
+              "cooking",
+              "leisure",
+              "domestic",
+              "socializing"
+            ],
+            "preference_hypotheses": [
+              {
+                "topic": "home-cooked meals",
+                "evidence": "scheduled plan is 'Leisurely brunch at home' and frames show food preparation",
+                "confidence": "high"
+              },
+              {
+                "topic": "social cooking",
+                "evidence": "another person is visible in multiple frames, interacting with the user",
+                "confidence": "medium"
+              },
+              {
+                "topic": "organized kitchen",
+                "evidence": "clean countertops, organized cabinets, and tools",
+                "confidence": "medium"
+              }
+            ],
+            "plan_vs_observation": "The observed activity of preparing food in the kitchen aligns with the scheduled plan of 'Leisurely brunch at home'. The presence of another person suggests the brunch may be shared, enhancing the social aspect of the plan.",
+            "notable_details": [
+              "The kitchen has a distinctive blue color scheme on counters and flooring.",
+              "The user is wearing gloves, suggesting handling potentially messy or sticky ingredients.",
+              "The presence of a large blue bottle and a white plate indicates preparation for a meal or snack.",
+              "The user moves between the kitchen and hallway, indicating a multi-room activity."
+            ]
+          },
+          "vision_used": true
+        },
+        {
+          "video_uid": "d0cd84b0-afb3-4dde-9263-baaa4f40463a",
+          "node_id": "clip_01_007",
+          "video_available": true,
+          "video_path": "/mnt/data_oss/raw_data/Ego4d/v2/full_scale/d0cd84b0-afb3-4dde-9263-baaa4f40463a.mp4",
+          "frame_count": 12,
+          "duration_min": 12.47,
+          "sampling": "adaptive",
+          "analysis": {
+            "observed_activities": [
+              "washing dishes",
+              "preparing food",
+              "cleaning kitchen counter",
+              "moving around kitchen"
+            ],
+            "objects_and_places": [
+              "kitchen sink",
+              "stove",
+              "microwave",
+              "knife block",
+              "plant",
+              "sign reading 'YOU, ME AND THE DOG'",
+              "refrigerator",
+              "dish rack",
+              "measuring cup",
+              "pot",
+              "kettle",
+              "blue cabinets",
+              "tile backsplash"
+            ],
+            "social_interaction": "none",
+            "behavior_tags": [
+              "cooking",
+              "cleaning",
+              "daily hygiene",
+              "commuting"
+            ],
+            "preference_hypotheses": [
+              {
+                "topic": "cooking at home",
+                "evidence": "multiple frames show kitchen setup with cooking tools, pots, and food prep items; scheduled plan includes preparing breakfast",
+                "confidence": "high"
+              },
+              {
+                "topic": "pet ownership",
+                "evidence": "sign reading 'YOU, ME AND THE DOG' visible on counter",
+                "confidence": "medium"
+              },
+              {
+                "topic": "organized kitchen",
+                "evidence": "knife block, dish rack, and labeled containers suggest organized space",
+                "confidence": "medium"
+              }
+            ],
+            "plan_vs_observation": "The scheduled plan was to prepare breakfast and coffee at home. The observed video shows the user actively cooking and cleaning in the kitchen, which aligns with the plan. The time (09:16-09:28) is consistent with morning meal preparation.",
+            "notable_details": [
+              "The kitchen has a distinct blue color scheme with blue cabinets and countertops.",
+              "A plant and a sign reading 'YOU, ME AND THE DOG' are visible, suggesting a pet-friendly home.",
+              "The user is seen washing dishes and cleaning the counter, indicating a focus on cleanliness after cooking."
+            ]
+          },
+          "vision_used": true
+        }
+      ]
+    },
+    {
+      "query": "shopping errands consumer behavior",
+      "rag_context": "## Multi-day patterns\n- [period|score=0.115] Period week1 (2026-01-05 to 2026-01-11): clips=207, scenes={'outdoor': 16, 'mixed': 49, 'indoor': 142}, top_scenarios=[('Cooking', 43), ('Cleaning / laundry', 41), ('Car - commuting, road trip', 36), ('Walking on street', 25), ('On a screen (phone/laptop)', 25), ('Crafting/knitting/sewing/drawing/painting', 23), ('Eating', 22), ('Talking with family members', 20), ('Watching tv', 8), ('Grocery shopping indoors', 7), ('jobs related to construction/renovation company\\n(Director of work, tiler, plu\n- [period|score=0.000] Period week2 (2026-01-12 to 2026-01-18): clips=212, scenes={'mixed': 43, 'indoor': 148, 'outdoor': 21}, top_scenarios=[('Crafting/knitting/sewing/drawing/painting', 37), ('Cleaning / laundry', 35), ('Cooking', 30), ('jobs related to construction/renovation company\\n(Director of work, tiler, plumber, Electrician, Handyman, etc)', 22), ('Eating', 16), ('On a screen (phone/laptop)', 12), ('Car mechanic', 12), ('Walking on street', 11), ('Talking with family members', 11), ('Car - commuting, road tr\n\n## Daily summaries\n- [day|score=0.092] Date 2026-01-08 (Thursday), weekend=False, scenes={'outdoor': 4, 'mixed': 6, 'indoor': 19}, top_scenarios=[('Walking on street', 6), ('Eating', 6), ('Cooking', 6), ('Car - commuting, road trip', 3), ('Crafting/knitting/sewing/drawing/painting', 3), ('Cleaning / laundry', 3), ('Grocery shopping indoors', 3), ('Talking with friends/housemates', 2)], plan=Wake up, daily hygiene, prepare breakfast and coffee at home (07:00-07:45) | Commute to office by car or bus (08:00-08:40) | Work at desk, read e\n- [day|score=0.061] Date 2026-01-07 (Wednesday), weekend=False, scenes={'mixed': 8, 'indoor': 19}, top_scenarios=[('Cleaning / laundry', 8), ('On a screen (phone/laptop)', 7), ('Walking on street', 5), ('Camp setup/pack-up/chores', 4), ('Car - commuting, road trip', 3), ('Grocery shopping indoors', 2), ('Talking with family members', 2), ('Train', 2)], plan=Wake up to heavy rain, check weather app (07:10-07:50) | Rainy commute with umbrella, traffic slower than usual (08:10-08:55) | Work at desk, many colleagues wo\n- [day|score=0.060] Date 2026-01-17 (Saturday), weekend=True, scenes={'outdoor': 11, 'indoor': 17, 'mixed': 2}, top_scenarios=[('Playing board games', 6), ('Cooking', 5), ('Outdoor social (includes campfire)', 4), ('Crafting/knitting/sewing/drawing/painting', 4), ('Walking on street', 3), ('Clothes, other shopping', 3), ('Going to the park', 3), ('Outdoor technical climbing/belaying/rappelling (includes ropework)', 2)], plan=Browse farmers market, buy fresh produce (12:30-13:30) | Leisurely brunch at home (08:30-09\n\n## Hour blocks\n- [hour|score=0.177] Hour block 2026-01-10T08:00 on 2026-01-10, clips=1, scenes=Counter({'mixed': 1}), scenarios=[('Car - commuting, road trip', 1), ('Grocery shopping indoors', 1)]\n- [hour|score=0.176] Hour block 2026-01-19T10:00 on 2026-01-19, clips=3, scenes=Counter({'indoor': 2, 'mixed': 1}), scenarios=[('Cooking', 1), ('Carpenter', 1), ('Grocery shopping indoors', 1)]\n- [hour|score=0.175] Hour block 2026-01-23T09:00 on 2026-01-23, clips=3, scenes=Counter({'indoor': 3}), scenarios=[('Cooking', 1), ('Clothes, other shopping', 1), ('Making coffee', 1)]\n- [hour|score=0.174] Hour block 2026-01-08T16:00 on 2026-01-08, clips=3, scenes=Counter({'indoor': 2, 'mixed': 1}), scenarios=[('Cooking', 2), ('Grocery shopping indoors', 1), ('Walking on street', 1)]\n\n## Clip-level evidence\n- [clip|score=0.201] [2026-01-24T07:00:00 - 2026-01-24T07:26:52] scene=mixed slot=outdoor_afternoon scenarios=Clothes, other shopping plan=Explore new neighborhood on foot, visit local shops summary=the character interacts with others, takes photos, and walks around a shopping mall.\n- [clip|score=0.132] [2026-01-08T13:43:15 - 2026-01-08T14:06:38] scene=mixed slot=commute_morning scenarios=Grocery shopping indoors, Walking on street plan=Commute to office by car or bus summary=the character walks outdoors and shops in a supermarket.\n- [clip|score=0.126] [2026-01-14T13:53:33 - 2026-01-14T14:07:43] scene=indoor slot=work_focus scenarios=Grocery shopping indoors plan=Focused desk work and collaboration summary=the character shops in a mall, checks items, and converses with others.\n- [clip|score=0.125] [2026-01-05T15:48:15 - 2026-01-05T16:03:42] scene=mixed slot=commute_evening scenarios=Car - commuting, road trip, Clothes, other shopping plan=Commute home, optionally stop by grocery store summary=the character drives a car and purchases a bicycle helmet.\n- [clip|score=0.115] [2026-01-23T09:20:39 - 2026-01-23T09:37:42] scene=indoor slot=work_morning scenarios=Clothes, other shopping plan=Work at desk, read emails, handle morning tasks summary=the character interacts with clothes and people in a clothing store.\n- [clip|score=0.115] [2026-01-08T16:27:35 - 2026-01-08T16:51:42] scene=mixed slot=commute_evening scenarios=Grocery shopping indoors, Walking on street plan=Commute home, optionally stop by grocery store summary=the character walks with others and shops for groceries.\n- [clip|score=0.115] [2026-01-08T08:00:57 - 2026-01-08T08:24:36] scene=mixed slot=commute_evening scenarios=Car - commuting, road trip, Clothes, other shopping plan=Commute home, optionally stop by grocery store summary=the character drives a car, interacts with someone, and shops in a supermarket.\n- [clip|score=0.109] [2026-01-08T12:11:55 - 2026-01-08T12:16:40] scene=mixed slot=commute_evening scenarios=Grocery shopping indoors plan=Commute home, optionally stop by grocery store summary=the character interacts with others in a supermarket and then strolls with a baby on the street.\n- [clip|score=0.000] [2026-01-10T08:29:15 - 2026-01-10T08:59:15] scene=mixed slot=drive_home scenarios=Car - commuting, road trip, Grocery shopping indoors plan=Drive home, tired but satisfied summary=the character drives, picks up a monitor, and shops at a store.\n- [clip|score=0.000] [2026-01-19T10:00:35 - 2026-01-19T10:22:10] scene=indoor slot=wake_home scenarios=Cooking plan=Wake up, daily hygiene, prepare breakfast and coffee at home summary=the character cooks, stirs food, prepares sauce, and cleans in a kitchen and room.\n- [clip|score=0.000] [2026-01-19T10:27:10 - 2026-01-19T10:46:24] scene=mixed slot=commute_morning scenarios=Carpenter plan=Commute to office by car or bus summary=the character works on tile installation in an apartment, including measuring, cutting, placing, and attaching tiles.\n- [clip|score=0.000] [2026-01-19T10:51:24 - 2026-01-19T11:07:49] scene=indoor slot=work_morning scenarios=Grocery shopping indoors plan=Weekly all-hands team meeting and sprint planning summary=the character shops for a trouser and snacks in a store, pays for items in a supermarket, and observes a transaction in a mall.\n- [clip|score=0.000] [2026-01-23T09:13:30 - 2026-01-23T09:15:39] scene=indoor slot=wake_home scenarios=Cooking plan=Wake up, daily hygiene, prepare breakfast and coffee at home summary=the character uses a phone and bakes a pie in an apartment.\n- [clip|score=0.000] [2026-01-23T09:42:42 - 2026-01-23T10:12:13] scene=indoor slot=wake_home scenarios=Making coffee plan=Wake up, daily hygiene, prepare breakfast and coffee at home summary=the character hands over a camera, makes coffee, converses, plays musical instruments, and plays a game inside a house.\n- [clip|score=0.000] [2026-01-08T16:07:56 - 2026-01-08T16:22:35] scene=indoor slot=work_afternoon scenarios=Cooking plan=Project presentation and demo to stakeholders summary=the character cooks, washes plates, and interacts with others in a kitchen.",
+      "rag_hits": {
+        "period": 2,
+        "day": 3,
+        "hour": 4,
+        "clip": 15
+      },
+      "text_levels": {
+        "period": "**Summary of Shopping Errands Consumer Behavior (Weeks 1 & 2, 2026-01-05 to 2026-01-18)**\n\n---\n\n### 📊 **Overall Trends**\n\n- **Total Clips**: 419 (207 + 212) — indicates consistent daily activity tracking.\n- **Scene Distribution**:\n  - **Indoor**: 290 clips (69%)\n  - **Mixed**: 82 clips (19%)\n  - **Outdoor**: 37 clips (9%)\n  - *Indoor dominance suggests shopping errands are often completed within home or enclosed retail environments.*\n\n---\n\n### 🛒 **Shopping Errands Behavior Patterns**\n\n#### ✅ **Week 1 (Jan 5–11)**\n- **Top Scenarios**:\n  1. **Cooking (43)** — Strong indication of meal prep or grocery use.\n  2. **Cleaning / Laundry (41)** — Suggests household maintenance, possibly post-shopping.\n  3. **Car - commuting, road trip (36)** — Indicates mobility for errands.\n  4. **Walking on street (25)** — Suggests local shopping or neighborhood errands.\n  5. **On a screen (phone/laptop) (25)** — Likely online shopping, app-based grocery ordering, or digital checkout.\n\n- **Grocery Shopping Indoors (7 clips)** — Direct evidence of in-store shopping, possibly at supermarkets or convenience stores.\n\n#### ✅ **Week 2 (Jan 12–18)**\n- **Top Scenarios**:\n  1. **Crafting/knitting/sewing/drawing/painting (37)** — Suggests hobby-related purchases or DIY projects (e.g., fabric, art supplies).\n  2. **Cleaning / laundry (35)** — Continuation of household maintenance.\n  3. **Cooking (30)** — Sustained meal prep behavior.\n  4. **Construction/renovation jobs (22)** — Indicates potential home improvement purchases (tools, materials, etc.).\n  5. **Eating (16)** — Suggests meal consumption or snack purchases.\n\n- **Grocery Shopping Indoors** not explicitly listed — but **“Making coffee (8)”** and **“Going to the park (8)”** imply possible convenience store or café visits.\n\n---\n\n### 🚗 **Mobility & Errand Context**\n\n- **Commuting/road trips (Week 1: 36, Week 2: 9)** — Suggests errands are often tied to travel or transit.\n- **Walking on street (Week 1: 25, Week 2: 11)** — Indicates local shopping (e.g., neighborhood stores, pharmacies, bakeries).\n- **Car mechanic (Week 2: 12)** — Suggests errands may include vehicle-related purchases or maintenance.\n\n---\n\n### 📱 **Digital & Convenience Behavior**\n\n- **On a screen (phone/laptop)** — Appears in both weeks (25 + 12), indicating **increased digital shopping or app-based errands**.\n- **No explicit “online shopping” scenario**, but screen time correlates with likely digital purchases (e.g., grocery delivery, online retail).\n\n---\n\n### 🏠 **Home-Based Errands**\n\n- **Indoor scenes dominate** — suggests shopping is often done at home (e.g., unpacking groceries, meal prep, laundry, crafting).\n- **Cleaning / laundry** and **Cooking** are recurring — implies **shopping is often followed by home use or preparation**.\n\n---\n\n### 🧩 **Unique Insights**\n\n- **Week 2 shows increased crafting and construction-related activities** — suggests **shopping behavior shifted toward DIY/home improvement**.\n- **“Going to the park” (Week 2)** — may indicate **outdoor errands** (e.g., buying picnic supplies, pet supplies, or visiting a market).\n- **“Car mechanic”** — implies **errands may include vehicle-related purchases or services**.\n\n---\n\n### 📈 **Behavioral Summary**\n\n> **Shopping errands are primarily conducted indoors (69%) and are often tied to household maintenance, meal prep, and DIY projects. Digital tools (phone/laptop) are increasingly used for errands. Mobility (commuting, walking) supports local or travel-based shopping. Week 2 shows a shift toward home improvement and crafting-related purchases.**\n\n---\n\n### 📌 **Recommendations for Retailers/Marketers**\n\n- **Target indoor retail spaces** (supermarkets, convenience stores, home improvement stores).\n- **Promote digital shopping apps** for grocery, DIY, and home goods.\n- **Offer local delivery or pickup** for convenience.\n- **Bundle crafting/home improvement kits** for Week 2-style behavior.\n- **Consider vehicle-related products** (e.g., car care, accessories) for commuters.\n\n---\n\n**Conclusion**: Consumer behavior shows a blend of **in-store, digital, and DIY-driven shopping**, with a **strong emphasis on home-based activities**. Errands are often **multifunctional**, combining shopping with cooking, cleaning, and crafting — suggesting **personalized, convenience-focused retail strategies** are most effective.",
+        "day": "**Shopping Errands Consumer Behavior Summary (Daily-Level Patterns)**\n\nAcross the three observed days — a Thursday (workday), a Wednesday (workday with rain), and a Saturday (weekend) — consumer behavior around shopping errands reveals distinct patterns shaped by **day type, weather, and lifestyle context**.\n\n---\n\n### 📊 **Key Behavioral Trends**\n\n#### 1. **Shopping Frequency & Type**\n- **Weekdays (Tue–Thu)**:  \n  - Shopping is **low-frequency and utilitarian**.  \n  - Most errands are **indoor grocery shopping** (3x on Wed/Thu), often integrated into routine (e.g., lunch prep, breakfast).  \n  - No major shopping trips outside of workday necessities.  \n  - **No outdoor shopping** on weekdays — even when outdoors, it’s for leisure or transit (e.g., walking, commuting).\n\n- **Weekend (Sat)**:  \n  - **High-frequency, experiential shopping**.  \n  - **Farmers market visit** (12:30–13:30) is a **planned, intentional, social shopping experience** — buying fresh produce, supporting local vendors.  \n  - **Indoor shopping** (e.g., grocery, crafting) still occurs, but **outdoor shopping** (e.g., park, bike path) is part of the day’s rhythm.  \n  - **Shopping is tied to social or recreational activities** — e.g., cooking with market finds, dining out, playing games.\n\n---\n\n#### 2. **Influencing Factors**\n\n- **Weather**:  \n  - Rain on Wednesday **canceled outdoor errands** and shifted shopping to indoor activities (e.g., coffee break, screen time).  \n  - No shopping errands were canceled on Saturday despite rain (none occurred on Sat — weather didn’t impact weekend shopping).\n\n- **Day Type**:  \n  - **Workdays**: Shopping is **embedded in routine** — e.g., grocery shopping indoors for meals, no time for discretionary shopping.  \n  - **Weekends**: Shopping is **planned, social, and experiential** — e.g., farmers market, cooking with finds, dining out.\n\n---\n\n#### 3. **Shopping Context & Motivation**\n\n- **Workdays**:  \n  - Shopping is **functional** — driven by **meal prep, hygiene, and commuting needs**.  \n  - **No discretionary shopping** — no “clothes, other shopping” or “crafting” on weekdays.\n\n- **Weekends**:  \n  - Shopping is **pleasure-driven** — e.g., farmers market for fresh produce, cooking experiments, dining out.  \n  - **Social shopping** — e.g., buying groceries for friends’ game night, shopping for shared meals.\n\n---\n\n#### 4. **Scene & Scenario Correlation**\n\n- **Indoor scenes dominate weekdays** (19/25 scenes on Wed/Thu), reflecting **routine, task-oriented behavior**.  \n- **Outdoor scenes dominate weekends** (11/20 scenes on Sat), reflecting **leisure, social, and experiential behavior**.  \n- **Mixed scenes** (e.g., “walking + eating”) are common on weekdays — **shopping is often combined with other activities** (e.g., walking to store, eating after shopping).\n\n---\n\n### 📈 **Summary Table**\n\n| Day Type | Shopping Frequency | Shopping Type | Shopping Motivation | Weather Impact | Key Shopping Activities |\n|----------|--------------------|---------------|---------------------|----------------|--------------------------|\n| **Workday (Thu/Wed)** | Low | Utilitarian (grocery, indoor) | Meal prep, routine | Rain (Wed) → canceled outdoor errands | Grocery shopping, cooking, commuting |\n| **Weekend (Sat)** | High | Experiential, social | Pleasure, social, exploration | None | Farmers market, cooking with finds, dining out |\n\n---\n\n### 🧭 **Insights for Retailers & Marketers**\n\n- **Target workday shoppers** with **convenience, speed, and indoor accessibility** — e.g., quick grocery delivery, pre-packed meals.  \n- **Target weekend shoppers** with **experiential, local, and social offerings** — e.g., farmers markets, cooking classes, community events.  \n- **Weather-sensitive campaigns** — e.g., promote indoor shopping or delivery on rainy days.  \n- **Leverage social shopping** — e.g., group buys, shared meals, community events.\n\n---\n\n### ✅ **Conclusion**\n\nShopping errands behavior is **highly context-dependent** — shaped by **day type, weather, and lifestyle**. On weekdays, shopping is **functional and routine**; on weekends, it’s **social and experiential**. Retailers should tailor their offerings to match these behavioral patterns — **convenience for workdays, experience for weekends**.",
+        "hour": "**Summary of Shopping Errands Consumer Behavior by Hour Block:**\n\nConsumer shopping errands exhibit **distinct temporal patterns**, clustering around **morning and late afternoon hours**, with a strong preference for **indoor environments** and **multi-tasking scenarios**.\n\n---\n\n### 🕒 **Key Behavioral Patterns by Hour Block:**\n\n#### **1. Morning Hours (08:00–09:00)**\n- **Date**: 2026-01-10 (08:00), 2026-01-23 (09:00)\n- **Behavior**: \n  - **Grocery shopping indoors** is the dominant activity (appears in both blocks).\n  - **Mixed scenes** (e.g., commuting + shopping) occur in the 08:00 block.\n  - **Indoor-only** behavior dominates in the 09:00 block.\n- **Implication**: Consumers prioritize **early-morning errands**, likely due to time efficiency or routine. Grocery shopping is a core morning activity, often combined with commuting or other indoor tasks.\n\n#### **2. Midday Hours (10:00)**\n- **Date**: 2026-01-19 (10:00)\n- **Behavior**:\n  - **3 clips**, with **2 indoor**, 1 mixed.\n  - Activities: **Cooking**, **Carpenter**, **Grocery shopping indoors**.\n  - **Grocery shopping** still present, but **co-occurs with cooking or home repair**.\n- **Implication**: Midday shopping is **less focused** — often integrated into other household tasks. Consumers may be multitasking or shopping opportunistically during breaks.\n\n#### **3. Late Afternoon (16:00)**\n- **Date**: 2026-01-08 (16:00)\n- **Behavior**:\n  - **3 clips**, **2 indoor**, 1 mixed.\n  - Activities: **Cooking (x2)**, **Grocery shopping indoors**, **Walking on street**.\n  - **Outdoor activity** (walking) appears — suggesting **post-shopping mobility** or **transition to evening**.\n- **Implication**: Late afternoon shopping is **often paired with cooking or walking**, indicating **flexible, task-oriented behavior**. Consumers may be wrapping up errands before evening routines.\n\n---\n\n### 📊 **Scene & Scenario Trends:**\n\n- **Indoor scenes dominate** (especially 09:00 and 10:00 blocks), suggesting **comfort, safety, or efficiency** in shopping environments.\n- **Mixed scenes** appear in morning and late afternoon — indicating **integration with commuting or outdoor mobility**.\n- **Grocery shopping indoors** is a **consistent activity** across all blocks — **core errand behavior**.\n- **Cooking** frequently co-occurs with shopping — **shopping for meal prep** is a key driver.\n- **Other shopping** (clothes, etc.) appears in morning (09:00) — suggesting **multi-purpose errands**.\n\n---\n\n### 🧭 **Consumer Behavior Insights:**\n\n1. **Morning is Peak Shopping Time** — Consumers prioritize grocery shopping early, often indoors and integrated with routines.\n2. **Midday Shopping is Opportunistic** — Often combined with cooking or other household tasks.\n3. **Late Afternoon Shopping is Task-Integrated** — Often paired with cooking or walking, suggesting **flexible, post-work errands**.\n4. **Indoor Preference** — Consumers favor indoor shopping environments, likely for **convenience, safety, or comfort**.\n5. **Multi-Tasking is Common** — Shopping is rarely isolated; it’s often bundled with cooking, commuting, or other activities.\n\n---\n\n### 📌 **Recommendations for Retailers:**\n\n- **Morning Hours**: Optimize **grocery and essentials** offerings with **early-morning promotions**.\n- **Midday Hours**: Offer **meal-prep bundles** or **quick-service options** to align with cooking + shopping.\n- **Late Afternoon**: Promote **convenience items** or **post-work errands** (e.g., snacks, household goods).\n- **Indoor Experience**: Enhance **indoor shopping comfort** (lighting, layout, accessibility).\n- **Bundle Offers**: Encourage **multi-tasking** with **combo deals** (e.g., groceries + cooking supplies).\n\n---\n\n**Conclusion**: Shopping errands are **time-sensitive, task-integrated, and environment-dependent**. Consumers prioritize **morning grocery shopping**, often indoors, and **integrate errands with daily routines** — making **convenience, timing, and bundling** key to optimizing consumer engagement."
+      },
+      "clip_analyses": [
+        {
+          "video_uid": "e837708f-8276-4d2b-88b3-319cddabbf74",
+          "node_id": "clip_03_020",
+          "video_available": true,
+          "video_path": "/mnt/data_oss/raw_data/Ego4d/v2/full_scale/e837708f-8276-4d2b-88b3-319cddabbf74.mp4",
+          "frame_count": 16,
+          "duration_min": 23.39,
+          "sampling": "adaptive",
+          "analysis": {
+            "observed_activities": [
+              "walking outdoors",
+              "entering Walmart",
+              "shopping in grocery aisles",
+              "purchasing items",
+              "checking out at register",
+              "exiting store"
+            ],
+            "objects_and_places": [
+              "Walmart parking lot",
+              "Walmart store interior",
+              "grocery aisles",
+              "checkout counter",
+              "shopping cart",
+              "Walmart sign",
+              "fire hydrant",
+              "street",
+              "apartment complex",
+              "car"
+            ],
+            "social_interaction": "minimal",
+            "behavior_tags": [
+              "commuting",
+              "grocery shopping",
+              "walking",
+              "shopping"
+            ],
+            "preference_hypotheses": [
+              {
+                "topic": "Walmart as preferred grocery store",
+                "evidence": "User enters Walmart and spends significant time shopping, indicating routine preference",
+                "confidence": "high"
+              },
+              {
+                "topic": "Budget-conscious shopping",
+                "evidence": "User browses 'Low Price' sections and selects items with visible price tags",
+                "confidence": "medium"
+              },
+              {
+                "topic": "Casual attire for daily errands",
+                "evidence": "User wears a hoodie and bandana, suggesting comfort over formality for routine tasks",
+                "confidence": "medium"
+              }
+            ],
+            "plan_vs_observation": "Observed activity (grocery shopping) deviates from the scheduled commute plan, suggesting the user may have adjusted their routine to include errands.",
+            "notable_details": [
+              "User is wearing a bandana and hoodie, possibly for warmth or personal style.",
+              "Walmart sign is visible, confirming location.",
+              "User is seen holding a purchased item at checkout, indicating completion of shopping."
+            ]
+          },
+          "vision_used": true
+        },
+        {
+          "video_uid": "1a7b9b5d-499a-454e-aaee-3758718fb5f2",
+          "node_id": "clip_00_026",
+          "video_available": true,
+          "video_path": "/mnt/data_oss/raw_data/Ego4d/v2/full_scale/1a7b9b5d-499a-454e-aaee-3758718fb5f2.mp4",
+          "frame_count": 14,
+          "duration_min": 15.46,
+          "sampling": "adaptive",
+          "analysis": {
+            "observed_activities": [
+              "driving car",
+              "purchasing bicycle helmet",
+              "interacting with store staff"
+            ],
+            "objects_and_places": [
+              "car interior",
+              "snow-covered roads",
+              "bicycle helmet store",
+              "checkout counter",
+              "store shelves with helmets"
+            ],
+            "social_interaction": "moderate",
+            "behavior_tags": [
+              "commuting",
+              "shopping",
+              "purchasing safety gear"
+            ],
+            "preference_hypotheses": [
+              {
+                "topic": "safety-conscious behavior",
+                "evidence": "purchasing a bicycle helmet during a commute",
+                "confidence": "high"
+              },
+              {
+                "topic": "winter commuting",
+                "evidence": "snow-covered roads and winter sunset lighting",
+                "confidence": "high"
+              },
+              {
+                "topic": "practical shopping",
+                "evidence": "purchasing a helmet likely for future use, not impulse buying",
+                "confidence": "medium"
+              }
+            ],
+            "plan_vs_observation": "The user's scheduled plan was to commute home and optionally stop by a grocery store. Instead, they stopped at a bicycle helmet store, indicating a deviation from the original plan to acquire safety gear.",
+            "notable_details": [
+              "The store is well-stocked with helmets, suggesting it's a specialized sports or outdoor gear shop.",
+              "The user interacts with multiple staff members, indicating a customer service-oriented purchase.",
+              "The time of day (sunset) and snowy conditions suggest the user is commuting in winter."
+            ]
+          },
+          "vision_used": true
+        }
+      ]
+    }
+  ],
+  "behavior_profile": {
+    "summary": "The user exhibits a strong preference for indoor and mixed (indoor/outdoor) environments, with minimal engagement in active outdoor sports or structured exercise. Outdoor activities are sporadic, passive, or social (e.g., walking, campfire, commuting), and occur predominantly on weekends. Indoor activities — cooking, cleaning, crafting, screen time, and socializing — dominate daily routines. No evidence of structured physical activity or sports is present, suggesting a sedentary or low-intensity movement pattern. Weekend behavior shows intentional outdoor exploration (hiking, nature photography), but weekday activity remains largely confined to indoor tasks and transit-related exposure.",
+    "core_interests": [
+      {
+        "topic": "Indoor Domestic Activities",
+        "evidence": "Top scenarios include Cooking (104), Cleaning / laundry (104), Crafting (75), Eating (57), and On a screen (47). These dominate both weekday and weekend behavior.",
+        "confidence": 0.95,
+        "supporting_video_uids": [
+          "clip_2026-01-20T10:23:54",
+          "clip_2026-01-12T10:41:13",
+          "clip_2026-01-10T11:57:44"
+        ]
+      },
+      {
+        "topic": "Weekend Outdoor Exploration",
+        "evidence": "Weekend days (e.g., 2026-01-24) show intentional outdoor plans: hiking, nature photography, outdoor lunches, and socializing. Outdoor scenes increased to 6/8 total scenes on that day.",
+        "confidence": 0.85,
+        "supporting_video_uids": [
+          "clip_2026-01-24T12:26:54",
+          "clip_2026-01-20T10:00",
+          "clip_2026-01-17T07:12:43"
+        ]
+      },
+      {
+        "topic": "Social Interactions (Indoor & Outdoor)",
+        "evidence": "Frequent scenarios include Talking with family (49), Talking with friends (22), and Outdoor social (5 clips). Socializing is a consistent theme across contexts.",
+        "confidence": 0.88,
+        "supporting_video_uids": [
+          "clip_2026-01-19T15:43:41",
+          "clip_2026-01-17T17:10:52",
+          "clip_2026-01-10T11:04:06"
+        ]
+      }
+    ],
+    "habitual_patterns": [
+      {
+        "pattern": "Morning Routine: Indoor Domestic Tasks",
+        "time_context": "wake_home (74 clips) and commute_morning (59 clips)",
+        "frequency_hint": "Daily, consistent across weekdays and weekends"
+      },
+      {
+        "pattern": "Weekend Outdoor Expeditions",
+        "time_context": "Saturday mornings (07:30–12:00) and afternoons",
+        "frequency_hint": "Occurs 2–3 times per month, highly intentional"
+      },
+      {
+        "pattern": "Indoor Screen Time",
+        "time_context": "Throughout day, especially during work_focus and work_afternoon",
+        "frequency_hint": "Daily, moderate to high frequency"
+      }
+    ],
+    "preferences": [
+      {
+        "category": "Activity Type",
+        "preference": "Indoor domestic tasks over active outdoor sports",
+        "reasoning": "Cooking, cleaning, and crafting dominate top scenarios (104+ clips each), while no active sports or structured exercise is detected. Outdoor activities are passive or social, not fitness-oriented."
+      },
+      {
+        "category": "Time Preference",
+        "preference": "Weekend-focused outdoor engagement",
+        "reasoning": "Outdoor scenes increase 3x on weekends (avg. 11–12 scenes/day) vs. weekdays (avg. 2). Weekend plans are intentional (e.g., hiking, photography), while weekdays are transit- or chore-based."
+      },
+      {
+        "category": "Social Context",
+        "preference": "Socializing indoors or in casual outdoor settings",
+        "reasoning": "Talking with family/friends appears in 49+ clips. Outdoor social (campfire, park) appears 5 times — suggesting preference for low-intensity, relational outdoor experiences."
+      }
+    ],
+    "weekday_vs_weekend": "Weekdays are dominated by indoor domestic tasks (cooking, cleaning, screen time) and transit-related outdoor exposure (commuting, errands). Weekends feature intentional outdoor exploration (hiking, nature photography, socializing outdoors), but still remain relatively low in volume compared to indoor activities. Weekend outdoor activity is more structured and goal-oriented, while weekday outdoor exposure is incidental.",
+    "anomaly_insights": [
+      "No evidence of active sports or structured exercise — despite occasional outdoor walks, no running, cycling, or gym activity detected.",
+      "Outdoor scenes are mostly passive or social — no evidence of recreational sports, team activities, or fitness-oriented behavior.",
+      "Weekend outdoor activity is highly intentional (e.g., hiking, photography) but limited to 6–12 scenes per day — suggesting a niche interest rather than a lifestyle preference."
+    ],
+    "data_quality_note": "Vision coverage is limited to 29.2% of total clips (178 with local video), which may underrepresent outdoor or dynamic activities. Indoor scenes are well-covered, but outdoor scenes may be missed or misclassified (e.g., walking on street vs. hiking). No explicit sports or exercise tags detected — may reflect absence of such activities or limitations in scenario labeling."
+  },
+  "vision_analyses_count": 14
+}

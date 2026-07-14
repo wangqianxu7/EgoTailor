@@ -1,0 +1,688 @@
+{
+  "metadata": {
+    "persona_id": "egotailor_usa_enfp",
+    "day_index": 2,
+    "calendar_date": "2026-01-07",
+    "day_of_week": "Wednesday",
+    "is_weekend": false,
+    "target_seconds": 28800,
+    "location": "USA",
+    "day_theme": "anomaly_rain_day",
+    "anomaly_events": [
+      "rain_cancelled_outdoor"
+    ],
+    "time_variations": {
+      "wake_jitter_min": 9,
+      "commute_jitter_min": -8,
+      "exercise_jitter_min": 8
+    }
+  },
+  "daily_plan": [
+    "Wake up to heavy rain, check weather app (07:10-07:50)",
+    "Rainy commute with umbrella, traffic slower than usual (08:10-08:55)",
+    "Work at desk, many colleagues working from home (09:10-10:30)",
+    "Focused coding session, rain visible through window (10:45-12:00)",
+    "Lunch at office cafeteria, rain still pouring (12:15-13:00)",
+    "Cancelled outdoor walk due to rain; coffee break indoors instead (13:15-14:00)",
+    "Afternoon meetings via video call (14:15-16:00)",
+    "Rainy evening commute, wet shoes (16:15-17:05)",
+    "Cook warm soup dinner, dry clothes (17:20-18:20)",
+    "Watch comfort TV show, glad to stay indoors (19:00-20:30)",
+    "Read by the window, rain still falling (20:45-21:45)"
+  ],
+  "memory_content": [
+    {
+      "video_uid": "ed23435d-79b6-48fc-9c92-ab1ee0806534",
+      "slot_id": "commute_morning",
+      "plan_chunk": "Rainy commute with umbrella, traffic slower than usual",
+      "matched_scenarios": [
+        "Car - commuting, road trip",
+        "Bus",
+        "Walking on street"
+      ],
+      "video_scenarios": [
+        "Grocery shopping indoors",
+        "Walking on street"
+      ],
+      "main_scene": "mixed",
+      "consolidated_summary": "the character is at home, goes to the grocery store with her kids, and strolls on a walk path with a girl.",
+      "start_time": "07:00:00",
+      "end_time": "07:12:09",
+      "start_timestamp": "2026-01-07T07:00:00",
+      "end_timestamp": "2026-01-07T07:12:09",
+      "duration": 729.8,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "77cc4654-4eec-44c6-af05-dbdf71f9a401",
+      "slot_id": "commute_evening",
+      "plan_chunk": "Rainy evening commute, wet shoes",
+      "matched_scenarios": [
+        "Car - commuting, road trip",
+        "Bus"
+      ],
+      "video_scenarios": [
+        "Car - commuting, road trip",
+        "Talking with family members"
+      ],
+      "main_scene": "mixed",
+      "consolidated_summary": "the character interacts with people in a house, gets into a car, and interacts with others while using a phone.",
+      "start_time": "07:17:09",
+      "end_time": "07:37:56",
+      "start_timestamp": "2026-01-07T07:17:09",
+      "end_timestamp": "2026-01-07T07:37:56",
+      "duration": 1247.13,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "ae85c74a-0963-469b-93f9-cdfe3f898e5f",
+      "slot_id": "commute_morning",
+      "plan_chunk": "Rainy commute with umbrella, traffic slower than usual",
+      "matched_scenarios": [
+        "Car - commuting, road trip",
+        "Bus",
+        "Walking on street"
+      ],
+      "video_scenarios": [
+        "Bus",
+        "Walking on street"
+      ],
+      "main_scene": "mixed",
+      "consolidated_summary": "the character rides a bus, interacts with a boy and others, and shops at a store.",
+      "start_time": "07:42:56",
+      "end_time": "08:12:56",
+      "start_timestamp": "2026-01-07T07:42:56",
+      "end_timestamp": "2026-01-07T08:12:56",
+      "duration": 1800.13,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "68c8b7df-7fc5-414c-907d-5de75a29e3e7",
+      "slot_id": "commute_morning",
+      "plan_chunk": "Rainy commute with umbrella, traffic slower than usual",
+      "matched_scenarios": [
+        "Car - commuting, road trip",
+        "Bus",
+        "Walking on street"
+      ],
+      "video_scenarios": [
+        "On a screen (phone/laptop)",
+        "Train",
+        "Walking on street"
+      ],
+      "main_scene": "mixed",
+      "consolidated_summary": "the character takes a train, uses a phone, and walks on a sidewalk.",
+      "start_time": "08:17:56",
+      "end_time": "08:33:09",
+      "start_timestamp": "2026-01-07T08:17:56",
+      "end_timestamp": "2026-01-07T08:33:09",
+      "duration": 913.0,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "023bf95e-28de-43b4-a43f-720edba667a5",
+      "slot_id": "home_evening",
+      "plan_chunk": "Cook warm soup dinner, dry clothes",
+      "matched_scenarios": [
+        "Cooking",
+        "Cleaning / laundry"
+      ],
+      "video_scenarios": [
+        "Cleaning / laundry"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character cleans an apartment, rearranges dishes, and interacts with a boy and a man.",
+      "start_time": "08:38:09",
+      "end_time": "08:54:31",
+      "start_timestamp": "2026-01-07T08:38:09",
+      "end_timestamp": "2026-01-07T08:54:31",
+      "duration": 982.67,
+      "video_source": "USA",
+      "time_period": "twilight"
+    },
+    {
+      "video_uid": "4ac57aee-4ac0-457e-b9de-9419056e4bbd",
+      "slot_id": "work_afternoon",
+      "plan_chunk": "Afternoon meetings via video call",
+      "matched_scenarios": [
+        "Video call",
+        "Participating in a meeting"
+      ],
+      "video_scenarios": [
+        "Cleaning / laundry",
+        "Playing with pets",
+        "Talking with family members"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character interacts with people and dogs, and manages food and equipment in an apartment.",
+      "start_time": "08:59:31",
+      "end_time": "09:14:27",
+      "start_timestamp": "2026-01-07T08:59:31",
+      "end_timestamp": "2026-01-07T09:14:27",
+      "duration": 896.43,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "5b9aa0ee-38d4-40bd-8af9-c53c5e35869b",
+      "slot_id": "leisure_read",
+      "plan_chunk": "Read by the window, rain still falling",
+      "matched_scenarios": [
+        "Reading books"
+      ],
+      "video_scenarios": [
+        "On a screen (phone/laptop)",
+        "Playing cards"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character plays cards and interacts with others in a room.",
+      "start_time": "09:19:27",
+      "end_time": "09:34:37",
+      "start_timestamp": "2026-01-07T09:19:27",
+      "end_timestamp": "2026-01-07T09:34:37",
+      "duration": 910.67,
+      "video_source": "USA",
+      "time_period": "nighttime"
+    },
+    {
+      "video_uid": "906447e1-6120-4393-85df-f5f1c9d9ea90",
+      "slot_id": "wake_home",
+      "plan_chunk": "Wake up to heavy rain, check weather app",
+      "matched_scenarios": [
+        "Daily hygiene",
+        "On a screen (phone/laptop)"
+      ],
+      "video_scenarios": [
+        "On a screen (phone/laptop)"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character uses a computer in a room.",
+      "start_time": "09:39:37",
+      "end_time": "09:42:03",
+      "start_timestamp": "2026-01-07T09:39:37",
+      "end_timestamp": "2026-01-07T09:42:03",
+      "duration": 146.7,
+      "video_source": "USA",
+      "time_period": "not know"
+    },
+    {
+      "video_uid": "a8238ec0-a8d8-4b2e-8d92-d161bb6dcdca",
+      "slot_id": "wake_home",
+      "plan_chunk": "Wake up to heavy rain, check weather app",
+      "matched_scenarios": [
+        "Daily hygiene",
+        "On a screen (phone/laptop)"
+      ],
+      "video_scenarios": [
+        "Camp setup/pack-up/chores",
+        "Cleaning / laundry",
+        "Gardening",
+        "On a screen (phone/laptop)"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character hangs frames and paintings, moves items, packs and unpacks cartons, cleans the floor, plants a seedling, and pours sand into a flowerpot.",
+      "start_time": "09:47:03",
+      "end_time": "10:12:06",
+      "start_timestamp": "2026-01-07T09:47:03",
+      "end_timestamp": "2026-01-07T10:12:06",
+      "duration": 1503.97,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "4bb74f1a-1892-4415-a976-2b6db639f949",
+      "slot_id": "commute_morning",
+      "plan_chunk": "Rainy commute with umbrella, traffic slower than usual",
+      "matched_scenarios": [
+        "Car - commuting, road trip",
+        "Bus",
+        "Walking on street"
+      ],
+      "video_scenarios": [
+        "Walking on street"
+      ],
+      "main_scene": "mixed",
+      "consolidated_summary": "the character walks along the streets, interacts with someone, and walks and interacts with another person in a house.",
+      "start_time": "10:17:06",
+      "end_time": "10:24:06",
+      "start_timestamp": "2026-01-07T10:17:06",
+      "end_timestamp": "2026-01-07T10:24:06",
+      "duration": 420.6,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "1ff80c5d-836b-4850-83dc-0b4c9e382e74",
+      "slot_id": "work_morning",
+      "plan_chunk": "Work at desk, many colleagues working from home",
+      "matched_scenarios": [
+        "Working at desk",
+        "Video call"
+      ],
+      "video_scenarios": [
+        "Crafting/knitting/sewing/drawing/painting"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character knits fabric with a knitting crochet in the house.",
+      "start_time": "10:29:06",
+      "end_time": "10:44:01",
+      "start_timestamp": "2026-01-07T10:29:06",
+      "end_timestamp": "2026-01-07T10:44:01",
+      "duration": 895.73,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "6a5fa00b-64de-4851-98fa-7e96f3f441f6",
+      "slot_id": "work_focus",
+      "plan_chunk": "Focused coding session, rain visible through window",
+      "matched_scenarios": [
+        "Working at desk",
+        "On a screen (phone/laptop)"
+      ],
+      "video_scenarios": [
+        "Camp setup/pack-up/chores",
+        "Cleaning / laundry",
+        "Cooking",
+        "On a screen (phone/laptop)"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character cooks, prepares a meal, and cleans the kitchen in an apartment.",
+      "start_time": "10:49:01",
+      "end_time": "11:14:06",
+      "start_timestamp": "2026-01-07T10:49:01",
+      "end_timestamp": "2026-01-07T11:14:06",
+      "duration": 1505.87,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "1b4b9493-2f3b-48e2-ba96-4feb9b9e98a1",
+      "slot_id": "lunch_indoor",
+      "plan_chunk": "Lunch at office cafeteria, rain still pouring",
+      "matched_scenarios": [
+        "Eating at the cafeteria",
+        "Eating"
+      ],
+      "video_scenarios": [
+        "Eating"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character shops in a store, interacts with a man, browses items, and handles a phone and products.",
+      "start_time": "11:19:06",
+      "end_time": "11:38:49",
+      "start_timestamp": "2026-01-07T11:19:06",
+      "end_timestamp": "2026-01-07T11:38:49",
+      "duration": 1183.51,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "8ac38f66-3c12-4d52-a7f9-81738e04745f",
+      "slot_id": "rain_cancel_indoor",
+      "plan_chunk": "Cancelled outdoor walk due to rain; coffee break indoors instead",
+      "matched_scenarios": [
+        "Making coffee",
+        "Talking to colleagues",
+        "Hanging out at a coffee shop"
+      ],
+      "video_scenarios": [
+        "Making coffee"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character plays a drum, plays games, and sets up dominoes in a room.",
+      "start_time": "11:43:49",
+      "end_time": "12:08:42",
+      "start_timestamp": "2026-01-07T11:43:49",
+      "end_timestamp": "2026-01-07T12:08:42",
+      "duration": 1493.65,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "56aa087d-d6ca-4a51-915e-f700b1a0de5d",
+      "slot_id": "work_afternoon",
+      "plan_chunk": "Afternoon meetings via video call",
+      "matched_scenarios": [
+        "Video call",
+        "Participating in a meeting"
+      ],
+      "video_scenarios": [
+        "Crafting/knitting/sewing/drawing/painting"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character paints a drawing in a room.",
+      "start_time": "12:13:42",
+      "end_time": "12:28:34",
+      "start_timestamp": "2026-01-07T12:13:42",
+      "end_timestamp": "2026-01-07T12:28:34",
+      "duration": 892.23,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "046855d7-41d7-4f41-a6a7-fce921ea8133",
+      "slot_id": "commute_evening",
+      "plan_chunk": "Rainy evening commute, wet shoes",
+      "matched_scenarios": [
+        "Car - commuting, road trip",
+        "Bus"
+      ],
+      "video_scenarios": [
+        "Car - commuting, road trip",
+        "Going to the park"
+      ],
+      "main_scene": "mixed",
+      "consolidated_summary": "the character gets ready for baseball, travels in a car, and walks to a baseball court.",
+      "start_time": "12:33:34",
+      "end_time": "12:40:37",
+      "start_timestamp": "2026-01-07T12:33:34",
+      "end_timestamp": "2026-01-07T12:40:37",
+      "duration": 423.13,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "192accf0-c649-46b7-a9c1-c0595b2f83d5",
+      "slot_id": "home_evening",
+      "plan_chunk": "Cook warm soup dinner, dry clothes",
+      "matched_scenarios": [
+        "Cooking",
+        "Cleaning / laundry"
+      ],
+      "video_scenarios": [
+        "Cleaning / laundry"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character folds clothes, uses a phone, and interacts with someone in an apartment bedroom.",
+      "start_time": "12:45:37",
+      "end_time": "12:59:19",
+      "start_timestamp": "2026-01-07T12:45:37",
+      "end_timestamp": "2026-01-07T12:59:19",
+      "duration": 822.27,
+      "video_source": "USA",
+      "time_period": "twilight"
+    },
+    {
+      "video_uid": "483c9392-c844-4eea-a1ad-5fb4d8aec637",
+      "slot_id": "leisure_tv",
+      "plan_chunk": "Watch comfort TV show, glad to stay indoors",
+      "matched_scenarios": [
+        "Watching tv"
+      ],
+      "video_scenarios": [
+        "Watching tv"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character watches television in a living room with a dog nearby.",
+      "start_time": "13:04:19",
+      "end_time": "13:34:16",
+      "start_timestamp": "2026-01-07T13:04:19",
+      "end_timestamp": "2026-01-07T13:34:16",
+      "duration": 1797.77,
+      "video_source": "USA",
+      "time_period": "nighttime"
+    },
+    {
+      "video_uid": "ac61be4d-33a0-4534-aa94-be44070b9a3b",
+      "slot_id": "leisure_read",
+      "plan_chunk": "Read by the window, rain still falling",
+      "matched_scenarios": [
+        "Reading books"
+      ],
+      "video_scenarios": [
+        "Cleaning / laundry"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character washes and arranges cutleries and dishes in a kitchen.",
+      "start_time": "13:39:16",
+      "end_time": "13:54:33",
+      "start_timestamp": "2026-01-07T13:39:16",
+      "end_timestamp": "2026-01-07T13:54:33",
+      "duration": 917.63,
+      "video_source": "USA",
+      "time_period": "nighttime"
+    },
+    {
+      "video_uid": "eeba49b8-9ee8-494b-b730-eaad889e9625",
+      "slot_id": "wake_home",
+      "plan_chunk": "Wake up to heavy rain, check weather app",
+      "matched_scenarios": [
+        "Daily hygiene",
+        "On a screen (phone/laptop)"
+      ],
+      "video_scenarios": [
+        "Camp setup/pack-up/chores",
+        "Cleaning / laundry",
+        "On a screen (phone/laptop)",
+        "Playing with pets"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character arranges belongings in an apartment, interacts with a pet dog, and briefly attends to personal hygiene.",
+      "start_time": "13:59:33",
+      "end_time": "14:17:39",
+      "start_timestamp": "2026-01-07T13:59:33",
+      "end_timestamp": "2026-01-07T14:17:39",
+      "duration": 1086.0,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "c77015b4-40e1-44f5-b411-6b962dfd3157",
+      "slot_id": "commute_morning",
+      "plan_chunk": "Rainy commute with umbrella, traffic slower than usual",
+      "matched_scenarios": [
+        "Car - commuting, road trip",
+        "Bus",
+        "Walking on street"
+      ],
+      "video_scenarios": [
+        "Talking on the phone",
+        "Train",
+        "Walking on street"
+      ],
+      "main_scene": "mixed",
+      "consolidated_summary": "the character rides a bus, walks along the road, and crosses the road on the zebra crossing.",
+      "start_time": "14:22:39",
+      "end_time": "14:32:37",
+      "start_timestamp": "2026-01-07T14:22:39",
+      "end_timestamp": "2026-01-07T14:32:37",
+      "duration": 598.33,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "3a718f0f-a85e-4461-b5bc-94c5a8d300a8",
+      "slot_id": "work_morning",
+      "plan_chunk": "Work at desk, many colleagues working from home",
+      "matched_scenarios": [
+        "Working at desk",
+        "Video call"
+      ],
+      "video_scenarios": [
+        "Grocery shopping indoors"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character and a man walk, talk, and shop in a supermarket.",
+      "start_time": "14:37:37",
+      "end_time": "14:52:35",
+      "start_timestamp": "2026-01-07T14:37:37",
+      "end_timestamp": "2026-01-07T14:52:35",
+      "duration": 898.17,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "680071b8-7912-443d-95e7-8f73ff4ed1c7",
+      "slot_id": "work_focus",
+      "plan_chunk": "Focused coding session, rain visible through window",
+      "matched_scenarios": [
+        "Working at desk",
+        "On a screen (phone/laptop)"
+      ],
+      "video_scenarios": [
+        "Camp setup/pack-up/chores",
+        "Cleaning / laundry",
+        "On a screen (phone/laptop)"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character moves and organizes belongings within a house and apartment.",
+      "start_time": "14:57:35",
+      "end_time": "15:27:35",
+      "start_timestamp": "2026-01-07T14:57:35",
+      "end_timestamp": "2026-01-07T15:27:35",
+      "duration": 1800.13,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "80c74a5b-81e0-4bc1-bc09-2f146351fe70",
+      "slot_id": "lunch_indoor",
+      "plan_chunk": "Lunch at office cafeteria, rain still pouring",
+      "matched_scenarios": [
+        "Eating at the cafeteria",
+        "Eating"
+      ],
+      "video_scenarios": [
+        "Eating"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character shops in various indoor locations, including a supermarket, room, and grocery store, and observes person Y.",
+      "start_time": "15:32:35",
+      "end_time": "15:52:36",
+      "start_timestamp": "2026-01-07T15:32:35",
+      "end_timestamp": "2026-01-07T15:52:36",
+      "duration": 1201.79,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "624f1d5c-21da-4bd6-9faa-8b512d5d999c",
+      "slot_id": "rain_cancel_indoor",
+      "plan_chunk": "Cancelled outdoor walk due to rain; coffee break indoors instead",
+      "matched_scenarios": [
+        "Making coffee",
+        "Talking to colleagues",
+        "Hanging out at a coffee shop"
+      ],
+      "video_scenarios": [
+        "Making coffee"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character spends time in the house, converses with others, prepares coffee, and plays a board game.",
+      "start_time": "15:57:36",
+      "end_time": "16:22:18",
+      "start_timestamp": "2026-01-07T15:57:36",
+      "end_timestamp": "2026-01-07T16:22:18",
+      "duration": 1482.63,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "3bbf723b-6893-42fc-bd59-3c59f3eb9745",
+      "slot_id": "work_afternoon",
+      "plan_chunk": "Afternoon meetings via video call",
+      "matched_scenarios": [
+        "Video call",
+        "Participating in a meeting"
+      ],
+      "video_scenarios": [
+        "Carpenter"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character renovates a room, removing wall trims, attaching wood to door frames, and using tools like a nail gun and saw.",
+      "start_time": "16:27:18",
+      "end_time": "16:42:26",
+      "start_timestamp": "2026-01-07T16:27:18",
+      "end_timestamp": "2026-01-07T16:42:26",
+      "duration": 908.73,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "f7148e30-2ded-4d14-a8bb-f50813da26df",
+      "slot_id": "commute_evening",
+      "plan_chunk": "Rainy evening commute, wet shoes",
+      "matched_scenarios": [
+        "Car - commuting, road trip",
+        "Bus"
+      ],
+      "video_scenarios": [
+        "Car - commuting, road trip"
+      ],
+      "main_scene": "mixed",
+      "consolidated_summary": "the character drives, goes to a shop with a woman, and shops at a mall.",
+      "start_time": "16:47:26",
+      "end_time": "17:12:33",
+      "start_timestamp": "2026-01-07T16:47:26",
+      "end_timestamp": "2026-01-07T17:12:33",
+      "duration": 1507.7,
+      "video_source": "USA",
+      "time_period": "daytime"
+    }
+  ],
+  "statistics": {
+    "clip_count": 27,
+    "total_duration": 28966.37,
+    "total_duration_hours": 8.05,
+    "scene_distribution": {
+      "mixed": 8,
+      "indoor": 19
+    },
+    "selected_videos": [
+      "ed23435d-79b6-48fc-9c92-ab1ee0806534",
+      "77cc4654-4eec-44c6-af05-dbdf71f9a401",
+      "ae85c74a-0963-469b-93f9-cdfe3f898e5f",
+      "68c8b7df-7fc5-414c-907d-5de75a29e3e7",
+      "023bf95e-28de-43b4-a43f-720edba667a5",
+      "4ac57aee-4ac0-457e-b9de-9419056e4bbd",
+      "5b9aa0ee-38d4-40bd-8af9-c53c5e35869b",
+      "906447e1-6120-4393-85df-f5f1c9d9ea90",
+      "a8238ec0-a8d8-4b2e-8d92-d161bb6dcdca",
+      "4bb74f1a-1892-4415-a976-2b6db639f949",
+      "1ff80c5d-836b-4850-83dc-0b4c9e382e74",
+      "6a5fa00b-64de-4851-98fa-7e96f3f441f6",
+      "1b4b9493-2f3b-48e2-ba96-4feb9b9e98a1",
+      "8ac38f66-3c12-4d52-a7f9-81738e04745f",
+      "56aa087d-d6ca-4a51-915e-f700b1a0de5d",
+      "046855d7-41d7-4f41-a6a7-fce921ea8133",
+      "192accf0-c649-46b7-a9c1-c0595b2f83d5",
+      "483c9392-c844-4eea-a1ad-5fb4d8aec637",
+      "ac61be4d-33a0-4534-aa94-be44070b9a3b",
+      "eeba49b8-9ee8-494b-b730-eaad889e9625",
+      "c77015b4-40e1-44f5-b411-6b962dfd3157",
+      "3a718f0f-a85e-4461-b5bc-94c5a8d300a8",
+      "680071b8-7912-443d-95e7-8f73ff4ed1c7",
+      "80c74a5b-81e0-4bc1-bc09-2f146351fe70",
+      "624f1d5c-21da-4bd6-9faa-8b512d5d999c",
+      "3bbf723b-6893-42fc-bd59-3c59f3eb9745",
+      "f7148e30-2ded-4d14-a8bb-f50813da26df"
+    ],
+    "unique_scenarios": [
+      "Bus",
+      "Camp setup/pack-up/chores",
+      "Car - commuting, road trip",
+      "Carpenter",
+      "Cleaning / laundry",
+      "Cooking",
+      "Crafting/knitting/sewing/drawing/painting",
+      "Eating",
+      "Gardening",
+      "Going to the park",
+      "Grocery shopping indoors",
+      "Making coffee",
+      "On a screen (phone/laptop)",
+      "Playing cards",
+      "Playing with pets",
+      "Talking on the phone",
+      "Talking with family members",
+      "Train",
+      "Walking on street",
+      "Watching tv"
+    ]
+  }
+}

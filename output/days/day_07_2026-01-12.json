@@ -1,0 +1,647 @@
+{
+  "metadata": {
+    "persona_id": "egotailor_usa_enfp",
+    "day_index": 7,
+    "calendar_date": "2026-01-12",
+    "day_of_week": "Monday",
+    "is_weekend": false,
+    "target_seconds": 28800,
+    "location": "USA",
+    "day_theme": "anomaly_business_trip",
+    "anomaly_events": [
+      "business_trip_day1"
+    ],
+    "time_variations": {
+      "wake_jitter_min": -7,
+      "commute_jitter_min": -10,
+      "exercise_jitter_min": 12
+    }
+  },
+  "daily_plan": [
+    "Wake up in hotel, quick hygiene and pack bag (06:30-07:15)",
+    "Taxi to airport, check in and wait at gate (07:30-09:30)",
+    "Flight to client city, work on laptop during flight (10:00-12:30)",
+    "Client site visit and product demo meeting (13:30-15:30)",
+    "Business lunch with client team (15:45-16:45)",
+    "Work from hotel room: follow-up emails and slides (17:30-19:00)",
+    "Solo dinner at hotel restaurant (19:30-20:30)",
+    "Early sleep in unfamiliar hotel room (21:00-22:00)"
+  ],
+  "memory_content": [
+    {
+      "video_uid": "c67cb1da-90ac-4da8-af17-4f8b77da9b9d",
+      "slot_id": "flight",
+      "plan_chunk": "Flight to client city, work on laptop during flight",
+      "matched_scenarios": [
+        "On a screen (phone/laptop)",
+        "Reading books"
+      ],
+      "video_scenarios": [
+        "Clothes, other shopping"
+      ],
+      "main_scene": "mixed",
+      "consolidated_summary": "the character shops at a supermarket, drives a car, and encounters a roadblock.",
+      "start_time": "07:00:00",
+      "end_time": "07:13:51",
+      "start_timestamp": "2026-01-12T07:00:00",
+      "end_timestamp": "2026-01-12T07:13:51",
+      "duration": 831.4,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "85252ed3-0511-43e5-8e50-e6a7c644556b",
+      "slot_id": "flight",
+      "plan_chunk": "Flight to client city, work on laptop during flight",
+      "matched_scenarios": [
+        "On a screen (phone/laptop)",
+        "Reading books"
+      ],
+      "video_scenarios": [
+        "jobs related to construction/renovation company\n(Director of work, tiler, plumber, Electrician, Handyman, etc)"
+      ],
+      "main_scene": "mixed",
+      "consolidated_summary": "the character prepares materials, cuts wood and cardboard, and hammers nails.",
+      "start_time": "07:18:51",
+      "end_time": "07:33:26",
+      "start_timestamp": "2026-01-12T07:18:51",
+      "end_timestamp": "2026-01-12T07:33:26",
+      "duration": 875.6,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "16e4a475-acf5-448c-b059-93980af15639",
+      "slot_id": "travel_airport",
+      "plan_chunk": "Taxi to airport, check in and wait at gate",
+      "matched_scenarios": [
+        "Car - commuting, road trip",
+        "Walking on street",
+        "Talking on the phone"
+      ],
+      "video_scenarios": [
+        "Making coffee",
+        "Talking on the phone",
+        "Train",
+        "Walking on street"
+      ],
+      "main_scene": "mixed",
+      "consolidated_summary": "the character makes tea in an apartment, walks outdoors, and takes a train journey.",
+      "start_time": "07:38:26",
+      "end_time": "08:08:26",
+      "start_timestamp": "2026-01-12T07:38:26",
+      "end_timestamp": "2026-01-12T08:08:26",
+      "duration": 1800.13,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "d9f8d3e4-4042-4afe-84dc-25f19b8c0c10",
+      "slot_id": "travel_airport",
+      "plan_chunk": "Taxi to airport, check in and wait at gate",
+      "matched_scenarios": [
+        "Car - commuting, road trip",
+        "Walking on street",
+        "Talking on the phone"
+      ],
+      "video_scenarios": [
+        "Car - commuting, road trip",
+        "Clothes, other shopping",
+        "Talking with friends/housemates"
+      ],
+      "main_scene": "mixed",
+      "consolidated_summary": "the character drives a car, interacts with a woman, gives her a ride, and visits an aquarium with her to observe aquatic life.",
+      "start_time": "08:13:26",
+      "end_time": "08:43:26",
+      "start_timestamp": "2026-01-12T08:13:26",
+      "end_timestamp": "2026-01-12T08:43:26",
+      "duration": 1800.0,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "bebfd0fa-93bc-41a3-886d-e04a3675fc6d",
+      "slot_id": "solo_dinner",
+      "plan_chunk": "Solo dinner at hotel restaurant",
+      "matched_scenarios": [
+        "Eating at a restaurant",
+        "Eating"
+      ],
+      "video_scenarios": [
+        "Eating"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character shops in a store with a woman, they walk around, add juice to tumblers, use their phones, and buy food.",
+      "start_time": "08:48:26",
+      "end_time": "09:10:00",
+      "start_timestamp": "2026-01-12T08:48:26",
+      "end_timestamp": "2026-01-12T09:10:00",
+      "duration": 1294.0,
+      "video_source": "USA",
+      "time_period": "not know"
+    },
+    {
+      "video_uid": "20d62117-8b5f-44b3-b86f-a936e6cdd2c2",
+      "slot_id": "client_meeting",
+      "plan_chunk": "Client site visit and product demo meeting",
+      "matched_scenarios": [
+        "Participating in a meeting",
+        "Working at desk",
+        "Talking to colleagues"
+      ],
+      "video_scenarios": [
+        "Crafting/knitting/sewing/drawing/painting"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character paints in a room, uses a laptop, and has a drink.",
+      "start_time": "09:15:00",
+      "end_time": "09:30:24",
+      "start_timestamp": "2026-01-12T09:15:00",
+      "end_timestamp": "2026-01-12T09:30:24",
+      "duration": 924.33,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "e1f00539-4cf5-449b-b13b-c7ee11a4c0bb",
+      "slot_id": "wake_hotel",
+      "plan_chunk": "Wake up in hotel, quick hygiene and pack bag",
+      "matched_scenarios": [
+        "Daily hygiene",
+        "Cleaning / laundry"
+      ],
+      "video_scenarios": [
+        "Cleaning / laundry",
+        "Daily hygiene",
+        "Talking with family members"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character cares for a woman and arranges an apartment.",
+      "start_time": "09:35:24",
+      "end_time": "09:44:15",
+      "start_timestamp": "2026-01-12T09:35:24",
+      "end_timestamp": "2026-01-12T09:44:15",
+      "duration": 531.0,
+      "video_source": "USA",
+      "time_period": "not know"
+    },
+    {
+      "video_uid": "fdc39d01-44cb-431a-96a1-558ebf4c15ae",
+      "slot_id": "hotel_work",
+      "plan_chunk": "Work from hotel room: follow-up emails and slides",
+      "matched_scenarios": [
+        "Working at desk",
+        "On a screen (phone/laptop)"
+      ],
+      "video_scenarios": [
+        "Cleaning / laundry",
+        "Indoor Navigation (walking)",
+        "On a screen (phone/laptop)"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character organizes belongings in a bedroom/apartment and interacts with a dog.",
+      "start_time": "09:49:15",
+      "end_time": "10:19:15",
+      "start_timestamp": "2026-01-12T09:49:15",
+      "end_timestamp": "2026-01-12T10:19:15",
+      "duration": 1800.0,
+      "video_source": "USA",
+      "time_period": "twilight"
+    },
+    {
+      "video_uid": "5ce0e545-7b31-4905-944c-72823f9b8bac",
+      "slot_id": "wake_hotel",
+      "plan_chunk": "Wake up in hotel, quick hygiene and pack bag",
+      "matched_scenarios": [
+        "Daily hygiene",
+        "Cleaning / laundry"
+      ],
+      "video_scenarios": [
+        "Cleaning / laundry"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character walks around an apartment, picks up containers and clothes, folds clothes, and packs them.",
+      "start_time": "10:24:15",
+      "end_time": "10:36:13",
+      "start_timestamp": "2026-01-12T10:24:15",
+      "end_timestamp": "2026-01-12T10:36:13",
+      "duration": 718.17,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "af72c57c-b242-48b2-8d00-aea29f4e37ac",
+      "slot_id": "travel_airport",
+      "plan_chunk": "Taxi to airport, check in and wait at gate",
+      "matched_scenarios": [
+        "Car - commuting, road trip",
+        "Walking on street",
+        "Talking on the phone"
+      ],
+      "video_scenarios": [
+        "BasketBall",
+        "Car - commuting, road trip",
+        "Going to the park"
+      ],
+      "main_scene": "mixed",
+      "consolidated_summary": "the character plays basketball at a sports park and briefly interacts with others in a car and on the phone.",
+      "start_time": "10:41:13",
+      "end_time": "11:11:13",
+      "start_timestamp": "2026-01-12T10:41:13",
+      "end_timestamp": "2026-01-12T11:11:13",
+      "duration": 1800.03,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "fce8be89-2bdb-4aa1-ac78-97e6ca474270",
+      "slot_id": "flight",
+      "plan_chunk": "Flight to client city, work on laptop during flight",
+      "matched_scenarios": [
+        "On a screen (phone/laptop)",
+        "Reading books"
+      ],
+      "video_scenarios": [
+        "Car mechanic"
+      ],
+      "main_scene": "mixed",
+      "consolidated_summary": "the character fixes, test drives, fuels, sprays, and washes a lawn mower in and around a workshop.",
+      "start_time": "11:16:13",
+      "end_time": "11:32:11",
+      "start_timestamp": "2026-01-12T11:16:13",
+      "end_timestamp": "2026-01-12T11:32:11",
+      "duration": 958.63,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "e8b96d38-718a-4ab9-bfca-0e5d281fc217",
+      "slot_id": "client_meeting",
+      "plan_chunk": "Client site visit and product demo meeting",
+      "matched_scenarios": [
+        "Participating in a meeting",
+        "Working at desk",
+        "Talking to colleagues"
+      ],
+      "video_scenarios": [
+        "Crafting/knitting/sewing/drawing/painting"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character paints a room.",
+      "start_time": "11:37:11",
+      "end_time": "11:52:41",
+      "start_timestamp": "2026-01-12T11:37:11",
+      "end_timestamp": "2026-01-12T11:52:41",
+      "duration": 930.7,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "8e1920f1-8522-4e98-bcb3-d096550e5113",
+      "slot_id": "business_lunch",
+      "plan_chunk": "Business lunch with client team",
+      "matched_scenarios": [
+        "Eating at a restaurant",
+        "Talking to colleagues"
+      ],
+      "video_scenarios": [
+        "Eating at a restaurant"
+      ],
+      "main_scene": "mixed",
+      "consolidated_summary": "the character drives a car, interacts with a lady, and serves a drink.",
+      "start_time": "11:57:41",
+      "end_time": "12:02:33",
+      "start_timestamp": "2026-01-12T11:57:41",
+      "end_timestamp": "2026-01-12T12:02:33",
+      "duration": 292.8,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "a6f99fa0-6ad4-4b1c-b7bd-68d69e708736",
+      "slot_id": "hotel_work",
+      "plan_chunk": "Work from hotel room: follow-up emails and slides",
+      "matched_scenarios": [
+        "Working at desk",
+        "On a screen (phone/laptop)"
+      ],
+      "video_scenarios": [
+        "On a screen (phone/laptop)",
+        "Playing with pets",
+        "Walking the dog / pet"
+      ],
+      "main_scene": "mixed",
+      "consolidated_summary": "the character walks a dog, uses a phone, and spends short periods indoors.",
+      "start_time": "12:07:33",
+      "end_time": "12:27:55",
+      "start_timestamp": "2026-01-12T12:07:33",
+      "end_timestamp": "2026-01-12T12:27:55",
+      "duration": 1222.83,
+      "video_source": "USA",
+      "time_period": "twilight"
+    },
+    {
+      "video_uid": "606a91df-fc77-444e-988d-e0178c83c586",
+      "slot_id": "solo_dinner",
+      "plan_chunk": "Solo dinner at hotel restaurant",
+      "matched_scenarios": [
+        "Eating at a restaurant",
+        "Eating"
+      ],
+      "video_scenarios": [
+        "Eating"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character is in a room/house, interacts with others (X, S, A, B), uses a phone, opens cabinets, and eats.",
+      "start_time": "12:32:55",
+      "end_time": "12:52:26",
+      "start_timestamp": "2026-01-12T12:32:55",
+      "end_timestamp": "2026-01-12T12:52:26",
+      "duration": 1171.77,
+      "video_source": "USA",
+      "time_period": "nighttime"
+    },
+    {
+      "video_uid": "ec1b4e46-c533-4b77-8f80-533dd5934d14",
+      "slot_id": "leisure_early_sleep",
+      "plan_chunk": "Early sleep in unfamiliar hotel room",
+      "matched_scenarios": [
+        "Sleeping",
+        "Daily hygiene"
+      ],
+      "video_scenarios": [
+        "Daily hygiene",
+        "Playing cards"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character plays cards with a woman in an apartment.",
+      "start_time": "12:57:26",
+      "end_time": "13:27:26",
+      "start_timestamp": "2026-01-12T12:57:26",
+      "end_timestamp": "2026-01-12T13:27:26",
+      "duration": 1800.13,
+      "video_source": "USA",
+      "time_period": "nighttime"
+    },
+    {
+      "video_uid": "fc70a3dd-06aa-45f1-8f9e-2991ed1ac33e",
+      "slot_id": "wake_hotel",
+      "plan_chunk": "Wake up in hotel, quick hygiene and pack bag",
+      "matched_scenarios": [
+        "Daily hygiene",
+        "Cleaning / laundry"
+      ],
+      "video_scenarios": [
+        "Cleaning / laundry"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character cleans the apartment, arranges the kitchen, and interacts with children.",
+      "start_time": "13:32:26",
+      "end_time": "13:48:23",
+      "start_timestamp": "2026-01-12T13:32:26",
+      "end_timestamp": "2026-01-12T13:48:23",
+      "duration": 957.53,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "727bea1a-b2c5-4da7-a207-e8810109c44c",
+      "slot_id": "travel_airport",
+      "plan_chunk": "Taxi to airport, check in and wait at gate",
+      "matched_scenarios": [
+        "Car - commuting, road trip",
+        "Walking on street",
+        "Talking on the phone"
+      ],
+      "video_scenarios": [
+        "Car - commuting, road trip",
+        "Playing cards",
+        "Talking with family members"
+      ],
+      "main_scene": "mixed",
+      "consolidated_summary": "the character drives, parks, plays ball, converses with others, and plays cards.",
+      "start_time": "13:53:23",
+      "end_time": "14:37:52",
+      "start_timestamp": "2026-01-12T13:53:23",
+      "end_timestamp": "2026-01-12T14:37:52",
+      "duration": 2669.3,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "9ae0a813-9874-45a9-bdea-3add693f7937",
+      "slot_id": "flight",
+      "plan_chunk": "Flight to client city, work on laptop during flight",
+      "matched_scenarios": [
+        "On a screen (phone/laptop)",
+        "Reading books"
+      ],
+      "video_scenarios": [
+        "Indoor Navigation (walking)",
+        "Walking the dog / pet"
+      ],
+      "main_scene": "mixed",
+      "consolidated_summary": "the character walks dogs X and Y around a neighborhood, cleans up after them, and then uses a phone and makes a bed in an apartment.",
+      "start_time": "14:42:52",
+      "end_time": "14:56:33",
+      "start_timestamp": "2026-01-12T14:42:52",
+      "end_timestamp": "2026-01-12T14:56:33",
+      "duration": 821.67,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "a723d89c-78b7-4325-b18e-b8a4436a27ca",
+      "slot_id": "client_meeting",
+      "plan_chunk": "Client site visit and product demo meeting",
+      "matched_scenarios": [
+        "Participating in a meeting",
+        "Working at desk",
+        "Talking to colleagues"
+      ],
+      "video_scenarios": [
+        "Crafting/knitting/sewing/drawing/painting"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character draws in a room using various tools and paper.",
+      "start_time": "15:01:33",
+      "end_time": "15:17:04",
+      "start_timestamp": "2026-01-12T15:01:33",
+      "end_timestamp": "2026-01-12T15:17:04",
+      "duration": 931.4,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "0e0a1ed9-d7ca-4da0-9e65-b8096cba966e",
+      "slot_id": "business_lunch",
+      "plan_chunk": "Business lunch with client team",
+      "matched_scenarios": [
+        "Eating at a restaurant",
+        "Talking to colleagues"
+      ],
+      "video_scenarios": [
+        "jobs related to construction/renovation company\n(Director of work, tiler, plumber, Electrician, Handyman, etc)"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character repairs a car, changes the oil filter, and refuels it.",
+      "start_time": "15:22:04",
+      "end_time": "15:37:35",
+      "start_timestamp": "2026-01-12T15:22:04",
+      "end_timestamp": "2026-01-12T15:37:35",
+      "duration": 931.43,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "43d83207-9c41-46aa-90c9-e30a6194be11",
+      "slot_id": "hotel_work",
+      "plan_chunk": "Work from hotel room: follow-up emails and slides",
+      "matched_scenarios": [
+        "Working at desk",
+        "On a screen (phone/laptop)"
+      ],
+      "video_scenarios": [
+        "Cooking",
+        "On a screen (phone/laptop)"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character packs items, interacts with others, fixes household items, prepares food in the kitchen, and uses a phone.",
+      "start_time": "15:42:35",
+      "end_time": "16:08:16",
+      "start_timestamp": "2026-01-12T15:42:35",
+      "end_timestamp": "2026-01-12T16:08:16",
+      "duration": 1541.87,
+      "video_source": "USA",
+      "time_period": "twilight"
+    },
+    {
+      "video_uid": "6cc6e4e8-ebf6-454c-97e9-79a7ad6058a0",
+      "slot_id": "solo_dinner",
+      "plan_chunk": "Solo dinner at hotel restaurant",
+      "matched_scenarios": [
+        "Eating at a restaurant",
+        "Eating"
+      ],
+      "video_scenarios": [
+        "Eating"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character interacts with a man and a child while eating in an apartment dining area.",
+      "start_time": "16:13:16",
+      "end_time": "16:29:23",
+      "start_timestamp": "2026-01-12T16:13:16",
+      "end_timestamp": "2026-01-12T16:29:23",
+      "duration": 967.33,
+      "video_source": "USA",
+      "time_period": "nighttime"
+    },
+    {
+      "video_uid": "7e3989da-be99-4d82-8b03-844daed5dcbc",
+      "slot_id": "leisure_early_sleep",
+      "plan_chunk": "Early sleep in unfamiliar hotel room",
+      "matched_scenarios": [
+        "Sleeping",
+        "Daily hygiene"
+      ],
+      "video_scenarios": [
+        "Cleaning / laundry",
+        "Listening to music",
+        "On a screen (phone/laptop)",
+        "Talking with friends/housemates"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character organizes cutleries and utensils in a kitchen, washes dishes, takes water, converses with others, arranges items in a bedroom, and removes a pair from a poster strip in a living room within an apartment.",
+      "start_time": "16:34:23",
+      "end_time": "16:48:42",
+      "start_timestamp": "2026-01-12T16:34:23",
+      "end_timestamp": "2026-01-12T16:48:42",
+      "duration": 859.13,
+      "video_source": "USA",
+      "time_period": "nighttime"
+    },
+    {
+      "video_uid": "86c459ad-9f05-4e1c-9413-e545d0c9ce7f",
+      "slot_id": "wake_hotel",
+      "plan_chunk": "Wake up in hotel, quick hygiene and pack bag",
+      "matched_scenarios": [
+        "Daily hygiene",
+        "Cleaning / laundry"
+      ],
+      "video_scenarios": [
+        "Cleaning / laundry"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character performs household activities within an apartment, including doing laundry, interacting with objects, and interacting with a person.",
+      "start_time": "16:53:42",
+      "end_time": "17:10:50",
+      "start_timestamp": "2026-01-12T16:53:42",
+      "end_timestamp": "2026-01-12T17:10:50",
+      "duration": 1028.7,
+      "video_source": "USA",
+      "time_period": "daytime"
+    }
+  ],
+  "statistics": {
+    "clip_count": 25,
+    "total_duration": 29459.88,
+    "total_duration_hours": 8.18,
+    "scene_distribution": {
+      "mixed": 10,
+      "indoor": 15
+    },
+    "selected_videos": [
+      "c67cb1da-90ac-4da8-af17-4f8b77da9b9d",
+      "85252ed3-0511-43e5-8e50-e6a7c644556b",
+      "16e4a475-acf5-448c-b059-93980af15639",
+      "d9f8d3e4-4042-4afe-84dc-25f19b8c0c10",
+      "bebfd0fa-93bc-41a3-886d-e04a3675fc6d",
+      "20d62117-8b5f-44b3-b86f-a936e6cdd2c2",
+      "e1f00539-4cf5-449b-b13b-c7ee11a4c0bb",
+      "fdc39d01-44cb-431a-96a1-558ebf4c15ae",
+      "5ce0e545-7b31-4905-944c-72823f9b8bac",
+      "af72c57c-b242-48b2-8d00-aea29f4e37ac",
+      "fce8be89-2bdb-4aa1-ac78-97e6ca474270",
+      "e8b96d38-718a-4ab9-bfca-0e5d281fc217",
+      "8e1920f1-8522-4e98-bcb3-d096550e5113",
+      "a6f99fa0-6ad4-4b1c-b7bd-68d69e708736",
+      "606a91df-fc77-444e-988d-e0178c83c586",
+      "ec1b4e46-c533-4b77-8f80-533dd5934d14",
+      "fc70a3dd-06aa-45f1-8f9e-2991ed1ac33e",
+      "727bea1a-b2c5-4da7-a207-e8810109c44c",
+      "9ae0a813-9874-45a9-bdea-3add693f7937",
+      "a723d89c-78b7-4325-b18e-b8a4436a27ca",
+      "0e0a1ed9-d7ca-4da0-9e65-b8096cba966e",
+      "43d83207-9c41-46aa-90c9-e30a6194be11",
+      "6cc6e4e8-ebf6-454c-97e9-79a7ad6058a0",
+      "7e3989da-be99-4d82-8b03-844daed5dcbc",
+      "86c459ad-9f05-4e1c-9413-e545d0c9ce7f"
+    ],
+    "unique_scenarios": [
+      "BasketBall",
+      "Car - commuting, road trip",
+      "Car mechanic",
+      "Cleaning / laundry",
+      "Clothes, other shopping",
+      "Cooking",
+      "Crafting/knitting/sewing/drawing/painting",
+      "Daily hygiene",
+      "Eating",
+      "Eating at a restaurant",
+      "Going to the park",
+      "Indoor Navigation (walking)",
+      "Listening to music",
+      "Making coffee",
+      "On a screen (phone/laptop)",
+      "Playing cards",
+      "Playing with pets",
+      "Talking on the phone",
+      "Talking with family members",
+      "Talking with friends/housemates",
+      "Train",
+      "Walking on street",
+      "Walking the dog / pet",
+      "jobs related to construction/renovation company\n(Director of work, tiler, plumber, Electrician, Handyman, etc)"
+    ]
+  }
+}

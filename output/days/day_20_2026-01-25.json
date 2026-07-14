@@ -1,0 +1,565 @@
+{
+  "metadata": {
+    "persona_id": "egotailor_usa_enfp",
+    "day_index": 20,
+    "calendar_date": "2026-01-25",
+    "day_of_week": "Sunday",
+    "is_weekend": true,
+    "target_seconds": 28800,
+    "location": "USA",
+    "day_theme": "sunday_gaming_cooking",
+    "anomaly_events": [],
+    "time_variations": {
+      "wake_jitter_min": 21,
+      "commute_jitter_min": 0,
+      "exercise_jitter_min": 0
+    }
+  },
+  "daily_plan": [
+    "Continue gaming, try new game mode (19:00-21:00)",
+    "Cook comfort food for dinner (17:00-18:30)",
+    "Online multiplayer with friends (14:30-16:30)",
+    "Wind down with music playlist (21:30-22:30)",
+    "Brunch and check gaming news online (10:00-11:00)",
+    "Long gaming session: new RPG release (11:30-14:00)"
+  ],
+  "memory_content": [
+    {
+      "video_uid": "0fcf23a0-fc53-4378-9a99-18c4f109f659",
+      "slot_id": "home_cooking",
+      "plan_chunk": "Cook comfort food for dinner",
+      "matched_scenarios": [
+        "Cooking"
+      ],
+      "video_scenarios": [
+        "Cooking"
+      ],
+      "main_scene": "mixed",
+      "consolidated_summary": "the character prepares food in the kitchen and walks outside.",
+      "start_time": "07:00:00",
+      "end_time": "07:07:06",
+      "start_timestamp": "2026-01-25T07:00:00",
+      "end_timestamp": "2026-01-25T07:07:06",
+      "duration": 426.33,
+      "video_source": "USA",
+      "time_period": "twilight"
+    },
+    {
+      "video_uid": "24ef2f0c-9301-4158-84af-c1d5b7c6ed8a",
+      "slot_id": "leisure_music",
+      "plan_chunk": "Wind down with music playlist",
+      "matched_scenarios": [
+        "Listening to music"
+      ],
+      "video_scenarios": [
+        "Cleaning / laundry",
+        "Eating",
+        "Listening to music",
+        "On a screen (phone/laptop)"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character performs household chores in an apartment, including arranging clothes, cleaning, preparing a meal, and washing dishes.",
+      "start_time": "07:12:06",
+      "end_time": "07:42:06",
+      "start_timestamp": "2026-01-25T07:12:06",
+      "end_timestamp": "2026-01-25T07:42:06",
+      "duration": 1800.13,
+      "video_source": "USA",
+      "time_period": "nighttime"
+    },
+    {
+      "video_uid": "994616c8-63b0-47bd-a526-0680f4acff9e",
+      "slot_id": "wake_home",
+      "plan_chunk": "Brunch and check gaming news online",
+      "matched_scenarios": [
+        "Cooking",
+        "On a screen (phone/laptop)"
+      ],
+      "video_scenarios": [
+        "Cooking"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character cooks a meal in the kitchen.",
+      "start_time": "07:47:06",
+      "end_time": "08:17:06",
+      "start_timestamp": "2026-01-25T07:47:06",
+      "end_timestamp": "2026-01-25T08:17:06",
+      "duration": 1800.0,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "f8b4b0f6-b6cd-4051-bcb6-7b994689ddf5",
+      "slot_id": "gaming_evening",
+      "plan_chunk": "Continue gaming, try new game mode",
+      "matched_scenarios": [
+        "Playing games / video games",
+        "Watching tv"
+      ],
+      "video_scenarios": [
+        "Playing games / video games"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character plays a video game indoors.",
+      "start_time": "08:22:06",
+      "end_time": "08:30:59",
+      "start_timestamp": "2026-01-25T08:22:06",
+      "end_timestamp": "2026-01-25T08:30:59",
+      "duration": 533.87,
+      "video_source": "USA",
+      "time_period": "nighttime"
+    },
+    {
+      "video_uid": "86e38202-ef01-4bee-8e82-87313fd6c0b1",
+      "slot_id": "wake_home",
+      "plan_chunk": "Brunch and check gaming news online",
+      "matched_scenarios": [
+        "Cooking",
+        "On a screen (phone/laptop)"
+      ],
+      "video_scenarios": [
+        "Cooking",
+        "Talking with family members"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character interacts with a man in a kitchen, preparing a meal.",
+      "start_time": "08:35:59",
+      "end_time": "09:05:59",
+      "start_timestamp": "2026-01-25T08:35:59",
+      "end_timestamp": "2026-01-25T09:05:59",
+      "duration": 1800.13,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "03d6e9bf-389a-4828-bf82-0ef6decf7671",
+      "slot_id": "wake_home",
+      "plan_chunk": "Brunch and check gaming news online",
+      "matched_scenarios": [
+        "Cooking",
+        "On a screen (phone/laptop)"
+      ],
+      "video_scenarios": [
+        "Cooking",
+        "Talking with friends/housemates"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character interacts with others while preparing food in a kitchen within an apartment.",
+      "start_time": "09:10:59",
+      "end_time": "09:40:59",
+      "start_timestamp": "2026-01-25T09:10:59",
+      "end_timestamp": "2026-01-25T09:40:59",
+      "duration": 1800.17,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "bdeb0df9-2983-41bb-ba27-c431d9ef3163",
+      "slot_id": "home_cooking",
+      "plan_chunk": "Cook comfort food for dinner",
+      "matched_scenarios": [
+        "Cooking"
+      ],
+      "video_scenarios": [
+        "Cleaning / laundry",
+        "Cooking",
+        "Household management - caring for kids",
+        "Ironing"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character interacts with a woman and baby, cleans, irons clothes, and prepares a meal in a kitchen.",
+      "start_time": "09:45:59",
+      "end_time": "10:15:59",
+      "start_timestamp": "2026-01-25T09:45:59",
+      "end_timestamp": "2026-01-25T10:15:59",
+      "duration": 1800.13,
+      "video_source": "USA",
+      "time_period": "twilight"
+    },
+    {
+      "video_uid": "f9d6b7d1-5886-4189-8f71-69e6130fa49e",
+      "slot_id": "leisure_music",
+      "plan_chunk": "Wind down with music playlist",
+      "matched_scenarios": [
+        "Listening to music"
+      ],
+      "video_scenarios": [
+        "Listening to music"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character covers with a blanket on a bed and raises a piece of clothing in a room.",
+      "start_time": "10:20:59",
+      "end_time": "10:27:10",
+      "start_timestamp": "2026-01-25T10:20:59",
+      "end_timestamp": "2026-01-25T10:27:10",
+      "duration": 371.77,
+      "video_source": "USA",
+      "time_period": "nighttime"
+    },
+    {
+      "video_uid": "e3ee87c2-0e48-49cd-93e3-1e39e61a8543",
+      "slot_id": "gaming_evening",
+      "plan_chunk": "Continue gaming, try new game mode",
+      "matched_scenarios": [
+        "Playing games / video games",
+        "Watching tv"
+      ],
+      "video_scenarios": [
+        "Playing games / video games"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character plays video games and watches TV/movies in a room.",
+      "start_time": "10:32:10",
+      "end_time": "11:02:10",
+      "start_timestamp": "2026-01-25T10:32:10",
+      "end_timestamp": "2026-01-25T11:02:10",
+      "duration": 1800.03,
+      "video_source": "USA",
+      "time_period": "nighttime"
+    },
+    {
+      "video_uid": "e402df54-0a64-424e-a7e6-3e68b18a761c",
+      "slot_id": "home_cooking",
+      "plan_chunk": "Cook comfort food for dinner",
+      "matched_scenarios": [
+        "Cooking"
+      ],
+      "video_scenarios": [
+        "Cooking",
+        "Playing with pets"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character plays, uses the phone, does chores around the house, and prepares snacks.",
+      "start_time": "11:07:10",
+      "end_time": "11:37:10",
+      "start_timestamp": "2026-01-25T11:07:10",
+      "end_timestamp": "2026-01-25T11:37:10",
+      "duration": 1800.13,
+      "video_source": "USA",
+      "time_period": "not know"
+    },
+    {
+      "video_uid": "22930bd6-58d7-46bf-acb8-a3261cbdfa46",
+      "slot_id": "online_gaming",
+      "plan_chunk": "Online multiplayer with friends",
+      "matched_scenarios": [
+        "Playing games / video games",
+        "Video call"
+      ],
+      "video_scenarios": [
+        "Playing games / video games"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character plays a video game and converses with others in a living room.",
+      "start_time": "11:42:10",
+      "end_time": "11:50:47",
+      "start_timestamp": "2026-01-25T11:42:10",
+      "end_timestamp": "2026-01-25T11:50:47",
+      "duration": 517.67,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "f7936fbc-41e4-4232-8401-ee547668be39",
+      "slot_id": "leisure_music",
+      "plan_chunk": "Wind down with music playlist",
+      "matched_scenarios": [
+        "Listening to music"
+      ],
+      "video_scenarios": [
+        "Camp setup/pack-up/chores",
+        "Cleaning / laundry",
+        "Listening to music"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character cleans and organizes an apartment, focusing on bathroom areas, including arranging pills, cleaning fixtures, and arranging toiletries.",
+      "start_time": "11:55:47",
+      "end_time": "12:17:14",
+      "start_timestamp": "2026-01-25T11:55:47",
+      "end_timestamp": "2026-01-25T12:17:14",
+      "duration": 1287.5,
+      "video_source": "USA",
+      "time_period": "nighttime"
+    },
+    {
+      "video_uid": "016bfe72-74ef-4956-9cc9-7a7ad2f6ab48",
+      "slot_id": "wake_home",
+      "plan_chunk": "Brunch and check gaming news online",
+      "matched_scenarios": [
+        "Cooking",
+        "On a screen (phone/laptop)"
+      ],
+      "video_scenarios": [
+        "Cleaning / laundry",
+        "Cooking"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character prepares a meal, interacts with children, and cleans the kitchen in an apartment.",
+      "start_time": "12:22:14",
+      "end_time": "12:52:14",
+      "start_timestamp": "2026-01-25T12:22:14",
+      "end_timestamp": "2026-01-25T12:52:14",
+      "duration": 1800.13,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "149d7707-b01d-4ef9-8b51-eee8ac12a716",
+      "slot_id": "gaming_session",
+      "plan_chunk": "Long gaming session: new RPG release",
+      "matched_scenarios": [
+        "Playing games / video games"
+      ],
+      "video_scenarios": [
+        "Playing games / video games"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character plays video games in a house/room, sometimes while person X performs other actions.",
+      "start_time": "12:57:14",
+      "end_time": "13:27:14",
+      "start_timestamp": "2026-01-25T12:57:14",
+      "end_timestamp": "2026-01-25T13:27:14",
+      "duration": 1800.03,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "45924fbb-ce59-4e66-9b56-5eaeb63b85d3",
+      "slot_id": "gaming_evening",
+      "plan_chunk": "Continue gaming, try new game mode",
+      "matched_scenarios": [
+        "Playing games / video games",
+        "Watching tv"
+      ],
+      "video_scenarios": [
+        "Playing games / video games"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character plays a board game with a man in an apartment.",
+      "start_time": "13:32:14",
+      "end_time": "13:36:08",
+      "start_timestamp": "2026-01-25T13:32:14",
+      "end_timestamp": "2026-01-25T13:36:08",
+      "duration": 234.6,
+      "video_source": "USA",
+      "time_period": "nighttime"
+    },
+    {
+      "video_uid": "1a327b0c-b78b-4ae2-add0-49334bccddcd",
+      "slot_id": "home_cooking",
+      "plan_chunk": "Cook comfort food for dinner",
+      "matched_scenarios": [
+        "Cooking"
+      ],
+      "video_scenarios": [
+        "Cooking"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character interacts with a woman and baby, prepares food, and converses in an apartment.",
+      "start_time": "13:41:08",
+      "end_time": "14:11:08",
+      "start_timestamp": "2026-01-25T13:41:08",
+      "end_timestamp": "2026-01-25T14:11:08",
+      "duration": 1800.13,
+      "video_source": "USA",
+      "time_period": "twilight"
+    },
+    {
+      "video_uid": "58c8a4e6-67cb-4fda-85c8-a0806ed8c6f3",
+      "slot_id": "online_gaming",
+      "plan_chunk": "Online multiplayer with friends",
+      "matched_scenarios": [
+        "Playing games / video games",
+        "Video call"
+      ],
+      "video_scenarios": [
+        "Playing games / video games"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character plays a video game with a woman in his apartment.",
+      "start_time": "14:16:08",
+      "end_time": "14:25:50",
+      "start_timestamp": "2026-01-25T14:16:08",
+      "end_timestamp": "2026-01-25T14:25:50",
+      "duration": 582.83,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "23164be8-8b5e-492f-8417-a56f4f44d9db",
+      "slot_id": "leisure_music",
+      "plan_chunk": "Wind down with music playlist",
+      "matched_scenarios": [
+        "Listening to music"
+      ],
+      "video_scenarios": [
+        "Camp setup/pack-up/chores",
+        "Cleaning / laundry",
+        "Listening to music",
+        "On a screen (phone/laptop)"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character arranges, washes dishes, cleans the kitchen sink, and organizes items in the apartment.",
+      "start_time": "14:30:50",
+      "end_time": "15:00:50",
+      "start_timestamp": "2026-01-25T14:30:50",
+      "end_timestamp": "2026-01-25T15:00:50",
+      "duration": 1800.13,
+      "video_source": "USA",
+      "time_period": "nighttime"
+    },
+    {
+      "video_uid": "3c35b545-ec1b-4b0c-b5aa-27e94916b931",
+      "slot_id": "wake_home",
+      "plan_chunk": "Brunch and check gaming news online",
+      "matched_scenarios": [
+        "Cooking",
+        "On a screen (phone/laptop)"
+      ],
+      "video_scenarios": [
+        "Cleaning / laundry",
+        "Cooking"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character descends stairs and removes mushrooms from a microwave in an apartment.",
+      "start_time": "15:05:50",
+      "end_time": "15:08:53",
+      "start_timestamp": "2026-01-25T15:05:50",
+      "end_timestamp": "2026-01-25T15:08:53",
+      "duration": 183.93,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "bbe5ecd3-1cca-4417-b3de-25afb8383950",
+      "slot_id": "gaming_session",
+      "plan_chunk": "Long gaming session: new RPG release",
+      "matched_scenarios": [
+        "Playing games / video games"
+      ],
+      "video_scenarios": [
+        "Playing games / video games"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character plays games with a woman in an apartment.",
+      "start_time": "15:13:53",
+      "end_time": "15:33:51",
+      "start_timestamp": "2026-01-25T15:13:53",
+      "end_timestamp": "2026-01-25T15:33:51",
+      "duration": 1198.47,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "929a6fbb-3fda-45af-95bf-144d851761f4",
+      "slot_id": "gaming_evening",
+      "plan_chunk": "Continue gaming, try new game mode",
+      "matched_scenarios": [
+        "Playing games / video games",
+        "Watching tv"
+      ],
+      "video_scenarios": [
+        "Playing games / video games"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character plays video games in a room, interacts with a cat, and briefly uses a phone.",
+      "start_time": "15:38:51",
+      "end_time": "16:08:51",
+      "start_timestamp": "2026-01-25T15:38:51",
+      "end_timestamp": "2026-01-25T16:08:51",
+      "duration": 1800.03,
+      "video_source": "USA",
+      "time_period": "nighttime"
+    },
+    {
+      "video_uid": "d6ade77d-f6a8-4735-958c-bd66537d0baf",
+      "slot_id": "home_cooking",
+      "plan_chunk": "Cook comfort food for dinner",
+      "matched_scenarios": [
+        "Cooking"
+      ],
+      "video_scenarios": [
+        "jobs related to construction/renovation company\n(Director of work, tiler, plumber, Electrician, Handyman, etc)"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character repairs a break disc and welds a metal bar in a workshop.",
+      "start_time": "16:13:51",
+      "end_time": "16:25:52",
+      "start_timestamp": "2026-01-25T16:13:51",
+      "end_timestamp": "2026-01-25T16:25:52",
+      "duration": 721.53,
+      "video_source": "USA",
+      "time_period": "not know"
+    },
+    {
+      "video_uid": "b7f0df69-58fe-4532-8371-d478d9316320",
+      "slot_id": "online_gaming",
+      "plan_chunk": "Online multiplayer with friends",
+      "matched_scenarios": [
+        "Playing games / video games",
+        "Video call"
+      ],
+      "video_scenarios": [
+        "Playing games / video games"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character plays a video game in a living room.",
+      "start_time": "16:30:52",
+      "end_time": "17:00:52",
+      "start_timestamp": "2026-01-25T16:30:52",
+      "end_timestamp": "2026-01-25T17:00:52",
+      "duration": 1800.03,
+      "video_source": "USA",
+      "time_period": "daytime"
+    }
+  ],
+  "statistics": {
+    "clip_count": 23,
+    "total_duration": 29459.7,
+    "total_duration_hours": 8.18,
+    "scene_distribution": {
+      "mixed": 1,
+      "indoor": 22
+    },
+    "selected_videos": [
+      "0fcf23a0-fc53-4378-9a99-18c4f109f659",
+      "24ef2f0c-9301-4158-84af-c1d5b7c6ed8a",
+      "994616c8-63b0-47bd-a526-0680f4acff9e",
+      "f8b4b0f6-b6cd-4051-bcb6-7b994689ddf5",
+      "86e38202-ef01-4bee-8e82-87313fd6c0b1",
+      "03d6e9bf-389a-4828-bf82-0ef6decf7671",
+      "bdeb0df9-2983-41bb-ba27-c431d9ef3163",
+      "f9d6b7d1-5886-4189-8f71-69e6130fa49e",
+      "e3ee87c2-0e48-49cd-93e3-1e39e61a8543",
+      "e402df54-0a64-424e-a7e6-3e68b18a761c",
+      "22930bd6-58d7-46bf-acb8-a3261cbdfa46",
+      "f7936fbc-41e4-4232-8401-ee547668be39",
+      "016bfe72-74ef-4956-9cc9-7a7ad2f6ab48",
+      "149d7707-b01d-4ef9-8b51-eee8ac12a716",
+      "45924fbb-ce59-4e66-9b56-5eaeb63b85d3",
+      "1a327b0c-b78b-4ae2-add0-49334bccddcd",
+      "58c8a4e6-67cb-4fda-85c8-a0806ed8c6f3",
+      "23164be8-8b5e-492f-8417-a56f4f44d9db",
+      "3c35b545-ec1b-4b0c-b5aa-27e94916b931",
+      "bbe5ecd3-1cca-4417-b3de-25afb8383950",
+      "929a6fbb-3fda-45af-95bf-144d851761f4",
+      "d6ade77d-f6a8-4735-958c-bd66537d0baf",
+      "b7f0df69-58fe-4532-8371-d478d9316320"
+    ],
+    "unique_scenarios": [
+      "Camp setup/pack-up/chores",
+      "Cleaning / laundry",
+      "Cooking",
+      "Eating",
+      "Household management - caring for kids",
+      "Ironing",
+      "Listening to music",
+      "On a screen (phone/laptop)",
+      "Playing games / video games",
+      "Playing with pets",
+      "Talking with family members",
+      "Talking with friends/housemates",
+      "jobs related to construction/renovation company\n(Director of work, tiler, plumber, Electrician, Handyman, etc)"
+    ]
+  }
+}

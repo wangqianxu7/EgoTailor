@@ -1,0 +1,518 @@
+{
+  "metadata": {
+    "persona_id": "egotailor_usa_enfp",
+    "day_index": 19,
+    "calendar_date": "2026-01-24",
+    "day_of_week": "Saturday",
+    "is_weekend": true,
+    "target_seconds": 28800,
+    "location": "USA",
+    "day_theme": "saturday_outdoor_expedition",
+    "anomaly_events": [],
+    "time_variations": {
+      "wake_jitter_min": 3,
+      "commute_jitter_min": 5,
+      "exercise_jitter_min": 8
+    }
+  },
+  "daily_plan": [
+    "Prepare for full-day outdoor expedition (07:30-08:30)",
+    "Full-day outdoor adventure: hiking and nature photography (09:00-12:00)",
+    "Eat at outdoor hawker center (12:15-13:00)",
+    "Explore new neighborhood on foot, visit local shops (13:30-16:30)",
+    "Bus ride home, review photos on phone (17:00-18:00)",
+    "Cook hearty dinner, share photos with friends (18:30-20:00)"
+  ],
+  "memory_content": [
+    {
+      "video_uid": "5cccdec3-ebbc-40e0-a714-b4b6acd387b3",
+      "slot_id": "outdoor_afternoon",
+      "plan_chunk": "Explore new neighborhood on foot, visit local shops",
+      "matched_scenarios": [
+        "Walking on street",
+        "Tourism",
+        "Clothes, other shopping"
+      ],
+      "video_scenarios": [
+        "Clothes, other shopping"
+      ],
+      "main_scene": "mixed",
+      "consolidated_summary": "the character interacts with others, takes photos, and walks around a shopping mall.",
+      "start_time": "07:00:00",
+      "end_time": "07:26:52",
+      "start_timestamp": "2026-01-24T07:00:00",
+      "end_timestamp": "2026-01-24T07:26:52",
+      "duration": 1612.48,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "41f268d1-c4a8-4add-abf7-3785f13cd4e7",
+      "slot_id": "outdoor_afternoon",
+      "plan_chunk": "Explore new neighborhood on foot, visit local shops",
+      "matched_scenarios": [
+        "Walking on street",
+        "Tourism",
+        "Clothes, other shopping"
+      ],
+      "video_scenarios": [
+        "Doing yardwork / shoveling snow"
+      ],
+      "main_scene": "outdoor",
+      "consolidated_summary": "the character gardens, removes weeds, and handles construction materials outside the house.",
+      "start_time": "07:31:52",
+      "end_time": "07:46:47",
+      "start_timestamp": "2026-01-24T07:31:52",
+      "end_timestamp": "2026-01-24T07:46:47",
+      "duration": 895.73,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "5f28f61c-2eb4-4cc1-a6dd-010ef950670c",
+      "slot_id": "commute_home",
+      "plan_chunk": "Bus ride home, review photos on phone",
+      "matched_scenarios": [
+        "Bus",
+        "On a screen (phone/laptop)"
+      ],
+      "video_scenarios": [
+        "Indoor Navigation (walking)",
+        "On a screen (phone/laptop)",
+        "Walking the dog / pet"
+      ],
+      "main_scene": "mixed",
+      "consolidated_summary": "the character walks the dog outdoors, goes home, and sleeps.",
+      "start_time": "07:51:47",
+      "end_time": "08:14:24",
+      "start_timestamp": "2026-01-24T07:51:47",
+      "end_timestamp": "2026-01-24T08:14:24",
+      "duration": 1357.6,
+      "video_source": "USA",
+      "time_period": "twilight"
+    },
+    {
+      "video_uid": "97217d34-fcc3-4acb-bd37-f0b14ca588f5",
+      "slot_id": "commute_home",
+      "plan_chunk": "Bus ride home, review photos on phone",
+      "matched_scenarios": [
+        "Bus",
+        "On a screen (phone/laptop)"
+      ],
+      "video_scenarios": [
+        "Cleaning / laundry",
+        "On a screen (phone/laptop)"
+      ],
+      "main_scene": "mixed",
+      "consolidated_summary": "the character moves items in and out of a house and car, organizes household items, and uses a laptop and phone.",
+      "start_time": "08:19:24",
+      "end_time": "08:49:24",
+      "start_timestamp": "2026-01-24T08:19:24",
+      "end_timestamp": "2026-01-24T08:49:24",
+      "duration": 1800.0,
+      "video_source": "USA",
+      "time_period": "twilight"
+    },
+    {
+      "video_uid": "9198b9a4-8d8f-4ba6-9924-4c86982d890a",
+      "slot_id": "wake_home",
+      "plan_chunk": "Prepare for full-day outdoor expedition",
+      "matched_scenarios": [
+        "Daily hygiene",
+        "Cooking"
+      ],
+      "video_scenarios": [
+        "Cooking"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character prepares shawarma and other food items in a kitchen, involving chopping vegetables, wrapping fillings, operating kitchen appliances, and using a mobile phone.",
+      "start_time": "08:54:24",
+      "end_time": "09:54:24",
+      "start_timestamp": "2026-01-24T08:54:24",
+      "end_timestamp": "2026-01-24T09:54:24",
+      "duration": 3600.0,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "4930cced-9b84-464e-88ce-3990188efed6",
+      "slot_id": "wake_home",
+      "plan_chunk": "Prepare for full-day outdoor expedition",
+      "matched_scenarios": [
+        "Daily hygiene",
+        "Cooking"
+      ],
+      "video_scenarios": [
+        "Cooking"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character interacts with others while cooking and doing chores in a kitchen.",
+      "start_time": "09:59:24",
+      "end_time": "10:29:24",
+      "start_timestamp": "2026-01-24T09:59:24",
+      "end_timestamp": "2026-01-24T10:29:24",
+      "duration": 1800.13,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "1c0ba820-4a30-47dd-852d-c30685c7051e",
+      "slot_id": "wake_home",
+      "plan_chunk": "Prepare for full-day outdoor expedition",
+      "matched_scenarios": [
+        "Daily hygiene",
+        "Cooking"
+      ],
+      "video_scenarios": [
+        "Cleaning / laundry",
+        "Cooking"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character plays with a dog, prepares food, cleans the apartment, and interacts with a man.",
+      "start_time": "10:34:24",
+      "end_time": "11:02:49",
+      "start_timestamp": "2026-01-24T10:34:24",
+      "end_timestamp": "2026-01-24T11:02:49",
+      "duration": 1705.87,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "00c450a5-49d0-4647-a45c-bf214cea169d",
+      "slot_id": "wake_home",
+      "plan_chunk": "Prepare for full-day outdoor expedition",
+      "matched_scenarios": [
+        "Daily hygiene",
+        "Cooking"
+      ],
+      "video_scenarios": [
+        "Cooking"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character prepares a meal in the kitchen.",
+      "start_time": "11:07:49",
+      "end_time": "11:37:49",
+      "start_timestamp": "2026-01-24T11:07:49",
+      "end_timestamp": "2026-01-24T11:37:49",
+      "duration": 1800.0,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "80a88fcb-8f4e-470d-bdff-1907852b49aa",
+      "slot_id": "wake_home",
+      "plan_chunk": "Prepare for full-day outdoor expedition",
+      "matched_scenarios": [
+        "Daily hygiene",
+        "Cooking"
+      ],
+      "video_scenarios": [
+        "Cleaning / laundry",
+        "Cooking",
+        "Eating"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character cooks meals, interacts with others, and moves between rooms in a house/apartment.",
+      "start_time": "11:42:49",
+      "end_time": "12:09:48",
+      "start_timestamp": "2026-01-24T11:42:49",
+      "end_timestamp": "2026-01-24T12:09:48",
+      "duration": 1619.87,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "5edde925-3aa2-41eb-b14e-81a3d060ee47",
+      "slot_id": "outdoor_activity",
+      "plan_chunk": "Full-day outdoor adventure: hiking and nature photography",
+      "matched_scenarios": [
+        "Hiking",
+        "Taking photos in photography studio",
+        "Tourism"
+      ],
+      "video_scenarios": [
+        "Hiking"
+      ],
+      "main_scene": "outdoor",
+      "consolidated_summary": "the character climbs a rocky mountain and hikes with others, taking pictures.",
+      "start_time": "12:14:48",
+      "end_time": "12:21:54",
+      "start_timestamp": "2026-01-24T12:14:48",
+      "end_timestamp": "2026-01-24T12:21:54",
+      "duration": 426.9,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "ae11b3ee-0ef5-4ff8-90f6-c5fd3fef8072",
+      "slot_id": "outdoor_lunch",
+      "plan_chunk": "Eat at outdoor hawker center",
+      "matched_scenarios": [
+        "Eating in hawker center",
+        "Eating"
+      ],
+      "video_scenarios": [
+        "Eating",
+        "Outdoor social (includes campfire)"
+      ],
+      "main_scene": "outdoor",
+      "consolidated_summary": "the character prepares sausages at a campsite with a woman and a dog.",
+      "start_time": "12:26:54",
+      "end_time": "12:54:07",
+      "start_timestamp": "2026-01-24T12:26:54",
+      "end_timestamp": "2026-01-24T12:54:07",
+      "duration": 1633.7,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "8a933a23-55ff-42f2-8f86-c7746b2e09ac",
+      "slot_id": "outdoor_afternoon",
+      "plan_chunk": "Explore new neighborhood on foot, visit local shops",
+      "matched_scenarios": [
+        "Walking on street",
+        "Tourism",
+        "Clothes, other shopping"
+      ],
+      "video_scenarios": [
+        "Car mechanic"
+      ],
+      "main_scene": "outdoor",
+      "consolidated_summary": "the character repairs a car in a garage.",
+      "start_time": "12:59:07",
+      "end_time": "13:14:08",
+      "start_timestamp": "2026-01-24T12:59:07",
+      "end_timestamp": "2026-01-24T13:14:08",
+      "duration": 901.67,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "e65cdb37-b00c-44b1-909f-068022d804cb",
+      "slot_id": "commute_home",
+      "plan_chunk": "Bus ride home, review photos on phone",
+      "matched_scenarios": [
+        "Bus",
+        "On a screen (phone/laptop)"
+      ],
+      "video_scenarios": [
+        "Car - commuting, road trip",
+        "Indoor Navigation (walking)",
+        "On a screen (phone/laptop)"
+      ],
+      "main_scene": "mixed",
+      "consolidated_summary": "the character walks around buildings, including a university and a hospital, drives a car, and uses a phone.",
+      "start_time": "13:19:08",
+      "end_time": "13:49:08",
+      "start_timestamp": "2026-01-24T13:19:08",
+      "end_timestamp": "2026-01-24T13:49:08",
+      "duration": 1800.13,
+      "video_source": "USA",
+      "time_period": "twilight"
+    },
+    {
+      "video_uid": "6f4194f3-41f2-4d05-97de-22ee87303bb0",
+      "slot_id": "home_evening",
+      "plan_chunk": "Cook hearty dinner, share photos with friends",
+      "matched_scenarios": [
+        "Cooking",
+        "Video call",
+        "Talking with friends/housemates"
+      ],
+      "video_scenarios": [
+        "Cooking",
+        "Talking with friends/housemates"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character is in the house with D, looks around, and arranges pastries.",
+      "start_time": "13:54:08",
+      "end_time": "13:58:07",
+      "start_timestamp": "2026-01-24T13:54:08",
+      "end_timestamp": "2026-01-24T13:58:07",
+      "duration": 239.77,
+      "video_source": "USA",
+      "time_period": "nighttime"
+    },
+    {
+      "video_uid": "f246429f-404e-4023-9b82-bfe6bf1e50cd",
+      "slot_id": "wake_home",
+      "plan_chunk": "Prepare for full-day outdoor expedition",
+      "matched_scenarios": [
+        "Daily hygiene",
+        "Cooking"
+      ],
+      "video_scenarios": [
+        "Cooking"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character and a woman X prepare a meal together in a kitchen, including preparing ingredients, cooking, and barbecuing meat in the front yard.",
+      "start_time": "14:03:07",
+      "end_time": "14:33:07",
+      "start_timestamp": "2026-01-24T14:03:07",
+      "end_timestamp": "2026-01-24T14:33:07",
+      "duration": 1800.13,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "630bd4ba-3053-459e-9284-3259aee16aa5",
+      "slot_id": "outdoor_activity",
+      "plan_chunk": "Full-day outdoor adventure: hiking and nature photography",
+      "matched_scenarios": [
+        "Hiking",
+        "Taking photos in photography studio",
+        "Tourism"
+      ],
+      "video_scenarios": [
+        "Hiking"
+      ],
+      "main_scene": "outdoor",
+      "consolidated_summary": "the character slides down a rocky mountain in a desert with others.",
+      "start_time": "14:38:07",
+      "end_time": "14:42:31",
+      "start_timestamp": "2026-01-24T14:38:07",
+      "end_timestamp": "2026-01-24T14:42:31",
+      "duration": 264.83,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "b2078083-c33f-4c35-9ebf-0ff6ccc05b6c",
+      "slot_id": "outdoor_lunch",
+      "plan_chunk": "Eat at outdoor hawker center",
+      "matched_scenarios": [
+        "Eating in hawker center",
+        "Eating"
+      ],
+      "video_scenarios": [
+        "Cleaning / laundry",
+        "Eating"
+      ],
+      "main_scene": "mixed",
+      "consolidated_summary": "the character uses a phone, exercises, cleans, decorates, plays video games, and reads a book inside a house or room.",
+      "start_time": "14:47:31",
+      "end_time": "15:40:59",
+      "start_timestamp": "2026-01-24T14:47:31",
+      "end_timestamp": "2026-01-24T15:40:59",
+      "duration": 3208.28,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "f50e4fef-a9bb-4448-a6a3-1d58373d43ff",
+      "slot_id": "outdoor_afternoon",
+      "plan_chunk": "Explore new neighborhood on foot, visit local shops",
+      "matched_scenarios": [
+        "Walking on street",
+        "Tourism",
+        "Clothes, other shopping"
+      ],
+      "video_scenarios": [
+        "Talking with family members",
+        "Walking the dog / pet"
+      ],
+      "main_scene": "outdoor",
+      "consolidated_summary": "the character walks a dog outdoors after climbing down stairs.",
+      "start_time": "15:45:59",
+      "end_time": "16:00:55",
+      "start_timestamp": "2026-01-24T15:45:59",
+      "end_timestamp": "2026-01-24T16:00:55",
+      "duration": 896.2,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "91ffdcc8-4f68-47a9-a5be-e4a7da926dfe",
+      "slot_id": "commute_home",
+      "plan_chunk": "Bus ride home, review photos on phone",
+      "matched_scenarios": [
+        "Bus",
+        "On a screen (phone/laptop)"
+      ],
+      "video_scenarios": [
+        "Cleaning / laundry",
+        "On a screen (phone/laptop)"
+      ],
+      "main_scene": "mixed",
+      "consolidated_summary": "the character arranges household items, takes out the trash, does laundry, and uses a phone.",
+      "start_time": "16:05:55",
+      "end_time": "16:29:23",
+      "start_timestamp": "2026-01-24T16:05:55",
+      "end_timestamp": "2026-01-24T16:29:23",
+      "duration": 1408.4,
+      "video_source": "USA",
+      "time_period": "twilight"
+    },
+    {
+      "video_uid": "dddce8ac-09b0-4b13-b0fa-eb18e1f27b21",
+      "slot_id": "home_evening",
+      "plan_chunk": "Cook hearty dinner, share photos with friends",
+      "matched_scenarios": [
+        "Cooking",
+        "Video call",
+        "Talking with friends/housemates"
+      ],
+      "video_scenarios": [
+        "Cooking",
+        "Talking with friends/housemates"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character cooks, converses with others, and prepares ingredients in a house.",
+      "start_time": "16:34:23",
+      "end_time": "17:04:23",
+      "start_timestamp": "2026-01-24T16:34:23",
+      "end_timestamp": "2026-01-24T17:04:23",
+      "duration": 1800.13,
+      "video_source": "USA",
+      "time_period": "nighttime"
+    }
+  ],
+  "statistics": {
+    "clip_count": 20,
+    "total_duration": 30571.82,
+    "total_duration_hours": 8.49,
+    "scene_distribution": {
+      "mixed": 6,
+      "outdoor": 6,
+      "indoor": 8
+    },
+    "selected_videos": [
+      "5cccdec3-ebbc-40e0-a714-b4b6acd387b3",
+      "41f268d1-c4a8-4add-abf7-3785f13cd4e7",
+      "5f28f61c-2eb4-4cc1-a6dd-010ef950670c",
+      "97217d34-fcc3-4acb-bd37-f0b14ca588f5",
+      "9198b9a4-8d8f-4ba6-9924-4c86982d890a",
+      "4930cced-9b84-464e-88ce-3990188efed6",
+      "1c0ba820-4a30-47dd-852d-c30685c7051e",
+      "00c450a5-49d0-4647-a45c-bf214cea169d",
+      "80a88fcb-8f4e-470d-bdff-1907852b49aa",
+      "5edde925-3aa2-41eb-b14e-81a3d060ee47",
+      "ae11b3ee-0ef5-4ff8-90f6-c5fd3fef8072",
+      "8a933a23-55ff-42f2-8f86-c7746b2e09ac",
+      "e65cdb37-b00c-44b1-909f-068022d804cb",
+      "6f4194f3-41f2-4d05-97de-22ee87303bb0",
+      "f246429f-404e-4023-9b82-bfe6bf1e50cd",
+      "630bd4ba-3053-459e-9284-3259aee16aa5",
+      "b2078083-c33f-4c35-9ebf-0ff6ccc05b6c",
+      "f50e4fef-a9bb-4448-a6a3-1d58373d43ff",
+      "91ffdcc8-4f68-47a9-a5be-e4a7da926dfe",
+      "dddce8ac-09b0-4b13-b0fa-eb18e1f27b21"
+    ],
+    "unique_scenarios": [
+      "Car - commuting, road trip",
+      "Car mechanic",
+      "Cleaning / laundry",
+      "Clothes, other shopping",
+      "Cooking",
+      "Doing yardwork / shoveling snow",
+      "Eating",
+      "Hiking",
+      "Indoor Navigation (walking)",
+      "On a screen (phone/laptop)",
+      "Outdoor social (includes campfire)",
+      "Talking with family members",
+      "Talking with friends/housemates",
+      "Walking the dog / pet"
+    ]
+  }
+}

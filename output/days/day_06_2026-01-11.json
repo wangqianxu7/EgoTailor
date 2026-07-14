@@ -1,0 +1,813 @@
+{
+  "metadata": {
+    "persona_id": "egotailor_usa_enfp",
+    "day_index": 6,
+    "calendar_date": "2026-01-11",
+    "day_of_week": "Sunday",
+    "is_weekend": true,
+    "target_seconds": 28800,
+    "location": "USA",
+    "day_theme": "sunday_movie_marathon",
+    "anomaly_events": [],
+    "time_variations": {
+      "wake_jitter_min": 26,
+      "commute_jitter_min": -1,
+      "exercise_jitter_min": 2
+    }
+  },
+  "daily_plan": [
+    "Light laundry and tidying up apartment (11:00-12:00)",
+    "Simple home-cooked dinner (19:30-20:30)",
+    "Continue movie series, take short breaks (16:45-19:00)",
+    "Read a few chapters before early sleep (21:00-22:00)",
+    "Movie marathon at home on the couch (12:30-15:30)",
+    "Order delivery and eat while watching (15:45-16:30)",
+    "Sleep in, lazy breakfast in pajamas (09:30-10:30)"
+  ],
+  "memory_content": [
+    {
+      "video_uid": "6b70f1de-16cd-4b62-ab46-bc988254f486",
+      "slot_id": "movie_marathon",
+      "plan_chunk": "Movie marathon at home on the couch",
+      "matched_scenarios": [
+        "Watching tv",
+        "Watching movies at the cinema"
+      ],
+      "video_scenarios": [
+        "Cleaning / laundry",
+        "Cooking",
+        "Talking with family members",
+        "Watching tv"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character unpacks groceries, arranges items in the kitchen, and makes coffee in her apartment.",
+      "start_time": "07:00:00",
+      "end_time": "07:23:54",
+      "start_timestamp": "2026-01-11T07:00:00",
+      "end_timestamp": "2026-01-11T07:23:54",
+      "duration": 1434.02,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "3da16b7e-e982-465f-91c6-ecf587b92387",
+      "slot_id": "leisure_read",
+      "plan_chunk": "Read a few chapters before early sleep",
+      "matched_scenarios": [
+        "Reading books"
+      ],
+      "video_scenarios": [
+        "Crafting/knitting/sewing/drawing/painting"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character uses a phone and knits in a room.",
+      "start_time": "07:28:54",
+      "end_time": "07:43:13",
+      "start_timestamp": "2026-01-11T07:28:54",
+      "end_timestamp": "2026-01-11T07:43:13",
+      "duration": 859.6,
+      "video_source": "USA",
+      "time_period": "nighttime"
+    },
+    {
+      "video_uid": "dbd15dbc-1efe-4556-95fd-160da29191e8",
+      "slot_id": "movie_afternoon",
+      "plan_chunk": "Continue movie series, take short breaks",
+      "matched_scenarios": [
+        "Watching tv"
+      ],
+      "video_scenarios": [
+        "Crafting/knitting/sewing/drawing/painting"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character uses a phone and paints a drawing in a room.",
+      "start_time": "07:48:13",
+      "end_time": "08:01:20",
+      "start_timestamp": "2026-01-11T07:48:13",
+      "end_timestamp": "2026-01-11T08:01:20",
+      "duration": 787.13,
+      "video_source": "USA",
+      "time_period": "not know"
+    },
+    {
+      "video_uid": "e78057f8-ce0f-47ea-87e4-ee6a8dcd7550",
+      "slot_id": "home_chores",
+      "plan_chunk": "Light laundry and tidying up apartment",
+      "matched_scenarios": [
+        "Cleaning / laundry",
+        "Ironing"
+      ],
+      "video_scenarios": [
+        "Cleaning / laundry"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character cleans the apartment and sorts books.",
+      "start_time": "08:06:20",
+      "end_time": "08:20:23",
+      "start_timestamp": "2026-01-11T08:06:20",
+      "end_timestamp": "2026-01-11T08:20:23",
+      "duration": 843.13,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "ae2cd423-6d11-4b18-959c-9e6ad872249f",
+      "slot_id": "wake_home",
+      "plan_chunk": "Sleep in, lazy breakfast in pajamas",
+      "matched_scenarios": [
+        "Daily hygiene",
+        "Making coffee",
+        "Cooking"
+      ],
+      "video_scenarios": [
+        "Cooking"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character cooks in a house.",
+      "start_time": "08:25:23",
+      "end_time": "08:33:58",
+      "start_timestamp": "2026-01-11T08:25:23",
+      "end_timestamp": "2026-01-11T08:33:58",
+      "duration": 515.93,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "ba1de596-15f4-45f3-bab3-dbf7283490be",
+      "slot_id": "movie_afternoon",
+      "plan_chunk": "Continue movie series, take short breaks",
+      "matched_scenarios": [
+        "Watching tv"
+      ],
+      "video_scenarios": [
+        "Eating"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character interacts with people, eats a meal, and performs household tasks like cleaning and washing dishes in an apartment.",
+      "start_time": "08:38:58",
+      "end_time": "08:54:26",
+      "start_timestamp": "2026-01-11T08:38:58",
+      "end_timestamp": "2026-01-11T08:54:26",
+      "duration": 928.17,
+      "video_source": "USA",
+      "time_period": "twilight"
+    },
+    {
+      "video_uid": "327843a1-83d0-409f-8a07-1453e30d49a8",
+      "slot_id": "wake_home",
+      "plan_chunk": "Sleep in, lazy breakfast in pajamas",
+      "matched_scenarios": [
+        "Daily hygiene",
+        "Making coffee",
+        "Cooking"
+      ],
+      "video_scenarios": [
+        "Cleaning / laundry",
+        "Cooking"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character washes dishes, prepares a snack, and watches television.",
+      "start_time": "08:59:26",
+      "end_time": "09:12:17",
+      "start_timestamp": "2026-01-11T08:59:26",
+      "end_timestamp": "2026-01-11T09:12:17",
+      "duration": 771.47,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "58aeccfb-3674-48f3-9ca0-511d2bb1c664",
+      "slot_id": "movie_marathon",
+      "plan_chunk": "Movie marathon at home on the couch",
+      "matched_scenarios": [
+        "Watching tv",
+        "Watching movies at the cinema"
+      ],
+      "video_scenarios": [
+        "Watching tv"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character cuts papers with scissors and arranges clothes in a house.",
+      "start_time": "09:17:17",
+      "end_time": "09:27:02",
+      "start_timestamp": "2026-01-11T09:17:17",
+      "end_timestamp": "2026-01-11T09:27:02",
+      "duration": 585.67,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "8e7d9780-ada4-4f60-9032-e2970f893cde",
+      "slot_id": "home_chores",
+      "plan_chunk": "Light laundry and tidying up apartment",
+      "matched_scenarios": [
+        "Cleaning / laundry",
+        "Ironing"
+      ],
+      "video_scenarios": [
+        "Cleaning / laundry"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character tidies up the bedroom, washes clothes, and cleans the room.",
+      "start_time": "09:32:02",
+      "end_time": "09:45:54",
+      "start_timestamp": "2026-01-11T09:32:02",
+      "end_timestamp": "2026-01-11T09:45:54",
+      "duration": 832.97,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "d14d6c08-b80a-446a-988e-5b57a079097c",
+      "slot_id": "home_cooking",
+      "plan_chunk": "Simple home-cooked dinner",
+      "matched_scenarios": [
+        "Cooking"
+      ],
+      "video_scenarios": [
+        "Cooking"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character prepares rice and grills beef in the kitchen.",
+      "start_time": "09:50:54",
+      "end_time": "09:57:46",
+      "start_timestamp": "2026-01-11T09:50:54",
+      "end_timestamp": "2026-01-11T09:57:46",
+      "duration": 412.8,
+      "video_source": "USA",
+      "time_period": "nighttime"
+    },
+    {
+      "video_uid": "8bef8b33-a1ee-43e7-a2d0-8cf68653cb0c",
+      "slot_id": "movie_afternoon",
+      "plan_chunk": "Continue movie series, take short breaks",
+      "matched_scenarios": [
+        "Watching tv"
+      ],
+      "video_scenarios": [
+        "Crafting/knitting/sewing/drawing/painting"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character paints and draws in a room.",
+      "start_time": "10:02:46",
+      "end_time": "10:19:42",
+      "start_timestamp": "2026-01-11T10:02:46",
+      "end_timestamp": "2026-01-11T10:19:42",
+      "duration": 1016.5,
+      "video_source": "USA",
+      "time_period": "not know"
+    },
+    {
+      "video_uid": "01dc966b-851c-49af-b1bb-158c68aac4eb",
+      "slot_id": "leisure_read",
+      "plan_chunk": "Read a few chapters before early sleep",
+      "matched_scenarios": [
+        "Reading books"
+      ],
+      "video_scenarios": [
+        "Crafting/knitting/sewing/drawing/painting"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character paints a picture.",
+      "start_time": "10:24:42",
+      "end_time": "10:38:48",
+      "start_timestamp": "2026-01-11T10:24:42",
+      "end_timestamp": "2026-01-11T10:38:48",
+      "duration": 846.53,
+      "video_source": "USA",
+      "time_period": "nighttime"
+    },
+    {
+      "video_uid": "bd4fad53-7dfc-41b1-899a-e0320286a836",
+      "slot_id": "movie_marathon",
+      "plan_chunk": "Movie marathon at home on the couch",
+      "matched_scenarios": [
+        "Watching tv",
+        "Watching movies at the cinema"
+      ],
+      "video_scenarios": [
+        "jobs related to construction/renovation company\n(Director of work, tiler, plumber, Electrician, Handyman, etc)"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character paints a wall in a room, moves containers, and checks the wall.",
+      "start_time": "10:43:48",
+      "end_time": "10:58:25",
+      "start_timestamp": "2026-01-11T10:43:48",
+      "end_timestamp": "2026-01-11T10:58:25",
+      "duration": 877.37,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "b34c5bd2-dc08-4b76-a566-9f46ec9e4cec",
+      "slot_id": "home_lunch",
+      "plan_chunk": "Order delivery and eat while watching",
+      "matched_scenarios": [
+        "Eating",
+        "Drive-thru food"
+      ],
+      "video_scenarios": [
+        "Eating"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character enters a supermarket, converses with someone, window-shops, shops, and makes a payment.",
+      "start_time": "11:03:25",
+      "end_time": "11:21:19",
+      "start_timestamp": "2026-01-11T11:03:25",
+      "end_timestamp": "2026-01-11T11:21:19",
+      "duration": 1074.43,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "0f07958c-04e3-4be9-9118-f3313c4e183e",
+      "slot_id": "wake_home",
+      "plan_chunk": "Sleep in, lazy breakfast in pajamas",
+      "matched_scenarios": [
+        "Daily hygiene",
+        "Making coffee",
+        "Cooking"
+      ],
+      "video_scenarios": [
+        "Cooking"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character packs grapes, slices peppers, and stores them in a fridge.",
+      "start_time": "11:26:19",
+      "end_time": "11:35:29",
+      "start_timestamp": "2026-01-11T11:26:19",
+      "end_timestamp": "2026-01-11T11:35:29",
+      "duration": 550.87,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "ad851441-1f15-467e-83d8-48c764e220a8",
+      "slot_id": "home_chores",
+      "plan_chunk": "Light laundry and tidying up apartment",
+      "matched_scenarios": [
+        "Cleaning / laundry",
+        "Ironing"
+      ],
+      "video_scenarios": [
+        "Cleaning / laundry"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character makes her bed, arranges the room and dishes, plays with dogs, and checks her phone in her apartment.",
+      "start_time": "11:40:29",
+      "end_time": "11:57:07",
+      "start_timestamp": "2026-01-11T11:40:29",
+      "end_timestamp": "2026-01-11T11:57:07",
+      "duration": 998.43,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "c799c3ab-9e07-427c-94f9-0d9d295153b8",
+      "slot_id": "home_cooking",
+      "plan_chunk": "Simple home-cooked dinner",
+      "matched_scenarios": [
+        "Cooking"
+      ],
+      "video_scenarios": [
+        "Cooking"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character cooks a meal and converses with others in an apartment.",
+      "start_time": "12:02:07",
+      "end_time": "12:21:24",
+      "start_timestamp": "2026-01-11T12:02:07",
+      "end_timestamp": "2026-01-11T12:21:24",
+      "duration": 1157.73,
+      "video_source": "USA",
+      "time_period": "nighttime"
+    },
+    {
+      "video_uid": "e98dd5f7-e90e-484e-b8ae-9a180882a26d",
+      "slot_id": "movie_afternoon",
+      "plan_chunk": "Continue movie series, take short breaks",
+      "matched_scenarios": [
+        "Watching tv"
+      ],
+      "video_scenarios": [
+        "Car mechanic"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character works on a machine in a workshop, using tools like wrenches, hammer, and flashlight.",
+      "start_time": "12:26:24",
+      "end_time": "12:43:41",
+      "start_timestamp": "2026-01-11T12:26:24",
+      "end_timestamp": "2026-01-11T12:43:41",
+      "duration": 1037.97,
+      "video_source": "USA",
+      "time_period": "not know"
+    },
+    {
+      "video_uid": "7f03a8d4-dcc4-406b-b4f6-998619ff532a",
+      "slot_id": "leisure_read",
+      "plan_chunk": "Read a few chapters before early sleep",
+      "matched_scenarios": [
+        "Reading books"
+      ],
+      "video_scenarios": [
+        "Crafting/knitting/sewing/drawing/painting"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character crochets fabric in a room.",
+      "start_time": "12:48:41",
+      "end_time": "13:04:24",
+      "start_timestamp": "2026-01-11T12:48:41",
+      "end_timestamp": "2026-01-11T13:04:24",
+      "duration": 943.93,
+      "video_source": "USA",
+      "time_period": "nighttime"
+    },
+    {
+      "video_uid": "5c325fd3-5f77-4e03-b85e-02d376d66459",
+      "slot_id": "movie_marathon",
+      "plan_chunk": "Movie marathon at home on the couch",
+      "matched_scenarios": [
+        "Watching tv",
+        "Watching movies at the cinema"
+      ],
+      "video_scenarios": [
+        "jobs related to construction/renovation company\n(Director of work, tiler, plumber, Electrician, Handyman, etc)"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character works on car brakes and wheels in a garage, interacting with another person.",
+      "start_time": "13:09:24",
+      "end_time": "13:24:32",
+      "start_timestamp": "2026-01-11T13:09:24",
+      "end_timestamp": "2026-01-11T13:24:32",
+      "duration": 908.9,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "cf202138-e174-4c0d-80f2-ba8837206f4a",
+      "slot_id": "home_lunch",
+      "plan_chunk": "Order delivery and eat while watching",
+      "matched_scenarios": [
+        "Eating",
+        "Drive-thru food"
+      ],
+      "video_scenarios": [
+        "Eating"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character shops in a supermarket, interacts with a cashier, and later dines and converses with someone.",
+      "start_time": "13:29:32",
+      "end_time": "13:49:35",
+      "start_timestamp": "2026-01-11T13:29:32",
+      "end_timestamp": "2026-01-11T13:49:35",
+      "duration": 1203.76,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "733ac083-1962-46c3-9a46-1efee74fee90",
+      "slot_id": "wake_home",
+      "plan_chunk": "Sleep in, lazy breakfast in pajamas",
+      "matched_scenarios": [
+        "Daily hygiene",
+        "Making coffee",
+        "Cooking"
+      ],
+      "video_scenarios": [
+        "Cooking"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character eats and converses in a house.",
+      "start_time": "13:54:35",
+      "end_time": "14:02:18",
+      "start_timestamp": "2026-01-11T13:54:35",
+      "end_timestamp": "2026-01-11T14:02:18",
+      "duration": 463.6,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "7921902b-293f-49e2-9401-d96791a90e15",
+      "slot_id": "home_chores",
+      "plan_chunk": "Light laundry and tidying up apartment",
+      "matched_scenarios": [
+        "Cleaning / laundry",
+        "Ironing"
+      ],
+      "video_scenarios": [
+        "Cleaning / laundry"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character interacts with various objects in a kitchen and cooks food.",
+      "start_time": "14:07:18",
+      "end_time": "14:19:56",
+      "start_timestamp": "2026-01-11T14:07:18",
+      "end_timestamp": "2026-01-11T14:19:56",
+      "duration": 758.47,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "4bddae9e-8ffb-4a03-9421-adf6268d91b6",
+      "slot_id": "home_cooking",
+      "plan_chunk": "Simple home-cooked dinner",
+      "matched_scenarios": [
+        "Cooking"
+      ],
+      "video_scenarios": [
+        "Cooking"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character prepares a meal in a kitchen, shreds chicken, and interacts with a dog.",
+      "start_time": "14:24:56",
+      "end_time": "14:32:03",
+      "start_timestamp": "2026-01-11T14:24:56",
+      "end_timestamp": "2026-01-11T14:32:03",
+      "duration": 427.8,
+      "video_source": "USA",
+      "time_period": "nighttime"
+    },
+    {
+      "video_uid": "adf65602-f5ee-456a-a098-db19a521ce38",
+      "slot_id": "movie_afternoon",
+      "plan_chunk": "Continue movie series, take short breaks",
+      "matched_scenarios": [
+        "Watching tv"
+      ],
+      "video_scenarios": [
+        "Car mechanic"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character repairs a lawnmower in a workshop, interacting with a coworker.",
+      "start_time": "14:37:03",
+      "end_time": "14:53:34",
+      "start_timestamp": "2026-01-11T14:37:03",
+      "end_timestamp": "2026-01-11T14:53:34",
+      "duration": 991.4,
+      "video_source": "USA",
+      "time_period": "not know"
+    },
+    {
+      "video_uid": "5acf07f3-0be9-45e3-91c2-f28ca5acf440",
+      "slot_id": "leisure_read",
+      "plan_chunk": "Read a few chapters before early sleep",
+      "matched_scenarios": [
+        "Reading books"
+      ],
+      "video_scenarios": [
+        "Crafting/knitting/sewing/drawing/painting"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character knits a cloth in a room.",
+      "start_time": "14:58:34",
+      "end_time": "15:12:38",
+      "start_timestamp": "2026-01-11T14:58:34",
+      "end_timestamp": "2026-01-11T15:12:38",
+      "duration": 844.93,
+      "video_source": "USA",
+      "time_period": "nighttime"
+    },
+    {
+      "video_uid": "0ddb9f0e-5f3d-4fba-9367-ba0db225f449",
+      "slot_id": "movie_marathon",
+      "plan_chunk": "Movie marathon at home on the couch",
+      "matched_scenarios": [
+        "Watching tv",
+        "Watching movies at the cinema"
+      ],
+      "video_scenarios": [
+        "jobs related to construction/renovation company\n(Director of work, tiler, plumber, Electrician, Handyman, etc)"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character works with adhesives and cleans up excess materials in a workshop.",
+      "start_time": "15:17:38",
+      "end_time": "15:33:06",
+      "start_timestamp": "2026-01-11T15:17:38",
+      "end_timestamp": "2026-01-11T15:33:06",
+      "duration": 928.73,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "fc37b724-ba01-44ab-af7e-c31901a65b6a",
+      "slot_id": "home_lunch",
+      "plan_chunk": "Order delivery and eat while watching",
+      "matched_scenarios": [
+        "Eating",
+        "Drive-thru food"
+      ],
+      "video_scenarios": [
+        "Eating"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character prepares drinks, shops, pays, and interacts with others in a supermarket.",
+      "start_time": "15:38:06",
+      "end_time": "15:58:49",
+      "start_timestamp": "2026-01-11T15:38:06",
+      "end_timestamp": "2026-01-11T15:58:49",
+      "duration": 1243.87,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "c5a22c25-2649-4441-8bb0-777af79d544e",
+      "slot_id": "wake_home",
+      "plan_chunk": "Sleep in, lazy breakfast in pajamas",
+      "matched_scenarios": [
+        "Daily hygiene",
+        "Making coffee",
+        "Cooking"
+      ],
+      "video_scenarios": [
+        "Cooking"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character prepares a juice and a smoothie in a kitchen and interacts with man X.",
+      "start_time": "16:03:49",
+      "end_time": "16:12:16",
+      "start_timestamp": "2026-01-11T16:03:49",
+      "end_timestamp": "2026-01-11T16:12:16",
+      "duration": 507.97,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "3c0070e5-b471-4840-9a0b-4594ca7fdb2c",
+      "slot_id": "home_chores",
+      "plan_chunk": "Light laundry and tidying up apartment",
+      "matched_scenarios": [
+        "Cleaning / laundry",
+        "Ironing"
+      ],
+      "video_scenarios": [
+        "Cleaning / laundry"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character washes dishes, arranges plates, and eats a meal in an apartment.",
+      "start_time": "16:17:16",
+      "end_time": "16:34:45",
+      "start_timestamp": "2026-01-11T16:17:16",
+      "end_timestamp": "2026-01-11T16:34:45",
+      "duration": 1049.4,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "b2bd978d-1c84-4f58-897e-02667fdc156a",
+      "slot_id": "home_cooking",
+      "plan_chunk": "Simple home-cooked dinner",
+      "matched_scenarios": [
+        "Cooking"
+      ],
+      "video_scenarios": [
+        "Cooking"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character makes a sandwich in a kitchen and serves food in an apartment.",
+      "start_time": "16:39:45",
+      "end_time": "16:45:11",
+      "start_timestamp": "2026-01-11T16:39:45",
+      "end_timestamp": "2026-01-11T16:45:11",
+      "duration": 326.43,
+      "video_source": "USA",
+      "time_period": "not know"
+    },
+    {
+      "video_uid": "89fb42b8-a974-4c62-b5da-478f290d32c1",
+      "slot_id": "movie_afternoon",
+      "plan_chunk": "Continue movie series, take short breaks",
+      "matched_scenarios": [
+        "Watching tv"
+      ],
+      "video_scenarios": [
+        "Crafting/knitting/sewing/drawing/painting"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character paints, draws, and colors in a room.",
+      "start_time": "16:50:11",
+      "end_time": "17:03:39",
+      "start_timestamp": "2026-01-11T16:50:11",
+      "end_timestamp": "2026-01-11T17:03:39",
+      "duration": 808.87,
+      "video_source": "USA",
+      "time_period": "not know"
+    },
+    {
+      "video_uid": "58d33246-dc42-49ea-ac5f-c0f6266eb5a4",
+      "slot_id": "leisure_read",
+      "plan_chunk": "Read a few chapters before early sleep",
+      "matched_scenarios": [
+        "Reading books"
+      ],
+      "video_scenarios": [
+        "Crafting/knitting/sewing/drawing/painting"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character draws and paints with a woman in a room.",
+      "start_time": "17:08:39",
+      "end_time": "17:22:49",
+      "start_timestamp": "2026-01-11T17:08:39",
+      "end_timestamp": "2026-01-11T17:22:49",
+      "duration": 850.37,
+      "video_source": "USA",
+      "time_period": "nighttime"
+    },
+    {
+      "video_uid": "d9162e17-7325-4f1f-8a18-823a796cf2fb",
+      "slot_id": "movie_marathon",
+      "plan_chunk": "Movie marathon at home on the couch",
+      "matched_scenarios": [
+        "Watching tv",
+        "Watching movies at the cinema"
+      ],
+      "video_scenarios": [
+        "Crafting/knitting/sewing/drawing/painting"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character paints walls, pipes, and a door in an apartment, rearranges objects, and takes a break for a drink.",
+      "start_time": "17:27:49",
+      "end_time": "17:43:03",
+      "start_timestamp": "2026-01-11T17:27:49",
+      "end_timestamp": "2026-01-11T17:43:03",
+      "duration": 914.53,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "3165f443-4687-4630-a90b-ae9ef08227f6",
+      "slot_id": "home_lunch",
+      "plan_chunk": "Order delivery and eat while watching",
+      "matched_scenarios": [
+        "Eating",
+        "Drive-thru food"
+      ],
+      "video_scenarios": [
+        "Eating"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character buys items at a food store and interacts with people.",
+      "start_time": "17:48:03",
+      "end_time": "18:08:42",
+      "start_timestamp": "2026-01-11T17:48:03",
+      "end_timestamp": "2026-01-11T18:08:42",
+      "duration": 1239.21,
+      "video_source": "USA",
+      "time_period": "daytime"
+    }
+  ],
+  "statistics": {
+    "clip_count": 35,
+    "total_duration": 29942.89,
+    "total_duration_hours": 8.32,
+    "scene_distribution": {
+      "indoor": 35
+    },
+    "selected_videos": [
+      "6b70f1de-16cd-4b62-ab46-bc988254f486",
+      "3da16b7e-e982-465f-91c6-ecf587b92387",
+      "dbd15dbc-1efe-4556-95fd-160da29191e8",
+      "e78057f8-ce0f-47ea-87e4-ee6a8dcd7550",
+      "ae2cd423-6d11-4b18-959c-9e6ad872249f",
+      "ba1de596-15f4-45f3-bab3-dbf7283490be",
+      "327843a1-83d0-409f-8a07-1453e30d49a8",
+      "58aeccfb-3674-48f3-9ca0-511d2bb1c664",
+      "8e7d9780-ada4-4f60-9032-e2970f893cde",
+      "d14d6c08-b80a-446a-988e-5b57a079097c",
+      "8bef8b33-a1ee-43e7-a2d0-8cf68653cb0c",
+      "01dc966b-851c-49af-b1bb-158c68aac4eb",
+      "bd4fad53-7dfc-41b1-899a-e0320286a836",
+      "b34c5bd2-dc08-4b76-a566-9f46ec9e4cec",
+      "0f07958c-04e3-4be9-9118-f3313c4e183e",
+      "ad851441-1f15-467e-83d8-48c764e220a8",
+      "c799c3ab-9e07-427c-94f9-0d9d295153b8",
+      "e98dd5f7-e90e-484e-b8ae-9a180882a26d",
+      "7f03a8d4-dcc4-406b-b4f6-998619ff532a",
+      "5c325fd3-5f77-4e03-b85e-02d376d66459",
+      "cf202138-e174-4c0d-80f2-ba8837206f4a",
+      "733ac083-1962-46c3-9a46-1efee74fee90",
+      "7921902b-293f-49e2-9401-d96791a90e15",
+      "4bddae9e-8ffb-4a03-9421-adf6268d91b6",
+      "adf65602-f5ee-456a-a098-db19a521ce38",
+      "5acf07f3-0be9-45e3-91c2-f28ca5acf440",
+      "0ddb9f0e-5f3d-4fba-9367-ba0db225f449",
+      "fc37b724-ba01-44ab-af7e-c31901a65b6a",
+      "c5a22c25-2649-4441-8bb0-777af79d544e",
+      "3c0070e5-b471-4840-9a0b-4594ca7fdb2c",
+      "b2bd978d-1c84-4f58-897e-02667fdc156a",
+      "89fb42b8-a974-4c62-b5da-478f290d32c1",
+      "58d33246-dc42-49ea-ac5f-c0f6266eb5a4",
+      "d9162e17-7325-4f1f-8a18-823a796cf2fb",
+      "3165f443-4687-4630-a90b-ae9ef08227f6"
+    ],
+    "unique_scenarios": [
+      "Car mechanic",
+      "Cleaning / laundry",
+      "Cooking",
+      "Crafting/knitting/sewing/drawing/painting",
+      "Eating",
+      "Talking with family members",
+      "Watching tv",
+      "jobs related to construction/renovation company\n(Director of work, tiler, plumber, Electrician, Handyman, etc)"
+    ]
+  }
+}

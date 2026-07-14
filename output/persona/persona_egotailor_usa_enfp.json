@@ -1,0 +1,3464 @@
+{
+  "persona_id": "egotailor_usa_enfp",
+  "location": "USA",
+  "gen_way": "rule_based_v2",
+  "personality_traits": {
+    "mbti_type": "ENFP",
+    "character_traits": [
+      "curious and energetic",
+      "enjoys social interaction",
+      "organized but flexible",
+      "health-conscious"
+    ]
+  },
+  "lifestyle": "A 28-year-old software engineer living in a US city. Works hybrid with Monday stand-ups, Thursday project reviews, and Friday team dinners. Weekends alternate between outdoor adventures (Saturday) and cozy home days (Sunday). Life includes occasional overtime, business trips, and spontaneous social plans.",
+  "daily_routine": [
+    "Wake 6:45-7:20 on weekdays (varies), 8:00-10:00 on weekends",
+    "Monday weekly meeting, Thursday project presentation, Friday team dinner",
+    "Saturday: hiking / cycling / outdoor themes by week",
+    "Sunday: movie marathon / cozy home / gaming themes by week",
+    "Evening mix: TV, gaming, reading, early sleep — not always social calls"
+  ],
+  "hobbies": [
+    "hiking and cycling",
+    "cooking and baking",
+    "video games and TV series",
+    "reading"
+  ],
+  "scheduled_anomalies": {
+    "2": {
+      "theme": "anomaly_rain_day",
+      "events": [
+        "rain_cancelled_outdoor"
+      ]
+    },
+    "7": {
+      "theme": "anomaly_business_trip",
+      "events": [
+        "business_trip_day1"
+      ]
+    },
+    "10": {
+      "theme": "anomaly_overtime",
+      "events": [
+        "overtime_late_night"
+      ]
+    },
+    "15": {
+      "theme": "anomaly_impromptu_date",
+      "events": [
+        "impromptu_evening_date"
+      ]
+    },
+    "16": {
+      "theme": "anomaly_doctor_visit",
+      "events": [
+        "doctor_appointment_midday"
+      ]
+    }
+  },
+  "daily_plans": {
+    "0": [
+      "Wake up, daily hygiene, prepare breakfast and coffee at home at 07:00 - 07:45",
+      "Commute to office by car or bus at 08:00 - 08:40",
+      "Weekly all-hands team meeting and sprint planning at 09:00 - 10:30",
+      "Focused desk work and collaboration at 10:45 - 12:00",
+      "Lunch break at cafeteria or nearby restaurant at 12:15 - 13:00",
+      "Short walk outside or quick errand in the park at 13:15 - 14:00",
+      "Afternoon work session and async collaboration at 14:15 - 16:00",
+      "Commute home, optionally stop by grocery store at 16:15 - 17:00",
+      "Cook dinner, talk with housemates, clean kitchen at 17:15 - 18:15",
+      "Evening jog or cycling around the neighborhood at 19:45 - 20:35",
+      "Watch TV series episodes and relax on the couch at 20:50 - 22:05"
+    ],
+    "1": [
+      "Wake up, daily hygiene, prepare breakfast and coffee at home at 07:00 - 07:45",
+      "Commute to office by car or bus at 08:00 - 08:40",
+      "Work at desk, read emails, handle morning tasks at 09:00 - 10:30",
+      "Deep focus: coding, design docs, no meetings at 10:45 - 12:15",
+      "Lunch break at cafeteria or nearby restaurant at 12:15 - 13:00",
+      "Short walk outside or quick errand in the park at 13:15 - 14:00",
+      "Afternoon work session and async collaboration at 14:15 - 16:00",
+      "Commute home, optionally stop by grocery store at 16:15 - 17:00",
+      "Cook dinner, talk with housemates, clean kitchen at 17:15 - 18:15",
+      "Evening jog or cycling around the neighborhood at 19:45 - 20:35",
+      "Video call with a close friend at 20:50 - 21:35"
+    ],
+    "2": [
+      "Wake up to heavy rain, check weather app at 07:10 - 07:50",
+      "Rainy commute with umbrella, traffic slower than usual at 08:10 - 08:55",
+      "Work at desk, many colleagues working from home at 09:10 - 10:30",
+      "Focused coding session, rain visible through window at 10:45 - 12:00",
+      "Lunch at office cafeteria, rain still pouring at 12:15 - 13:00",
+      "Cancelled outdoor walk due to rain; coffee break indoors instead at 13:15 - 14:00",
+      "Afternoon meetings via video call at 14:15 - 16:00",
+      "Rainy evening commute, wet shoes at 16:15 - 17:05",
+      "Cook warm soup dinner, dry clothes at 17:20 - 18:20",
+      "Watch comfort TV show, glad to stay indoors at 19:00 - 20:30",
+      "Read by the window, rain still falling at 20:45 - 21:45"
+    ],
+    "3": [
+      "Wake up, daily hygiene, prepare breakfast and coffee at home at 07:00 - 07:45",
+      "Commute to office by car or bus at 08:00 - 08:40",
+      "Work at desk, read emails, handle morning tasks at 09:00 - 10:30",
+      "Focused desk work and collaboration at 10:45 - 12:00",
+      "Lunch break at cafeteria or nearby restaurant at 12:15 - 13:00",
+      "Short walk outside or quick errand in the park at 13:15 - 14:00",
+      "Project presentation and demo to stakeholders at 14:15 - 16:15",
+      "Commute home, optionally stop by grocery store at 16:30 - 17:15",
+      "Cook dinner, talk with housemates, clean kitchen at 17:15 - 18:15",
+      "Evening jog or cycling around the neighborhood at 20:00 - 20:50",
+      "Watch TV series episodes and relax on the couch at 21:05 - 22:20"
+    ],
+    "4": [
+      "Wake up, daily hygiene, prepare breakfast and coffee at home at 07:00 - 07:45",
+      "Commute to office by car or bus at 08:00 - 08:40",
+      "Work at desk, read emails, handle morning tasks at 09:00 - 10:30",
+      "Focused desk work and collaboration at 10:45 - 12:00",
+      "Lunch break at cafeteria or nearby restaurant at 12:15 - 13:00",
+      "Short walk outside or quick errand in the park at 13:15 - 14:00",
+      "Wrap up weekly tasks and hand off to teammates at 14:15 - 15:45",
+      "Commute to downtown for team gathering at 16:00 - 16:45",
+      "Quick refresh at home before heading out at 17:00 - 18:00",
+      "Team dinner at restaurant with colleagues at 18:30 - 20:30",
+      "Casual hangout at bar or dessert shop with teammates at 20:45 - 22:00"
+    ],
+    "5": [
+      "Early weekend wake-up, pack snacks and hiking gear at 08:00 - 09:00",
+      "Drive to trailhead for day hike at 09:30 - 10:30",
+      "Long hiking on mountain trail with scenic views at 10:45 - 13:30",
+      "Picnic lunch on the trail at 13:45 - 14:30",
+      "Continue hiking and descend back to trailhead at 14:45 - 16:30",
+      "Drive home, tired but satisfied at 17:00 - 18:00",
+      "Shower, simple dinner, stretch sore muscles at 18:30 - 20:00",
+      "Early to bed after exhausting hike at 20:30 - 21:30"
+    ],
+    "6": [
+      "Sleep in, lazy breakfast in pajamas at 09:30 - 10:30",
+      "Light laundry and tidying up apartment at 11:00 - 12:00",
+      "Movie marathon at home on the couch at 12:30 - 15:30",
+      "Order delivery and eat while watching at 15:45 - 16:30",
+      "Continue movie series, take short breaks at 16:45 - 19:00",
+      "Simple home-cooked dinner at 19:30 - 20:30",
+      "Read a few chapters before early sleep at 21:00 - 22:00"
+    ],
+    "7": [
+      "Wake up in hotel, quick hygiene and pack bag at 06:30 - 07:15",
+      "Taxi to airport, check in and wait at gate at 07:30 - 09:30",
+      "Flight to client city, work on laptop during flight at 10:00 - 12:30",
+      "Client site visit and product demo meeting at 13:30 - 15:30",
+      "Business lunch with client team at 15:45 - 16:45",
+      "Work from hotel room: follow-up emails and slides at 17:30 - 19:00",
+      "Solo dinner at hotel restaurant at 19:30 - 20:30",
+      "Early sleep in unfamiliar hotel room at 21:00 - 22:00"
+    ],
+    "8": [
+      "Wake up, daily hygiene, prepare breakfast and coffee at home at 07:00 - 07:45",
+      "Commute to office by car or bus at 08:00 - 08:40",
+      "Work at desk, read emails, handle morning tasks at 09:00 - 10:30",
+      "Deep focus: coding, design docs, no meetings at 10:45 - 12:15",
+      "Lunch break at cafeteria or nearby restaurant at 12:15 - 13:00",
+      "Short walk outside or quick errand in the park at 13:15 - 14:00",
+      "Afternoon work session and async collaboration at 14:15 - 16:00",
+      "Commute home, optionally stop by grocery store at 16:15 - 17:00",
+      "Cook dinner, talk with housemates, clean kitchen at 17:15 - 18:15",
+      "Gym workout: weights and cardio machines at 19:45 - 20:45",
+      "Play video games at home at 21:00 - 22:00"
+    ],
+    "9": [
+      "Wake up, daily hygiene, prepare breakfast and coffee at home at 07:00 - 07:45",
+      "Commute to office by car or bus at 08:00 - 08:40",
+      "Work at desk, read emails, handle morning tasks at 09:00 - 10:30",
+      "Focused desk work and collaboration at 10:45 - 12:00",
+      "Lunch break at cafeteria or nearby restaurant at 12:15 - 13:00",
+      "Short walk outside or quick errand in the park at 13:15 - 14:00",
+      "Afternoon work session and async collaboration at 14:15 - 16:00",
+      "Commute home, optionally stop by grocery store at 16:15 - 17:00",
+      "Cook dinner, talk with housemates, clean kitchen at 17:15 - 18:15",
+      "Evening jog or cycling around the neighborhood at 19:45 - 20:35",
+      "Listen to music and browse social media at 20:50 - 21:45"
+    ],
+    "10": [
+      "Wake early, anxious about project deadline at 06:50 - 07:35",
+      "Quick commute to office at 07:50 - 08:30",
+      "Intense morning: fix critical bugs before presentation at 08:45 - 12:00",
+      "Quick desk lunch, no time to go out at 12:10 - 12:40",
+      "High-stakes project presentation to leadership at 13:00 - 15:00",
+      "Overtime: patch issues found during review, team stays late at 15:15 - 19:30",
+      "Late night commute home, city lights at 19:45 - 20:30",
+      "Exhausted, order takeout and eat on couch at 20:45 - 21:30",
+      "Crash into bed immediately at 21:45 - 22:15"
+    ],
+    "11": [
+      "Wake up, daily hygiene, prepare breakfast and coffee at home at 07:00 - 07:45",
+      "Commute to office by car or bus at 08:00 - 08:40",
+      "Work at desk, read emails, handle morning tasks at 09:00 - 10:30",
+      "Focused desk work and collaboration at 10:45 - 12:00",
+      "Lunch break at cafeteria or nearby restaurant at 12:15 - 13:00",
+      "Short walk outside or quick errand in the park at 13:15 - 14:00",
+      "Wrap up weekly tasks and hand off to teammates at 14:15 - 15:45",
+      "Commute to downtown for team gathering at 16:00 - 16:45",
+      "Quick refresh at home before heading out at 17:00 - 18:00",
+      "Team dinner at restaurant with colleagues at 18:30 - 20:30",
+      "Casual hangout at bar or dessert shop with teammates at 20:45 - 22:00"
+    ],
+    "12": [
+      "Leisurely brunch at home at 08:30 - 09:30",
+      "Cycling along riverside bike path at 10:00 - 12:00",
+      "Browse farmers market, buy fresh produce at 12:30 - 13:30",
+      "Experiment with new recipes using market finds at 14:00 - 15:30",
+      "Meet friends at park for frisbee and chat at 16:00 - 17:30",
+      "Dinner at a new restaurant downtown at 19:00 - 20:30",
+      "Play board games at friend's home at 21:00 - 22:00"
+    ],
+    "13": [
+      "Slow morning with pour-over coffee and podcast at 09:00 - 10:00",
+      "Crafting project and organizing bookshelf at 10:30 - 12:30",
+      "Bake bread and prepare elaborate lunch at 13:00 - 14:30",
+      "Nap, browse phone, play with pet at 15:00 - 17:00",
+      "Meal prep for the coming work week at 17:30 - 18:30",
+      "Early night routine: skincare, journal, sleep by 9:30 at 19:30 - 21:00"
+    ],
+    "14": [
+      "Wake up, daily hygiene, prepare breakfast and coffee at home at 07:00 - 07:45",
+      "Commute to office by car or bus at 08:00 - 08:40",
+      "Weekly all-hands team meeting and sprint planning at 09:00 - 10:30",
+      "Focused desk work and collaboration at 10:45 - 12:00",
+      "Lunch break at cafeteria or nearby restaurant at 12:15 - 13:00",
+      "Short walk outside or quick errand in the park at 13:15 - 14:00",
+      "Afternoon work session and async collaboration at 14:15 - 16:00",
+      "Commute home, optionally stop by grocery store at 16:15 - 17:00",
+      "Cook dinner, talk with housemates, clean kitchen at 17:15 - 18:15",
+      "Gym workout: weights and cardio machines at 19:45 - 20:45",
+      "Watch TV series episodes and relax on the couch at 21:00 - 22:15"
+    ],
+    "15": [
+      "Normal morning routine at 07:05 - 07:50",
+      "Commute to office at 08:05 - 08:45",
+      "Regular work morning at 09:00 - 12:00",
+      "Lunch with coworker, receive impromptu date invitation at 12:15 - 13:00",
+      "Afternoon work, leave on time for date at 13:15 - 17:00",
+      "Commute to downtown restaurant at 17:15 - 17:45",
+      "Impromptu dinner date at nice restaurant at 18:00 - 20:00",
+      "After-dinner walk along the waterfront at 20:15 - 21:00",
+      "Return home happy, get ready for bed at 21:30 - 22:15"
+    ],
+    "16": [
+      "Wake up, remember doctor appointment today at 07:00 - 07:40",
+      "Commute to office at 08:00 - 08:35",
+      "Work before leaving for appointment at 08:45 - 11:30",
+      "Doctor appointment: annual check-up at 11:45 - 13:00",
+      "Grab lunch near clinic at 13:15 - 14:00",
+      "Return to office for afternoon work at 14:15 - 16:30",
+      "Commute home at 16:45 - 17:30",
+      "Cook light dinner, rest after appointment at 17:45 - 18:45",
+      "Gentle home stretching, skip intense workout at 19:00 - 19:45",
+      "Watch TV and relax at 20:00 - 21:30"
+    ],
+    "17": [
+      "Wake up, daily hygiene, prepare breakfast and coffee at home at 07:00 - 07:45",
+      "Commute to office by car or bus at 08:00 - 08:40",
+      "Work at desk, read emails, handle morning tasks at 09:00 - 10:30",
+      "Focused desk work and collaboration at 10:45 - 12:00",
+      "Lunch break at cafeteria or nearby restaurant at 12:15 - 13:00",
+      "Short walk outside or quick errand in the park at 13:15 - 14:00",
+      "Project presentation and demo to stakeholders at 14:15 - 16:15",
+      "Commute home, optionally stop by grocery store at 16:30 - 17:15",
+      "Cook dinner, talk with housemates, clean kitchen at 17:15 - 18:15",
+      "Evening jog or cycling around the neighborhood at 20:00 - 20:50",
+      "Watch TV series episodes and relax on the couch at 21:05 - 22:20"
+    ],
+    "18": [
+      "Wake up, daily hygiene, prepare breakfast and coffee at home at 07:00 - 07:45",
+      "Commute to office by car or bus at 08:00 - 08:40",
+      "Work at desk, read emails, handle morning tasks at 09:00 - 10:30",
+      "Focused desk work and collaboration at 10:45 - 12:00",
+      "Lunch break at cafeteria or nearby restaurant at 12:15 - 13:00",
+      "Short walk outside or quick errand in the park at 13:15 - 14:00",
+      "Wrap up weekly tasks and hand off to teammates at 14:15 - 15:45",
+      "Commute to downtown for team gathering at 16:00 - 16:45",
+      "Quick refresh at home before heading out at 17:00 - 18:00",
+      "Team dinner at restaurant with colleagues at 18:30 - 20:30",
+      "Casual hangout at bar or dessert shop with teammates at 20:45 - 22:00"
+    ],
+    "19": [
+      "Prepare for full-day outdoor expedition at 07:30 - 08:30",
+      "Full-day outdoor adventure: hiking and nature photography at 09:00 - 12:00",
+      "Eat at outdoor hawker center at 12:15 - 13:00",
+      "Explore new neighborhood on foot, visit local shops at 13:30 - 16:30",
+      "Bus ride home, review photos on phone at 17:00 - 18:00",
+      "Cook hearty dinner, share photos with friends at 18:30 - 20:00"
+    ],
+    "20": [
+      "Brunch and check gaming news online at 10:00 - 11:00",
+      "Long gaming session: new RPG release at 11:30 - 14:00",
+      "Online multiplayer with friends at 14:30 - 16:30",
+      "Cook comfort food for dinner at 17:00 - 18:30",
+      "Continue gaming, try new game mode at 19:00 - 21:00",
+      "Wind down with music playlist at 21:30 - 22:30"
+    ]
+  },
+  "daily_plan_chunks": {
+    "0": [
+      {
+        "slot_id": "wake_home",
+        "start_time": "07:00",
+        "end_time": "07:45",
+        "plan_chunk": "Wake up, daily hygiene, prepare breakfast and coffee at home",
+        "matched_scenarios": [
+          "Daily hygiene",
+          "Cooking",
+          "Making coffee"
+        ],
+        "location": "indoor",
+        "time_period": "daytime",
+        "day_theme": "monday_weekly_meeting",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "commute_morning",
+        "start_time": "08:00",
+        "end_time": "08:40",
+        "plan_chunk": "Commute to office by car or bus",
+        "matched_scenarios": [
+          "Car - commuting, road trip",
+          "Bus",
+          "Walking on street"
+        ],
+        "location": "mixed",
+        "time_period": "daytime",
+        "day_theme": "monday_weekly_meeting",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "work_morning",
+        "start_time": "09:00",
+        "end_time": "10:30",
+        "plan_chunk": "Weekly all-hands team meeting and sprint planning",
+        "matched_scenarios": [
+          "Participating in a meeting",
+          "Working at desk",
+          "Talking to colleagues"
+        ],
+        "location": "indoor",
+        "time_period": "daytime",
+        "day_theme": "monday_weekly_meeting",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "work_focus",
+        "start_time": "10:45",
+        "end_time": "12:00",
+        "plan_chunk": "Focused desk work and collaboration",
+        "matched_scenarios": [
+          "Working at desk",
+          "Writing on whiteboard",
+          "Labwork"
+        ],
+        "location": "indoor",
+        "time_period": "daytime",
+        "day_theme": "monday_weekly_meeting",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "lunch_out",
+        "start_time": "12:15",
+        "end_time": "13:00",
+        "plan_chunk": "Lunch break at cafeteria or nearby restaurant",
+        "matched_scenarios": [
+          "Eating at the cafeteria",
+          "Eating at a restaurant",
+          "Eating"
+        ],
+        "location": "indoor",
+        "time_period": "daytime",
+        "day_theme": "monday_weekly_meeting",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "errand_outdoor",
+        "start_time": "13:15",
+        "end_time": "14:00",
+        "plan_chunk": "Short walk outside or quick errand in the park",
+        "matched_scenarios": [
+          "Walking on street",
+          "Going to the park"
+        ],
+        "location": "outdoor",
+        "time_period": "daytime",
+        "day_theme": "monday_weekly_meeting",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "work_afternoon",
+        "start_time": "14:15",
+        "end_time": "16:00",
+        "plan_chunk": "Afternoon work session and async collaboration",
+        "matched_scenarios": [
+          "Working at desk",
+          "Video call",
+          "On a screen (phone/laptop)"
+        ],
+        "location": "indoor",
+        "time_period": "daytime",
+        "day_theme": "monday_weekly_meeting",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "commute_evening",
+        "start_time": "16:15",
+        "end_time": "17:00",
+        "plan_chunk": "Commute home, optionally stop by grocery store",
+        "matched_scenarios": [
+          "Car - commuting, road trip",
+          "Grocery shopping indoors",
+          "Bus"
+        ],
+        "location": "mixed",
+        "time_period": "daytime",
+        "day_theme": "monday_weekly_meeting",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "home_evening",
+        "start_time": "17:15",
+        "end_time": "18:15",
+        "plan_chunk": "Cook dinner, talk with housemates, clean kitchen",
+        "matched_scenarios": [
+          "Cooking",
+          "Talking with friends/housemates",
+          "Cleaning / laundry"
+        ],
+        "location": "indoor",
+        "time_period": "twilight",
+        "day_theme": "monday_weekly_meeting",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "exercise_gym",
+        "start_time": "19:45",
+        "end_time": "20:45",
+        "plan_chunk": "Gym workout: weights and cardio machines",
+        "matched_scenarios": [
+          "Going to the gym - exercise machine, class, weights"
+        ],
+        "location": "indoor",
+        "time_period": "nighttime",
+        "day_theme": "monday_weekly_meeting",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "leisure_tv",
+        "start_time": "21:00",
+        "end_time": "22:15",
+        "plan_chunk": "Watch TV series episodes and relax on the couch",
+        "matched_scenarios": [
+          "Watching tv"
+        ],
+        "location": "indoor",
+        "time_period": "nighttime",
+        "day_theme": "monday_weekly_meeting",
+        "anomaly_events": []
+      }
+    ],
+    "1": [
+      {
+        "slot_id": "wake_home",
+        "start_time": "07:00",
+        "end_time": "07:45",
+        "plan_chunk": "Wake up, daily hygiene, prepare breakfast and coffee at home",
+        "matched_scenarios": [
+          "Daily hygiene",
+          "Cooking",
+          "Making coffee"
+        ],
+        "location": "indoor",
+        "time_period": "daytime",
+        "day_theme": "tuesday_deep_work",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "commute_morning",
+        "start_time": "08:00",
+        "end_time": "08:40",
+        "plan_chunk": "Commute to office by car or bus",
+        "matched_scenarios": [
+          "Car - commuting, road trip",
+          "Bus",
+          "Walking on street"
+        ],
+        "location": "mixed",
+        "time_period": "daytime",
+        "day_theme": "tuesday_deep_work",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "work_morning",
+        "start_time": "09:00",
+        "end_time": "10:30",
+        "plan_chunk": "Work at desk, read emails, handle morning tasks",
+        "matched_scenarios": [
+          "Working at desk",
+          "On a screen (phone/laptop)",
+          "Talking to colleagues"
+        ],
+        "location": "indoor",
+        "time_period": "daytime",
+        "day_theme": "tuesday_deep_work",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "work_focus",
+        "start_time": "10:45",
+        "end_time": "12:15",
+        "plan_chunk": "Deep focus: coding, design docs, no meetings",
+        "matched_scenarios": [
+          "Working at desk",
+          "On a screen (phone/laptop)",
+          "Writing on whiteboard"
+        ],
+        "location": "indoor",
+        "time_period": "daytime",
+        "day_theme": "tuesday_deep_work",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "lunch_out",
+        "start_time": "12:15",
+        "end_time": "13:00",
+        "plan_chunk": "Lunch break at cafeteria or nearby restaurant",
+        "matched_scenarios": [
+          "Eating at the cafeteria",
+          "Eating at a restaurant",
+          "Eating"
+        ],
+        "location": "indoor",
+        "time_period": "daytime",
+        "day_theme": "tuesday_deep_work",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "errand_outdoor",
+        "start_time": "13:15",
+        "end_time": "14:00",
+        "plan_chunk": "Short walk outside or quick errand in the park",
+        "matched_scenarios": [
+          "Walking on street",
+          "Going to the park"
+        ],
+        "location": "outdoor",
+        "time_period": "daytime",
+        "day_theme": "tuesday_deep_work",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "work_afternoon",
+        "start_time": "14:15",
+        "end_time": "16:00",
+        "plan_chunk": "Afternoon work session and async collaboration",
+        "matched_scenarios": [
+          "Working at desk",
+          "Video call",
+          "On a screen (phone/laptop)"
+        ],
+        "location": "indoor",
+        "time_period": "daytime",
+        "day_theme": "tuesday_deep_work",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "commute_evening",
+        "start_time": "16:15",
+        "end_time": "17:00",
+        "plan_chunk": "Commute home, optionally stop by grocery store",
+        "matched_scenarios": [
+          "Car - commuting, road trip",
+          "Grocery shopping indoors",
+          "Bus"
+        ],
+        "location": "mixed",
+        "time_period": "daytime",
+        "day_theme": "tuesday_deep_work",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "home_evening",
+        "start_time": "17:15",
+        "end_time": "18:15",
+        "plan_chunk": "Cook dinner, talk with housemates, clean kitchen",
+        "matched_scenarios": [
+          "Cooking",
+          "Talking with friends/housemates",
+          "Cleaning / laundry"
+        ],
+        "location": "indoor",
+        "time_period": "twilight",
+        "day_theme": "tuesday_deep_work",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "exercise_gym",
+        "start_time": "19:45",
+        "end_time": "20:45",
+        "plan_chunk": "Gym workout: weights and cardio machines",
+        "matched_scenarios": [
+          "Going to the gym - exercise machine, class, weights"
+        ],
+        "location": "indoor",
+        "time_period": "nighttime",
+        "day_theme": "tuesday_deep_work",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "leisure_video_call",
+        "start_time": "21:00",
+        "end_time": "21:45",
+        "plan_chunk": "Video call with a close friend",
+        "matched_scenarios": [
+          "Video call",
+          "Talking on the phone"
+        ],
+        "location": "indoor",
+        "time_period": "nighttime",
+        "day_theme": "tuesday_deep_work",
+        "anomaly_events": []
+      }
+    ],
+    "2": [
+      {
+        "slot_id": "wake_home",
+        "start_time": "07:10",
+        "end_time": "07:50",
+        "plan_chunk": "Wake up to heavy rain, check weather app",
+        "matched_scenarios": [
+          "Daily hygiene",
+          "On a screen (phone/laptop)"
+        ],
+        "location": "indoor",
+        "time_period": "daytime",
+        "day_theme": "anomaly_rain_day",
+        "anomaly_events": [
+          "rain_cancelled_outdoor"
+        ]
+      },
+      {
+        "slot_id": "commute_morning",
+        "start_time": "08:10",
+        "end_time": "08:55",
+        "plan_chunk": "Rainy commute with umbrella, traffic slower than usual",
+        "matched_scenarios": [
+          "Car - commuting, road trip",
+          "Bus",
+          "Walking on street"
+        ],
+        "location": "mixed",
+        "time_period": "daytime",
+        "day_theme": "anomaly_rain_day",
+        "anomaly_events": [
+          "rain_cancelled_outdoor"
+        ]
+      },
+      {
+        "slot_id": "work_morning",
+        "start_time": "09:10",
+        "end_time": "10:30",
+        "plan_chunk": "Work at desk, many colleagues working from home",
+        "matched_scenarios": [
+          "Working at desk",
+          "Video call"
+        ],
+        "location": "indoor",
+        "time_period": "daytime",
+        "day_theme": "anomaly_rain_day",
+        "anomaly_events": [
+          "rain_cancelled_outdoor"
+        ]
+      },
+      {
+        "slot_id": "work_focus",
+        "start_time": "10:45",
+        "end_time": "12:00",
+        "plan_chunk": "Focused coding session, rain visible through window",
+        "matched_scenarios": [
+          "Working at desk",
+          "On a screen (phone/laptop)"
+        ],
+        "location": "indoor",
+        "time_period": "daytime",
+        "day_theme": "anomaly_rain_day",
+        "anomaly_events": [
+          "rain_cancelled_outdoor"
+        ]
+      },
+      {
+        "slot_id": "lunch_indoor",
+        "start_time": "12:15",
+        "end_time": "13:00",
+        "plan_chunk": "Lunch at office cafeteria, rain still pouring",
+        "matched_scenarios": [
+          "Eating at the cafeteria",
+          "Eating"
+        ],
+        "location": "indoor",
+        "time_period": "daytime",
+        "day_theme": "anomaly_rain_day",
+        "anomaly_events": [
+          "rain_cancelled_outdoor"
+        ]
+      },
+      {
+        "slot_id": "rain_cancel_indoor",
+        "start_time": "13:15",
+        "end_time": "14:00",
+        "plan_chunk": "Cancelled outdoor walk due to rain; coffee break indoors instead",
+        "matched_scenarios": [
+          "Making coffee",
+          "Talking to colleagues",
+          "Hanging out at a coffee shop"
+        ],
+        "location": "indoor",
+        "time_period": "daytime",
+        "day_theme": "anomaly_rain_day",
+        "anomaly_events": [
+          "rain_cancelled_outdoor"
+        ]
+      },
+      {
+        "slot_id": "work_afternoon",
+        "start_time": "14:15",
+        "end_time": "16:00",
+        "plan_chunk": "Afternoon meetings via video call",
+        "matched_scenarios": [
+          "Video call",
+          "Participating in a meeting"
+        ],
+        "location": "indoor",
+        "time_period": "daytime",
+        "day_theme": "anomaly_rain_day",
+        "anomaly_events": [
+          "rain_cancelled_outdoor"
+        ]
+      },
+      {
+        "slot_id": "commute_evening",
+        "start_time": "16:15",
+        "end_time": "17:05",
+        "plan_chunk": "Rainy evening commute, wet shoes",
+        "matched_scenarios": [
+          "Car - commuting, road trip",
+          "Bus"
+        ],
+        "location": "mixed",
+        "time_period": "daytime",
+        "day_theme": "anomaly_rain_day",
+        "anomaly_events": [
+          "rain_cancelled_outdoor"
+        ]
+      },
+      {
+        "slot_id": "home_evening",
+        "start_time": "17:20",
+        "end_time": "18:20",
+        "plan_chunk": "Cook warm soup dinner, dry clothes",
+        "matched_scenarios": [
+          "Cooking",
+          "Cleaning / laundry"
+        ],
+        "location": "indoor",
+        "time_period": "twilight",
+        "day_theme": "anomaly_rain_day",
+        "anomaly_events": [
+          "rain_cancelled_outdoor"
+        ]
+      },
+      {
+        "slot_id": "leisure_tv",
+        "start_time": "19:00",
+        "end_time": "20:30",
+        "plan_chunk": "Watch comfort TV show, glad to stay indoors",
+        "matched_scenarios": [
+          "Watching tv"
+        ],
+        "location": "indoor",
+        "time_period": "nighttime",
+        "day_theme": "anomaly_rain_day",
+        "anomaly_events": [
+          "rain_cancelled_outdoor"
+        ]
+      },
+      {
+        "slot_id": "leisure_read",
+        "start_time": "20:45",
+        "end_time": "21:45",
+        "plan_chunk": "Read by the window, rain still falling",
+        "matched_scenarios": [
+          "Reading books"
+        ],
+        "location": "indoor",
+        "time_period": "nighttime",
+        "day_theme": "anomaly_rain_day",
+        "anomaly_events": [
+          "rain_cancelled_outdoor"
+        ]
+      }
+    ],
+    "3": [
+      {
+        "slot_id": "wake_home",
+        "start_time": "07:00",
+        "end_time": "07:45",
+        "plan_chunk": "Wake up, daily hygiene, prepare breakfast and coffee at home",
+        "matched_scenarios": [
+          "Daily hygiene",
+          "Cooking",
+          "Making coffee"
+        ],
+        "location": "indoor",
+        "time_period": "daytime",
+        "day_theme": "thursday_project_review",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "commute_morning",
+        "start_time": "08:00",
+        "end_time": "08:40",
+        "plan_chunk": "Commute to office by car or bus",
+        "matched_scenarios": [
+          "Car - commuting, road trip",
+          "Bus",
+          "Walking on street"
+        ],
+        "location": "mixed",
+        "time_period": "daytime",
+        "day_theme": "thursday_project_review",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "work_morning",
+        "start_time": "09:00",
+        "end_time": "10:30",
+        "plan_chunk": "Work at desk, read emails, handle morning tasks",
+        "matched_scenarios": [
+          "Working at desk",
+          "On a screen (phone/laptop)",
+          "Talking to colleagues"
+        ],
+        "location": "indoor",
+        "time_period": "daytime",
+        "day_theme": "thursday_project_review",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "work_focus",
+        "start_time": "10:45",
+        "end_time": "12:00",
+        "plan_chunk": "Focused desk work and collaboration",
+        "matched_scenarios": [
+          "Working at desk",
+          "Writing on whiteboard",
+          "Labwork"
+        ],
+        "location": "indoor",
+        "time_period": "daytime",
+        "day_theme": "thursday_project_review",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "lunch_out",
+        "start_time": "12:15",
+        "end_time": "13:00",
+        "plan_chunk": "Lunch break at cafeteria or nearby restaurant",
+        "matched_scenarios": [
+          "Eating at the cafeteria",
+          "Eating at a restaurant",
+          "Eating"
+        ],
+        "location": "indoor",
+        "time_period": "daytime",
+        "day_theme": "thursday_project_review",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "errand_outdoor",
+        "start_time": "13:15",
+        "end_time": "14:00",
+        "plan_chunk": "Short walk outside or quick errand in the park",
+        "matched_scenarios": [
+          "Walking on street",
+          "Going to the park"
+        ],
+        "location": "outdoor",
+        "time_period": "daytime",
+        "day_theme": "thursday_project_review",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "work_afternoon",
+        "start_time": "14:15",
+        "end_time": "16:15",
+        "plan_chunk": "Project presentation and demo to stakeholders",
+        "matched_scenarios": [
+          "Participating in a meeting",
+          "Writing on whiteboard",
+          "Working at desk"
+        ],
+        "location": "indoor",
+        "time_period": "daytime",
+        "day_theme": "thursday_project_review",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "commute_evening",
+        "start_time": "16:30",
+        "end_time": "17:15",
+        "plan_chunk": "Commute home, optionally stop by grocery store",
+        "matched_scenarios": [
+          "Car - commuting, road trip",
+          "Grocery shopping indoors",
+          "Bus"
+        ],
+        "location": "mixed",
+        "time_period": "daytime",
+        "day_theme": "thursday_project_review",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "home_evening",
+        "start_time": "17:15",
+        "end_time": "18:15",
+        "plan_chunk": "Cook dinner, talk with housemates, clean kitchen",
+        "matched_scenarios": [
+          "Cooking",
+          "Talking with friends/housemates",
+          "Cleaning / laundry"
+        ],
+        "location": "indoor",
+        "time_period": "twilight",
+        "day_theme": "thursday_project_review",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "exercise_gym",
+        "start_time": "20:00",
+        "end_time": "21:00",
+        "plan_chunk": "Gym workout: weights and cardio machines",
+        "matched_scenarios": [
+          "Going to the gym - exercise machine, class, weights"
+        ],
+        "location": "indoor",
+        "time_period": "nighttime",
+        "day_theme": "thursday_project_review",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "leisure_tv",
+        "start_time": "21:15",
+        "end_time": "22:30",
+        "plan_chunk": "Watch TV series episodes and relax on the couch",
+        "matched_scenarios": [
+          "Watching tv"
+        ],
+        "location": "indoor",
+        "time_period": "nighttime",
+        "day_theme": "thursday_project_review",
+        "anomaly_events": []
+      }
+    ],
+    "4": [
+      {
+        "slot_id": "wake_home",
+        "start_time": "07:00",
+        "end_time": "07:45",
+        "plan_chunk": "Wake up, daily hygiene, prepare breakfast and coffee at home",
+        "matched_scenarios": [
+          "Daily hygiene",
+          "Cooking",
+          "Making coffee"
+        ],
+        "location": "indoor",
+        "time_period": "daytime",
+        "day_theme": "friday_team_social",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "commute_morning",
+        "start_time": "08:00",
+        "end_time": "08:40",
+        "plan_chunk": "Commute to office by car or bus",
+        "matched_scenarios": [
+          "Car - commuting, road trip",
+          "Bus",
+          "Walking on street"
+        ],
+        "location": "mixed",
+        "time_period": "daytime",
+        "day_theme": "friday_team_social",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "work_morning",
+        "start_time": "09:00",
+        "end_time": "10:30",
+        "plan_chunk": "Work at desk, read emails, handle morning tasks",
+        "matched_scenarios": [
+          "Working at desk",
+          "On a screen (phone/laptop)",
+          "Talking to colleagues"
+        ],
+        "location": "indoor",
+        "time_period": "daytime",
+        "day_theme": "friday_team_social",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "work_focus",
+        "start_time": "10:45",
+        "end_time": "12:00",
+        "plan_chunk": "Focused desk work and collaboration",
+        "matched_scenarios": [
+          "Working at desk",
+          "Writing on whiteboard",
+          "Labwork"
+        ],
+        "location": "indoor",
+        "time_period": "daytime",
+        "day_theme": "friday_team_social",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "lunch_out",
+        "start_time": "12:15",
+        "end_time": "13:00",
+        "plan_chunk": "Lunch break at cafeteria or nearby restaurant",
+        "matched_scenarios": [
+          "Eating at the cafeteria",
+          "Eating at a restaurant",
+          "Eating"
+        ],
+        "location": "indoor",
+        "time_period": "daytime",
+        "day_theme": "friday_team_social",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "errand_outdoor",
+        "start_time": "13:15",
+        "end_time": "14:00",
+        "plan_chunk": "Short walk outside or quick errand in the park",
+        "matched_scenarios": [
+          "Walking on street",
+          "Going to the park"
+        ],
+        "location": "outdoor",
+        "time_period": "daytime",
+        "day_theme": "friday_team_social",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "work_afternoon",
+        "start_time": "14:15",
+        "end_time": "15:45",
+        "plan_chunk": "Wrap up weekly tasks and hand off to teammates",
+        "matched_scenarios": [
+          "Working at desk",
+          "Talking to colleagues"
+        ],
+        "location": "indoor",
+        "time_period": "daytime",
+        "day_theme": "friday_team_social",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "commute_evening",
+        "start_time": "16:00",
+        "end_time": "16:45",
+        "plan_chunk": "Commute to downtown for team gathering",
+        "matched_scenarios": [
+          "Car - commuting, road trip",
+          "Walking on street"
+        ],
+        "location": "mixed",
+        "time_period": "daytime",
+        "day_theme": "friday_team_social",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "home_evening",
+        "start_time": "17:00",
+        "end_time": "18:00",
+        "plan_chunk": "Quick refresh at home before heading out",
+        "matched_scenarios": [
+          "Daily hygiene",
+          "Cooking"
+        ],
+        "location": "indoor",
+        "time_period": "twilight",
+        "day_theme": "friday_team_social",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "team_dinner",
+        "start_time": "18:30",
+        "end_time": "20:30",
+        "plan_chunk": "Team dinner at restaurant with colleagues",
+        "matched_scenarios": [
+          "Eating at a restaurant",
+          "Talking to colleagues",
+          "Attending a party"
+        ],
+        "location": "indoor",
+        "time_period": "nighttime",
+        "day_theme": "friday_team_social",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "friday_night_out",
+        "start_time": "20:45",
+        "end_time": "22:00",
+        "plan_chunk": "Casual hangout at bar or dessert shop with teammates",
+        "matched_scenarios": [
+          "Hanging out with friends at a bar",
+          "Eating at a restaurant"
+        ],
+        "location": "indoor",
+        "time_period": "nighttime",
+        "day_theme": "friday_team_social",
+        "anomaly_events": []
+      }
+    ],
+    "5": [
+      {
+        "slot_id": "wake_home",
+        "start_time": "08:00",
+        "end_time": "09:00",
+        "plan_chunk": "Early weekend wake-up, pack snacks and hiking gear",
+        "matched_scenarios": [
+          "Daily hygiene",
+          "Cooking",
+          "Making coffee"
+        ],
+        "location": "indoor",
+        "time_period": "daytime",
+        "day_theme": "saturday_hiking",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "drive_trailhead",
+        "start_time": "09:30",
+        "end_time": "10:30",
+        "plan_chunk": "Drive to trailhead for day hike",
+        "matched_scenarios": [
+          "Car - commuting, road trip"
+        ],
+        "location": "mixed",
+        "time_period": "daytime",
+        "day_theme": "saturday_hiking",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "hiking",
+        "start_time": "10:45",
+        "end_time": "13:30",
+        "plan_chunk": "Long hiking on mountain trail with scenic views",
+        "matched_scenarios": [
+          "Hiking",
+          "Walking on street"
+        ],
+        "location": "outdoor",
+        "time_period": "daytime",
+        "day_theme": "saturday_hiking",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "trail_lunch",
+        "start_time": "13:45",
+        "end_time": "14:30",
+        "plan_chunk": "Picnic lunch on the trail",
+        "matched_scenarios": [
+          "BBQ'ing/picnics",
+          "Eating",
+          "Outdoor cooking"
+        ],
+        "location": "outdoor",
+        "time_period": "daytime",
+        "day_theme": "saturday_hiking",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "hiking_return",
+        "start_time": "14:45",
+        "end_time": "16:30",
+        "plan_chunk": "Continue hiking and descend back to trailhead",
+        "matched_scenarios": [
+          "Hiking",
+          "Tourism"
+        ],
+        "location": "outdoor",
+        "time_period": "daytime",
+        "day_theme": "saturday_hiking",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "drive_home",
+        "start_time": "17:00",
+        "end_time": "18:00",
+        "plan_chunk": "Drive home, tired but satisfied",
+        "matched_scenarios": [
+          "Car - commuting, road trip"
+        ],
+        "location": "mixed",
+        "time_period": "twilight",
+        "day_theme": "saturday_hiking",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "recovery_home",
+        "start_time": "18:30",
+        "end_time": "20:00",
+        "plan_chunk": "Shower, simple dinner, stretch sore muscles",
+        "matched_scenarios": [
+          "Cooking",
+          "Daily hygiene",
+          "Working out at home"
+        ],
+        "location": "indoor",
+        "time_period": "nighttime",
+        "day_theme": "saturday_hiking",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "early_sleep",
+        "start_time": "20:30",
+        "end_time": "21:30",
+        "plan_chunk": "Early to bed after exhausting hike",
+        "matched_scenarios": [
+          "Sleeping",
+          "Reading books"
+        ],
+        "location": "indoor",
+        "time_period": "nighttime",
+        "day_theme": "saturday_hiking",
+        "anomaly_events": []
+      }
+    ],
+    "6": [
+      {
+        "slot_id": "wake_home",
+        "start_time": "09:30",
+        "end_time": "10:30",
+        "plan_chunk": "Sleep in, lazy breakfast in pajamas",
+        "matched_scenarios": [
+          "Daily hygiene",
+          "Making coffee",
+          "Cooking"
+        ],
+        "location": "indoor",
+        "time_period": "daytime",
+        "day_theme": "sunday_movie_marathon",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "home_chores",
+        "start_time": "11:00",
+        "end_time": "12:00",
+        "plan_chunk": "Light laundry and tidying up apartment",
+        "matched_scenarios": [
+          "Cleaning / laundry",
+          "Ironing"
+        ],
+        "location": "indoor",
+        "time_period": "daytime",
+        "day_theme": "sunday_movie_marathon",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "movie_marathon",
+        "start_time": "12:30",
+        "end_time": "15:30",
+        "plan_chunk": "Movie marathon at home on the couch",
+        "matched_scenarios": [
+          "Watching tv",
+          "Watching movies at the cinema"
+        ],
+        "location": "indoor",
+        "time_period": "daytime",
+        "day_theme": "sunday_movie_marathon",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "home_lunch",
+        "start_time": "15:45",
+        "end_time": "16:30",
+        "plan_chunk": "Order delivery and eat while watching",
+        "matched_scenarios": [
+          "Eating",
+          "Drive-thru food"
+        ],
+        "location": "indoor",
+        "time_period": "daytime",
+        "day_theme": "sunday_movie_marathon",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "movie_afternoon",
+        "start_time": "16:45",
+        "end_time": "19:00",
+        "plan_chunk": "Continue movie series, take short breaks",
+        "matched_scenarios": [
+          "Watching tv"
+        ],
+        "location": "indoor",
+        "time_period": "twilight",
+        "day_theme": "sunday_movie_marathon",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "home_cooking",
+        "start_time": "19:30",
+        "end_time": "20:30",
+        "plan_chunk": "Simple home-cooked dinner",
+        "matched_scenarios": [
+          "Cooking"
+        ],
+        "location": "indoor",
+        "time_period": "nighttime",
+        "day_theme": "sunday_movie_marathon",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "leisure_read",
+        "start_time": "21:00",
+        "end_time": "22:00",
+        "plan_chunk": "Read a few chapters before early sleep",
+        "matched_scenarios": [
+          "Reading books"
+        ],
+        "location": "indoor",
+        "time_period": "nighttime",
+        "day_theme": "sunday_movie_marathon",
+        "anomaly_events": []
+      }
+    ],
+    "7": [
+      {
+        "slot_id": "wake_hotel",
+        "start_time": "06:30",
+        "end_time": "07:15",
+        "plan_chunk": "Wake up in hotel, quick hygiene and pack bag",
+        "matched_scenarios": [
+          "Daily hygiene",
+          "Cleaning / laundry"
+        ],
+        "location": "indoor",
+        "time_period": "daytime",
+        "day_theme": "anomaly_business_trip",
+        "anomaly_events": [
+          "business_trip_day1"
+        ]
+      },
+      {
+        "slot_id": "travel_airport",
+        "start_time": "07:30",
+        "end_time": "09:30",
+        "plan_chunk": "Taxi to airport, check in and wait at gate",
+        "matched_scenarios": [
+          "Car - commuting, road trip",
+          "Walking on street",
+          "Talking on the phone"
+        ],
+        "location": "mixed",
+        "time_period": "daytime",
+        "day_theme": "anomaly_business_trip",
+        "anomaly_events": [
+          "business_trip_day1"
+        ]
+      },
+      {
+        "slot_id": "flight",
+        "start_time": "10:00",
+        "end_time": "12:30",
+        "plan_chunk": "Flight to client city, work on laptop during flight",
+        "matched_scenarios": [
+          "On a screen (phone/laptop)",
+          "Reading books"
+        ],
+        "location": "mixed",
+        "time_period": "daytime",
+        "day_theme": "anomaly_business_trip",
+        "anomaly_events": [
+          "business_trip_day1"
+        ]
+      },
+      {
+        "slot_id": "client_meeting",
+        "start_time": "13:30",
+        "end_time": "15:30",
+        "plan_chunk": "Client site visit and product demo meeting",
+        "matched_scenarios": [
+          "Participating in a meeting",
+          "Working at desk",
+          "Talking to colleagues"
+        ],
+        "location": "indoor",
+        "time_period": "daytime",
+        "day_theme": "anomaly_business_trip",
+        "anomaly_events": [
+          "business_trip_day1"
+        ]
+      },
+      {
+        "slot_id": "business_lunch",
+        "start_time": "15:45",
+        "end_time": "16:45",
+        "plan_chunk": "Business lunch with client team",
+        "matched_scenarios": [
+          "Eating at a restaurant",
+          "Talking to colleagues"
+        ],
+        "location": "indoor",
+        "time_period": "daytime",
+        "day_theme": "anomaly_business_trip",
+        "anomaly_events": [
+          "business_trip_day1"
+        ]
+      },
+      {
+        "slot_id": "hotel_work",
+        "start_time": "17:30",
+        "end_time": "19:00",
+        "plan_chunk": "Work from hotel room: follow-up emails and slides",
+        "matched_scenarios": [
+          "Working at desk",
+          "On a screen (phone/laptop)"
+        ],
+        "location": "indoor",
+        "time_period": "twilight",
+        "day_theme": "anomaly_business_trip",
+        "anomaly_events": [
+          "business_trip_day1"
+        ]
+      },
+      {
+        "slot_id": "solo_dinner",
+        "start_time": "19:30",
+        "end_time": "20:30",
+        "plan_chunk": "Solo dinner at hotel restaurant",
+        "matched_scenarios": [
+          "Eating at a restaurant",
+          "Eating"
+        ],
+        "location": "indoor",
+        "time_period": "nighttime",
+        "day_theme": "anomaly_business_trip",
+        "anomaly_events": [
+          "business_trip_day1"
+        ]
+      },
+      {
+        "slot_id": "leisure_early_sleep",
+        "start_time": "21:00",
+        "end_time": "22:00",
+        "plan_chunk": "Early sleep in unfamiliar hotel room",
+        "matched_scenarios": [
+          "Sleeping",
+          "Daily hygiene"
+        ],
+        "location": "indoor",
+        "time_period": "nighttime",
+        "day_theme": "anomaly_business_trip",
+        "anomaly_events": [
+          "business_trip_day1"
+        ]
+      }
+    ],
+    "8": [
+      {
+        "slot_id": "wake_home",
+        "start_time": "07:00",
+        "end_time": "07:45",
+        "plan_chunk": "Wake up, daily hygiene, prepare breakfast and coffee at home",
+        "matched_scenarios": [
+          "Daily hygiene",
+          "Cooking",
+          "Making coffee"
+        ],
+        "location": "indoor",
+        "time_period": "daytime",
+        "day_theme": "tuesday_deep_work",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "commute_morning",
+        "start_time": "08:00",
+        "end_time": "08:40",
+        "plan_chunk": "Commute to office by car or bus",
+        "matched_scenarios": [
+          "Car - commuting, road trip",
+          "Bus",
+          "Walking on street"
+        ],
+        "location": "mixed",
+        "time_period": "daytime",
+        "day_theme": "tuesday_deep_work",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "work_morning",
+        "start_time": "09:00",
+        "end_time": "10:30",
+        "plan_chunk": "Work at desk, read emails, handle morning tasks",
+        "matched_scenarios": [
+          "Working at desk",
+          "On a screen (phone/laptop)",
+          "Talking to colleagues"
+        ],
+        "location": "indoor",
+        "time_period": "daytime",
+        "day_theme": "tuesday_deep_work",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "work_focus",
+        "start_time": "10:45",
+        "end_time": "12:15",
+        "plan_chunk": "Deep focus: coding, design docs, no meetings",
+        "matched_scenarios": [
+          "Working at desk",
+          "On a screen (phone/laptop)",
+          "Writing on whiteboard"
+        ],
+        "location": "indoor",
+        "time_period": "daytime",
+        "day_theme": "tuesday_deep_work",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "lunch_out",
+        "start_time": "12:15",
+        "end_time": "13:00",
+        "plan_chunk": "Lunch break at cafeteria or nearby restaurant",
+        "matched_scenarios": [
+          "Eating at the cafeteria",
+          "Eating at a restaurant",
+          "Eating"
+        ],
+        "location": "indoor",
+        "time_period": "daytime",
+        "day_theme": "tuesday_deep_work",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "errand_outdoor",
+        "start_time": "13:15",
+        "end_time": "14:00",
+        "plan_chunk": "Short walk outside or quick errand in the park",
+        "matched_scenarios": [
+          "Walking on street",
+          "Going to the park"
+        ],
+        "location": "outdoor",
+        "time_period": "daytime",
+        "day_theme": "tuesday_deep_work",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "work_afternoon",
+        "start_time": "14:15",
+        "end_time": "16:00",
+        "plan_chunk": "Afternoon work session and async collaboration",
+        "matched_scenarios": [
+          "Working at desk",
+          "Video call",
+          "On a screen (phone/laptop)"
+        ],
+        "location": "indoor",
+        "time_period": "daytime",
+        "day_theme": "tuesday_deep_work",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "commute_evening",
+        "start_time": "16:15",
+        "end_time": "17:00",
+        "plan_chunk": "Commute home, optionally stop by grocery store",
+        "matched_scenarios": [
+          "Car - commuting, road trip",
+          "Grocery shopping indoors",
+          "Bus"
+        ],
+        "location": "mixed",
+        "time_period": "daytime",
+        "day_theme": "tuesday_deep_work",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "home_evening",
+        "start_time": "17:15",
+        "end_time": "18:15",
+        "plan_chunk": "Cook dinner, talk with housemates, clean kitchen",
+        "matched_scenarios": [
+          "Cooking",
+          "Talking with friends/housemates",
+          "Cleaning / laundry"
+        ],
+        "location": "indoor",
+        "time_period": "twilight",
+        "day_theme": "tuesday_deep_work",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "exercise_gym",
+        "start_time": "19:45",
+        "end_time": "20:45",
+        "plan_chunk": "Gym workout: weights and cardio machines",
+        "matched_scenarios": [
+          "Going to the gym - exercise machine, class, weights"
+        ],
+        "location": "indoor",
+        "time_period": "nighttime",
+        "day_theme": "tuesday_deep_work",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "leisure_games",
+        "start_time": "21:00",
+        "end_time": "22:00",
+        "plan_chunk": "Play video games at home",
+        "matched_scenarios": [
+          "Playing games / video games"
+        ],
+        "location": "indoor",
+        "time_period": "nighttime",
+        "day_theme": "tuesday_deep_work",
+        "anomaly_events": []
+      }
+    ],
+    "9": [
+      {
+        "slot_id": "wake_home",
+        "start_time": "07:00",
+        "end_time": "07:45",
+        "plan_chunk": "Wake up, daily hygiene, prepare breakfast and coffee at home",
+        "matched_scenarios": [
+          "Daily hygiene",
+          "Cooking",
+          "Making coffee"
+        ],
+        "location": "indoor",
+        "time_period": "daytime",
+        "day_theme": "wednesday_midweek",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "commute_morning",
+        "start_time": "08:00",
+        "end_time": "08:40",
+        "plan_chunk": "Commute to office by car or bus",
+        "matched_scenarios": [
+          "Car - commuting, road trip",
+          "Bus",
+          "Walking on street"
+        ],
+        "location": "mixed",
+        "time_period": "daytime",
+        "day_theme": "wednesday_midweek",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "work_morning",
+        "start_time": "09:00",
+        "end_time": "10:30",
+        "plan_chunk": "Work at desk, read emails, handle morning tasks",
+        "matched_scenarios": [
+          "Working at desk",
+          "On a screen (phone/laptop)",
+          "Talking to colleagues"
+        ],
+        "location": "indoor",
+        "time_period": "daytime",
+        "day_theme": "wednesday_midweek",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "work_focus",
+        "start_time": "10:45",
+        "end_time": "12:00",
+        "plan_chunk": "Focused desk work and collaboration",
+        "matched_scenarios": [
+          "Working at desk",
+          "Writing on whiteboard",
+          "Labwork"
+        ],
+        "location": "indoor",
+        "time_period": "daytime",
+        "day_theme": "wednesday_midweek",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "lunch_out",
+        "start_time": "12:15",
+        "end_time": "13:00",
+        "plan_chunk": "Lunch break at cafeteria or nearby restaurant",
+        "matched_scenarios": [
+          "Eating at the cafeteria",
+          "Eating at a restaurant",
+          "Eating"
+        ],
+        "location": "indoor",
+        "time_period": "daytime",
+        "day_theme": "wednesday_midweek",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "errand_outdoor",
+        "start_time": "13:15",
+        "end_time": "14:00",
+        "plan_chunk": "Short walk outside or quick errand in the park",
+        "matched_scenarios": [
+          "Walking on street",
+          "Going to the park"
+        ],
+        "location": "outdoor",
+        "time_period": "daytime",
+        "day_theme": "wednesday_midweek",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "work_afternoon",
+        "start_time": "14:15",
+        "end_time": "16:00",
+        "plan_chunk": "Afternoon work session and async collaboration",
+        "matched_scenarios": [
+          "Working at desk",
+          "Video call",
+          "On a screen (phone/laptop)"
+        ],
+        "location": "indoor",
+        "time_period": "daytime",
+        "day_theme": "wednesday_midweek",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "commute_evening",
+        "start_time": "16:15",
+        "end_time": "17:00",
+        "plan_chunk": "Commute home, optionally stop by grocery store",
+        "matched_scenarios": [
+          "Car - commuting, road trip",
+          "Grocery shopping indoors",
+          "Bus"
+        ],
+        "location": "mixed",
+        "time_period": "daytime",
+        "day_theme": "wednesday_midweek",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "home_evening",
+        "start_time": "17:15",
+        "end_time": "18:15",
+        "plan_chunk": "Cook dinner, talk with housemates, clean kitchen",
+        "matched_scenarios": [
+          "Cooking",
+          "Talking with friends/housemates",
+          "Cleaning / laundry"
+        ],
+        "location": "indoor",
+        "time_period": "twilight",
+        "day_theme": "wednesday_midweek",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "exercise_home",
+        "start_time": "19:45",
+        "end_time": "20:30",
+        "plan_chunk": "Home workout: bodyweight exercises and stretching",
+        "matched_scenarios": [
+          "Working out at home"
+        ],
+        "location": "indoor",
+        "time_period": "nighttime",
+        "day_theme": "wednesday_midweek",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "leisure_music",
+        "start_time": "20:45",
+        "end_time": "21:40",
+        "plan_chunk": "Listen to music and browse social media",
+        "matched_scenarios": [
+          "Listening to music",
+          "On a screen (phone/laptop)"
+        ],
+        "location": "indoor",
+        "time_period": "nighttime",
+        "day_theme": "wednesday_midweek",
+        "anomaly_events": []
+      }
+    ],
+    "10": [
+      {
+        "slot_id": "wake_home",
+        "start_time": "06:50",
+        "end_time": "07:35",
+        "plan_chunk": "Wake early, anxious about project deadline",
+        "matched_scenarios": [
+          "Daily hygiene",
+          "Making coffee"
+        ],
+        "location": "indoor",
+        "time_period": "daytime",
+        "day_theme": "anomaly_overtime",
+        "anomaly_events": [
+          "overtime_late_night"
+        ]
+      },
+      {
+        "slot_id": "commute_morning",
+        "start_time": "07:50",
+        "end_time": "08:30",
+        "plan_chunk": "Quick commute to office",
+        "matched_scenarios": [
+          "Car - commuting, road trip",
+          "Bus"
+        ],
+        "location": "mixed",
+        "time_period": "daytime",
+        "day_theme": "anomaly_overtime",
+        "anomaly_events": [
+          "overtime_late_night"
+        ]
+      },
+      {
+        "slot_id": "work_morning",
+        "start_time": "08:45",
+        "end_time": "12:00",
+        "plan_chunk": "Intense morning: fix critical bugs before presentation",
+        "matched_scenarios": [
+          "Working at desk",
+          "Fixing PC",
+          "On a screen (phone/laptop)"
+        ],
+        "location": "indoor",
+        "time_period": "daytime",
+        "day_theme": "anomaly_overtime",
+        "anomaly_events": [
+          "overtime_late_night"
+        ]
+      },
+      {
+        "slot_id": "lunch_quick",
+        "start_time": "12:10",
+        "end_time": "12:40",
+        "plan_chunk": "Quick desk lunch, no time to go out",
+        "matched_scenarios": [
+          "Eating",
+          "Working at desk"
+        ],
+        "location": "indoor",
+        "time_period": "daytime",
+        "day_theme": "anomaly_overtime",
+        "anomaly_events": [
+          "overtime_late_night"
+        ]
+      },
+      {
+        "slot_id": "project_presentation",
+        "start_time": "13:00",
+        "end_time": "15:00",
+        "plan_chunk": "High-stakes project presentation to leadership",
+        "matched_scenarios": [
+          "Participating in a meeting",
+          "Writing on whiteboard"
+        ],
+        "location": "indoor",
+        "time_period": "daytime",
+        "day_theme": "anomaly_overtime",
+        "anomaly_events": [
+          "overtime_late_night"
+        ]
+      },
+      {
+        "slot_id": "overtime_work",
+        "start_time": "15:15",
+        "end_time": "19:30",
+        "plan_chunk": "Overtime: patch issues found during review, team stays late",
+        "matched_scenarios": [
+          "Working at desk",
+          "Talking to colleagues",
+          "Video call"
+        ],
+        "location": "indoor",
+        "time_period": "nighttime",
+        "day_theme": "anomaly_overtime",
+        "anomaly_events": [
+          "overtime_late_night"
+        ]
+      },
+      {
+        "slot_id": "late_commute",
+        "start_time": "19:45",
+        "end_time": "20:30",
+        "plan_chunk": "Late night commute home, city lights",
+        "matched_scenarios": [
+          "Car - commuting, road trip",
+          "Bus"
+        ],
+        "location": "mixed",
+        "time_period": "nighttime",
+        "day_theme": "anomaly_overtime",
+        "anomaly_events": [
+          "overtime_late_night"
+        ]
+      },
+      {
+        "slot_id": "takeout_dinner",
+        "start_time": "20:45",
+        "end_time": "21:30",
+        "plan_chunk": "Exhausted, order takeout and eat on couch",
+        "matched_scenarios": [
+          "Drive-thru food",
+          "Eating"
+        ],
+        "location": "indoor",
+        "time_period": "nighttime",
+        "day_theme": "anomaly_overtime",
+        "anomaly_events": [
+          "overtime_late_night"
+        ]
+      },
+      {
+        "slot_id": "leisure_early_sleep",
+        "start_time": "21:45",
+        "end_time": "22:15",
+        "plan_chunk": "Crash into bed immediately",
+        "matched_scenarios": [
+          "Sleeping"
+        ],
+        "location": "indoor",
+        "time_period": "nighttime",
+        "day_theme": "anomaly_overtime",
+        "anomaly_events": [
+          "overtime_late_night"
+        ]
+      }
+    ],
+    "11": [
+      {
+        "slot_id": "wake_home",
+        "start_time": "07:00",
+        "end_time": "07:45",
+        "plan_chunk": "Wake up, daily hygiene, prepare breakfast and coffee at home",
+        "matched_scenarios": [
+          "Daily hygiene",
+          "Cooking",
+          "Making coffee"
+        ],
+        "location": "indoor",
+        "time_period": "daytime",
+        "day_theme": "friday_team_social",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "commute_morning",
+        "start_time": "08:00",
+        "end_time": "08:40",
+        "plan_chunk": "Commute to office by car or bus",
+        "matched_scenarios": [
+          "Car - commuting, road trip",
+          "Bus",
+          "Walking on street"
+        ],
+        "location": "mixed",
+        "time_period": "daytime",
+        "day_theme": "friday_team_social",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "work_morning",
+        "start_time": "09:00",
+        "end_time": "10:30",
+        "plan_chunk": "Work at desk, read emails, handle morning tasks",
+        "matched_scenarios": [
+          "Working at desk",
+          "On a screen (phone/laptop)",
+          "Talking to colleagues"
+        ],
+        "location": "indoor",
+        "time_period": "daytime",
+        "day_theme": "friday_team_social",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "work_focus",
+        "start_time": "10:45",
+        "end_time": "12:00",
+        "plan_chunk": "Focused desk work and collaboration",
+        "matched_scenarios": [
+          "Working at desk",
+          "Writing on whiteboard",
+          "Labwork"
+        ],
+        "location": "indoor",
+        "time_period": "daytime",
+        "day_theme": "friday_team_social",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "lunch_out",
+        "start_time": "12:15",
+        "end_time": "13:00",
+        "plan_chunk": "Lunch break at cafeteria or nearby restaurant",
+        "matched_scenarios": [
+          "Eating at the cafeteria",
+          "Eating at a restaurant",
+          "Eating"
+        ],
+        "location": "indoor",
+        "time_period": "daytime",
+        "day_theme": "friday_team_social",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "errand_outdoor",
+        "start_time": "13:15",
+        "end_time": "14:00",
+        "plan_chunk": "Short walk outside or quick errand in the park",
+        "matched_scenarios": [
+          "Walking on street",
+          "Going to the park"
+        ],
+        "location": "outdoor",
+        "time_period": "daytime",
+        "day_theme": "friday_team_social",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "work_afternoon",
+        "start_time": "14:15",
+        "end_time": "15:45",
+        "plan_chunk": "Wrap up weekly tasks and hand off to teammates",
+        "matched_scenarios": [
+          "Working at desk",
+          "Talking to colleagues"
+        ],
+        "location": "indoor",
+        "time_period": "daytime",
+        "day_theme": "friday_team_social",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "commute_evening",
+        "start_time": "16:00",
+        "end_time": "16:45",
+        "plan_chunk": "Commute to downtown for team gathering",
+        "matched_scenarios": [
+          "Car - commuting, road trip",
+          "Walking on street"
+        ],
+        "location": "mixed",
+        "time_period": "daytime",
+        "day_theme": "friday_team_social",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "home_evening",
+        "start_time": "17:00",
+        "end_time": "18:00",
+        "plan_chunk": "Quick refresh at home before heading out",
+        "matched_scenarios": [
+          "Daily hygiene",
+          "Cooking"
+        ],
+        "location": "indoor",
+        "time_period": "twilight",
+        "day_theme": "friday_team_social",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "team_dinner",
+        "start_time": "18:30",
+        "end_time": "20:30",
+        "plan_chunk": "Team dinner at restaurant with colleagues",
+        "matched_scenarios": [
+          "Eating at a restaurant",
+          "Talking to colleagues",
+          "Attending a party"
+        ],
+        "location": "indoor",
+        "time_period": "nighttime",
+        "day_theme": "friday_team_social",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "friday_night_out",
+        "start_time": "20:45",
+        "end_time": "22:00",
+        "plan_chunk": "Casual hangout at bar or dessert shop with teammates",
+        "matched_scenarios": [
+          "Hanging out with friends at a bar",
+          "Eating at a restaurant"
+        ],
+        "location": "indoor",
+        "time_period": "nighttime",
+        "day_theme": "friday_team_social",
+        "anomaly_events": []
+      }
+    ],
+    "12": [
+      {
+        "slot_id": "wake_home",
+        "start_time": "08:30",
+        "end_time": "09:30",
+        "plan_chunk": "Leisurely brunch at home",
+        "matched_scenarios": [
+          "Making coffee",
+          "Cooking",
+          "Daily hygiene"
+        ],
+        "location": "indoor",
+        "time_period": "daytime",
+        "day_theme": "saturday_cycling_market",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "cycling",
+        "start_time": "10:00",
+        "end_time": "12:00",
+        "plan_chunk": "Cycling along riverside bike path",
+        "matched_scenarios": [
+          "Cycling / jogging",
+          "Going to the park"
+        ],
+        "location": "outdoor",
+        "time_period": "daytime",
+        "day_theme": "saturday_cycling_market",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "farmers_market",
+        "start_time": "12:30",
+        "end_time": "13:30",
+        "plan_chunk": "Browse farmers market, buy fresh produce",
+        "matched_scenarios": [
+          "Grocery shopping indoors",
+          "Clothes, other shopping",
+          "Walking on street"
+        ],
+        "location": "outdoor",
+        "time_period": "daytime",
+        "day_theme": "saturday_cycling_market",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "home_cooking",
+        "start_time": "14:00",
+        "end_time": "15:30",
+        "plan_chunk": "Experiment with new recipes using market finds",
+        "matched_scenarios": [
+          "Cooking",
+          "Crafting/knitting/sewing/drawing/painting"
+        ],
+        "location": "indoor",
+        "time_period": "daytime",
+        "day_theme": "saturday_cycling_market",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "social_outdoor",
+        "start_time": "16:00",
+        "end_time": "17:30",
+        "plan_chunk": "Meet friends at park for frisbee and chat",
+        "matched_scenarios": [
+          "Frisbee",
+          "Outdoor social (includes campfire)",
+          "Talking with friends/housemates"
+        ],
+        "location": "outdoor",
+        "time_period": "daytime",
+        "day_theme": "saturday_cycling_market",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "dining_out",
+        "start_time": "19:00",
+        "end_time": "20:30",
+        "plan_chunk": "Dinner at a new restaurant downtown",
+        "matched_scenarios": [
+          "Eating at a restaurant"
+        ],
+        "location": "indoor",
+        "time_period": "nighttime",
+        "day_theme": "saturday_cycling_market",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "leisure_games",
+        "start_time": "21:00",
+        "end_time": "22:00",
+        "plan_chunk": "Play board games at friend's home",
+        "matched_scenarios": [
+          "Playing board games",
+          "Playing games / video games"
+        ],
+        "location": "indoor",
+        "time_period": "nighttime",
+        "day_theme": "saturday_cycling_market",
+        "anomaly_events": []
+      }
+    ],
+    "13": [
+      {
+        "slot_id": "wake_home",
+        "start_time": "09:00",
+        "end_time": "10:00",
+        "plan_chunk": "Slow morning with pour-over coffee and podcast",
+        "matched_scenarios": [
+          "Making coffee",
+          "Listening to music",
+          "Daily hygiene"
+        ],
+        "location": "indoor",
+        "time_period": "daytime",
+        "day_theme": "sunday_cozy_home",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "home_hobby",
+        "start_time": "10:30",
+        "end_time": "12:30",
+        "plan_chunk": "Crafting project and organizing bookshelf",
+        "matched_scenarios": [
+          "Crafting/knitting/sewing/drawing/painting",
+          "Reading books"
+        ],
+        "location": "indoor",
+        "time_period": "daytime",
+        "day_theme": "sunday_cozy_home",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "home_cooking",
+        "start_time": "13:00",
+        "end_time": "14:30",
+        "plan_chunk": "Bake bread and prepare elaborate lunch",
+        "matched_scenarios": [
+          "Cooking",
+          "Baker"
+        ],
+        "location": "indoor",
+        "time_period": "daytime",
+        "day_theme": "sunday_cozy_home",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "indoor_relax",
+        "start_time": "15:00",
+        "end_time": "17:00",
+        "plan_chunk": "Nap, browse phone, play with pet",
+        "matched_scenarios": [
+          "Playing with pets",
+          "On a screen (phone/laptop)",
+          "Sleeping"
+        ],
+        "location": "indoor",
+        "time_period": "daytime",
+        "day_theme": "sunday_cozy_home",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "home_chores",
+        "start_time": "17:30",
+        "end_time": "18:30",
+        "plan_chunk": "Meal prep for the coming work week",
+        "matched_scenarios": [
+          "Cooking",
+          "Cleaning / laundry"
+        ],
+        "location": "indoor",
+        "time_period": "twilight",
+        "day_theme": "sunday_cozy_home",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "leisure_early_sleep",
+        "start_time": "19:30",
+        "end_time": "21:00",
+        "plan_chunk": "Early night routine: skincare, journal, sleep by 9:30",
+        "matched_scenarios": [
+          "Daily hygiene",
+          "Sleeping",
+          "Reading books"
+        ],
+        "location": "indoor",
+        "time_period": "nighttime",
+        "day_theme": "sunday_cozy_home",
+        "anomaly_events": []
+      }
+    ],
+    "14": [
+      {
+        "slot_id": "wake_home",
+        "start_time": "07:00",
+        "end_time": "07:45",
+        "plan_chunk": "Wake up, daily hygiene, prepare breakfast and coffee at home",
+        "matched_scenarios": [
+          "Daily hygiene",
+          "Cooking",
+          "Making coffee"
+        ],
+        "location": "indoor",
+        "time_period": "daytime",
+        "day_theme": "monday_weekly_meeting",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "commute_morning",
+        "start_time": "08:00",
+        "end_time": "08:40",
+        "plan_chunk": "Commute to office by car or bus",
+        "matched_scenarios": [
+          "Car - commuting, road trip",
+          "Bus",
+          "Walking on street"
+        ],
+        "location": "mixed",
+        "time_period": "daytime",
+        "day_theme": "monday_weekly_meeting",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "work_morning",
+        "start_time": "09:00",
+        "end_time": "10:30",
+        "plan_chunk": "Weekly all-hands team meeting and sprint planning",
+        "matched_scenarios": [
+          "Participating in a meeting",
+          "Working at desk",
+          "Talking to colleagues"
+        ],
+        "location": "indoor",
+        "time_period": "daytime",
+        "day_theme": "monday_weekly_meeting",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "work_focus",
+        "start_time": "10:45",
+        "end_time": "12:00",
+        "plan_chunk": "Focused desk work and collaboration",
+        "matched_scenarios": [
+          "Working at desk",
+          "Writing on whiteboard",
+          "Labwork"
+        ],
+        "location": "indoor",
+        "time_period": "daytime",
+        "day_theme": "monday_weekly_meeting",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "lunch_out",
+        "start_time": "12:15",
+        "end_time": "13:00",
+        "plan_chunk": "Lunch break at cafeteria or nearby restaurant",
+        "matched_scenarios": [
+          "Eating at the cafeteria",
+          "Eating at a restaurant",
+          "Eating"
+        ],
+        "location": "indoor",
+        "time_period": "daytime",
+        "day_theme": "monday_weekly_meeting",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "errand_outdoor",
+        "start_time": "13:15",
+        "end_time": "14:00",
+        "plan_chunk": "Short walk outside or quick errand in the park",
+        "matched_scenarios": [
+          "Walking on street",
+          "Going to the park"
+        ],
+        "location": "outdoor",
+        "time_period": "daytime",
+        "day_theme": "monday_weekly_meeting",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "work_afternoon",
+        "start_time": "14:15",
+        "end_time": "16:00",
+        "plan_chunk": "Afternoon work session and async collaboration",
+        "matched_scenarios": [
+          "Working at desk",
+          "Video call",
+          "On a screen (phone/laptop)"
+        ],
+        "location": "indoor",
+        "time_period": "daytime",
+        "day_theme": "monday_weekly_meeting",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "commute_evening",
+        "start_time": "16:15",
+        "end_time": "17:00",
+        "plan_chunk": "Commute home, optionally stop by grocery store",
+        "matched_scenarios": [
+          "Car - commuting, road trip",
+          "Grocery shopping indoors",
+          "Bus"
+        ],
+        "location": "mixed",
+        "time_period": "daytime",
+        "day_theme": "monday_weekly_meeting",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "home_evening",
+        "start_time": "17:15",
+        "end_time": "18:15",
+        "plan_chunk": "Cook dinner, talk with housemates, clean kitchen",
+        "matched_scenarios": [
+          "Cooking",
+          "Talking with friends/housemates",
+          "Cleaning / laundry"
+        ],
+        "location": "indoor",
+        "time_period": "twilight",
+        "day_theme": "monday_weekly_meeting",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "exercise_run",
+        "start_time": "19:45",
+        "end_time": "20:35",
+        "plan_chunk": "Evening jog or cycling around the neighborhood",
+        "matched_scenarios": [
+          "Cycling / jogging",
+          "Working out outside"
+        ],
+        "location": "outdoor",
+        "time_period": "nighttime",
+        "day_theme": "monday_weekly_meeting",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "leisure_tv",
+        "start_time": "20:50",
+        "end_time": "22:05",
+        "plan_chunk": "Watch TV series episodes and relax on the couch",
+        "matched_scenarios": [
+          "Watching tv"
+        ],
+        "location": "indoor",
+        "time_period": "nighttime",
+        "day_theme": "monday_weekly_meeting",
+        "anomaly_events": []
+      }
+    ],
+    "15": [
+      {
+        "slot_id": "wake_home",
+        "start_time": "07:05",
+        "end_time": "07:50",
+        "plan_chunk": "Normal morning routine",
+        "matched_scenarios": [
+          "Daily hygiene",
+          "Cooking",
+          "Making coffee"
+        ],
+        "location": "indoor",
+        "time_period": "daytime",
+        "day_theme": "anomaly_impromptu_date",
+        "anomaly_events": [
+          "impromptu_evening_date"
+        ]
+      },
+      {
+        "slot_id": "commute_morning",
+        "start_time": "08:05",
+        "end_time": "08:45",
+        "plan_chunk": "Commute to office",
+        "matched_scenarios": [
+          "Car - commuting, road trip",
+          "Bus"
+        ],
+        "location": "mixed",
+        "time_period": "daytime",
+        "day_theme": "anomaly_impromptu_date",
+        "anomaly_events": [
+          "impromptu_evening_date"
+        ]
+      },
+      {
+        "slot_id": "work_morning",
+        "start_time": "09:00",
+        "end_time": "12:00",
+        "plan_chunk": "Regular work morning",
+        "matched_scenarios": [
+          "Working at desk",
+          "Talking to colleagues"
+        ],
+        "location": "indoor",
+        "time_period": "daytime",
+        "day_theme": "anomaly_impromptu_date",
+        "anomaly_events": [
+          "impromptu_evening_date"
+        ]
+      },
+      {
+        "slot_id": "lunch_out",
+        "start_time": "12:15",
+        "end_time": "13:00",
+        "plan_chunk": "Lunch with coworker, receive impromptu date invitation",
+        "matched_scenarios": [
+          "Eating at the cafeteria",
+          "Talking to colleagues"
+        ],
+        "location": "indoor",
+        "time_period": "daytime",
+        "day_theme": "anomaly_impromptu_date",
+        "anomaly_events": [
+          "impromptu_evening_date"
+        ]
+      },
+      {
+        "slot_id": "work_afternoon",
+        "start_time": "13:15",
+        "end_time": "17:00",
+        "plan_chunk": "Afternoon work, leave on time for date",
+        "matched_scenarios": [
+          "Working at desk",
+          "On a screen (phone/laptop)"
+        ],
+        "location": "indoor",
+        "time_period": "daytime",
+        "day_theme": "anomaly_impromptu_date",
+        "anomaly_events": [
+          "impromptu_evening_date"
+        ]
+      },
+      {
+        "slot_id": "commute_date",
+        "start_time": "17:15",
+        "end_time": "17:45",
+        "plan_chunk": "Commute to downtown restaurant",
+        "matched_scenarios": [
+          "Car - commuting, road trip",
+          "Walking on street"
+        ],
+        "location": "mixed",
+        "time_period": "daytime",
+        "day_theme": "anomaly_impromptu_date",
+        "anomaly_events": [
+          "impromptu_evening_date"
+        ]
+      },
+      {
+        "slot_id": "impromptu_date",
+        "start_time": "18:00",
+        "end_time": "20:00",
+        "plan_chunk": "Impromptu dinner date at nice restaurant",
+        "matched_scenarios": [
+          "Eating at a restaurant",
+          "Talking with friends/housemates"
+        ],
+        "location": "indoor",
+        "time_period": "nighttime",
+        "day_theme": "anomaly_impromptu_date",
+        "anomaly_events": [
+          "impromptu_evening_date"
+        ]
+      },
+      {
+        "slot_id": "evening_walk",
+        "start_time": "20:15",
+        "end_time": "21:00",
+        "plan_chunk": "After-dinner walk along the waterfront",
+        "matched_scenarios": [
+          "Walking on street",
+          "Talking on the phone"
+        ],
+        "location": "outdoor",
+        "time_period": "nighttime",
+        "day_theme": "anomaly_impromptu_date",
+        "anomaly_events": [
+          "impromptu_evening_date"
+        ]
+      },
+      {
+        "slot_id": "leisure_early_sleep",
+        "start_time": "21:30",
+        "end_time": "22:15",
+        "plan_chunk": "Return home happy, get ready for bed",
+        "matched_scenarios": [
+          "Daily hygiene",
+          "Sleeping"
+        ],
+        "location": "indoor",
+        "time_period": "nighttime",
+        "day_theme": "anomaly_impromptu_date",
+        "anomaly_events": [
+          "impromptu_evening_date"
+        ]
+      }
+    ],
+    "16": [
+      {
+        "slot_id": "wake_home",
+        "start_time": "07:00",
+        "end_time": "07:40",
+        "plan_chunk": "Wake up, remember doctor appointment today",
+        "matched_scenarios": [
+          "Daily hygiene",
+          "Making coffee"
+        ],
+        "location": "indoor",
+        "time_period": "daytime",
+        "day_theme": "anomaly_doctor_visit",
+        "anomaly_events": [
+          "doctor_appointment_midday"
+        ]
+      },
+      {
+        "slot_id": "commute_morning",
+        "start_time": "08:00",
+        "end_time": "08:35",
+        "plan_chunk": "Commute to office",
+        "matched_scenarios": [
+          "Car - commuting, road trip"
+        ],
+        "location": "mixed",
+        "time_period": "daytime",
+        "day_theme": "anomaly_doctor_visit",
+        "anomaly_events": [
+          "doctor_appointment_midday"
+        ]
+      },
+      {
+        "slot_id": "work_morning",
+        "start_time": "08:45",
+        "end_time": "11:30",
+        "plan_chunk": "Work before leaving for appointment",
+        "matched_scenarios": [
+          "Working at desk"
+        ],
+        "location": "indoor",
+        "time_period": "daytime",
+        "day_theme": "anomaly_doctor_visit",
+        "anomaly_events": [
+          "doctor_appointment_midday"
+        ]
+      },
+      {
+        "slot_id": "doctor_appointment",
+        "start_time": "11:45",
+        "end_time": "13:00",
+        "plan_chunk": "Doctor appointment: annual check-up",
+        "matched_scenarios": [
+          "Appointments: doctor, dentist",
+          "Talking on the phone"
+        ],
+        "location": "indoor",
+        "time_period": "daytime",
+        "day_theme": "anomaly_doctor_visit",
+        "anomaly_events": [
+          "doctor_appointment_midday"
+        ]
+      },
+      {
+        "slot_id": "lunch_out",
+        "start_time": "13:15",
+        "end_time": "14:00",
+        "plan_chunk": "Grab lunch near clinic",
+        "matched_scenarios": [
+          "Eating at a restaurant",
+          "Eating"
+        ],
+        "location": "indoor",
+        "time_period": "daytime",
+        "day_theme": "anomaly_doctor_visit",
+        "anomaly_events": [
+          "doctor_appointment_midday"
+        ]
+      },
+      {
+        "slot_id": "work_afternoon",
+        "start_time": "14:15",
+        "end_time": "16:30",
+        "plan_chunk": "Return to office for afternoon work",
+        "matched_scenarios": [
+          "Working at desk",
+          "Video call"
+        ],
+        "location": "indoor",
+        "time_period": "daytime",
+        "day_theme": "anomaly_doctor_visit",
+        "anomaly_events": [
+          "doctor_appointment_midday"
+        ]
+      },
+      {
+        "slot_id": "commute_evening",
+        "start_time": "16:45",
+        "end_time": "17:30",
+        "plan_chunk": "Commute home",
+        "matched_scenarios": [
+          "Car - commuting, road trip"
+        ],
+        "location": "mixed",
+        "time_period": "daytime",
+        "day_theme": "anomaly_doctor_visit",
+        "anomaly_events": [
+          "doctor_appointment_midday"
+        ]
+      },
+      {
+        "slot_id": "home_evening",
+        "start_time": "17:45",
+        "end_time": "18:45",
+        "plan_chunk": "Cook light dinner, rest after appointment",
+        "matched_scenarios": [
+          "Cooking"
+        ],
+        "location": "indoor",
+        "time_period": "twilight",
+        "day_theme": "anomaly_doctor_visit",
+        "anomaly_events": [
+          "doctor_appointment_midday"
+        ]
+      },
+      {
+        "slot_id": "exercise_home",
+        "start_time": "19:00",
+        "end_time": "19:45",
+        "plan_chunk": "Gentle home stretching, skip intense workout",
+        "matched_scenarios": [
+          "Working out at home",
+          "Yoga practice"
+        ],
+        "location": "indoor",
+        "time_period": "nighttime",
+        "day_theme": "anomaly_doctor_visit",
+        "anomaly_events": [
+          "doctor_appointment_midday"
+        ]
+      },
+      {
+        "slot_id": "leisure_tv",
+        "start_time": "20:00",
+        "end_time": "21:30",
+        "plan_chunk": "Watch TV and relax",
+        "matched_scenarios": [
+          "Watching tv"
+        ],
+        "location": "indoor",
+        "time_period": "nighttime",
+        "day_theme": "anomaly_doctor_visit",
+        "anomaly_events": [
+          "doctor_appointment_midday"
+        ]
+      }
+    ],
+    "17": [
+      {
+        "slot_id": "wake_home",
+        "start_time": "07:00",
+        "end_time": "07:45",
+        "plan_chunk": "Wake up, daily hygiene, prepare breakfast and coffee at home",
+        "matched_scenarios": [
+          "Daily hygiene",
+          "Cooking",
+          "Making coffee"
+        ],
+        "location": "indoor",
+        "time_period": "daytime",
+        "day_theme": "thursday_project_review",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "commute_morning",
+        "start_time": "08:00",
+        "end_time": "08:40",
+        "plan_chunk": "Commute to office by car or bus",
+        "matched_scenarios": [
+          "Car - commuting, road trip",
+          "Bus",
+          "Walking on street"
+        ],
+        "location": "mixed",
+        "time_period": "daytime",
+        "day_theme": "thursday_project_review",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "work_morning",
+        "start_time": "09:00",
+        "end_time": "10:30",
+        "plan_chunk": "Work at desk, read emails, handle morning tasks",
+        "matched_scenarios": [
+          "Working at desk",
+          "On a screen (phone/laptop)",
+          "Talking to colleagues"
+        ],
+        "location": "indoor",
+        "time_period": "daytime",
+        "day_theme": "thursday_project_review",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "work_focus",
+        "start_time": "10:45",
+        "end_time": "12:00",
+        "plan_chunk": "Focused desk work and collaboration",
+        "matched_scenarios": [
+          "Working at desk",
+          "Writing on whiteboard",
+          "Labwork"
+        ],
+        "location": "indoor",
+        "time_period": "daytime",
+        "day_theme": "thursday_project_review",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "lunch_out",
+        "start_time": "12:15",
+        "end_time": "13:00",
+        "plan_chunk": "Lunch break at cafeteria or nearby restaurant",
+        "matched_scenarios": [
+          "Eating at the cafeteria",
+          "Eating at a restaurant",
+          "Eating"
+        ],
+        "location": "indoor",
+        "time_period": "daytime",
+        "day_theme": "thursday_project_review",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "errand_outdoor",
+        "start_time": "13:15",
+        "end_time": "14:00",
+        "plan_chunk": "Short walk outside or quick errand in the park",
+        "matched_scenarios": [
+          "Walking on street",
+          "Going to the park"
+        ],
+        "location": "outdoor",
+        "time_period": "daytime",
+        "day_theme": "thursday_project_review",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "work_afternoon",
+        "start_time": "14:15",
+        "end_time": "16:15",
+        "plan_chunk": "Project presentation and demo to stakeholders",
+        "matched_scenarios": [
+          "Participating in a meeting",
+          "Writing on whiteboard",
+          "Working at desk"
+        ],
+        "location": "indoor",
+        "time_period": "daytime",
+        "day_theme": "thursday_project_review",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "commute_evening",
+        "start_time": "16:30",
+        "end_time": "17:15",
+        "plan_chunk": "Commute home, optionally stop by grocery store",
+        "matched_scenarios": [
+          "Car - commuting, road trip",
+          "Grocery shopping indoors",
+          "Bus"
+        ],
+        "location": "mixed",
+        "time_period": "daytime",
+        "day_theme": "thursday_project_review",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "home_evening",
+        "start_time": "17:15",
+        "end_time": "18:15",
+        "plan_chunk": "Cook dinner, talk with housemates, clean kitchen",
+        "matched_scenarios": [
+          "Cooking",
+          "Talking with friends/housemates",
+          "Cleaning / laundry"
+        ],
+        "location": "indoor",
+        "time_period": "twilight",
+        "day_theme": "thursday_project_review",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "exercise_gym",
+        "start_time": "20:00",
+        "end_time": "21:00",
+        "plan_chunk": "Gym workout: weights and cardio machines",
+        "matched_scenarios": [
+          "Going to the gym - exercise machine, class, weights"
+        ],
+        "location": "indoor",
+        "time_period": "nighttime",
+        "day_theme": "thursday_project_review",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "leisure_tv",
+        "start_time": "21:15",
+        "end_time": "22:30",
+        "plan_chunk": "Watch TV series episodes and relax on the couch",
+        "matched_scenarios": [
+          "Watching tv"
+        ],
+        "location": "indoor",
+        "time_period": "nighttime",
+        "day_theme": "thursday_project_review",
+        "anomaly_events": []
+      }
+    ],
+    "18": [
+      {
+        "slot_id": "wake_home",
+        "start_time": "07:00",
+        "end_time": "07:45",
+        "plan_chunk": "Wake up, daily hygiene, prepare breakfast and coffee at home",
+        "matched_scenarios": [
+          "Daily hygiene",
+          "Cooking",
+          "Making coffee"
+        ],
+        "location": "indoor",
+        "time_period": "daytime",
+        "day_theme": "friday_team_social",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "commute_morning",
+        "start_time": "08:00",
+        "end_time": "08:40",
+        "plan_chunk": "Commute to office by car or bus",
+        "matched_scenarios": [
+          "Car - commuting, road trip",
+          "Bus",
+          "Walking on street"
+        ],
+        "location": "mixed",
+        "time_period": "daytime",
+        "day_theme": "friday_team_social",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "work_morning",
+        "start_time": "09:00",
+        "end_time": "10:30",
+        "plan_chunk": "Work at desk, read emails, handle morning tasks",
+        "matched_scenarios": [
+          "Working at desk",
+          "On a screen (phone/laptop)",
+          "Talking to colleagues"
+        ],
+        "location": "indoor",
+        "time_period": "daytime",
+        "day_theme": "friday_team_social",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "work_focus",
+        "start_time": "10:45",
+        "end_time": "12:00",
+        "plan_chunk": "Focused desk work and collaboration",
+        "matched_scenarios": [
+          "Working at desk",
+          "Writing on whiteboard",
+          "Labwork"
+        ],
+        "location": "indoor",
+        "time_period": "daytime",
+        "day_theme": "friday_team_social",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "lunch_out",
+        "start_time": "12:15",
+        "end_time": "13:00",
+        "plan_chunk": "Lunch break at cafeteria or nearby restaurant",
+        "matched_scenarios": [
+          "Eating at the cafeteria",
+          "Eating at a restaurant",
+          "Eating"
+        ],
+        "location": "indoor",
+        "time_period": "daytime",
+        "day_theme": "friday_team_social",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "errand_outdoor",
+        "start_time": "13:15",
+        "end_time": "14:00",
+        "plan_chunk": "Short walk outside or quick errand in the park",
+        "matched_scenarios": [
+          "Walking on street",
+          "Going to the park"
+        ],
+        "location": "outdoor",
+        "time_period": "daytime",
+        "day_theme": "friday_team_social",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "work_afternoon",
+        "start_time": "14:15",
+        "end_time": "15:45",
+        "plan_chunk": "Wrap up weekly tasks and hand off to teammates",
+        "matched_scenarios": [
+          "Working at desk",
+          "Talking to colleagues"
+        ],
+        "location": "indoor",
+        "time_period": "daytime",
+        "day_theme": "friday_team_social",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "commute_evening",
+        "start_time": "16:00",
+        "end_time": "16:45",
+        "plan_chunk": "Commute to downtown for team gathering",
+        "matched_scenarios": [
+          "Car - commuting, road trip",
+          "Walking on street"
+        ],
+        "location": "mixed",
+        "time_period": "daytime",
+        "day_theme": "friday_team_social",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "home_evening",
+        "start_time": "17:00",
+        "end_time": "18:00",
+        "plan_chunk": "Quick refresh at home before heading out",
+        "matched_scenarios": [
+          "Daily hygiene",
+          "Cooking"
+        ],
+        "location": "indoor",
+        "time_period": "twilight",
+        "day_theme": "friday_team_social",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "team_dinner",
+        "start_time": "18:30",
+        "end_time": "20:30",
+        "plan_chunk": "Team dinner at restaurant with colleagues",
+        "matched_scenarios": [
+          "Eating at a restaurant",
+          "Talking to colleagues",
+          "Attending a party"
+        ],
+        "location": "indoor",
+        "time_period": "nighttime",
+        "day_theme": "friday_team_social",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "friday_night_out",
+        "start_time": "20:45",
+        "end_time": "22:00",
+        "plan_chunk": "Casual hangout at bar or dessert shop with teammates",
+        "matched_scenarios": [
+          "Hanging out with friends at a bar",
+          "Eating at a restaurant"
+        ],
+        "location": "indoor",
+        "time_period": "nighttime",
+        "day_theme": "friday_team_social",
+        "anomaly_events": []
+      }
+    ],
+    "19": [
+      {
+        "slot_id": "wake_home",
+        "start_time": "07:30",
+        "end_time": "08:30",
+        "plan_chunk": "Prepare for full-day outdoor expedition",
+        "matched_scenarios": [
+          "Daily hygiene",
+          "Cooking"
+        ],
+        "location": "indoor",
+        "time_period": "daytime",
+        "day_theme": "saturday_outdoor_expedition",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "outdoor_activity",
+        "start_time": "09:00",
+        "end_time": "12:00",
+        "plan_chunk": "Full-day outdoor adventure: hiking and nature photography",
+        "matched_scenarios": [
+          "Hiking",
+          "Taking photos in photography studio",
+          "Tourism"
+        ],
+        "location": "outdoor",
+        "time_period": "daytime",
+        "day_theme": "saturday_outdoor_expedition",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "outdoor_lunch",
+        "start_time": "12:15",
+        "end_time": "13:00",
+        "plan_chunk": "Eat at outdoor hawker center",
+        "matched_scenarios": [
+          "Eating in hawker center",
+          "Eating"
+        ],
+        "location": "outdoor",
+        "time_period": "daytime",
+        "day_theme": "saturday_outdoor_expedition",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "outdoor_afternoon",
+        "start_time": "13:30",
+        "end_time": "16:30",
+        "plan_chunk": "Explore new neighborhood on foot, visit local shops",
+        "matched_scenarios": [
+          "Walking on street",
+          "Tourism",
+          "Clothes, other shopping"
+        ],
+        "location": "outdoor",
+        "time_period": "daytime",
+        "day_theme": "saturday_outdoor_expedition",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "commute_home",
+        "start_time": "17:00",
+        "end_time": "18:00",
+        "plan_chunk": "Bus ride home, review photos on phone",
+        "matched_scenarios": [
+          "Bus",
+          "On a screen (phone/laptop)"
+        ],
+        "location": "mixed",
+        "time_period": "twilight",
+        "day_theme": "saturday_outdoor_expedition",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "home_evening",
+        "start_time": "18:30",
+        "end_time": "20:00",
+        "plan_chunk": "Cook hearty dinner, share photos with friends",
+        "matched_scenarios": [
+          "Cooking",
+          "Video call",
+          "Talking with friends/housemates"
+        ],
+        "location": "indoor",
+        "time_period": "nighttime",
+        "day_theme": "saturday_outdoor_expedition",
+        "anomaly_events": []
+      }
+    ],
+    "20": [
+      {
+        "slot_id": "wake_home",
+        "start_time": "10:00",
+        "end_time": "11:00",
+        "plan_chunk": "Brunch and check gaming news online",
+        "matched_scenarios": [
+          "Cooking",
+          "On a screen (phone/laptop)"
+        ],
+        "location": "indoor",
+        "time_period": "daytime",
+        "day_theme": "sunday_gaming_cooking",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "gaming_session",
+        "start_time": "11:30",
+        "end_time": "14:00",
+        "plan_chunk": "Long gaming session: new RPG release",
+        "matched_scenarios": [
+          "Playing games / video games"
+        ],
+        "location": "indoor",
+        "time_period": "daytime",
+        "day_theme": "sunday_gaming_cooking",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "online_gaming",
+        "start_time": "14:30",
+        "end_time": "16:30",
+        "plan_chunk": "Online multiplayer with friends",
+        "matched_scenarios": [
+          "Playing games / video games",
+          "Video call"
+        ],
+        "location": "indoor",
+        "time_period": "daytime",
+        "day_theme": "sunday_gaming_cooking",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "home_cooking",
+        "start_time": "17:00",
+        "end_time": "18:30",
+        "plan_chunk": "Cook comfort food for dinner",
+        "matched_scenarios": [
+          "Cooking"
+        ],
+        "location": "indoor",
+        "time_period": "twilight",
+        "day_theme": "sunday_gaming_cooking",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "gaming_evening",
+        "start_time": "19:00",
+        "end_time": "21:00",
+        "plan_chunk": "Continue gaming, try new game mode",
+        "matched_scenarios": [
+          "Playing games / video games",
+          "Watching tv"
+        ],
+        "location": "indoor",
+        "time_period": "nighttime",
+        "day_theme": "sunday_gaming_cooking",
+        "anomaly_events": []
+      },
+      {
+        "slot_id": "leisure_music",
+        "start_time": "21:30",
+        "end_time": "22:30",
+        "plan_chunk": "Wind down with music playlist",
+        "matched_scenarios": [
+          "Listening to music"
+        ],
+        "location": "indoor",
+        "time_period": "nighttime",
+        "day_theme": "sunday_gaming_cooking",
+        "anomaly_events": []
+      }
+    ]
+  },
+  "day_metadata": {
+    "0": {
+      "day_theme": "monday_weekly_meeting",
+      "anomaly_events": [],
+      "time_variations": {
+        "wake_jitter_min": 19,
+        "commute_jitter_min": -8,
+        "exercise_jitter_min": 8
+      }
+    },
+    "1": {
+      "day_theme": "tuesday_deep_work",
+      "anomaly_events": [],
+      "time_variations": {
+        "wake_jitter_min": -5,
+        "commute_jitter_min": -10,
+        "exercise_jitter_min": -6
+      }
+    },
+    "2": {
+      "day_theme": "anomaly_rain_day",
+      "anomaly_events": [
+        "rain_cancelled_outdoor"
+      ],
+      "time_variations": {
+        "wake_jitter_min": 9,
+        "commute_jitter_min": -8,
+        "exercise_jitter_min": 8
+      }
+    },
+    "3": {
+      "day_theme": "thursday_project_review",
+      "anomaly_events": [],
+      "time_variations": {
+        "wake_jitter_min": -13,
+        "commute_jitter_min": -4,
+        "exercise_jitter_min": 20
+      }
+    },
+    "4": {
+      "day_theme": "friday_team_social",
+      "anomaly_events": [],
+      "time_variations": {
+        "wake_jitter_min": 11,
+        "commute_jitter_min": 9,
+        "exercise_jitter_min": 12
+      }
+    },
+    "5": {
+      "day_theme": "saturday_hiking",
+      "anomaly_events": [],
+      "time_variations": {
+        "wake_jitter_min": 5,
+        "commute_jitter_min": 14,
+        "exercise_jitter_min": 13
+      }
+    },
+    "6": {
+      "day_theme": "sunday_movie_marathon",
+      "anomaly_events": [],
+      "time_variations": {
+        "wake_jitter_min": 26,
+        "commute_jitter_min": -1,
+        "exercise_jitter_min": 2
+      }
+    },
+    "7": {
+      "day_theme": "anomaly_business_trip",
+      "anomaly_events": [
+        "business_trip_day1"
+      ],
+      "time_variations": {
+        "wake_jitter_min": -7,
+        "commute_jitter_min": -10,
+        "exercise_jitter_min": 12
+      }
+    },
+    "8": {
+      "day_theme": "tuesday_deep_work",
+      "anomaly_events": [],
+      "time_variations": {
+        "wake_jitter_min": -11,
+        "commute_jitter_min": 7,
+        "exercise_jitter_min": 5
+      }
+    },
+    "9": {
+      "day_theme": "wednesday_midweek",
+      "anomaly_events": [],
+      "time_variations": {
+        "wake_jitter_min": 2,
+        "commute_jitter_min": 8,
+        "exercise_jitter_min": -8
+      }
+    },
+    "10": {
+      "day_theme": "anomaly_overtime",
+      "anomaly_events": [
+        "overtime_late_night"
+      ],
+      "time_variations": {
+        "wake_jitter_min": -10,
+        "commute_jitter_min": 0,
+        "exercise_jitter_min": -4
+      }
+    },
+    "11": {
+      "day_theme": "friday_team_social",
+      "anomaly_events": [],
+      "time_variations": {
+        "wake_jitter_min": 2,
+        "commute_jitter_min": 7,
+        "exercise_jitter_min": 13
+      }
+    },
+    "12": {
+      "day_theme": "saturday_cycling_market",
+      "anomaly_events": [],
+      "time_variations": {
+        "wake_jitter_min": 20,
+        "commute_jitter_min": -10,
+        "exercise_jitter_min": 1
+      }
+    },
+    "13": {
+      "day_theme": "sunday_cozy_home",
+      "anomaly_events": [],
+      "time_variations": {
+        "wake_jitter_min": -13,
+        "commute_jitter_min": 0,
+        "exercise_jitter_min": 16
+      }
+    },
+    "14": {
+      "day_theme": "monday_weekly_meeting",
+      "anomaly_events": [],
+      "time_variations": {
+        "wake_jitter_min": -2,
+        "commute_jitter_min": 4,
+        "exercise_jitter_min": -3
+      }
+    },
+    "15": {
+      "day_theme": "anomaly_impromptu_date",
+      "anomaly_events": [
+        "impromptu_evening_date"
+      ],
+      "time_variations": {
+        "wake_jitter_min": -15,
+        "commute_jitter_min": -1,
+        "exercise_jitter_min": 17
+      }
+    },
+    "16": {
+      "day_theme": "anomaly_doctor_visit",
+      "anomaly_events": [
+        "doctor_appointment_midday"
+      ],
+      "time_variations": {
+        "wake_jitter_min": 4,
+        "commute_jitter_min": -8,
+        "exercise_jitter_min": 2
+      }
+    },
+    "17": {
+      "day_theme": "thursday_project_review",
+      "anomaly_events": [],
+      "time_variations": {
+        "wake_jitter_min": -1,
+        "commute_jitter_min": 11,
+        "exercise_jitter_min": 12
+      }
+    },
+    "18": {
+      "day_theme": "friday_team_social",
+      "anomaly_events": [],
+      "time_variations": {
+        "wake_jitter_min": -13,
+        "commute_jitter_min": 6,
+        "exercise_jitter_min": 13
+      }
+    },
+    "19": {
+      "day_theme": "saturday_outdoor_expedition",
+      "anomaly_events": [],
+      "time_variations": {
+        "wake_jitter_min": 3,
+        "commute_jitter_min": 5,
+        "exercise_jitter_min": 8
+      }
+    },
+    "20": {
+      "day_theme": "sunday_gaming_cooking",
+      "anomaly_events": [],
+      "time_variations": {
+        "wake_jitter_min": 21,
+        "commute_jitter_min": 0,
+        "exercise_jitter_min": 0
+      }
+    }
+  }
+}

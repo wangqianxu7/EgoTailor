@@ -1,0 +1,734 @@
+{
+  "metadata": {
+    "persona_id": "egotailor_usa_enfp",
+    "day_index": 12,
+    "calendar_date": "2026-01-17",
+    "day_of_week": "Saturday",
+    "is_weekend": true,
+    "target_seconds": 28800,
+    "location": "USA",
+    "day_theme": "saturday_cycling_market",
+    "anomaly_events": [],
+    "time_variations": {
+      "wake_jitter_min": 20,
+      "commute_jitter_min": -10,
+      "exercise_jitter_min": 1
+    }
+  },
+  "daily_plan": [
+    "Browse farmers market, buy fresh produce (12:30-13:30)",
+    "Leisurely brunch at home (08:30-09:30)",
+    "Play board games at friend's home (21:00-22:00)",
+    "Cycling along riverside bike path (10:00-12:00)",
+    "Dinner at a new restaurant downtown (19:00-20:30)",
+    "Experiment with new recipes using market finds (14:00-15:30)",
+    "Meet friends at park for frisbee and chat (16:00-17:30)"
+  ],
+  "memory_content": [
+    {
+      "video_uid": "af27880e-52c4-4841-8ac6-c3019755a4a5",
+      "slot_id": "farmers_market",
+      "plan_chunk": "Browse farmers market, buy fresh produce",
+      "matched_scenarios": [
+        "Grocery shopping indoors",
+        "Clothes, other shopping",
+        "Walking on street"
+      ],
+      "video_scenarios": [
+        "Walking on street"
+      ],
+      "main_scene": "outdoor",
+      "consolidated_summary": "the character walks on the streets with a woman.",
+      "start_time": "07:00:00",
+      "end_time": "07:07:43",
+      "start_timestamp": "2026-01-17T07:00:00",
+      "end_timestamp": "2026-01-17T07:07:43",
+      "duration": 463.7,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "86fb4797-274f-4807-848a-8b1ddc5c29e8",
+      "slot_id": "social_outdoor",
+      "plan_chunk": "Meet friends at park for frisbee and chat",
+      "matched_scenarios": [
+        "Frisbee",
+        "Outdoor social (includes campfire)",
+        "Talking with friends/housemates"
+      ],
+      "video_scenarios": [
+        "Outdoor social (includes campfire)",
+        "Outdoor technical climbing/belaying/rappelling (includes ropework)"
+      ],
+      "main_scene": "outdoor",
+      "consolidated_summary": "the character prepares for rock climbing in the mountains, interacts with others, and climbs.",
+      "start_time": "07:12:43",
+      "end_time": "07:27:46",
+      "start_timestamp": "2026-01-17T07:12:43",
+      "end_timestamp": "2026-01-17T07:27:46",
+      "duration": 903.63,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "61a0b3cd-4c24-47bb-a086-9b703e0f117c",
+      "slot_id": "leisure_games",
+      "plan_chunk": "Play board games at friend's home",
+      "matched_scenarios": [
+        "Playing board games",
+        "Playing games / video games"
+      ],
+      "video_scenarios": [
+        "Playing board games"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character plays dominoes with someone in a house.",
+      "start_time": "07:32:46",
+      "end_time": "07:45:51",
+      "start_timestamp": "2026-01-17T07:32:46",
+      "end_timestamp": "2026-01-17T07:45:51",
+      "duration": 785.33,
+      "video_source": "USA",
+      "time_period": "nighttime"
+    },
+    {
+      "video_uid": "fbe2d308-6506-4ba6-87cb-266844dc43f0",
+      "slot_id": "farmers_market",
+      "plan_chunk": "Browse farmers market, buy fresh produce",
+      "matched_scenarios": [
+        "Grocery shopping indoors",
+        "Clothes, other shopping",
+        "Walking on street"
+      ],
+      "video_scenarios": [
+        "Car - commuting, road trip",
+        "Clothes, other shopping"
+      ],
+      "main_scene": "outdoor",
+      "consolidated_summary": "the character dials the phone, interacts with a man, and drives a car.",
+      "start_time": "07:50:51",
+      "end_time": "07:53:53",
+      "start_timestamp": "2026-01-17T07:50:51",
+      "end_timestamp": "2026-01-17T07:53:53",
+      "duration": 182.17,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "201af2e0-72dd-466c-8280-8c3dc00a7981",
+      "slot_id": "wake_home",
+      "plan_chunk": "Leisurely brunch at home",
+      "matched_scenarios": [
+        "Making coffee",
+        "Cooking",
+        "Daily hygiene"
+      ],
+      "video_scenarios": [
+        "Cooking"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character prepares food and interacts with others in a kitchen.",
+      "start_time": "07:58:53",
+      "end_time": "08:22:55",
+      "start_timestamp": "2026-01-17T07:58:53",
+      "end_timestamp": "2026-01-17T08:22:55",
+      "duration": 1442.7,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "c96966b4-ecd1-4421-9b53-e7b4e7721376",
+      "slot_id": "leisure_games",
+      "plan_chunk": "Play board games at friend's home",
+      "matched_scenarios": [
+        "Playing board games",
+        "Playing games / video games"
+      ],
+      "video_scenarios": [
+        "Playing board games"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character sits in a room, talks to a man, plays dominoes, and uses a phone.",
+      "start_time": "08:27:55",
+      "end_time": "08:37:34",
+      "start_timestamp": "2026-01-17T08:27:55",
+      "end_timestamp": "2026-01-17T08:37:34",
+      "duration": 579.37,
+      "video_source": "USA",
+      "time_period": "nighttime"
+    },
+    {
+      "video_uid": "12929de6-287f-4751-b741-4c98d59d898b",
+      "slot_id": "leisure_games",
+      "plan_chunk": "Play board games at friend's home",
+      "matched_scenarios": [
+        "Playing board games",
+        "Playing games / video games"
+      ],
+      "video_scenarios": [
+        "Playing board games"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character plays puzzle game and dominoes with others.",
+      "start_time": "08:42:34",
+      "end_time": "08:50:55",
+      "start_timestamp": "2026-01-17T08:42:34",
+      "end_timestamp": "2026-01-17T08:50:55",
+      "duration": 501.57,
+      "video_source": "USA",
+      "time_period": "nighttime"
+    },
+    {
+      "video_uid": "3bb19da3-0b8a-48d9-aef1-4c8202e01ad1",
+      "slot_id": "leisure_games",
+      "plan_chunk": "Play board games at friend's home",
+      "matched_scenarios": [
+        "Playing board games",
+        "Playing games / video games"
+      ],
+      "video_scenarios": [
+        "Playing board games"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character is in a room, interacts with person Y and person Z, and uses a mobile phone.",
+      "start_time": "08:55:55",
+      "end_time": "09:08:27",
+      "start_timestamp": "2026-01-17T08:55:55",
+      "end_timestamp": "2026-01-17T09:08:27",
+      "duration": 752.7,
+      "video_source": "USA",
+      "time_period": "nighttime"
+    },
+    {
+      "video_uid": "5815ab40-89a6-453b-9e6c-986ed8a9f0b4",
+      "slot_id": "farmers_market",
+      "plan_chunk": "Browse farmers market, buy fresh produce",
+      "matched_scenarios": [
+        "Grocery shopping indoors",
+        "Clothes, other shopping",
+        "Walking on street"
+      ],
+      "video_scenarios": [
+        "Walking on street"
+      ],
+      "main_scene": "outdoor",
+      "consolidated_summary": "the character interacts with others while walking outdoors with a baby, including along a railway line, pavement, and across a road junction.",
+      "start_time": "09:13:27",
+      "end_time": "09:35:37",
+      "start_timestamp": "2026-01-17T09:13:27",
+      "end_timestamp": "2026-01-17T09:35:37",
+      "duration": 1330.67,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "b9bc5b47-ae9a-4220-84c7-ada93722c4fe",
+      "slot_id": "wake_home",
+      "plan_chunk": "Leisurely brunch at home",
+      "matched_scenarios": [
+        "Making coffee",
+        "Cooking",
+        "Daily hygiene"
+      ],
+      "video_scenarios": [
+        "Cooking"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character interacts with a man and a baby, prepares food, and does dishes inside a house.",
+      "start_time": "09:40:37",
+      "end_time": "10:05:31",
+      "start_timestamp": "2026-01-17T09:40:37",
+      "end_timestamp": "2026-01-17T10:05:31",
+      "duration": 1494.2,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "aca9e131-8b44-4e59-8394-24a494c19801",
+      "slot_id": "leisure_games",
+      "plan_chunk": "Play board games at friend's home",
+      "matched_scenarios": [
+        "Playing board games",
+        "Playing games / video games"
+      ],
+      "video_scenarios": [
+        "Playing games / video games"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character watches television, sleeps, uses a phone, talks to someone, and eats inside a house.",
+      "start_time": "10:10:31",
+      "end_time": "10:16:39",
+      "start_timestamp": "2026-01-17T10:10:31",
+      "end_timestamp": "2026-01-17T10:16:39",
+      "duration": 368.17,
+      "video_source": "USA",
+      "time_period": "nighttime"
+    },
+    {
+      "video_uid": "83fd2efb-168e-4d90-be13-cedea6f576f8",
+      "slot_id": "cycling",
+      "plan_chunk": "Cycling along riverside bike path",
+      "matched_scenarios": [
+        "Cycling / jogging",
+        "Going to the park"
+      ],
+      "video_scenarios": [
+        "Cycling / jogging",
+        "Going to the park"
+      ],
+      "main_scene": "outdoor",
+      "consolidated_summary": "the character jogs and walks on a road with others.",
+      "start_time": "10:21:39",
+      "end_time": "10:33:43",
+      "start_timestamp": "2026-01-17T10:21:39",
+      "end_timestamp": "2026-01-17T10:33:43",
+      "duration": 724.57,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "ae24f60b-be0f-4595-bbc7-bb6958ed8f61",
+      "slot_id": "dining_out",
+      "plan_chunk": "Dinner at a new restaurant downtown",
+      "matched_scenarios": [
+        "Eating at a restaurant"
+      ],
+      "video_scenarios": [
+        "Cleaning / laundry",
+        "Cooking"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character washes dishes, interacts with children, and uses a phone in an apartment.",
+      "start_time": "10:38:43",
+      "end_time": "10:54:46",
+      "start_timestamp": "2026-01-17T10:38:43",
+      "end_timestamp": "2026-01-17T10:54:46",
+      "duration": 963.7,
+      "video_source": "USA",
+      "time_period": "nighttime"
+    },
+    {
+      "video_uid": "59e7c28e-f60c-432e-a644-4a4d1bdbfe4d",
+      "slot_id": "home_cooking",
+      "plan_chunk": "Experiment with new recipes using market finds",
+      "matched_scenarios": [
+        "Cooking",
+        "Crafting/knitting/sewing/drawing/painting"
+      ],
+      "video_scenarios": [
+        "Crafting/knitting/sewing/drawing/painting"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character paints and draws in a room and a workshop.",
+      "start_time": "10:59:46",
+      "end_time": "11:15:42",
+      "start_timestamp": "2026-01-17T10:59:46",
+      "end_timestamp": "2026-01-17T11:15:42",
+      "duration": 956.6,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "2329f803-44b1-4654-b8b7-564a016b5478",
+      "slot_id": "social_outdoor",
+      "plan_chunk": "Meet friends at park for frisbee and chat",
+      "matched_scenarios": [
+        "Frisbee",
+        "Outdoor social (includes campfire)",
+        "Talking with friends/housemates"
+      ],
+      "video_scenarios": [
+        "Outdoor social (includes campfire)",
+        "Outdoor technical climbing/belaying/rappelling (includes ropework)"
+      ],
+      "main_scene": "outdoor",
+      "consolidated_summary": "the character explores a mountain range, adjusts climbing ropes, and observes another person climbing.",
+      "start_time": "11:20:42",
+      "end_time": "11:32:36",
+      "start_timestamp": "2026-01-17T11:20:42",
+      "end_timestamp": "2026-01-17T11:32:36",
+      "duration": 714.63,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "741c48e4-b8fb-400e-912e-73130bd00c3a",
+      "slot_id": "farmers_market",
+      "plan_chunk": "Browse farmers market, buy fresh produce",
+      "matched_scenarios": [
+        "Grocery shopping indoors",
+        "Clothes, other shopping",
+        "Walking on street"
+      ],
+      "video_scenarios": [
+        "Clothes, other shopping"
+      ],
+      "main_scene": "mixed",
+      "consolidated_summary": "the character interacts with people, uses a phone, shops at a supermarket and store, and walks between a boutique, store, and supermarket.",
+      "start_time": "11:37:36",
+      "end_time": "12:01:50",
+      "start_timestamp": "2026-01-17T11:37:36",
+      "end_timestamp": "2026-01-17T12:01:50",
+      "duration": 1454.33,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "935792d2-a07f-4db6-8b06-a9f020b26109",
+      "slot_id": "wake_home",
+      "plan_chunk": "Leisurely brunch at home",
+      "matched_scenarios": [
+        "Making coffee",
+        "Cooking",
+        "Daily hygiene"
+      ],
+      "video_scenarios": [
+        "Cooking"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character interacts with a woman and prepares food in a kitchen.",
+      "start_time": "12:06:50",
+      "end_time": "12:31:44",
+      "start_timestamp": "2026-01-17T12:06:50",
+      "end_timestamp": "2026-01-17T12:31:44",
+      "duration": 1494.57,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "48e4028c-c79b-431c-aeb1-bd02d46487aa",
+      "slot_id": "leisure_games",
+      "plan_chunk": "Play board games at friend's home",
+      "matched_scenarios": [
+        "Playing board games",
+        "Playing games / video games"
+      ],
+      "video_scenarios": [
+        "Playing board games"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character plays games, uses blocks, and uses a phone in a room.",
+      "start_time": "12:36:44",
+      "end_time": "13:03:20",
+      "start_timestamp": "2026-01-17T12:36:44",
+      "end_timestamp": "2026-01-17T13:03:20",
+      "duration": 1596.9,
+      "video_source": "USA",
+      "time_period": "nighttime"
+    },
+    {
+      "video_uid": "23ac2590-b25f-4718-8c9b-89d32eb992b2",
+      "slot_id": "cycling",
+      "plan_chunk": "Cycling along riverside bike path",
+      "matched_scenarios": [
+        "Cycling / jogging",
+        "Going to the park"
+      ],
+      "video_scenarios": [
+        "Going to the park"
+      ],
+      "main_scene": "outdoor",
+      "consolidated_summary": "the character plays handball and frisbee with others in a field or playground.",
+      "start_time": "13:08:20",
+      "end_time": "13:38:20",
+      "start_timestamp": "2026-01-17T13:08:20",
+      "end_timestamp": "2026-01-17T13:38:20",
+      "duration": 1800.0,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "ffd0a9b6-bb01-44e0-b6db-41d6a979d648",
+      "slot_id": "dining_out",
+      "plan_chunk": "Dinner at a new restaurant downtown",
+      "matched_scenarios": [
+        "Eating at a restaurant"
+      ],
+      "video_scenarios": [
+        "Fixing something in the home"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character works on a car, metals, pipes, and woods in an apartment garage.",
+      "start_time": "13:43:20",
+      "end_time": "13:57:02",
+      "start_timestamp": "2026-01-17T13:43:20",
+      "end_timestamp": "2026-01-17T13:57:02",
+      "duration": 822.47,
+      "video_source": "USA",
+      "time_period": "nighttime"
+    },
+    {
+      "video_uid": "5594645f-862c-4485-9463-aece443458b4",
+      "slot_id": "home_cooking",
+      "plan_chunk": "Experiment with new recipes using market finds",
+      "matched_scenarios": [
+        "Cooking",
+        "Crafting/knitting/sewing/drawing/painting"
+      ],
+      "video_scenarios": [
+        "Crafting/knitting/sewing/drawing/painting"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character draws a portrait indoors, using a photograph as a reference.",
+      "start_time": "14:02:02",
+      "end_time": "14:15:20",
+      "start_timestamp": "2026-01-17T14:02:02",
+      "end_timestamp": "2026-01-17T14:15:20",
+      "duration": 798.7,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "b0a30641-ad93-4d6a-92a9-f277c78f1aa5",
+      "slot_id": "social_outdoor",
+      "plan_chunk": "Meet friends at park for frisbee and chat",
+      "matched_scenarios": [
+        "Frisbee",
+        "Outdoor social (includes campfire)",
+        "Talking with friends/housemates"
+      ],
+      "video_scenarios": [
+        "Outdoor social (includes campfire)"
+      ],
+      "main_scene": "outdoor",
+      "consolidated_summary": "the character plays with children and converses with them in various locations, including an apartment, carpark, yard, and a building.",
+      "start_time": "14:20:20",
+      "end_time": "14:40:25",
+      "start_timestamp": "2026-01-17T14:20:20",
+      "end_timestamp": "2026-01-17T14:40:25",
+      "duration": 1205.5,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "d011d171-5057-4968-ae7c-30dd484d7cf1",
+      "slot_id": "farmers_market",
+      "plan_chunk": "Browse farmers market, buy fresh produce",
+      "matched_scenarios": [
+        "Grocery shopping indoors",
+        "Clothes, other shopping",
+        "Walking on street"
+      ],
+      "video_scenarios": [
+        "Clothes, other shopping",
+        "Talking with friends/housemates"
+      ],
+      "main_scene": "mixed",
+      "consolidated_summary": "the character interacts with people and objects in a store and a car.",
+      "start_time": "14:45:25",
+      "end_time": "14:53:06",
+      "start_timestamp": "2026-01-17T14:45:25",
+      "end_timestamp": "2026-01-17T14:53:06",
+      "duration": 461.7,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "2cfb2eec-ec7d-469f-bdc2-78e4d61ef209",
+      "slot_id": "wake_home",
+      "plan_chunk": "Leisurely brunch at home",
+      "matched_scenarios": [
+        "Making coffee",
+        "Cooking",
+        "Daily hygiene"
+      ],
+      "video_scenarios": [
+        "Cooking"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character prepares a meal and interacts with a man in a kitchen.",
+      "start_time": "14:58:06",
+      "end_time": "15:22:49",
+      "start_timestamp": "2026-01-17T14:58:06",
+      "end_timestamp": "2026-01-17T15:22:49",
+      "duration": 1483.53,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "e4ec6abc-093c-4865-aac1-f823c22fb4af",
+      "slot_id": "leisure_games",
+      "plan_chunk": "Play board games at friend's home",
+      "matched_scenarios": [
+        "Playing board games",
+        "Playing games / video games"
+      ],
+      "video_scenarios": [
+        "Playing board games"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character plays a game with X inside a house.",
+      "start_time": "15:27:49",
+      "end_time": "15:53:46",
+      "start_timestamp": "2026-01-17T15:27:49",
+      "end_timestamp": "2026-01-17T15:53:46",
+      "duration": 1557.2,
+      "video_source": "USA",
+      "time_period": "nighttime"
+    },
+    {
+      "video_uid": "89d8c9c5-fa11-4674-b08f-007f81958555",
+      "slot_id": "cycling",
+      "plan_chunk": "Cycling along riverside bike path",
+      "matched_scenarios": [
+        "Cycling / jogging",
+        "Going to the park"
+      ],
+      "video_scenarios": [
+        "Going to the park"
+      ],
+      "main_scene": "outdoor",
+      "consolidated_summary": "the character plays with children in a park or playground, walks around, and checks clothing.",
+      "start_time": "15:58:46",
+      "end_time": "16:28:46",
+      "start_timestamp": "2026-01-17T15:58:46",
+      "end_timestamp": "2026-01-17T16:28:46",
+      "duration": 1800.23,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "39530710-7963-4aed-93b0-bc4ac00fc955",
+      "slot_id": "dining_out",
+      "plan_chunk": "Dinner at a new restaurant downtown",
+      "matched_scenarios": [
+        "Eating at a restaurant"
+      ],
+      "video_scenarios": [
+        "Crafting/knitting/sewing/drawing/painting"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character knits a fabric with a crochet hook in the house.",
+      "start_time": "16:33:46",
+      "end_time": "16:47:26",
+      "start_timestamp": "2026-01-17T16:33:46",
+      "end_timestamp": "2026-01-17T16:47:26",
+      "duration": 820.47,
+      "video_source": "USA",
+      "time_period": "nighttime"
+    },
+    {
+      "video_uid": "427a671e-cf82-418b-9130-118887ab90c9",
+      "slot_id": "home_cooking",
+      "plan_chunk": "Experiment with new recipes using market finds",
+      "matched_scenarios": [
+        "Cooking",
+        "Crafting/knitting/sewing/drawing/painting"
+      ],
+      "video_scenarios": [
+        "Crafting/knitting/sewing/drawing/painting"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character paints inside the house.",
+      "start_time": "16:52:26",
+      "end_time": "17:05:52",
+      "start_timestamp": "2026-01-17T16:52:26",
+      "end_timestamp": "2026-01-17T17:05:52",
+      "duration": 806.4,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "b8b4fc74-e036-4731-ae03-4bfab7fd47b9",
+      "slot_id": "social_outdoor",
+      "plan_chunk": "Meet friends at park for frisbee and chat",
+      "matched_scenarios": [
+        "Frisbee",
+        "Outdoor social (includes campfire)",
+        "Talking with friends/housemates"
+      ],
+      "video_scenarios": [
+        "Outdoor social (includes campfire)"
+      ],
+      "main_scene": "outdoor",
+      "consolidated_summary": "the character and others eat at a campsite.",
+      "start_time": "17:10:52",
+      "end_time": "17:15:00",
+      "start_timestamp": "2026-01-17T17:10:52",
+      "end_timestamp": "2026-01-17T17:15:00",
+      "duration": 248.43,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "e1b22a6c-dfd6-4c11-a9f6-1033b110f766",
+      "slot_id": "farmers_market",
+      "plan_chunk": "Browse farmers market, buy fresh produce",
+      "matched_scenarios": [
+        "Grocery shopping indoors",
+        "Clothes, other shopping",
+        "Walking on street"
+      ],
+      "video_scenarios": [
+        "Walking on street"
+      ],
+      "main_scene": "outdoor",
+      "consolidated_summary": "the character walks outdoors and converses with others.",
+      "start_time": "17:20:00",
+      "end_time": "17:41:23",
+      "start_timestamp": "2026-01-17T17:20:00",
+      "end_timestamp": "2026-01-17T17:41:23",
+      "duration": 1283.43,
+      "video_source": "USA",
+      "time_period": "daytime"
+    }
+  ],
+  "statistics": {
+    "clip_count": 30,
+    "total_duration": 29797.57,
+    "total_duration_hours": 8.28,
+    "scene_distribution": {
+      "outdoor": 11,
+      "indoor": 17,
+      "mixed": 2
+    },
+    "selected_videos": [
+      "af27880e-52c4-4841-8ac6-c3019755a4a5",
+      "86fb4797-274f-4807-848a-8b1ddc5c29e8",
+      "61a0b3cd-4c24-47bb-a086-9b703e0f117c",
+      "fbe2d308-6506-4ba6-87cb-266844dc43f0",
+      "201af2e0-72dd-466c-8280-8c3dc00a7981",
+      "c96966b4-ecd1-4421-9b53-e7b4e7721376",
+      "12929de6-287f-4751-b741-4c98d59d898b",
+      "3bb19da3-0b8a-48d9-aef1-4c8202e01ad1",
+      "5815ab40-89a6-453b-9e6c-986ed8a9f0b4",
+      "b9bc5b47-ae9a-4220-84c7-ada93722c4fe",
+      "aca9e131-8b44-4e59-8394-24a494c19801",
+      "83fd2efb-168e-4d90-be13-cedea6f576f8",
+      "ae24f60b-be0f-4595-bbc7-bb6958ed8f61",
+      "59e7c28e-f60c-432e-a644-4a4d1bdbfe4d",
+      "2329f803-44b1-4654-b8b7-564a016b5478",
+      "741c48e4-b8fb-400e-912e-73130bd00c3a",
+      "935792d2-a07f-4db6-8b06-a9f020b26109",
+      "48e4028c-c79b-431c-aeb1-bd02d46487aa",
+      "23ac2590-b25f-4718-8c9b-89d32eb992b2",
+      "ffd0a9b6-bb01-44e0-b6db-41d6a979d648",
+      "5594645f-862c-4485-9463-aece443458b4",
+      "b0a30641-ad93-4d6a-92a9-f277c78f1aa5",
+      "d011d171-5057-4968-ae7c-30dd484d7cf1",
+      "2cfb2eec-ec7d-469f-bdc2-78e4d61ef209",
+      "e4ec6abc-093c-4865-aac1-f823c22fb4af",
+      "89d8c9c5-fa11-4674-b08f-007f81958555",
+      "39530710-7963-4aed-93b0-bc4ac00fc955",
+      "427a671e-cf82-418b-9130-118887ab90c9",
+      "b8b4fc74-e036-4731-ae03-4bfab7fd47b9",
+      "e1b22a6c-dfd6-4c11-a9f6-1033b110f766"
+    ],
+    "unique_scenarios": [
+      "Car - commuting, road trip",
+      "Cleaning / laundry",
+      "Clothes, other shopping",
+      "Cooking",
+      "Crafting/knitting/sewing/drawing/painting",
+      "Cycling / jogging",
+      "Fixing something in the home",
+      "Going to the park",
+      "Outdoor social (includes campfire)",
+      "Outdoor technical climbing/belaying/rappelling (includes ropework)",
+      "Playing board games",
+      "Playing games / video games",
+      "Talking with friends/housemates",
+      "Walking on street"
+    ]
+  }
+}
