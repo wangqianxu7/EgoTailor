@@ -18,12 +18,18 @@ EgoTailor/
 └── notebooks/            # Ego4D 数据探索
 ```
 
-Ego4D 视频元信息复用 `../X-LeBench/generation/ego4d_info/video_info.json`。
+Ego4D 视频元信息使用**本地已下载子集**：`generation/ego4d_info/video_info.json`
+（从 X-LeBench 全量 `video_info.json` 中筛出 `/mnt/data_oss/raw_data/Ego4d/v2/full_scale` 里实际存在的 `{video_uid}.mp4`）。
 
 ## 快速开始
 
 ```bash
 cd /root/EgoTailor
+
+# （可选）按本地 mp4 重新筛选 video_info
+python scripts/filter_local_video_info.py
+
+# 基于本地可用视频生成 21 天 demo lifelog
 python -m generation.build_lifelog        # 默认 seed=42
 python -m generation.build_lifelog 123    # 自定义随机种子
 ```
@@ -32,8 +38,8 @@ python -m generation.build_lifelog 123    # 自定义随机种子
 
 - **1 人**：美国 ENFP 软件工程师
 - **21 天 v2 日程**：2026-01-05 起，含工作日变体、周末主题轮换、异常事件
-- **每天 8 小时视频**，场景覆盖 indoor / outdoor / mixed
-- **连续精确时间戳**：`start_timestamp` / `end_timestamp`（ISO 8601）
+- **细粒度 daily plan**：复合活动拆成原子时段（如 hygiene / breakfast / commute / grocery 分开），每个时段仍只配 1 个视频
+- **开始时间对齐日程**：能对上 plan 起点就对齐；若上一段超时，下一段紧接上一段结束时间
 - **Caption**：来自 `video_info.json` 的 `consolidated_summary`
 
 ### 日程 v2 亮点

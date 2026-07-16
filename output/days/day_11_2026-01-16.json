@@ -10,116 +10,62 @@
     "day_theme": "friday_team_social",
     "anomaly_events": [],
     "time_variations": {
-      "wake_jitter_min": 2,
-      "commute_jitter_min": 7,
-      "exercise_jitter_min": 13
-    }
+      "wake_jitter_min": 20,
+      "commute_jitter_min": 13,
+      "exercise_jitter_min": 20
+    },
+    "placement_policy": "one_clip_per_plan_align_or_chain"
   },
   "daily_plan": [
-    "Wake up, daily hygiene, prepare breakfast and coffee at home (07:00-07:45)",
-    "Commute to office by car or bus (08:00-08:40)",
-    "Work at desk, read emails, handle morning tasks (09:00-10:30)",
-    "Focused desk work and collaboration (10:45-12:00)",
-    "Lunch break at cafeteria or nearby restaurant (12:15-13:00)",
-    "Short walk outside or quick errand in the park (13:15-14:00)",
-    "Wrap up weekly tasks and hand off to teammates (14:15-15:45)",
-    "Commute to downtown for team gathering (16:00-16:45)",
-    "Quick refresh at home before heading out (17:00-18:00)",
-    "Team dinner at restaurant with colleagues (18:30-20:30)",
-    "Casual hangout at bar or dessert shop with teammates (20:45-22:00)"
+    "Wake up and do morning hygiene (07:18-07:38)",
+    "Prepare breakfast and make coffee at home (07:38-08:03)",
+    "Commute to office by car or bus (08:15-08:45)",
+    "Walk from parking or stop into the office building (08:45-09:00)",
+    "Check emails and triage morning tasks at desk (09:16-09:51)",
+    "Talk with colleagues and sync on morning priorities (09:51-10:31)",
+    "Focused desk work: coding and design docs (11:01-11:46)",
+    "Whiteboard brainstorming and collaboration (11:46-12:16)",
+    "Walk to cafeteria or nearby restaurant (12:26-12:41)",
+    "Eat lunch at cafeteria or restaurant (12:41-13:16)",
+    "Short outdoor walk after lunch (13:31-13:56)",
+    "Quick park break or outdoor errand (13:56-14:16)",
+    "Wrap up weekly tickets (14:31-15:06)",
+    "Hand off unfinished tasks to teammates (15:06-15:36)",
+    "Clear inbox before weekend (15:36-16:01)",
+    "Commute downtown for team gathering (16:15-16:45)",
+    "Quick refresh and light snack at home before heading out (17:16-17:51)",
+    "Team dinner at restaurant with colleagues (18:46-19:59)",
+    "Dessert or drinks after dinner (20:01-20:58)",
+    "Casual hangout at bar with teammates (20:46-22:29)"
   ],
   "memory_content": [
     {
-      "video_uid": "940ff963-ab1c-496f-991c-b23c29714f73",
-      "slot_id": "errand_outdoor",
-      "plan_chunk": "Short walk outside or quick errand in the park",
+      "video_uid": "84a895b5-f419-4bc6-9ac5-a813ff70ccfe",
+      "slot_id": "wake_hygiene",
+      "plan_chunk": "Wake up and do morning hygiene",
       "matched_scenarios": [
-        "Walking on street",
-        "Going to the park"
+        "Daily hygiene"
       ],
       "video_scenarios": [
-        "Walking on street"
+        "Crafting/knitting/sewing/drawing/painting"
       ],
-      "main_scene": "outdoor",
-      "consolidated_summary": "the character drives a car and walks a dog with a woman.",
-      "start_time": "07:00:00",
-      "end_time": "07:07:47",
-      "start_timestamp": "2026-01-16T07:00:00",
-      "end_timestamp": "2026-01-16T07:07:47",
-      "duration": 467.63,
+      "main_scene": "indoor",
+      "consolidated_summary": "the character draws pictures, uses a pen, and works with a book and paper in a room.",
+      "plan_start_time": "07:18:00",
+      "plan_end_time": "07:38:00",
+      "start_time": "07:18:00",
+      "end_time": "07:37:22",
+      "start_timestamp": "2026-01-16T07:18:00",
+      "end_timestamp": "2026-01-16T07:37:22",
+      "duration": 1162.77,
       "video_source": "USA",
       "time_period": "daytime"
     },
     {
-      "video_uid": "897e0050-26ad-4f2a-a82a-76f3764c741f",
-      "slot_id": "commute_evening",
-      "plan_chunk": "Commute to downtown for team gathering",
+      "video_uid": "5dde766e-e93a-4d48-b3c7-96774f24d39d",
+      "slot_id": "breakfast_coffee",
+      "plan_chunk": "Prepare breakfast and make coffee at home",
       "matched_scenarios": [
-        "Car - commuting, road trip",
-        "Walking on street"
-      ],
-      "video_scenarios": [
-        "Car mechanic"
-      ],
-      "main_scene": "mixed",
-      "consolidated_summary": "the character fixes a grass trimmer in a workshop.",
-      "start_time": "07:12:47",
-      "end_time": "07:24:14",
-      "start_timestamp": "2026-01-16T07:12:47",
-      "end_timestamp": "2026-01-16T07:24:14",
-      "duration": 687.4,
-      "video_source": "USA",
-      "time_period": "daytime"
-    },
-    {
-      "video_uid": "439c4f57-6d3f-4def-a303-f80e211971da",
-      "slot_id": "commute_morning",
-      "plan_chunk": "Commute to office by car or bus",
-      "matched_scenarios": [
-        "Car - commuting, road trip",
-        "Bus",
-        "Walking on street"
-      ],
-      "video_scenarios": [
-        "jobs related to construction/renovation company\n(Director of work, tiler, plumber, Electrician, Handyman, etc)"
-      ],
-      "main_scene": "mixed",
-      "consolidated_summary": "the character performs home renovation tasks, including using a grinder, drilling, removing grout, and deconstructing lights.",
-      "start_time": "07:29:14",
-      "end_time": "07:47:36",
-      "start_timestamp": "2026-01-16T07:29:14",
-      "end_timestamp": "2026-01-16T07:47:36",
-      "duration": 1102.9,
-      "video_source": "USA",
-      "time_period": "daytime"
-    },
-    {
-      "video_uid": "233b8290-a87f-4d29-b63e-d47d9a1410f7",
-      "slot_id": "commute_evening",
-      "plan_chunk": "Commute to downtown for team gathering",
-      "matched_scenarios": [
-        "Car - commuting, road trip",
-        "Walking on street"
-      ],
-      "video_scenarios": [
-        "Doing yardwork / shoveling snow"
-      ],
-      "main_scene": "mixed",
-      "consolidated_summary": "the character works with wood, uses tools, operates a cellphone, and spray-paints in and near a workshop.",
-      "start_time": "07:52:36",
-      "end_time": "08:03:57",
-      "start_timestamp": "2026-01-16T07:52:36",
-      "end_timestamp": "2026-01-16T08:03:57",
-      "duration": 681.73,
-      "video_source": "USA",
-      "time_period": "daytime"
-    },
-    {
-      "video_uid": "f5ac654b-8f39-427b-856f-4a9a2d4a3020",
-      "slot_id": "wake_home",
-      "plan_chunk": "Wake up, daily hygiene, prepare breakfast and coffee at home",
-      "matched_scenarios": [
-        "Daily hygiene",
         "Cooking",
         "Making coffee"
       ],
@@ -127,713 +73,481 @@
         "Cooking"
       ],
       "main_scene": "indoor",
-      "consolidated_summary": "the character prepares a meal and interacts with a man in an apartment kitchen.",
-      "start_time": "08:08:57",
-      "end_time": "08:15:14",
-      "start_timestamp": "2026-01-16T08:08:57",
-      "end_timestamp": "2026-01-16T08:15:14",
-      "duration": 377.0,
+      "consolidated_summary": "the character prepares breakfast in an apartment while interacting with a dog.",
+      "plan_start_time": "07:38:00",
+      "plan_end_time": "08:03:00",
+      "start_time": "07:38:00",
+      "end_time": "07:53:15",
+      "start_timestamp": "2026-01-16T07:38:00",
+      "end_timestamp": "2026-01-16T07:53:15",
+      "duration": 915.97,
       "video_source": "USA",
       "time_period": "daytime"
     },
     {
-      "video_uid": "fb8fd8fc-d4b4-412c-9c12-ae209c2e0e73",
-      "slot_id": "lunch_out",
-      "plan_chunk": "Lunch break at cafeteria or nearby restaurant",
+      "video_uid": "633d1e83-f350-4983-87fd-4e9b9e9ed754",
+      "slot_id": "commute_morning",
+      "plan_chunk": "Commute to office by car or bus",
+      "matched_scenarios": [
+        "Car - commuting, road trip",
+        "Bus"
+      ],
+      "video_scenarios": [
+        "jobs related to construction/renovation company\n(Director of work, tiler, plumber, Electrician, Handyman, etc)"
+      ],
+      "main_scene": "mixed",
+      "consolidated_summary": "the character works with wood in a workshop, gluing and attaching pieces to a frame, and cutting a plank.",
+      "plan_start_time": "08:15:00",
+      "plan_end_time": "08:45:00",
+      "start_time": "08:15:00",
+      "end_time": "08:23:41",
+      "start_timestamp": "2026-01-16T08:15:00",
+      "end_timestamp": "2026-01-16T08:23:41",
+      "duration": 521.37,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "424d302f-9765-4f7a-9945-366d4f789136",
+      "slot_id": "office_arrive",
+      "plan_chunk": "Walk from parking or stop into the office building",
+      "matched_scenarios": [
+        "Walking on street",
+        "Indoor Navigation (walking)"
+      ],
+      "video_scenarios": [
+        "Car mechanic"
+      ],
+      "main_scene": "mixed",
+      "consolidated_summary": "the character drives, parks, and pulls lawn mowers to a workshop, and then repairs engine parts inside the garage.",
+      "plan_start_time": "08:45:00",
+      "plan_end_time": "09:00:00",
+      "start_time": "08:45:00",
+      "end_time": "08:51:15",
+      "start_timestamp": "2026-01-16T08:45:00",
+      "end_timestamp": "2026-01-16T08:51:15",
+      "duration": 375.4,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "f1d2b2ee-2e29-4d57-94a0-8875b70ccd34",
+      "slot_id": "work_emails",
+      "plan_chunk": "Check emails and triage morning tasks at desk",
+      "matched_scenarios": [
+        "Working at desk",
+        "On a screen (phone/laptop)"
+      ],
+      "video_scenarios": [
+        "Handyman",
+        "Practicing a musical instrument"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character arranges paintings, plays drums, guitar, and piano inside a house.",
+      "plan_start_time": "09:16:00",
+      "plan_end_time": "09:51:00",
+      "start_time": "09:16:00",
+      "end_time": "09:39:39",
+      "start_timestamp": "2026-01-16T09:16:00",
+      "end_timestamp": "2026-01-16T09:39:39",
+      "duration": 1419.78,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "252b4e41-56c3-4628-93c9-ab23fea10f09",
+      "slot_id": "work_standup",
+      "plan_chunk": "Talk with colleagues and sync on morning priorities",
+      "matched_scenarios": [
+        "Talking to colleagues",
+        "Working at desk"
+      ],
+      "video_scenarios": [
+        "Car mechanic"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character repairs a car in a garage.",
+      "plan_start_time": "09:51:00",
+      "plan_end_time": "10:31:00",
+      "start_time": "09:51:00",
+      "end_time": "10:13:47",
+      "start_timestamp": "2026-01-16T09:51:00",
+      "end_timestamp": "2026-01-16T10:13:47",
+      "duration": 1367.93,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "c0b5fd60-732b-4f5b-977b-6452a589974d",
+      "slot_id": "work_focus_coding",
+      "plan_chunk": "Focused desk work: coding and design docs",
+      "matched_scenarios": [
+        "Working at desk",
+        "On a screen (phone/laptop)"
+      ],
+      "video_scenarios": [
+        "Making coffee"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character and another person take a house tour, make coffee, and play Jenga.",
+      "plan_start_time": "11:01:00",
+      "plan_end_time": "11:46:00",
+      "start_time": "11:01:00",
+      "end_time": "11:37:15",
+      "start_timestamp": "2026-01-16T11:01:00",
+      "end_timestamp": "2026-01-16T11:37:15",
+      "duration": 2175.13,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "56830730-4e9c-4928-ba0b-6ca75f57231d",
+      "slot_id": "work_collab",
+      "plan_chunk": "Whiteboard brainstorming and collaboration",
+      "matched_scenarios": [
+        "Writing on whiteboard",
+        "Talking to colleagues"
+      ],
+      "video_scenarios": [
+        "Crafting/knitting/sewing/drawing/painting"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character paints a sketch in a room.",
+      "plan_start_time": "11:46:00",
+      "plan_end_time": "12:16:00",
+      "start_time": "11:46:00",
+      "end_time": "12:07:33",
+      "start_timestamp": "2026-01-16T11:46:00",
+      "end_timestamp": "2026-01-16T12:07:33",
+      "duration": 1293.77,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "509160ad-d4be-4e15-87d1-fd739a18fb14",
+      "slot_id": "lunch_walk",
+      "plan_chunk": "Walk to cafeteria or nearby restaurant",
+      "matched_scenarios": [
+        "Walking on street",
+        "Indoor Navigation (walking)"
+      ],
+      "video_scenarios": [
+        "Car mechanic"
+      ],
+      "main_scene": "mixed",
+      "consolidated_summary": "the character drives a ride-on lawn mower between a workshop and a packing lot, and cleans the workshop.",
+      "plan_start_time": "12:26:00",
+      "plan_end_time": "12:41:00",
+      "start_time": "12:26:00",
+      "end_time": "12:32:13",
+      "start_timestamp": "2026-01-16T12:26:00",
+      "end_timestamp": "2026-01-16T12:32:13",
+      "duration": 373.83,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "b2078083-c33f-4c35-9ebf-0ff6ccc05b6c",
+      "slot_id": "lunch_eat",
+      "plan_chunk": "Eat lunch at cafeteria or restaurant",
       "matched_scenarios": [
         "Eating at the cafeteria",
         "Eating at a restaurant",
         "Eating"
       ],
       "video_scenarios": [
+        "Cleaning / laundry",
         "Eating"
       ],
-      "main_scene": "indoor",
-      "consolidated_summary": "the character shops at a shop and then goes home.",
-      "start_time": "08:20:14",
-      "end_time": "08:41:41",
-      "start_timestamp": "2026-01-16T08:20:14",
-      "end_timestamp": "2026-01-16T08:41:41",
-      "duration": 1287.19,
+      "main_scene": "mixed",
+      "consolidated_summary": "the character uses a phone, exercises, cleans, decorates, plays video games, and reads a book inside a house or room.",
+      "plan_start_time": "12:41:00",
+      "plan_end_time": "13:16:00",
+      "start_time": "12:41:00",
+      "end_time": "13:34:28",
+      "start_timestamp": "2026-01-16T12:41:00",
+      "end_timestamp": "2026-01-16T13:34:28",
+      "duration": 3208.28,
       "video_source": "USA",
       "time_period": "daytime"
     },
     {
-      "video_uid": "7ea64050-2785-4d1a-a0f8-b7d67bc0895a",
-      "slot_id": "work_focus",
-      "plan_chunk": "Focused desk work and collaboration",
+      "video_uid": "0fbf42b1-23ed-4a2b-ad71-ab438b45e0d2",
+      "slot_id": "errand_walk",
+      "plan_chunk": "Short outdoor walk after lunch",
       "matched_scenarios": [
-        "Working at desk",
-        "Writing on whiteboard",
-        "Labwork"
+        "Walking on street"
+      ],
+      "video_scenarios": [
+        "Doing yardwork / shoveling snow"
+      ],
+      "main_scene": "outdoor",
+      "consolidated_summary": "the character operates a forklift and tractor to move stones and other materials at a construction site, levels cement sand, and rakes sand.",
+      "plan_start_time": "13:31:00",
+      "plan_end_time": "13:56:00",
+      "start_time": "13:34:28",
+      "end_time": "13:57:37",
+      "start_timestamp": "2026-01-16T13:34:28",
+      "end_timestamp": "2026-01-16T13:57:37",
+      "duration": 1389.07,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "88faccde-dd5d-4af2-b769-8f0547c2c6a3",
+      "slot_id": "errand_park",
+      "plan_chunk": "Quick park break or outdoor errand",
+      "matched_scenarios": [
+        "Going to the park",
+        "Walking on street"
       ],
       "video_scenarios": [
         "jobs related to construction/renovation company\n(Director of work, tiler, plumber, Electrician, Handyman, etc)"
       ],
-      "main_scene": "indoor",
-      "consolidated_summary": "the character paints a wall in a room, interacts with others, and surveys the room.",
-      "start_time": "08:46:41",
-      "end_time": "09:02:29",
-      "start_timestamp": "2026-01-16T08:46:41",
-      "end_timestamp": "2026-01-16T09:02:29",
-      "duration": 948.9,
+      "main_scene": "outdoor",
+      "consolidated_summary": "the character builds a house, smooths cement, cleans wood, flattens mortar, and interacts with others at a construction site.",
+      "plan_start_time": "13:56:00",
+      "plan_end_time": "14:16:00",
+      "start_time": "13:57:37",
+      "end_time": "14:19:11",
+      "start_timestamp": "2026-01-16T13:57:37",
+      "end_timestamp": "2026-01-16T14:19:11",
+      "duration": 1294.63,
       "video_source": "USA",
       "time_period": "daytime"
     },
     {
-      "video_uid": "291e4d57-380b-4f8f-81e0-a67a3c3528a4",
-      "slot_id": "wake_home",
-      "plan_chunk": "Wake up, daily hygiene, prepare breakfast and coffee at home",
+      "video_uid": "b71166c2-c723-4f91-89b7-3a484e14079e",
+      "slot_id": "work_afternoon_desk",
+      "plan_chunk": "Wrap up weekly tickets",
+      "matched_scenarios": [
+        "Working at desk"
+      ],
+      "video_scenarios": [
+        "Doing yardwork / shoveling snow"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character paints walls and a wooden compartment in an apartment.",
+      "plan_start_time": "14:31:00",
+      "plan_end_time": "15:06:00",
+      "start_time": "14:31:00",
+      "end_time": "15:09:24",
+      "start_timestamp": "2026-01-16T14:31:00",
+      "end_timestamp": "2026-01-16T15:09:24",
+      "duration": 2304.43,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "1f4a4d13-f083-4464-8c03-5e09f55e3f63",
+      "slot_id": "work_videocall",
+      "plan_chunk": "Hand off unfinished tasks to teammates",
+      "matched_scenarios": [
+        "Talking to colleagues",
+        "Working at desk"
+      ],
+      "video_scenarios": [
+        "Household management - caring for kids",
+        "Walking on street"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character organizes and cleans inside a house and the surrounding compound, interacting with children and another person.",
+      "plan_start_time": "15:06:00",
+      "plan_end_time": "15:36:00",
+      "start_time": "15:09:24",
+      "end_time": "15:32:16",
+      "start_timestamp": "2026-01-16T15:09:24",
+      "end_timestamp": "2026-01-16T15:32:16",
+      "duration": 1372.57,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "fa53388f-58ab-41a8-9f0d-55407cae3973",
+      "slot_id": "work_afternoon_wrap",
+      "plan_chunk": "Clear inbox before weekend",
+      "matched_scenarios": [
+        "On a screen (phone/laptop)",
+        "Working at desk"
+      ],
+      "video_scenarios": [
+        "Eating"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character and others walk, shop, take coffee, pick a flower and other items, interact with people, and read magazines in a supermarket.",
+      "plan_start_time": "15:36:00",
+      "plan_end_time": "16:01:00",
+      "start_time": "15:36:00",
+      "end_time": "15:57:42",
+      "start_timestamp": "2026-01-16T15:36:00",
+      "end_timestamp": "2026-01-16T15:57:42",
+      "duration": 1302.98,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "99373490-3d99-4339-84e4-4b461c20b052",
+      "slot_id": "commute_evening",
+      "plan_chunk": "Commute downtown for team gathering",
+      "matched_scenarios": [
+        "Car - commuting, road trip",
+        "Walking on street"
+      ],
+      "video_scenarios": [
+        "Cleaning / laundry",
+        "Electronics (hobbyist circuitry board kind, not electrical repair)"
+      ],
+      "main_scene": "mixed",
+      "consolidated_summary": "the character cleans and organizes an apartment, makes a construct, adjusts a drone, and works at a table.",
+      "plan_start_time": "16:15:00",
+      "plan_end_time": "16:45:00",
+      "start_time": "16:15:00",
+      "end_time": "16:45:00",
+      "start_timestamp": "2026-01-16T16:15:00",
+      "end_timestamp": "2026-01-16T16:45:00",
+      "duration": 1800.0,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "543e4c99-5d9f-407d-be75-c397d633fe56",
+      "slot_id": "home_refresh",
+      "plan_chunk": "Quick refresh and light snack at home before heading out",
       "matched_scenarios": [
         "Daily hygiene",
-        "Cooking",
-        "Making coffee"
+        "Cooking"
       ],
       "video_scenarios": [
         "Cleaning / laundry",
         "Cooking"
       ],
       "main_scene": "indoor",
-      "consolidated_summary": "the character tidies the apartment, organizes belongings, plays with a dog, and washes dishes.",
-      "start_time": "09:07:29",
-      "end_time": "09:28:51",
-      "start_timestamp": "2026-01-16T09:07:29",
-      "end_timestamp": "2026-01-16T09:28:51",
-      "duration": 1282.87,
+      "consolidated_summary": "the character makes a sandwich and washes dishes.",
+      "plan_start_time": "17:16:00",
+      "plan_end_time": "17:51:00",
+      "start_time": "17:16:00",
+      "end_time": "17:24:25",
+      "start_timestamp": "2026-01-16T17:16:00",
+      "end_timestamp": "2026-01-16T17:24:25",
+      "duration": 505.43,
       "video_source": "USA",
-      "time_period": "daytime"
+      "time_period": "not know"
     },
     {
-      "video_uid": "8e910cd4-9d9d-477d-b10d-c4bb01135813",
-      "slot_id": "wake_home",
-      "plan_chunk": "Wake up, daily hygiene, prepare breakfast and coffee at home",
-      "matched_scenarios": [
-        "Daily hygiene",
-        "Cooking",
-        "Making coffee"
-      ],
-      "video_scenarios": [
-        "Cooking"
-      ],
-      "main_scene": "indoor",
-      "consolidated_summary": "the character converses with a man while preparing food in the kitchen.",
-      "start_time": "09:33:51",
-      "end_time": "09:39:57",
-      "start_timestamp": "2026-01-16T09:33:51",
-      "end_timestamp": "2026-01-16T09:39:57",
-      "duration": 366.43,
-      "video_source": "USA",
-      "time_period": "daytime"
-    },
-    {
-      "video_uid": "743420f9-72e1-4219-bc56-f5a93644c0f4",
-      "slot_id": "commute_morning",
-      "plan_chunk": "Commute to office by car or bus",
-      "matched_scenarios": [
-        "Car - commuting, road trip",
-        "Bus",
-        "Walking on street"
-      ],
-      "video_scenarios": [
-        "Carpenter"
-      ],
-      "main_scene": "mixed",
-      "consolidated_summary": "the character cuts wood, measures spaces, and organizes tools in an apartment, around a house, and in a truck.",
-      "start_time": "09:44:57",
-      "end_time": "10:03:53",
-      "start_timestamp": "2026-01-16T09:44:57",
-      "end_timestamp": "2026-01-16T10:03:53",
-      "duration": 1136.2,
-      "video_source": "USA",
-      "time_period": "daytime"
-    },
-    {
-      "video_uid": "313cc9d1-c87f-44ec-9900-3ee8d75389be",
-      "slot_id": "work_morning",
-      "plan_chunk": "Work at desk, read emails, handle morning tasks",
-      "matched_scenarios": [
-        "Working at desk",
-        "On a screen (phone/laptop)",
-        "Talking to colleagues"
-      ],
-      "video_scenarios": [
-        "Car mechanic"
-      ],
-      "main_scene": "indoor",
-      "consolidated_summary": "the character inspects a lawn mower in the garage, gathers tools and repairs it in the workshop, and then uses his phone in a room.",
-      "start_time": "10:08:53",
-      "end_time": "10:22:45",
-      "start_timestamp": "2026-01-16T10:08:53",
-      "end_timestamp": "2026-01-16T10:22:45",
-      "duration": 832.5,
-      "video_source": "USA",
-      "time_period": "daytime"
-    },
-    {
-      "video_uid": "800e33d4-468c-4414-9d6d-956baa764241",
-      "slot_id": "work_focus",
-      "plan_chunk": "Focused desk work and collaboration",
-      "matched_scenarios": [
-        "Working at desk",
-        "Writing on whiteboard",
-        "Labwork"
-      ],
-      "video_scenarios": [
-        "Household cleaners"
-      ],
-      "main_scene": "indoor",
-      "consolidated_summary": "the character cleans the cooker, sweeps the house, and cleans the bathroom.",
-      "start_time": "10:27:45",
-      "end_time": "10:41:36",
-      "start_timestamp": "2026-01-16T10:27:45",
-      "end_timestamp": "2026-01-16T10:41:36",
-      "duration": 831.57,
-      "video_source": "USA",
-      "time_period": "daytime"
-    },
-    {
-      "video_uid": "c1e91ca9-ebb0-4bef-8ded-3fbed8cc359d",
-      "slot_id": "lunch_out",
-      "plan_chunk": "Lunch break at cafeteria or nearby restaurant",
-      "matched_scenarios": [
-        "Eating at the cafeteria",
-        "Eating at a restaurant",
-        "Eating"
-      ],
-      "video_scenarios": [
-        "Eating"
-      ],
-      "main_scene": "indoor",
-      "consolidated_summary": "the character interacts with people and handles items in a supermarket, briefly visiting a cafeteria.",
-      "start_time": "10:46:36",
-      "end_time": "11:08:10",
-      "start_timestamp": "2026-01-16T10:46:36",
-      "end_timestamp": "2026-01-16T11:08:10",
-      "duration": 1294.12,
-      "video_source": "USA",
-      "time_period": "daytime"
-    },
-    {
-      "video_uid": "d6491872-31a0-4015-b9e1-ae992406f849",
-      "slot_id": "errand_outdoor",
-      "plan_chunk": "Short walk outside or quick errand in the park",
-      "matched_scenarios": [
-        "Walking on street",
-        "Going to the park"
-      ],
-      "video_scenarios": [
-        "Walking on street"
-      ],
-      "main_scene": "outdoor",
-      "consolidated_summary": "the character walks on a sidewalk and converses with people.",
-      "start_time": "11:13:10",
-      "end_time": "11:20:54",
-      "start_timestamp": "2026-01-16T11:13:10",
-      "end_timestamp": "2026-01-16T11:20:54",
-      "duration": 464.43,
-      "video_source": "USA",
-      "time_period": "daytime"
-    },
-    {
-      "video_uid": "47f60ff3-cdcb-40b5-bc32-c46eb241e51d",
-      "slot_id": "work_afternoon",
-      "plan_chunk": "Wrap up weekly tasks and hand off to teammates",
-      "matched_scenarios": [
-        "Working at desk",
-        "Talking to colleagues"
-      ],
-      "video_scenarios": [
-        "Car mechanic"
-      ],
-      "main_scene": "indoor",
-      "consolidated_summary": "the character repairs a lawn mower in a garage and workshop.",
-      "start_time": "11:25:54",
-      "end_time": "11:39:46",
-      "start_timestamp": "2026-01-16T11:25:54",
-      "end_timestamp": "2026-01-16T11:39:46",
-      "duration": 832.4,
-      "video_source": "USA",
-      "time_period": "daytime"
-    },
-    {
-      "video_uid": "6e8d8309-821a-4b0a-8e3f-6cd74f59cb44",
-      "slot_id": "commute_evening",
-      "plan_chunk": "Commute to downtown for team gathering",
-      "matched_scenarios": [
-        "Car - commuting, road trip",
-        "Walking on street"
-      ],
-      "video_scenarios": [
-        "Car mechanic"
-      ],
-      "main_scene": "mixed",
-      "consolidated_summary": "the character arranges tools in a workshop, moves lawn mowers, and plugs in a drilling machine battery.",
-      "start_time": "11:44:46",
-      "end_time": "11:56:05",
-      "start_timestamp": "2026-01-16T11:44:46",
-      "end_timestamp": "2026-01-16T11:56:05",
-      "duration": 679.7,
-      "video_source": "USA",
-      "time_period": "daytime"
-    },
-    {
-      "video_uid": "41c32675-1cc9-47f2-82e5-5ef1eacb720b",
-      "slot_id": "home_evening",
-      "plan_chunk": "Quick refresh at home before heading out",
-      "matched_scenarios": [
-        "Daily hygiene",
-        "Cooking"
-      ],
-      "video_scenarios": [
-        "Car - commuting, road trip",
-        "Cooking"
-      ],
-      "main_scene": "indoor",
-      "consolidated_summary": "the character goes to a parking lot with two girls, retrieves mail, goes to an apartment, touches a countertop, washes hands, and interacts with others.",
-      "start_time": "12:01:05",
-      "end_time": "12:08:48",
-      "start_timestamp": "2026-01-16T12:01:05",
-      "end_timestamp": "2026-01-16T12:08:48",
-      "duration": 463.17,
-      "video_source": "USA",
-      "time_period": "twilight"
-    },
-    {
-      "video_uid": "4d620f82-6792-49eb-8bd4-e831a252c70b",
+      "video_uid": "e334bf47-e5f0-4922-8cde-4700951fa193",
       "slot_id": "team_dinner",
       "plan_chunk": "Team dinner at restaurant with colleagues",
       "matched_scenarios": [
         "Eating at a restaurant",
-        "Talking to colleagues",
-        "Attending a party"
+        "Talking to colleagues"
       ],
       "video_scenarios": [
         "Cooking",
         "Talking with family members"
       ],
       "main_scene": "indoor",
-      "consolidated_summary": "the character prepares and eats noodles in a kitchen.",
-      "start_time": "12:13:48",
-      "end_time": "12:29:56",
-      "start_timestamp": "2026-01-16T12:13:48",
-      "end_timestamp": "2026-01-16T12:29:56",
-      "duration": 968.03,
+      "consolidated_summary": "the character and woman X cook green peas, noodles, and other ingredients in a kitchen.",
+      "plan_start_time": "18:46:00",
+      "plan_end_time": "19:59:00",
+      "start_time": "18:46:00",
+      "end_time": "19:14:58",
+      "start_timestamp": "2026-01-16T18:46:00",
+      "end_timestamp": "2026-01-16T19:14:58",
+      "duration": 1738.77,
       "video_source": "USA",
       "time_period": "nighttime"
     },
     {
-      "video_uid": "57c5dc7c-6498-4cb5-84d3-c811f1cc2235",
-      "slot_id": "friday_night_out",
-      "plan_chunk": "Casual hangout at bar or dessert shop with teammates",
-      "matched_scenarios": [
-        "Hanging out with friends at a bar",
-        "Eating at a restaurant"
-      ],
-      "video_scenarios": [
-        "Crafting/knitting/sewing/drawing/painting"
-      ],
-      "main_scene": "indoor",
-      "consolidated_summary": "the character paints in a room.",
-      "start_time": "12:34:56",
-      "end_time": "12:48:44",
-      "start_timestamp": "2026-01-16T12:34:56",
-      "end_timestamp": "2026-01-16T12:48:44",
-      "duration": 828.13,
-      "video_source": "USA",
-      "time_period": "nighttime"
-    },
-    {
-      "video_uid": "d8c7bf34-0440-48b3-bf22-263d7c926074",
-      "slot_id": "wake_home",
-      "plan_chunk": "Wake up, daily hygiene, prepare breakfast and coffee at home",
-      "matched_scenarios": [
-        "Daily hygiene",
-        "Cooking",
-        "Making coffee"
-      ],
-      "video_scenarios": [
-        "Cooking"
-      ],
-      "main_scene": "indoor",
-      "consolidated_summary": "the character prepares a meal with a woman, cleans cooking tools, and has a drink.",
-      "start_time": "12:53:44",
-      "end_time": "13:00:12",
-      "start_timestamp": "2026-01-16T12:53:44",
-      "end_timestamp": "2026-01-16T13:00:12",
-      "duration": 388.17,
-      "video_source": "USA",
-      "time_period": "daytime"
-    },
-    {
-      "video_uid": "d4b28d3d-29f8-4f2a-adb4-33a4126659a1",
-      "slot_id": "commute_morning",
-      "plan_chunk": "Commute to office by car or bus",
-      "matched_scenarios": [
-        "Car - commuting, road trip",
-        "Bus",
-        "Walking on street"
-      ],
-      "video_scenarios": [
-        "jobs related to construction/renovation company\n(Director of work, tiler, plumber, Electrician, Handyman, etc)"
-      ],
-      "main_scene": "mixed",
-      "consolidated_summary": "the character trims grass on a compound.",
-      "start_time": "13:05:12",
-      "end_time": "13:23:05",
-      "start_timestamp": "2026-01-16T13:05:12",
-      "end_timestamp": "2026-01-16T13:23:05",
-      "duration": 1073.73,
-      "video_source": "USA",
-      "time_period": "daytime"
-    },
-    {
-      "video_uid": "109a3b33-ea8c-496e-bfdd-a75989139096",
-      "slot_id": "work_morning",
-      "plan_chunk": "Work at desk, read emails, handle morning tasks",
-      "matched_scenarios": [
-        "Working at desk",
-        "On a screen (phone/laptop)",
-        "Talking to colleagues"
-      ],
-      "video_scenarios": [
-        "jobs related to construction/renovation company\n(Director of work, tiler, plumber, Electrician, Handyman, etc)"
-      ],
-      "main_scene": "indoor",
-      "consolidated_summary": "the character works with wood in a workshop, measuring, marking, gluing, and assembling pieces.",
-      "start_time": "13:28:05",
-      "end_time": "13:44:07",
-      "start_timestamp": "2026-01-16T13:28:05",
-      "end_timestamp": "2026-01-16T13:44:07",
-      "duration": 962.3,
-      "video_source": "USA",
-      "time_period": "daytime"
-    },
-    {
-      "video_uid": "bf2c8db3-e419-431d-bd6b-85cfd9c8569f",
-      "slot_id": "work_focus",
-      "plan_chunk": "Focused desk work and collaboration",
-      "matched_scenarios": [
-        "Working at desk",
-        "Writing on whiteboard",
-        "Labwork"
-      ],
-      "video_scenarios": [
-        "jobs related to construction/renovation company\n(Director of work, tiler, plumber, Electrician, Handyman, etc)"
-      ],
-      "main_scene": "indoor",
-      "consolidated_summary": "the character fixes a brake caliper, brake pad, and cleans garage tools.",
-      "start_time": "13:49:07",
-      "end_time": "14:05:17",
-      "start_timestamp": "2026-01-16T13:49:07",
-      "end_timestamp": "2026-01-16T14:05:17",
-      "duration": 970.83,
-      "video_source": "USA",
-      "time_period": "daytime"
-    },
-    {
-      "video_uid": "c824d4e5-298a-462b-a408-28a85a7364af",
-      "slot_id": "lunch_out",
-      "plan_chunk": "Lunch break at cafeteria or nearby restaurant",
-      "matched_scenarios": [
-        "Eating at the cafeteria",
-        "Eating at a restaurant",
-        "Eating"
-      ],
-      "video_scenarios": [
-        "Eating"
-      ],
-      "main_scene": "indoor",
-      "consolidated_summary": "the character shops at a supermarket, browses items, makes a purchase, and eats.",
-      "start_time": "14:10:17",
-      "end_time": "14:31:29",
-      "start_timestamp": "2026-01-16T14:10:17",
-      "end_timestamp": "2026-01-16T14:31:29",
-      "duration": 1272.81,
-      "video_source": "USA",
-      "time_period": "daytime"
-    },
-    {
-      "video_uid": "9164a62a-31c9-4610-8d7e-85bf3f3ea56e",
-      "slot_id": "errand_outdoor",
-      "plan_chunk": "Short walk outside or quick errand in the park",
-      "matched_scenarios": [
-        "Walking on street",
-        "Going to the park"
-      ],
-      "video_scenarios": [
-        "BasketBall",
-        "Going to the park",
-        "On a screen (phone/laptop)"
-      ],
-      "main_scene": "outdoor",
-      "consolidated_summary": "the character plays basketball and interacts with various objects on a playground.",
-      "start_time": "14:36:29",
-      "end_time": "14:47:37",
-      "start_timestamp": "2026-01-16T14:36:29",
-      "end_timestamp": "2026-01-16T14:47:37",
-      "duration": 668.83,
-      "video_source": "USA",
-      "time_period": "daytime"
-    },
-    {
-      "video_uid": "f8cbac27-db1d-4be2-85d5-5af602246f61",
-      "slot_id": "work_afternoon",
-      "plan_chunk": "Wrap up weekly tasks and hand off to teammates",
-      "matched_scenarios": [
-        "Working at desk",
-        "Talking to colleagues"
-      ],
-      "video_scenarios": [
-        "Crafting/knitting/sewing/drawing/painting"
-      ],
-      "main_scene": "indoor",
-      "consolidated_summary": "the character paints ceiling corners in a house/room, using a step stool, and removes tape from a ceiling fan.",
-      "start_time": "14:52:37",
-      "end_time": "15:06:27",
-      "start_timestamp": "2026-01-16T14:52:37",
-      "end_timestamp": "2026-01-16T15:06:27",
-      "duration": 830.57,
-      "video_source": "USA",
-      "time_period": "daytime"
-    },
-    {
-      "video_uid": "5338ac17-6382-4173-8b73-ecd7c853ae08",
-      "slot_id": "commute_evening",
-      "plan_chunk": "Commute to downtown for team gathering",
-      "matched_scenarios": [
-        "Car - commuting, road trip",
-        "Walking on street"
-      ],
-      "video_scenarios": [
-        "jobs related to construction/renovation company\n(Director of work, tiler, plumber, Electrician, Handyman, etc)"
-      ],
-      "main_scene": "mixed",
-      "consolidated_summary": "the character fits tiles and works with wood on the floor inside a house.",
-      "start_time": "15:11:27",
-      "end_time": "15:22:53",
-      "start_timestamp": "2026-01-16T15:11:27",
-      "end_timestamp": "2026-01-16T15:22:53",
-      "duration": 686.43,
-      "video_source": "USA",
-      "time_period": "daytime"
-    },
-    {
-      "video_uid": "029ff9ab-ac4c-43a5-ae53-153228c52a21",
-      "slot_id": "home_evening",
-      "plan_chunk": "Quick refresh at home before heading out",
-      "matched_scenarios": [
-        "Daily hygiene",
-        "Cooking"
-      ],
-      "video_scenarios": [
-        "Cleaning / laundry",
-        "Daily hygiene",
-        "On a screen (phone/laptop)",
-        "Playing with pets"
-      ],
-      "main_scene": "indoor",
-      "consolidated_summary": "the character arranges the house, interacts with dogs, walks around the house, takes pills, interacts with a person, operates a phone, and eats cake.",
-      "start_time": "15:27:53",
-      "end_time": "15:39:55",
-      "start_timestamp": "2026-01-16T15:27:53",
-      "end_timestamp": "2026-01-16T15:39:55",
-      "duration": 722.43,
-      "video_source": "USA",
-      "time_period": "twilight"
-    },
-    {
-      "video_uid": "4466d75d-2da3-404f-b49c-f28b3886194e",
-      "slot_id": "team_dinner",
-      "plan_chunk": "Team dinner at restaurant with colleagues",
+      "video_uid": "9e99e8b0-b99d-4c0b-9095-3bed41d74f5d",
+      "slot_id": "friday_dessert",
+      "plan_chunk": "Dessert or drinks after dinner",
       "matched_scenarios": [
         "Eating at a restaurant",
-        "Talking to colleagues",
-        "Attending a party"
-      ],
-      "video_scenarios": [
-        "Cleaning / laundry"
-      ],
-      "main_scene": "indoor",
-      "consolidated_summary": "the character uses the kitchen tap, folds towels from the washing machine, and puts clothes into the washing machine.",
-      "start_time": "15:44:55",
-      "end_time": "16:01:11",
-      "start_timestamp": "2026-01-16T15:44:55",
-      "end_timestamp": "2026-01-16T16:01:11",
-      "duration": 976.9,
-      "video_source": "USA",
-      "time_period": "nighttime"
-    },
-    {
-      "video_uid": "19562e2d-7cdd-4cc2-9a3d-b7fc609e5ee8",
-      "slot_id": "friday_night_out",
-      "plan_chunk": "Casual hangout at bar or dessert shop with teammates",
-      "matched_scenarios": [
-        "Hanging out with friends at a bar",
-        "Eating at a restaurant"
-      ],
-      "video_scenarios": [
-        "Crafting/knitting/sewing/drawing/painting"
-      ],
-      "main_scene": "indoor",
-      "consolidated_summary": "the character knits a garment inside the house.",
-      "start_time": "16:06:11",
-      "end_time": "16:22:27",
-      "start_timestamp": "2026-01-16T16:06:11",
-      "end_timestamp": "2026-01-16T16:22:27",
-      "duration": 976.4,
-      "video_source": "USA",
-      "time_period": "nighttime"
-    },
-    {
-      "video_uid": "6ba5f052-a1cd-46ba-83f2-1be480387020",
-      "slot_id": "wake_home",
-      "plan_chunk": "Wake up, daily hygiene, prepare breakfast and coffee at home",
-      "matched_scenarios": [
-        "Daily hygiene",
-        "Cooking",
-        "Making coffee"
-      ],
-      "video_scenarios": [
-        "Cleaning / laundry",
-        "Cooking"
-      ],
-      "main_scene": "indoor",
-      "consolidated_summary": "the character prepares a meal and interacts with others in an apartment.",
-      "start_time": "16:27:27",
-      "end_time": "16:49:02",
-      "start_timestamp": "2026-01-16T16:27:27",
-      "end_timestamp": "2026-01-16T16:49:02",
-      "duration": 1295.83,
-      "video_source": "USA",
-      "time_period": "daytime"
-    },
-    {
-      "video_uid": "ce90f6f8-a6a8-47b5-bb4c-6e12698164a3",
-      "slot_id": "commute_morning",
-      "plan_chunk": "Commute to office by car or bus",
-      "matched_scenarios": [
-        "Car - commuting, road trip",
-        "Bus",
-        "Walking on street"
+        "Hanging out with friends at a bar"
       ],
       "video_scenarios": [
         "jobs related to construction/renovation company\n(Director of work, tiler, plumber, Electrician, Handyman, etc)"
       ],
-      "main_scene": "mixed",
-      "consolidated_summary": "the character fixes tools, mixes paints and filler, applies filler to a wall, and paints the wall in a house, sometimes assisted by N.",
-      "start_time": "16:54:02",
-      "end_time": "17:13:49",
-      "start_timestamp": "2026-01-16T16:54:02",
-      "end_timestamp": "2026-01-16T17:13:49",
-      "duration": 1187.1,
+      "main_scene": "indoor",
+      "consolidated_summary": "the character removes wallpaper and paint from a wall inside a house using tools like a steamer and scraper.",
+      "plan_start_time": "20:01:00",
+      "plan_end_time": "20:58:00",
+      "start_time": "20:01:00",
+      "end_time": "20:32:29",
+      "start_timestamp": "2026-01-16T20:01:00",
+      "end_timestamp": "2026-01-16T20:32:29",
+      "duration": 1889.53,
       "video_source": "USA",
-      "time_period": "daytime"
+      "time_period": "nighttime"
     },
     {
-      "video_uid": "2ad1ed95-373a-4c44-aba3-27f6d5fff7ca",
-      "slot_id": "work_morning",
-      "plan_chunk": "Work at desk, read emails, handle morning tasks",
+      "video_uid": "5a8132ed-7a82-42da-a9c4-64fc99d2db79",
+      "slot_id": "friday_night_out",
+      "plan_chunk": "Casual hangout at bar with teammates",
       "matched_scenarios": [
-        "Working at desk",
-        "On a screen (phone/laptop)",
+        "Hanging out with friends at a bar",
         "Talking to colleagues"
       ],
       "video_scenarios": [
         "Crafting/knitting/sewing/drawing/painting"
       ],
       "main_scene": "indoor",
-      "consolidated_summary": "the character paints on paper.",
-      "start_time": "17:18:49",
-      "end_time": "17:35:04",
-      "start_timestamp": "2026-01-16T17:18:49",
-      "end_timestamp": "2026-01-16T17:35:04",
-      "duration": 975.73,
+      "consolidated_summary": "the character crochets in a room, occasionally interacts with a phone, and drinks from a can.",
+      "plan_start_time": "20:46:00",
+      "plan_end_time": "22:29:00",
+      "start_time": "20:46:00",
+      "end_time": "21:17:49",
+      "start_timestamp": "2026-01-16T20:46:00",
+      "end_timestamp": "2026-01-16T21:17:49",
+      "duration": 1909.37,
       "video_source": "USA",
-      "time_period": "daytime"
-    },
-    {
-      "video_uid": "c058dd9b-c4f5-4f0e-b08e-3b62ecdd1695",
-      "slot_id": "work_focus",
-      "plan_chunk": "Focused desk work and collaboration",
-      "matched_scenarios": [
-        "Working at desk",
-        "Writing on whiteboard",
-        "Labwork"
-      ],
-      "video_scenarios": [
-        "jobs related to construction/renovation company\n(Director of work, tiler, plumber, Electrician, Handyman, etc)"
-      ],
-      "main_scene": "indoor",
-      "consolidated_summary": "the character applies grease to the brake caliper mounting bracket, repairs brake calipers, fixes the tire, and arranges the garage tools.",
-      "start_time": "17:40:04",
-      "end_time": "17:56:17",
-      "start_timestamp": "2026-01-16T17:40:04",
-      "end_timestamp": "2026-01-16T17:56:17",
-      "duration": 973.07,
-      "video_source": "USA",
-      "time_period": "daytime"
+      "time_period": "nighttime"
     }
   ],
   "statistics": {
-    "clip_count": 34,
-    "total_duration": 29493.43,
-    "total_duration_hours": 8.19,
+    "clip_count": 20,
+    "plan_slot_count": 20,
+    "total_duration": 28321.01,
+    "total_duration_hours": 7.87,
     "scene_distribution": {
-      "outdoor": 3,
-      "mixed": 8,
-      "indoor": 23
+      "indoor": 13,
+      "mixed": 5,
+      "outdoor": 2
     },
     "selected_videos": [
-      "940ff963-ab1c-496f-991c-b23c29714f73",
-      "897e0050-26ad-4f2a-a82a-76f3764c741f",
-      "439c4f57-6d3f-4def-a303-f80e211971da",
-      "233b8290-a87f-4d29-b63e-d47d9a1410f7",
-      "f5ac654b-8f39-427b-856f-4a9a2d4a3020",
-      "fb8fd8fc-d4b4-412c-9c12-ae209c2e0e73",
-      "7ea64050-2785-4d1a-a0f8-b7d67bc0895a",
-      "291e4d57-380b-4f8f-81e0-a67a3c3528a4",
-      "8e910cd4-9d9d-477d-b10d-c4bb01135813",
-      "743420f9-72e1-4219-bc56-f5a93644c0f4",
-      "313cc9d1-c87f-44ec-9900-3ee8d75389be",
-      "800e33d4-468c-4414-9d6d-956baa764241",
-      "c1e91ca9-ebb0-4bef-8ded-3fbed8cc359d",
-      "d6491872-31a0-4015-b9e1-ae992406f849",
-      "47f60ff3-cdcb-40b5-bc32-c46eb241e51d",
-      "6e8d8309-821a-4b0a-8e3f-6cd74f59cb44",
-      "41c32675-1cc9-47f2-82e5-5ef1eacb720b",
-      "4d620f82-6792-49eb-8bd4-e831a252c70b",
-      "57c5dc7c-6498-4cb5-84d3-c811f1cc2235",
-      "d8c7bf34-0440-48b3-bf22-263d7c926074",
-      "d4b28d3d-29f8-4f2a-adb4-33a4126659a1",
-      "109a3b33-ea8c-496e-bfdd-a75989139096",
-      "bf2c8db3-e419-431d-bd6b-85cfd9c8569f",
-      "c824d4e5-298a-462b-a408-28a85a7364af",
-      "9164a62a-31c9-4610-8d7e-85bf3f3ea56e",
-      "f8cbac27-db1d-4be2-85d5-5af602246f61",
-      "5338ac17-6382-4173-8b73-ecd7c853ae08",
-      "029ff9ab-ac4c-43a5-ae53-153228c52a21",
-      "4466d75d-2da3-404f-b49c-f28b3886194e",
-      "19562e2d-7cdd-4cc2-9a3d-b7fc609e5ee8",
-      "6ba5f052-a1cd-46ba-83f2-1be480387020",
-      "ce90f6f8-a6a8-47b5-bb4c-6e12698164a3",
-      "2ad1ed95-373a-4c44-aba3-27f6d5fff7ca",
-      "c058dd9b-c4f5-4f0e-b08e-3b62ecdd1695"
+      "84a895b5-f419-4bc6-9ac5-a813ff70ccfe",
+      "5dde766e-e93a-4d48-b3c7-96774f24d39d",
+      "633d1e83-f350-4983-87fd-4e9b9e9ed754",
+      "424d302f-9765-4f7a-9945-366d4f789136",
+      "f1d2b2ee-2e29-4d57-94a0-8875b70ccd34",
+      "252b4e41-56c3-4628-93c9-ab23fea10f09",
+      "c0b5fd60-732b-4f5b-977b-6452a589974d",
+      "56830730-4e9c-4928-ba0b-6ca75f57231d",
+      "509160ad-d4be-4e15-87d1-fd739a18fb14",
+      "b2078083-c33f-4c35-9ebf-0ff6ccc05b6c",
+      "0fbf42b1-23ed-4a2b-ad71-ab438b45e0d2",
+      "88faccde-dd5d-4af2-b769-8f0547c2c6a3",
+      "b71166c2-c723-4f91-89b7-3a484e14079e",
+      "1f4a4d13-f083-4464-8c03-5e09f55e3f63",
+      "fa53388f-58ab-41a8-9f0d-55407cae3973",
+      "99373490-3d99-4339-84e4-4b461c20b052",
+      "543e4c99-5d9f-407d-be75-c397d633fe56",
+      "e334bf47-e5f0-4922-8cde-4700951fa193",
+      "9e99e8b0-b99d-4c0b-9095-3bed41d74f5d",
+      "5a8132ed-7a82-42da-a9c4-64fc99d2db79"
     ],
     "unique_scenarios": [
-      "BasketBall",
-      "Car - commuting, road trip",
       "Car mechanic",
-      "Carpenter",
       "Cleaning / laundry",
       "Cooking",
       "Crafting/knitting/sewing/drawing/painting",
-      "Daily hygiene",
       "Doing yardwork / shoveling snow",
       "Eating",
-      "Going to the park",
-      "Household cleaners",
-      "On a screen (phone/laptop)",
-      "Playing with pets",
+      "Electronics (hobbyist circuitry board kind, not electrical repair)",
+      "Handyman",
+      "Household management - caring for kids",
+      "Making coffee",
+      "Practicing a musical instrument",
       "Talking with family members",
       "Walking on street",
       "jobs related to construction/renovation company\n(Director of work, tiler, plumber, Electrician, Handyman, etc)"

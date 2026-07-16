@@ -1,4 +1,10 @@
-"""Video retrieval from Ego4D video_info.json with scene-diverse 8h/day selection."""
+"""Video retrieval from Ego4D video_info.json.
+
+Placement policy (one clip per daily-plan slot):
+  - Prefer start_time == plan slot start.
+  - If previous clip overran into this slot, chain: start == previous end.
+  - If previous clip under-filled, next clip still starts at its own plan start.
+"""
 
 from __future__ import annotations
 
@@ -27,7 +33,9 @@ def scenario_iou(list_a: list[str], list_b: list[str]) -> float:
 
 
 def classify_time_from_hhmm(time_str: str) -> str:
-    t = datetime.strptime(time_str, "%H:%M").time()
+    # Accept "HH:MM" or "HH:MM:SS"
+    parts = time_str.split(":")
+    t = datetime.strptime(f"{parts[0]}:{parts[1]}", "%H:%M").time()
     day_start = datetime.strptime("06:00", "%H:%M").time()
     twilight_start = datetime.strptime("17:00", "%H:%M").time()
     night_start = datetime.strptime("19:00", "%H:%M").time()
@@ -81,7 +89,12 @@ def score_candidate(video: dict[str, Any], chunk: dict[str, Any]) -> float:
     iou = scenario_iou(chunk.get("matched_scenarios", []), video["video_scenarios"])
     scene_bonus = 1.0 if video["main_scene"] == chunk.get("location") else 0.5
     dur = video["video_duration"]
-    dur_score = 1.0 - abs(dur - 900) / 900
+    # Prefer clips that roughly fit the plan-slot duration when available
+    slot_sec = _chunk_duration_sec(chunk)
+    if slot_sec > 0:
+        dur_score = 1.0 - abs(dur - min(slot_sec, 1800)) / max(slot_sec, 900)
+    else:
+        dur_score = 1.0 - abs(dur - 900) / 900
     return iou * 2 + scene_bonus + max(dur_score, 0)
 
 
@@ -100,10 +113,34 @@ def _format_ts(date_str: str, time_str: str) -> str:
     return f"{date_str}T{time_str}"
 
 
+def _to_hms(time_str: str) -> str:
+    """Normalize 'HH:MM' or 'HH:MM:SS' -> 'HH:MM:SS'."""
+    parts = time_str.strip().split(":")
+    if len(parts) == 2:
+        return f"{int(parts[0]):02d}:{int(parts[1]):02d}:00"
+    if len(parts) == 3:
+        return f"{int(parts[0]):02d}:{int(parts[1]):02d}:{int(parts[2]):02d}"
+    raise ValueError(f"Invalid time string: {time_str}")
+
+
 def _add_seconds(date_str: str, time_str: str, seconds: float) -> tuple[str, str]:
-    dt = datetime.strptime(f"{date_str} {time_str}", "%Y-%m-%d %H:%M:%S")
+    dt = datetime.strptime(f"{date_str} {_to_hms(time_str)}", "%Y-%m-%d %H:%M:%S")
     end = dt + timedelta(seconds=seconds)
     return end.strftime("%Y-%m-%d"), end.strftime("%H:%M:%S")
+
+
+def _time_ge(a: str, b: str) -> bool:
+    return _to_hms(a) >= _to_hms(b)
+
+
+def _chunk_duration_sec(chunk: dict[str, Any]) -> float:
+    try:
+        start = datetime.strptime(_to_hms(chunk["start_time"]), "%H:%M:%S")
+        end = datetime.strptime(_to_hms(chunk["end_time"]), "%H:%M:%S")
+        delta = (end - start).total_seconds()
+        return delta if delta > 0 else 0.0
+    except (KeyError, ValueError):
+        return 0.0
 
 
 def _calendar_date(day_index: int) -> str:
@@ -120,24 +157,50 @@ def build_day_lifelog(
     rng: random.Random,
     day_meta: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
+    """Build one day: exactly one video per daily-plan slot.
+
+    Timing rules:
+      - Prefer aligning each clip's start to the plan slot's start_time.
+      - If the previous clip ended *after* the next plan's start, the next clip
+        starts immediately at previous end (no forced gap).
+      - If the previous clip ended *before* the next plan's start (under-filled),
+        the next clip starts at the next plan's scheduled start_time.
+    """
     date_str = _calendar_date(day_index)
     used_today: set[str] = set()
     memory_content: list[dict[str, Any]] = []
     scene_counts: dict[str, int] = defaultdict(int)
-    quota_remaining = dict(config.MIN_CLIPS_PER_SCENE)
-    current_time = config.DAY_START_TIME
 
-    def try_add_from_chunk(chunk: dict[str, Any], required_scene: str | None = None) -> bool:
-        nonlocal current_time
+    # Cursor = absolute end of last placed clip on this calendar day (HH:MM:SS), or None
+    cursor_end: str | None = None
+
+    chrono_chunks = sorted(plan_chunks, key=lambda c: _to_hms(c["start_time"]))
+
+    for chunk in chrono_chunks:
         cands = filter_candidates(videos, chunk, used_today | global_used, persona["location"])
-        if required_scene:
-            cands = [v for v in cands if v["main_scene"] == required_scene] or cands
         video = pick_video(cands, chunk, rng)
         if not video:
-            return False
+            continue
 
-        start_date, start_time = date_str, current_time
+        plan_start = _to_hms(chunk["start_time"])
+        plan_end = _to_hms(chunk["end_time"])
+
+        if cursor_end is None or not _time_ge(cursor_end, plan_start):
+            # Under-filled previous slot (or first clip): align to this plan's start
+            start_time = plan_start
+        else:
+            # Previous overflowed past this plan start: chain immediately after it
+            start_time = cursor_end
+
+        start_date = date_str
         end_date, end_time = _add_seconds(start_date, start_time, video["video_duration"])
+        # Keep cursor on the same calendar day clock for chaining
+        if end_date != date_str:
+            # Crossed midnight — clamp cursor to end_time still usable as HH:MM:SS next day edge
+            cursor_end = end_time
+        else:
+            cursor_end = end_time
+
         memory_content.append(
             {
                 "video_uid": video["video_uid"],
@@ -147,6 +210,8 @@ def build_day_lifelog(
                 "video_scenarios": video["video_scenarios"],
                 "main_scene": video["main_scene"],
                 "consolidated_summary": video["consolidated_summary"].replace("C", "the character"),
+                "plan_start_time": plan_start,
+                "plan_end_time": plan_end,
                 "start_time": start_time,
                 "end_time": end_time,
                 "start_timestamp": _format_ts(start_date, start_time),
@@ -160,40 +225,8 @@ def build_day_lifelog(
         if not config.ALLOW_CROSS_DAY_REUSE:
             global_used.add(video["video_uid"])
         scene_counts[video["main_scene"]] += 1
-        _, current_time = _add_seconds(start_date, end_time, config.GAP_BETWEEN_CLIPS_SEC)
-        return True
-
-    for scene in ("outdoor", "mixed", "indoor"):
-        while quota_remaining.get(scene, 0) > 0:
-            if scene == "outdoor":
-                matching_chunks = [c for c in plan_chunks if c.get("location") in ("outdoor", "mixed")] or plan_chunks
-            else:
-                matching_chunks = [c for c in plan_chunks if c.get("location") == scene] or plan_chunks
-            rng.shuffle(matching_chunks)
-            added = False
-            for chunk in matching_chunks:
-                req = scene if scene != "mixed" else None
-                if try_add_from_chunk(chunk, required_scene=req):
-                    quota_remaining[scene] -= 1
-                    added = True
-                    break
-            if not added:
-                break
 
     total_duration = sum(m["duration"] for m in memory_content)
-    chunk_cycle = 0
-    while total_duration < config.TARGET_SECONDS_PER_DAY and plan_chunks:
-        chunk = plan_chunks[chunk_cycle % len(plan_chunks)]
-        before = len(memory_content)
-        try_add_from_chunk(chunk)
-        if len(memory_content) == before:
-            chunk_cycle += 1
-            if chunk_cycle > len(plan_chunks) * 3:
-                break
-            continue
-        total_duration = sum(m["duration"] for m in memory_content)
-        chunk_cycle += 1
-
     day_meta = day_meta or {}
     return {
         "metadata": {
@@ -207,11 +240,13 @@ def build_day_lifelog(
             "day_theme": day_meta.get("day_theme", plan_chunks[0].get("day_theme", "") if plan_chunks else ""),
             "anomaly_events": day_meta.get("anomaly_events", []),
             "time_variations": day_meta.get("time_variations", {}),
+            "placement_policy": "one_clip_per_plan_align_or_chain",
         },
         "daily_plan": [f"{c['plan_chunk']} ({c['start_time']}-{c['end_time']})" for c in plan_chunks],
         "memory_content": memory_content,
         "statistics": {
             "clip_count": len(memory_content),
+            "plan_slot_count": len(chrono_chunks),
             "total_duration": total_duration,
             "total_duration_hours": round(total_duration / 3600, 2),
             "scene_distribution": dict(scene_counts),

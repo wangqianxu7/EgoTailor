@@ -1,0 +1,39 @@
+{
+  "created_at": "2026-07-15T07:17:03.791843+00:00",
+  "source_video_info": "/root/X-LeBench/generation/ego4d_info/video_info.json",
+  "ego4d_video_root": "/mnt/data_oss/raw_data/Ego4d/v2/full_scale",
+  "source_count": 7852,
+  "local_mp4_count": 2977,
+  "filtered_count": 2344,
+  "coverage_vs_source": 0.2985,
+  "local_only_not_in_video_info": 633,
+  "by_source": {
+    "Italy": 458,
+    "KSA": 410,
+    "Colombia": 54,
+    "UK": 358,
+    "USA": 595,
+    "India": 269,
+    "Singapore": 43,
+    "Japan": 103,
+    "Rwanda": 54
+  },
+  "by_main_scene": {
+    "indoor": 1670,
+    "outdoor": 382,
+    "mixed": 292
+  },
+  "by_time_period": {
+    "daytime": 1551,
+    "nighttime": 427,
+    "twilight": 136,
+    "not know": 230
+  },
+  "usa_count": 595,
+  "duration_stats": {
+    "min": 11.58,
+    "max": 24189.3,
+    "mean": 1463.27,
+    "total_hours": 952.75
+  }
+}

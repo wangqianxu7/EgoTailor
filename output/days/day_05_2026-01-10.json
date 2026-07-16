@@ -13,133 +13,216 @@
       "wake_jitter_min": 5,
       "commute_jitter_min": 14,
       "exercise_jitter_min": 13
-    }
+    },
+    "placement_policy": "one_clip_per_plan_align_or_chain"
   },
   "daily_plan": [
-    "Early weekend wake-up, pack snacks and hiking gear (08:00-09:00)",
-    "Drive to trailhead for day hike (09:30-10:30)",
-    "Long hiking on mountain trail with scenic views (10:45-13:30)",
-    "Picnic lunch on the trail (13:45-14:30)",
-    "Continue hiking and descend back to trailhead (14:45-16:30)",
-    "Drive home, tired but satisfied (17:00-18:00)",
-    "Shower, simple dinner, stretch sore muscles (18:30-20:00)",
-    "Early to bed after exhausting hike (20:30-21:30)"
+    "Early weekend wake-up and hygiene (07:43-08:08)",
+    "Pack snacks, water, and hiking gear (08:08-08:43)",
+    "Drive to trailhead for day hike (09:19-10:19)",
+    "Hike uphill on mountain trail (10:31-12:01)",
+    "Pause for scenic views and photos (12:01-13:01)",
+    "Picnic lunch on the trail (13:16-14:01)",
+    "Descend trail back toward trailhead (14:16-16:01)",
+    "Drive home after the hike (16:34-17:34)",
+    "Shower and stretch sore muscles (18:01-18:46)",
+    "Simple recovery dinner at home (18:46-19:31)",
+    "Early to bed after exhausting hike (20:01-21:01)"
   ],
   "memory_content": [
     {
-      "video_uid": "3b3ecf0c-ee8d-4518-bf1c-3301ba44c743",
-      "slot_id": "drive_home",
-      "plan_chunk": "Drive home, tired but satisfied",
+      "video_uid": "c9e6c8c6-6192-4c6b-a430-e5a867f69bd9",
+      "slot_id": "wake_hygiene",
+      "plan_chunk": "Early weekend wake-up and hygiene",
       "matched_scenarios": [
-        "Car - commuting, road trip"
+        "Daily hygiene"
       ],
       "video_scenarios": [
-        "Car - commuting, road trip",
-        "On a screen (phone/laptop)"
+        "Cooking",
+        "Daily hygiene"
       ],
       "main_scene": "mixed",
-      "consolidated_summary": "the character drives a car.",
-      "start_time": "07:00:00",
-      "end_time": "07:20:36",
-      "start_timestamp": "2026-01-10T07:00:00",
-      "end_timestamp": "2026-01-10T07:20:36",
-      "duration": 1236.97,
+      "consolidated_summary": "the character cuts his fingernails, washes his hands, watches television, cooks food, and washes noodles.",
+      "plan_start_time": "07:43:00",
+      "plan_end_time": "08:08:00",
+      "start_time": "07:43:00",
+      "end_time": "07:56:31",
+      "start_timestamp": "2026-01-10T07:43:00",
+      "end_timestamp": "2026-01-10T07:56:31",
+      "duration": 811.97,
       "video_source": "USA",
-      "time_period": "twilight"
+      "time_period": "daytime"
     },
     {
-      "video_uid": "a448297b-ae62-4712-bc4f-849b39176558",
+      "video_uid": "f0c8aba4-3101-4912-881c-e12d7817eba8",
+      "slot_id": "pack_gear",
+      "plan_chunk": "Pack snacks, water, and hiking gear",
+      "matched_scenarios": [
+        "Cooking",
+        "Making coffee"
+      ],
+      "video_scenarios": [
+        "Making coffee"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character visits O's new house, makes coffee, converses with others, and plays games.",
+      "plan_start_time": "08:08:00",
+      "plan_end_time": "08:43:00",
+      "start_time": "08:08:00",
+      "end_time": "08:38:46",
+      "start_timestamp": "2026-01-10T08:08:00",
+      "end_timestamp": "2026-01-10T08:38:46",
+      "duration": 1846.93,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "a4375d98-e295-4e7d-a718-d8af066e3d57",
       "slot_id": "drive_trailhead",
       "plan_chunk": "Drive to trailhead for day hike",
       "matched_scenarios": [
         "Car - commuting, road trip"
       ],
       "video_scenarios": [
-        "Baseball",
+        "Car mechanic"
+      ],
+      "main_scene": "mixed",
+      "consolidated_summary": "the character performs various mechanical repairs and maintenance tasks in a garage or workshop.",
+      "plan_start_time": "09:19:00",
+      "plan_end_time": "10:19:00",
+      "start_time": "09:19:00",
+      "end_time": "09:47:29",
+      "start_timestamp": "2026-01-10T09:19:00",
+      "end_timestamp": "2026-01-10T09:47:29",
+      "duration": 1709.67,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "984c9fcb-525c-4514-b22d-9e440d121332",
+      "slot_id": "hiking_ascent",
+      "plan_chunk": "Hike uphill on mountain trail",
+      "matched_scenarios": [
+        "Hiking",
+        "Walking on street"
+      ],
+      "video_scenarios": [
+        "Hiking",
+        "Outdoor social (includes campfire)"
+      ],
+      "main_scene": "outdoor",
+      "consolidated_summary": "the character hikes with X, Y, and Z, and Y removes a jacket.",
+      "plan_start_time": "10:31:00",
+      "plan_end_time": "12:01:00",
+      "start_time": "10:31:00",
+      "end_time": "10:33:22",
+      "start_timestamp": "2026-01-10T10:31:00",
+      "end_timestamp": "2026-01-10T10:33:22",
+      "duration": 142.6,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "4b285020-fc23-4e14-b645-594111b65a36",
+      "slot_id": "trail_views",
+      "plan_chunk": "Pause for scenic views and photos",
+      "matched_scenarios": [
+        "Hiking",
+        "Tourism",
+        "Taking photos in photography studio"
+      ],
+      "video_scenarios": [
+        "Hiking"
+      ],
+      "main_scene": "outdoor",
+      "consolidated_summary": "the character hikes on a mountain.",
+      "plan_start_time": "12:01:00",
+      "plan_end_time": "13:01:00",
+      "start_time": "12:01:00",
+      "end_time": "12:14:33",
+      "start_timestamp": "2026-01-10T12:01:00",
+      "end_timestamp": "2026-01-10T12:14:33",
+      "duration": 813.47,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "9e76a664-9014-4630-94dd-26b3b2594576",
+      "slot_id": "trail_lunch",
+      "plan_chunk": "Picnic lunch on the trail",
+      "matched_scenarios": [
+        "BBQ'ing/picnics",
+        "Eating",
+        "Outdoor cooking"
+      ],
+      "video_scenarios": [
+        "Cleaning / laundry",
+        "Eating",
+        "Household management - caring for kids"
+      ],
+      "main_scene": "mixed",
+      "consolidated_summary": "the character performs various household activities, including doing laundry, washing utensils, checking the fridge, and letting the dog out.",
+      "plan_start_time": "13:16:00",
+      "plan_end_time": "14:01:00",
+      "start_time": "13:16:00",
+      "end_time": "13:46:00",
+      "start_timestamp": "2026-01-10T13:16:00",
+      "end_timestamp": "2026-01-10T13:46:00",
+      "duration": 1800.0,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "15c5a595-c577-4b4b-b26a-639517f140c9",
+      "slot_id": "hiking_descent",
+      "plan_chunk": "Descend trail back toward trailhead",
+      "matched_scenarios": [
+        "Hiking",
+        "Walking on street"
+      ],
+      "video_scenarios": [
+        "Gardening"
+      ],
+      "main_scene": "outdoor",
+      "consolidated_summary": "the character cuts plants, removes weeds, and uproots plants in the garden.",
+      "plan_start_time": "14:16:00",
+      "plan_end_time": "16:01:00",
+      "start_time": "14:16:00",
+      "end_time": "14:46:00",
+      "start_timestamp": "2026-01-10T14:16:00",
+      "end_timestamp": "2026-01-10T14:46:00",
+      "duration": 1800.13,
+      "video_source": "USA",
+      "time_period": "daytime"
+    },
+    {
+      "video_uid": "fdd675e0-ea8e-441a-96c3-d4600db830b5",
+      "slot_id": "drive_home",
+      "plan_chunk": "Drive home after the hike",
+      "matched_scenarios": [
+        "Car - commuting, road trip"
+      ],
+      "video_scenarios": [
         "Car - commuting, road trip",
         "Indoor Navigation (walking)"
       ],
       "main_scene": "mixed",
-      "consolidated_summary": "the character discusses with a man in an apartment, drives with him and a boy, and plays baseball with them in a field.",
-      "start_time": "07:25:36",
-      "end_time": "08:24:15",
-      "start_timestamp": "2026-01-10T07:25:36",
-      "end_timestamp": "2026-01-10T08:24:15",
-      "duration": 3519.87,
-      "video_source": "USA",
-      "time_period": "daytime"
-    },
-    {
-      "video_uid": "5577fdcb-744c-4cbe-9de9-aba8fdfe8dd4",
-      "slot_id": "drive_home",
-      "plan_chunk": "Drive home, tired but satisfied",
-      "matched_scenarios": [
-        "Car - commuting, road trip"
-      ],
-      "video_scenarios": [
-        "Car - commuting, road trip",
-        "Grocery shopping indoors"
-      ],
-      "main_scene": "mixed",
-      "consolidated_summary": "the character drives, picks up a monitor, and shops at a store.",
-      "start_time": "08:29:15",
-      "end_time": "08:59:15",
-      "start_timestamp": "2026-01-10T08:29:15",
-      "end_timestamp": "2026-01-10T08:59:15",
-      "duration": 1800.0,
+      "consolidated_summary": "the character arranges household items, walks, and drives a car.",
+      "plan_start_time": "16:34:00",
+      "plan_end_time": "17:34:00",
+      "start_time": "16:34:00",
+      "end_time": "16:47:09",
+      "start_timestamp": "2026-01-10T16:34:00",
+      "end_timestamp": "2026-01-10T16:47:09",
+      "duration": 789.7,
       "video_source": "USA",
       "time_period": "twilight"
     },
     {
-      "video_uid": "3c5841d6-8d79-4aa7-b020-bbb6ef114b42",
-      "slot_id": "drive_trailhead",
-      "plan_chunk": "Drive to trailhead for day hike",
+      "video_uid": "8db05748-e83e-4422-ac45-de586be75f70",
+      "slot_id": "shower_stretch",
+      "plan_chunk": "Shower and stretch sore muscles",
       "matched_scenarios": [
-        "Car - commuting, road trip"
-      ],
-      "video_scenarios": [
-        "Car - commuting, road trip",
-        "Cleaning / laundry",
-        "Playing with pets",
-        "Talking with family members"
-      ],
-      "main_scene": "mixed",
-      "consolidated_summary": "the character interacts with others indoors, walks, and drives a car.",
-      "start_time": "09:04:15",
-      "end_time": "09:22:20",
-      "start_timestamp": "2026-01-10T09:04:15",
-      "end_timestamp": "2026-01-10T09:22:20",
-      "duration": 1085.83,
-      "video_source": "USA",
-      "time_period": "daytime"
-    },
-    {
-      "video_uid": "f07dd7b7-4d7c-405b-89c4-f4eec40dfc53",
-      "slot_id": "early_sleep",
-      "plan_chunk": "Early to bed after exhausting hike",
-      "matched_scenarios": [
-        "Sleeping",
-        "Reading books"
-      ],
-      "video_scenarios": [
-        "Crafting/knitting/sewing/drawing/painting"
-      ],
-      "main_scene": "indoor",
-      "consolidated_summary": "the character knits a hat in the house.",
-      "start_time": "09:27:20",
-      "end_time": "09:42:39",
-      "start_timestamp": "2026-01-10T09:27:20",
-      "end_timestamp": "2026-01-10T09:42:39",
-      "duration": 919.53,
-      "video_source": "USA",
-      "time_period": "nighttime"
-    },
-    {
-      "video_uid": "843e6d37-9722-4b71-acbd-d1e2774ae2af",
-      "slot_id": "recovery_home",
-      "plan_chunk": "Shower, simple dinner, stretch sore muscles",
-      "matched_scenarios": [
-        "Cooking",
         "Daily hygiene",
         "Working out at home"
       ],
@@ -148,502 +231,102 @@
         "Talking with family members"
       ],
       "main_scene": "indoor",
-      "consolidated_summary": "the character makes flatbread in a kitchen.",
-      "start_time": "09:47:39",
-      "end_time": "10:03:34",
-      "start_timestamp": "2026-01-10T09:47:39",
-      "end_timestamp": "2026-01-10T10:03:34",
-      "duration": 955.43,
+      "consolidated_summary": "the character prepares vegetables in the kitchen and a room.",
+      "plan_start_time": "18:01:00",
+      "plan_end_time": "18:46:00",
+      "start_time": "18:01:00",
+      "end_time": "18:31:00",
+      "start_timestamp": "2026-01-10T18:01:00",
+      "end_timestamp": "2026-01-10T18:31:00",
+      "duration": 1800.0,
       "video_source": "USA",
       "time_period": "nighttime"
     },
     {
-      "video_uid": "3586372b-90a2-4d49-9571-880802c96edc",
-      "slot_id": "early_sleep",
-      "plan_chunk": "Early to bed after exhausting hike",
+      "video_uid": "6b3972a8-98ee-46b7-83d4-6d8cb192e920",
+      "slot_id": "simple_dinner",
+      "plan_chunk": "Simple recovery dinner at home",
       "matched_scenarios": [
-        "Sleeping",
-        "Reading books"
-      ],
-      "video_scenarios": [
-        "Playing board games"
-      ],
-      "main_scene": "indoor",
-      "consolidated_summary": "the character plays dominoes and reads the manual, briefly taking pizza from the oven.",
-      "start_time": "10:08:34",
-      "end_time": "10:23:02",
-      "start_timestamp": "2026-01-10T10:08:34",
-      "end_timestamp": "2026-01-10T10:23:02",
-      "duration": 868.83,
-      "video_source": "USA",
-      "time_period": "nighttime"
-    },
-    {
-      "video_uid": "dc35b632-d6db-4f40-86b9-46dbe860e9b6",
-      "slot_id": "early_sleep",
-      "plan_chunk": "Early to bed after exhausting hike",
-      "matched_scenarios": [
-        "Sleeping",
-        "Reading books"
-      ],
-      "video_scenarios": [
-        "Crafting/knitting/sewing/drawing/painting"
-      ],
-      "main_scene": "indoor",
-      "consolidated_summary": "the character paints indoors.",
-      "start_time": "10:28:02",
-      "end_time": "10:42:19",
-      "start_timestamp": "2026-01-10T10:28:02",
-      "end_timestamp": "2026-01-10T10:42:19",
-      "duration": 857.37,
-      "video_source": "USA",
-      "time_period": "nighttime"
-    },
-    {
-      "video_uid": "706de1df-babc-4e54-a310-1d9070140197",
-      "slot_id": "wake_home",
-      "plan_chunk": "Early weekend wake-up, pack snacks and hiking gear",
-      "matched_scenarios": [
-        "Daily hygiene",
         "Cooking",
-        "Making coffee"
+        "Eating"
+      ],
+      "video_scenarios": [
+        "Cooking"
+      ],
+      "main_scene": "indoor",
+      "consolidated_summary": "the character prepares food in a kitchen, including peeling and cutting strawberries, making a peanut butter sandwich, and using the oven.",
+      "plan_start_time": "18:46:00",
+      "plan_end_time": "19:31:00",
+      "start_time": "18:46:00",
+      "end_time": "19:01:25",
+      "start_timestamp": "2026-01-10T18:46:00",
+      "end_timestamp": "2026-01-10T19:01:25",
+      "duration": 925.7,
+      "video_source": "USA",
+      "time_period": "nighttime"
+    },
+    {
+      "video_uid": "f43bb351-fb98-4a74-bd50-f57e91d3863f",
+      "slot_id": "early_sleep",
+      "plan_chunk": "Early to bed after exhausting hike",
+      "matched_scenarios": [
+        "Sleeping",
+        "Reading books"
       ],
       "video_scenarios": [
         "Cleaning / laundry",
         "Cooking"
       ],
       "main_scene": "indoor",
-      "consolidated_summary": "the character interacts with others, cleans the microwave, and prepares a meal in a kitchen.",
-      "start_time": "10:47:19",
-      "end_time": "10:59:06",
-      "start_timestamp": "2026-01-10T10:47:19",
-      "end_timestamp": "2026-01-10T10:59:06",
-      "duration": 707.6,
-      "video_source": "USA",
-      "time_period": "daytime"
-    },
-    {
-      "video_uid": "83f3953f-6a6c-4a1c-93ce-e4ee12cd010a",
-      "slot_id": "drive_trailhead",
-      "plan_chunk": "Drive to trailhead for day hike",
-      "matched_scenarios": [
-        "Car - commuting, road trip"
-      ],
-      "video_scenarios": [
-        "Car - commuting, road trip",
-        "Talking with family members"
-      ],
-      "main_scene": "mixed",
-      "consolidated_summary": "the character drives a car, uses a phone, and briefly interacts with someone.",
-      "start_time": "11:04:06",
-      "end_time": "11:34:06",
-      "start_timestamp": "2026-01-10T11:04:06",
-      "end_timestamp": "2026-01-10T11:34:06",
-      "duration": 1800.0,
-      "video_source": "USA",
-      "time_period": "daytime"
-    },
-    {
-      "video_uid": "ba28e9d5-5a78-44c0-b985-2249dcc05956",
-      "slot_id": "hiking",
-      "plan_chunk": "Long hiking on mountain trail with scenic views",
-      "matched_scenarios": [
-        "Hiking",
-        "Walking on street"
-      ],
-      "video_scenarios": [
-        "Walking on street"
-      ],
-      "main_scene": "outdoor",
-      "consolidated_summary": "the character takes a walk outdoors, interacting with others and sometimes pushing a stroller or using a phone.",
-      "start_time": "11:39:06",
-      "end_time": "11:52:44",
-      "start_timestamp": "2026-01-10T11:39:06",
-      "end_timestamp": "2026-01-10T11:52:44",
-      "duration": 818.47,
-      "video_source": "USA",
-      "time_period": "daytime"
-    },
-    {
-      "video_uid": "182dffe9-d2bf-4a7d-b1d8-137470f0143d",
-      "slot_id": "trail_lunch",
-      "plan_chunk": "Picnic lunch on the trail",
-      "matched_scenarios": [
-        "BBQ'ing/picnics",
-        "Eating",
-        "Outdoor cooking"
-      ],
-      "video_scenarios": [
-        "Outdoor cooking"
-      ],
-      "main_scene": "outdoor",
-      "consolidated_summary": "the character prepares and cooks food in outdoor locations, sometimes with assistance from Person X.",
-      "start_time": "11:57:44",
-      "end_time": "12:26:13",
-      "start_timestamp": "2026-01-10T11:57:44",
-      "end_timestamp": "2026-01-10T12:26:13",
-      "duration": 1709.73,
-      "video_source": "USA",
-      "time_period": "daytime"
-    },
-    {
-      "video_uid": "e0087246-aa22-4cda-a03b-2a4639c7c7a1",
-      "slot_id": "hiking_return",
-      "plan_chunk": "Continue hiking and descend back to trailhead",
-      "matched_scenarios": [
-        "Hiking",
-        "Tourism"
-      ],
-      "video_scenarios": [
-        "Hiking"
-      ],
-      "main_scene": "outdoor",
-      "consolidated_summary": "the character climbs a mountain with three other men.",
-      "start_time": "12:31:13",
-      "end_time": "12:37:58",
-      "start_timestamp": "2026-01-10T12:31:13",
-      "end_timestamp": "2026-01-10T12:37:58",
-      "duration": 405.93,
-      "video_source": "USA",
-      "time_period": "daytime"
-    },
-    {
-      "video_uid": "b062ea19-1128-47fc-9ed2-da1644a62745",
-      "slot_id": "drive_home",
-      "plan_chunk": "Drive home, tired but satisfied",
-      "matched_scenarios": [
-        "Car - commuting, road trip"
-      ],
-      "video_scenarios": [
-        "Car - commuting, road trip",
-        "Cleaning / laundry"
-      ],
-      "main_scene": "mixed",
-      "consolidated_summary": "the character prepares to go out in an apartment, gets into a car, and organizes items inside.",
-      "start_time": "12:42:58",
-      "end_time": "12:50:20",
-      "start_timestamp": "2026-01-10T12:42:58",
-      "end_timestamp": "2026-01-10T12:50:20",
-      "duration": 442.6,
-      "video_source": "USA",
-      "time_period": "twilight"
-    },
-    {
-      "video_uid": "b3df1e5e-0c7a-4ac5-84b6-41acde78d57d",
-      "slot_id": "recovery_home",
-      "plan_chunk": "Shower, simple dinner, stretch sore muscles",
-      "matched_scenarios": [
-        "Cooking",
-        "Daily hygiene",
-        "Working out at home"
-      ],
-      "video_scenarios": [
-        "Cooking"
-      ],
-      "main_scene": "indoor",
-      "consolidated_summary": "the character prepares a meal, stores food items in the kitchen, and uses kitchen tools.",
-      "start_time": "12:55:20",
-      "end_time": "13:09:28",
-      "start_timestamp": "2026-01-10T12:55:20",
-      "end_timestamp": "2026-01-10T13:09:28",
-      "duration": 848.5,
+      "consolidated_summary": "the character cooks, cleans, and converses with others in a house.",
+      "plan_start_time": "20:01:00",
+      "plan_end_time": "21:01:00",
+      "start_time": "20:01:00",
+      "end_time": "20:31:00",
+      "start_timestamp": "2026-01-10T20:01:00",
+      "end_timestamp": "2026-01-10T20:31:00",
+      "duration": 1800.13,
       "video_source": "USA",
       "time_period": "nighttime"
-    },
-    {
-      "video_uid": "e57a9435-cfe7-4ded-a770-d322fce48425",
-      "slot_id": "early_sleep",
-      "plan_chunk": "Early to bed after exhausting hike",
-      "matched_scenarios": [
-        "Sleeping",
-        "Reading books"
-      ],
-      "video_scenarios": [
-        "Crafting/knitting/sewing/drawing/painting"
-      ],
-      "main_scene": "indoor",
-      "consolidated_summary": "the character knits.",
-      "start_time": "13:14:28",
-      "end_time": "13:29:48",
-      "start_timestamp": "2026-01-10T13:14:28",
-      "end_timestamp": "2026-01-10T13:29:48",
-      "duration": 920.53,
-      "video_source": "USA",
-      "time_period": "nighttime"
-    },
-    {
-      "video_uid": "a9fdb09f-3684-4521-901a-c4f6f30cf335",
-      "slot_id": "wake_home",
-      "plan_chunk": "Early weekend wake-up, pack snacks and hiking gear",
-      "matched_scenarios": [
-        "Daily hygiene",
-        "Cooking",
-        "Making coffee"
-      ],
-      "video_scenarios": [
-        "Cleaning / laundry",
-        "Cooking"
-      ],
-      "main_scene": "indoor",
-      "consolidated_summary": "the character puts dishes away, washes dishes, and interacts with a woman in an apartment.",
-      "start_time": "13:34:48",
-      "end_time": "13:46:51",
-      "start_timestamp": "2026-01-10T13:34:48",
-      "end_timestamp": "2026-01-10T13:46:51",
-      "duration": 723.2,
-      "video_source": "USA",
-      "time_period": "daytime"
-    },
-    {
-      "video_uid": "be7ede7a-c212-45ff-8601-e15dd2f7e531",
-      "slot_id": "drive_trailhead",
-      "plan_chunk": "Drive to trailhead for day hike",
-      "matched_scenarios": [
-        "Car - commuting, road trip"
-      ],
-      "video_scenarios": [
-        "BasketBall",
-        "Car - commuting, road trip"
-      ],
-      "main_scene": "mixed",
-      "consolidated_summary": "the character drives a car and plays basketball with others.",
-      "start_time": "13:51:51",
-      "end_time": "14:22:05",
-      "start_timestamp": "2026-01-10T13:51:51",
-      "end_timestamp": "2026-01-10T14:22:05",
-      "duration": 1814.4,
-      "video_source": "USA",
-      "time_period": "daytime"
-    },
-    {
-      "video_uid": "b849a2d6-3eff-4c64-aded-2d706ed1091e",
-      "slot_id": "hiking",
-      "plan_chunk": "Long hiking on mountain trail with scenic views",
-      "matched_scenarios": [
-        "Hiking",
-        "Walking on street"
-      ],
-      "video_scenarios": [
-        "Walking on street"
-      ],
-      "main_scene": "outdoor",
-      "consolidated_summary": "the character walks and converses with a woman outdoors.",
-      "start_time": "14:27:05",
-      "end_time": "14:38:06",
-      "start_timestamp": "2026-01-10T14:27:05",
-      "end_timestamp": "2026-01-10T14:38:06",
-      "duration": 661.13,
-      "video_source": "USA",
-      "time_period": "daytime"
-    },
-    {
-      "video_uid": "963c1ecc-d25e-4c0a-b447-9b26f3778efc",
-      "slot_id": "trail_lunch",
-      "plan_chunk": "Picnic lunch on the trail",
-      "matched_scenarios": [
-        "BBQ'ing/picnics",
-        "Eating",
-        "Outdoor cooking"
-      ],
-      "video_scenarios": [
-        "BBQ'ing/picnics"
-      ],
-      "main_scene": "mixed",
-      "consolidated_summary": "the character feeds a baby and interacts with others in a yard.",
-      "start_time": "14:43:06",
-      "end_time": "14:47:18",
-      "start_timestamp": "2026-01-10T14:43:06",
-      "end_timestamp": "2026-01-10T14:47:18",
-      "duration": 252.6,
-      "video_source": "USA",
-      "time_period": "daytime"
-    },
-    {
-      "video_uid": "e554236f-bba3-4c4e-a416-eef41ad0c290",
-      "slot_id": "hiking_return",
-      "plan_chunk": "Continue hiking and descend back to trailhead",
-      "matched_scenarios": [
-        "Hiking",
-        "Tourism"
-      ],
-      "video_scenarios": [
-        "Hiking"
-      ],
-      "main_scene": "outdoor",
-      "consolidated_summary": "the character climbs a mountain with others and adjusts his camera.",
-      "start_time": "14:52:18",
-      "end_time": "15:16:30",
-      "start_timestamp": "2026-01-10T14:52:18",
-      "end_timestamp": "2026-01-10T15:16:30",
-      "duration": 1452.7,
-      "video_source": "USA",
-      "time_period": "daytime"
-    },
-    {
-      "video_uid": "624d5d30-58a6-4d9b-9d1f-356018e46f70",
-      "slot_id": "drive_home",
-      "plan_chunk": "Drive home, tired but satisfied",
-      "matched_scenarios": [
-        "Car - commuting, road trip"
-      ],
-      "video_scenarios": [
-        "Car - commuting, road trip",
-        "Getting car fixed",
-        "On a screen (phone/laptop)"
-      ],
-      "main_scene": "mixed",
-      "consolidated_summary": "the character drives to the mall, fixes a flat tire by the roadside, and uses a phone in the car.",
-      "start_time": "15:21:30",
-      "end_time": "15:51:30",
-      "start_timestamp": "2026-01-10T15:21:30",
-      "end_timestamp": "2026-01-10T15:51:30",
-      "duration": 1800.0,
-      "video_source": "USA",
-      "time_period": "twilight"
-    },
-    {
-      "video_uid": "737e9619-7768-407c-8a4f-6fe1e8d61f04",
-      "slot_id": "recovery_home",
-      "plan_chunk": "Shower, simple dinner, stretch sore muscles",
-      "matched_scenarios": [
-        "Cooking",
-        "Daily hygiene",
-        "Working out at home"
-      ],
-      "video_scenarios": [
-        "Cooking",
-        "Talking with family members"
-      ],
-      "main_scene": "indoor",
-      "consolidated_summary": "the character prepares a meal in the kitchen, involving cutting coriander and mixing rice while D and E are present in the house.",
-      "start_time": "15:56:30",
-      "end_time": "16:10:03",
-      "start_timestamp": "2026-01-10T15:56:30",
-      "end_timestamp": "2026-01-10T16:10:03",
-      "duration": 813.47,
-      "video_source": "USA",
-      "time_period": "nighttime"
-    },
-    {
-      "video_uid": "511b0123-7b3d-4d3f-a0cf-8c3ca3490fc6",
-      "slot_id": "early_sleep",
-      "plan_chunk": "Early to bed after exhausting hike",
-      "matched_scenarios": [
-        "Sleeping",
-        "Reading books"
-      ],
-      "video_scenarios": [
-        "Cleaning / laundry"
-      ],
-      "main_scene": "indoor",
-      "consolidated_summary": "the character folds clothes, operates a phone, arranges items into a bag, organizes the apartment, and opens a drawer.",
-      "start_time": "16:15:03",
-      "end_time": "16:29:15",
-      "start_timestamp": "2026-01-10T16:15:03",
-      "end_timestamp": "2026-01-10T16:29:15",
-      "duration": 852.93,
-      "video_source": "USA",
-      "time_period": "nighttime"
-    },
-    {
-      "video_uid": "2ddc2090-bc0f-4f3f-89bc-f85aa062bb08",
-      "slot_id": "wake_home",
-      "plan_chunk": "Early weekend wake-up, pack snacks and hiking gear",
-      "matched_scenarios": [
-        "Daily hygiene",
-        "Cooking",
-        "Making coffee"
-      ],
-      "video_scenarios": [
-        "Cooking"
-      ],
-      "main_scene": "indoor",
-      "consolidated_summary": "the character prepares food in a kitchen, interacting with a dog and adjusting kitchen utilities.",
-      "start_time": "16:34:15",
-      "end_time": "16:45:03",
-      "start_timestamp": "2026-01-10T16:34:15",
-      "end_timestamp": "2026-01-10T16:45:03",
-      "duration": 648.97,
-      "video_source": "USA",
-      "time_period": "daytime"
-    },
-    {
-      "video_uid": "9fc49180-2cd2-4a96-9fcd-0bd54eb969ef",
-      "slot_id": "drive_trailhead",
-      "plan_chunk": "Drive to trailhead for day hike",
-      "matched_scenarios": [
-        "Car - commuting, road trip"
-      ],
-      "video_scenarios": [
-        "Car - commuting, road trip",
-        "On a screen (phone/laptop)"
-      ],
-      "main_scene": "mixed",
-      "consolidated_summary": "the character drives a car, drops off a man, and uses a phone.",
-      "start_time": "16:50:03",
-      "end_time": "17:20:03",
-      "start_timestamp": "2026-01-10T16:50:03",
-      "end_timestamp": "2026-01-10T17:20:03",
-      "duration": 1800.0,
-      "video_source": "USA",
-      "time_period": "daytime"
     }
   ],
   "statistics": {
-    "clip_count": 26,
-    "total_duration": 29716.59,
-    "total_duration_hours": 8.25,
+    "clip_count": 11,
+    "plan_slot_count": 11,
+    "total_duration": 14240.300000000001,
+    "total_duration_hours": 3.96,
     "scene_distribution": {
-      "mixed": 10,
-      "indoor": 11,
-      "outdoor": 5
+      "mixed": 4,
+      "indoor": 4,
+      "outdoor": 3
     },
     "selected_videos": [
-      "3b3ecf0c-ee8d-4518-bf1c-3301ba44c743",
-      "a448297b-ae62-4712-bc4f-849b39176558",
-      "5577fdcb-744c-4cbe-9de9-aba8fdfe8dd4",
-      "3c5841d6-8d79-4aa7-b020-bbb6ef114b42",
-      "f07dd7b7-4d7c-405b-89c4-f4eec40dfc53",
-      "843e6d37-9722-4b71-acbd-d1e2774ae2af",
-      "3586372b-90a2-4d49-9571-880802c96edc",
-      "dc35b632-d6db-4f40-86b9-46dbe860e9b6",
-      "706de1df-babc-4e54-a310-1d9070140197",
-      "83f3953f-6a6c-4a1c-93ce-e4ee12cd010a",
-      "ba28e9d5-5a78-44c0-b985-2249dcc05956",
-      "182dffe9-d2bf-4a7d-b1d8-137470f0143d",
-      "e0087246-aa22-4cda-a03b-2a4639c7c7a1",
-      "b062ea19-1128-47fc-9ed2-da1644a62745",
-      "b3df1e5e-0c7a-4ac5-84b6-41acde78d57d",
-      "e57a9435-cfe7-4ded-a770-d322fce48425",
-      "a9fdb09f-3684-4521-901a-c4f6f30cf335",
-      "be7ede7a-c212-45ff-8601-e15dd2f7e531",
-      "b849a2d6-3eff-4c64-aded-2d706ed1091e",
-      "963c1ecc-d25e-4c0a-b447-9b26f3778efc",
-      "e554236f-bba3-4c4e-a416-eef41ad0c290",
-      "624d5d30-58a6-4d9b-9d1f-356018e46f70",
-      "737e9619-7768-407c-8a4f-6fe1e8d61f04",
-      "511b0123-7b3d-4d3f-a0cf-8c3ca3490fc6",
-      "2ddc2090-bc0f-4f3f-89bc-f85aa062bb08",
-      "9fc49180-2cd2-4a96-9fcd-0bd54eb969ef"
+      "c9e6c8c6-6192-4c6b-a430-e5a867f69bd9",
+      "f0c8aba4-3101-4912-881c-e12d7817eba8",
+      "a4375d98-e295-4e7d-a718-d8af066e3d57",
+      "984c9fcb-525c-4514-b22d-9e440d121332",
+      "4b285020-fc23-4e14-b645-594111b65a36",
+      "9e76a664-9014-4630-94dd-26b3b2594576",
+      "15c5a595-c577-4b4b-b26a-639517f140c9",
+      "fdd675e0-ea8e-441a-96c3-d4600db830b5",
+      "8db05748-e83e-4422-ac45-de586be75f70",
+      "6b3972a8-98ee-46b7-83d4-6d8cb192e920",
+      "f43bb351-fb98-4a74-bd50-f57e91d3863f"
     ],
     "unique_scenarios": [
-      "BBQ'ing/picnics",
-      "Baseball",
-      "BasketBall",
       "Car - commuting, road trip",
+      "Car mechanic",
       "Cleaning / laundry",
       "Cooking",
-      "Crafting/knitting/sewing/drawing/painting",
-      "Getting car fixed",
-      "Grocery shopping indoors",
+      "Daily hygiene",
+      "Eating",
+      "Gardening",
       "Hiking",
+      "Household management - caring for kids",
       "Indoor Navigation (walking)",
-      "On a screen (phone/laptop)",
-      "Outdoor cooking",
-      "Playing board games",
-      "Playing with pets",
-      "Talking with family members",
-      "Walking on street"
+      "Making coffee",
+      "Outdoor social (includes campfire)",
+      "Talking with family members"
     ]
   }
 }
