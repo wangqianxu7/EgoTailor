@@ -35,6 +35,7 @@ import argparse
 import json
 import os
 import subprocess
+import time
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 from typing import Any
@@ -85,10 +86,13 @@ def run(cmd: list[str], dry_run: bool = False) -> None:
     )
 
 
-def normalize(src: Path, dst: Path, cfg: argparse.Namespace) -> Path:
+def normalize(src: Path, dst: Path, cfg: argparse.Namespace,
+              tag: str = "") -> Path:
     """Encode one clip to the common format. Cached; atomic via .part file."""
     if dst.exists():
+        print(f"  {tag} {dst.stem[:8]} cached")
         return dst
+    started = time.monotonic()
     tmp = dst.with_suffix(".part.mkv")
     w, h = cfg.width, cfg.height
     # Both streams are made endless (tpad clones the last frame, apad appends
@@ -132,6 +136,9 @@ def normalize(src: Path, dst: Path, cfg: argparse.Namespace) -> Path:
     run(cmd, cfg.dry_run)
     if not cfg.dry_run:
         tmp.rename(dst)
+        print(f"  {tag} {dst.stem[:8]} {dur / 60:5.1f}min clip, "
+              f"{'silent, ' if not audio_from_source else ''}"
+              f"encoded in {time.monotonic() - started:.0f}s")
     return dst
 
 
@@ -200,10 +207,14 @@ def stitch_day(day: dict[str, Any], cfg: argparse.Namespace,
     todo = [(Path(c["source_path"]), dirs["norm"] / f"{c['video_uid']}.mkv")
             for c in clips]
     with ThreadPoolExecutor(max_workers=cfg.jobs) as pool:
-        list(pool.map(lambda t: normalize(t[0], t[1], cfg), todo))
+        list(pool.map(
+            lambda t: normalize(t[1][0], t[1][1], cfg,
+                                f"[{t[0] + 1}/{len(todo)}]"),
+            enumerate(todo)))
 
     # pass 2
     parts = [dst for _, dst in todo]
+    print(f"  concat -> {out.name} (video copied, audio encoded once)")
     concat(parts, dirs["concat"] / f"{name}.txt", out, cfg)
     if cfg.dry_run:
         return {}
