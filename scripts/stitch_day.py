@@ -1,346 +1,285 @@
 #!/usr/bin/env python3
-"""Concatenate Ego4D clips for one or more lifelog days into day-level MP4s.
+"""Stitch Ego4D clips into day-level videos, keeping audio in sync.
 
-Input can be either:
-  - full 21-day lifelog JSON (recommended): output/lifelog/lifelog_egotailor_usa_enfp_21d.json
-  - single-day JSON: output/days/day_00_2026-01-05.json
+Input: the 21-day lifelog JSON. Each day's memory_content[*].video_uid maps to
+{video_root}/{video_uid}.mp4; clips are concatenated in lifelog order.
 
-Each day uses memory_content[*].video_uid -> {video_root}/{video_uid}.mp4,
-stitched in lifelog order.
+Why two passes (still only ONE video encode):
 
-Default stitch mode drops audio and regenerates timestamps. Plain `-c copy`
-across Ego4D clips often hits Non-monotonous DTS and fails with
-"Error writing trailer: Invalid argument". Ego4D full_scale is often VP9
-(not H.264), so H.264-only bitstream filters must not be used.
+  pass 1 - normalize: clip -> norm/<uid>.mkv
+      video: CFR h264, fixed WxH (letterboxed), yuv420p, one timebase
+      audio: pcm_s16le 48k stereo through `aresample=async=1`, which pads or
+             trims audio against the video clock, so intra-clip drift dies here.
+             Clips without an audio track get anullsrc silence, otherwise the
+             concat would shift every following clip's audio.
+      Cached and parallel: a uid is encoded once even if it appears on
+      several days; rerunning skips finished files.
 
-Examples (run on the server where Ego4D mp4s live):
+  pass 2 - concat: concat demuxer, `-c:v copy -c:a aac`
+      Video is copied (no second encode). Audio is encoded ONCE across the
+      whole day, so there is no per-segment AAC priming delay to accumulate.
+      That accumulation is what made sound drift later and later in the day.
 
-  python scripts/stitch_day.py \
+Run on the server where the Ego4D mp4s live:
+
+  python scripts/stitch_day.py --all-days \
     --lifelog output/lifelog/lifelog_egotailor_usa_enfp_21d.json \
-    --day 0 \
     --video-root /mnt/data_oss/raw_data/Ego4d/v2/full_scale \
-    --output-dir /mnt/data/workspace/outputs/EgoTailor_21days_videos
-
-  python scripts/stitch_day.py \
-    --lifelog output/lifelog/lifelog_egotailor_usa_enfp_21d.json \
-    --all-days \
-    --video-root /mnt/data_oss/raw_data/Ego4d/v2/full_scale \
-    --output-dir /mnt/data/workspace/outputs/EgoTailor_21days_videos
+    --output-dir /mnt/data/workspace/outputs/EgoTailor_21days_videos \
+    --jobs 8
 """
 
 from __future__ import annotations
 
 import argparse
 import json
+import os
 import subprocess
+from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 from typing import Any
 
-DEFAULT_LIFELOG = Path("/root/EgoTailor/output/lifelog/lifelog_egotailor_usa_enfp_21d.json")
-DEFAULT_DAY = Path("/root/EgoTailor/output/days/day_00_2026-01-05.json")
+DEFAULT_LIFELOG = Path("output/lifelog/lifelog_egotailor_usa_enfp_21d.json")
 DEFAULT_VIDEO_ROOT = Path("/mnt/data_oss/raw_data/Ego4d/v2/full_scale")
 DEFAULT_OUTPUT_DIR = Path("/mnt/data/workspace/outputs/EgoTailor_21days_videos")
 
 
+# ---------------------------------------------------------------- ffprobe ---
+
+def ffprobe(path: Path, *args: str) -> str:
+    out = subprocess.check_output(
+        ["ffprobe", "-v", "error", *args,
+         "-of", "default=noprint_wrappers=1:nokey=1", str(path)],
+        text=True,
+    )
+    return out.strip()
+
+
 def probe_duration(path: Path) -> float:
-    out = subprocess.check_output(
-        [
-            "ffprobe", "-v", "error", "-show_entries", "format=duration",
-            "-of", "default=noprint_wrappers=1:nokey=1", str(path),
-        ],
-        text=True,
-    ).strip()
-    return float(out)
+    return float(ffprobe(path, "-show_entries", "format=duration") or 0.0)
 
 
-def load_days(
-    lifelog: Path | None,
-    day_json: Path | None,
-    day_indices: list[int] | None,
-    all_days: bool,
-) -> list[dict[str, Any]]:
-    """Return list of day objects (each with metadata + memory_content)."""
-    if lifelog is not None:
-        data = json.loads(lifelog.read_text())
-        days = data["days"]
-        if all_days:
-            return days
-        if day_indices is None:
-            raise SystemExit("With --lifelog, pass --day N [N ...] or --all-days")
-        wanted = set(day_indices)
-        selected = [d for d in days if int(d["metadata"]["day_index"]) in wanted]
-        missing = wanted - {int(d["metadata"]["day_index"]) for d in selected}
-        if missing:
-            raise SystemExit(f"day_index not found in lifelog: {sorted(missing)}")
-        return selected
-
-    if day_json is not None:
-        return [json.loads(day_json.read_text())]
-
-    raise SystemExit("Provide --lifelog or --day-json")
+def has_audio(path: Path) -> bool:
+    return bool(ffprobe(path, "-select_streams", "a:0",
+                        "-show_entries", "stream=codec_type"))
 
 
-def run_ffmpeg(cmd: list[str], quiet: bool = True) -> None:
-    print("  $", " ".join(cmd[:8]), "..." if len(cmd) > 8 else "")
-    if quiet:
-        cmd = cmd[:1] + ["-hide_banner", "-loglevel", "error", "-stats"] + cmd[1:]
-    subprocess.run(cmd, check=True)
+def stream_duration(path: Path, stream: str) -> float:
+    val = ffprobe(path, "-select_streams", stream,
+                  "-show_entries", "stream=duration").splitlines()
+    try:
+        return float(val[0])
+    except (IndexError, ValueError):
+        return 0.0
 
 
-def probe_video_codec(path: Path) -> str:
-    out = subprocess.check_output(
-        [
-            "ffprobe", "-v", "error", "-select_streams", "v:0",
-            "-show_entries", "stream=codec_name",
-            "-of", "default=noprint_wrappers=1:nokey=1", str(path),
-        ],
-        text=True,
-    ).strip()
-    return out.lower()
+# ----------------------------------------------------------------- ffmpeg ---
+
+def run(cmd: list[str], dry_run: bool = False) -> None:
+    if dry_run:
+        print("  $", " ".join(cmd))
+        return
+    subprocess.run(
+        [cmd[0], "-hide_banner", "-loglevel", "error", "-nostdin", *cmd[1:]],
+        check=True,
+    )
 
 
-def choose_output_path(videos_dir: Path, day_name: str, mode: str, codecs: set[str]) -> Path:
-    """VP9 stream-copy cannot reliably mux into MP4; use MKV. Reencode -> MP4/H.264."""
-    if mode == "reencode":
-        return videos_dir / f"{day_name}.mp4"
-    if codecs == {"h264"} or codecs == {"avc1"}:
-        return videos_dir / f"{day_name}.mp4"
-    # vp9 / hevc / mixed-before-reencode-fallback → matroska is safe for copy
-    return videos_dir / f"{day_name}.mkv"
+def normalize(src: Path, dst: Path, cfg: argparse.Namespace) -> Path:
+    """Encode one clip to the common format. Cached; atomic via .part file."""
+    if dst.exists():
+        return dst
+    tmp = dst.with_suffix(".part.mkv")
+    w, h = cfg.width, cfg.height
+    # Both streams are made endless (tpad clones the last frame, apad appends
+    # silence) and then cut at the same `-t`, so every normalized clip has
+    # video and audio of *identical* length. Ego4D files often ship streams of
+    # unequal length; uncut, each mismatch would shove the whole rest of the
+    # day's audio out of place.
+    n_frames = max(1, round((stream_duration(src, "v:0") or probe_duration(src))
+                            * cfg.fps))
+    dur = n_frames / cfg.fps
+    vf = (
+        f"fps={cfg.fps},"
+        f"scale={w}:{h}:force_original_aspect_ratio=decrease,"
+        f"pad={w}:{h}:(ow-iw)/2:(oh-ih)/2:color=black,"
+        f"setsar=1,format=yuv420p,tpad=stop=-1:stop_mode=clone"
+    )
 
+    cmd = ["ffmpeg", "-y", "-i", str(src)]
+    audio_from_source = not cfg.mute and has_audio(src)
+    if not audio_from_source:
+        # Silence keeps every clip's audio track present and exactly as long as
+        # its video; a missing track here would desync everything downstream.
+        cmd += ["-f", "lavfi", "-i",
+                "anullsrc=channel_layout=stereo:sample_rate=48000"]
 
-def ffmpeg_concat(
-    sources: list[Path],
-    out_path: Path,
-    concat_list: Path,
-    mode: str,
-    keep_audio: bool,
-) -> tuple[str, Path]:
-    """Stitch sources into out_path. Returns (mode_used, actual_out_path)."""
-    with open(concat_list, "w") as f:
-        for src in sources:
-            path = str(src).replace("'", "'\\''")
-            f.write(f"file '{path}'\n")
+    cmd += ["-map", "0:v:0", "-vf", vf,
+            "-c:v", "libx264", "-preset", cfg.preset, "-crf", str(cfg.crf),
+            "-g", str(cfg.fps * 2), "-pix_fmt", "yuv420p"]
 
-    codecs = {probe_video_codec(s) for s in sources}
-    print(f"  video codecs in day: {sorted(codecs)}")
-    if mode != "reencode" and len(codecs) > 1:
-        print("  Mixed codecs detected -> forcing mode=reencode")
-        mode = "reencode"
-        out_path = out_path.with_suffix(".mp4")
-
-    if mode == "reencode":
-        out_path = out_path.with_suffix(".mp4")
-        cmd = [
-            "ffmpeg", "-y",
-            "-f", "concat", "-safe", "0", "-i", str(concat_list),
-            "-c:v", "libx264", "-preset", "veryfast", "-crf", "23",
-        ]
-        if keep_audio:
-            cmd += ["-c:a", "aac", "-b:a", "128k"]
-        else:
-            cmd += ["-an"]
-        cmd += ["-movflags", "+faststart", str(out_path)]
-        run_ffmpeg(cmd)
-        return mode, out_path
-
-    # safe / copy: single-pass concat, NO per-clip remux (VP9->MP4 remux breaks trailer)
-    if keep_audio:
-        cmd = [
-            "ffmpeg", "-y",
-            "-f", "concat", "-safe", "0", "-i", str(concat_list),
-            "-c", "copy",
-        ]
+    if audio_from_source:
+        # async=1 puts audio back on the video clock: a late start is padded
+        # with silence, an overrun is dropped.
+        cmd += ["-map", "0:a:0", "-af", "aresample=async=1:first_pts=0,apad"]
     else:
-        cmd = [
-            "ffmpeg", "-y",
-            "-f", "concat", "-safe", "0", "-i", str(concat_list),
-            "-map", "0:v:0",
-            "-c", "copy",
-            "-an",
-        ]
+        cmd += ["-map", "1:a:0"]
+    # PCM has no encoder priming delay, so segment boundaries stay sample-exact.
+    cmd += ["-t", f"{dur:.6f}",
+            "-c:a", "pcm_s16le", "-ar", "48000", "-ac", "2",
+            "-sn", "-dn", "-map_metadata", "-1", str(tmp)]
 
-    if out_path.suffix.lower() == ".mp4":
-        cmd += ["-avoid_negative_ts", "make_zero", "-movflags", "+faststart"]
-    cmd += [str(out_path)]
-    run_ffmpeg(cmd)
-    return mode, out_path
+    run(cmd, cfg.dry_run)
+    if not cfg.dry_run:
+        tmp.rename(dst)
+    return dst
 
 
-def stitch_one_day(
-    day: dict[str, Any],
-    output_dir: Path,
-    video_root: Path,
-    mode: str,
-    keep_audio: bool,
-) -> dict[str, Any]:
+def concat(parts: list[Path], listfile: Path, out: Path,
+           cfg: argparse.Namespace) -> None:
+    listfile.write_text(
+        "".join(f"file '{str(p.resolve())}'\n" for p in parts)
+    )
+    run(["ffmpeg", "-y", "-f", "concat", "-safe", "0", "-i", str(listfile),
+         "-c:v", "copy", "-c:a", "aac", "-b:a", "160k", "-ar", "48000",
+         "-movflags", "+faststart", str(out)], cfg.dry_run)
+
+
+# -------------------------------------------------------------------- day ---
+
+def load_days(lifelog: Path, day_indices: list[int] | None,
+              all_days: bool) -> list[dict[str, Any]]:
+    days = json.loads(lifelog.read_text())["days"]
+    if all_days:
+        return days
+    if not day_indices:
+        raise SystemExit("Pass --day N [N ...] or --all-days")
+    wanted = set(day_indices)
+    picked = [d for d in days if int(d["metadata"]["day_index"]) in wanted]
+    missing = wanted - {int(d["metadata"]["day_index"]) for d in picked}
+    if missing:
+        raise SystemExit(f"day_index not in lifelog: {sorted(missing)}")
+    return picked
+
+
+def stitch_day(day: dict[str, Any], cfg: argparse.Namespace,
+               dirs: dict[str, Path]) -> dict[str, Any]:
     meta = day["metadata"]
-    date = meta["calendar_date"]
-    day_idx = int(meta["day_index"])
-    day_name = f"day_{day_idx:02d}_{date}"
+    day_idx, date = int(meta["day_index"]), meta["calendar_date"]
+    name = f"day_{day_idx:02d}_{date}"
+    out = dirs["videos"] / f"{name}.mp4"
 
-    # Group by file format: videos/  manifests/  concat/
-    videos_dir = output_dir / "videos"
-    manifests_dir = output_dir / "manifests"
-    concat_dir = output_dir / "concat"
-    for d in (videos_dir, manifests_dir, concat_dir):
-        d.mkdir(parents=True, exist_ok=True)
-
-    concat_list = concat_dir / f"{day_name}.txt"
-    manifest_path = manifests_dir / f"{day_name}.json"
-
-    included: list[dict[str, Any]] = []
-    missing: list[dict[str, Any]] = []
+    clips, missing = [], []
     for i, clip in enumerate(day["memory_content"]):
-        uid = clip["video_uid"]
-        src = video_root / f"{uid}.mp4"
+        src = cfg.video_root / f"{clip['video_uid']}.mp4"
         entry = {
             "index": i,
-            "video_uid": uid,
+            "video_uid": clip["video_uid"],
             "slot_id": clip.get("slot_id"),
+            "plan_chunk": clip.get("plan_chunk"),
             "start_timestamp": clip.get("start_timestamp"),
             "end_timestamp": clip.get("end_timestamp"),
             "duration_lifelog": clip.get("duration"),
-            "plan_chunk": clip.get("plan_chunk"),
-            "consolidated_summary": clip.get("consolidated_summary"),
         }
+        (clips if src.exists() else missing).append(entry)
         if src.exists():
             entry["source_path"] = str(src)
-            entry["duration_actual"] = probe_duration(src)
-            included.append(entry)
-        else:
-            missing.append(entry)
 
-    if not included:
-        raise SystemExit(f"Day {day_idx} ({date}): no local mp4 files found under {video_root}")
+    if not clips:
+        print(f"[day {day_idx:02d}] no local mp4 under {cfg.video_root}, skipped")
+        return {}
 
-    sources = [Path(item["source_path"]) for item in included]
-    codecs = {probe_video_codec(s) for s in sources}
-    out_path = choose_output_path(videos_dir, day_name, mode, codecs)
+    print(f"[day {day_idx:02d}] {date}: {len(clips)}/{len(day['memory_content'])}"
+          f" clips -> {out.name}" + (f"  ({len(missing)} missing)" if missing else ""))
 
-    print(
-        f"[day {day_idx:02d}] Stitching {len(included)}/{len(day['memory_content'])} clips "
-        f"(mode={mode}, audio={'on' if keep_audio else 'off'}) -> {out_path}"
-    )
-    if missing:
-        print(f"  Warning: {len(missing)} clips missing locally (skipped)")
+    if out.exists() and not cfg.overwrite:
+        print("  already exists, skipped (use --overwrite to redo)")
+        return {}
 
-    used_mode, out_path = ffmpeg_concat(
-        sources, out_path, concat_list, mode=mode, keep_audio=keep_audio
-    )
+    # pass 1 (parallel, cached across days)
+    todo = [(Path(c["source_path"]), dirs["norm"] / f"{c['video_uid']}.mkv")
+            for c in clips]
+    with ThreadPoolExecutor(max_workers=cfg.jobs) as pool:
+        list(pool.map(lambda t: normalize(t[0], t[1], cfg), todo))
 
-    total_actual = sum(x["duration_actual"] for x in included)
+    # pass 2
+    parts = [dst for _, dst in todo]
+    concat(parts, dirs["concat"] / f"{name}.txt", out, cfg)
+    if cfg.dry_run:
+        return {}
+
+    v_dur, a_dur = stream_duration(out, "v:0"), stream_duration(out, "a:0")
+    for c, (_, dst) in zip(clips, todo):
+        c["duration_normalized"] = probe_duration(dst)
     manifest = {
-        "output_video": str(out_path),
-        "concat_list": str(concat_list),
-        "mode": used_mode,
-        "keep_audio": keep_audio,
-        "codecs": sorted(codecs),
-        "calendar_date": date,
+        "output_video": str(out),
         "day_index": day_idx,
+        "calendar_date": date,
         "day_theme": meta.get("day_theme"),
-        "clips_total": len(day["memory_content"]),
-        "clips_included": len(included),
+        "clips_included": len(clips),
         "clips_missing": len(missing),
-        "duration_lifelog_included_hours": round(
-            sum(x["duration_lifelog"] or 0 for x in included) / 3600, 3
-        ),
-        "duration_actual_hours": round(total_actual / 3600, 3),
-        "included_clips": included,
+        "duration_hours": round(v_dur / 3600, 3),
+        "av_offset_seconds": round(a_dur - v_dur, 3),
+        "profile": {"width": cfg.width, "height": cfg.height, "fps": cfg.fps,
+                    "crf": cfg.crf, "muted": cfg.mute},
+        "included_clips": clips,
         "missing_clips": missing,
     }
-    manifest_path.write_text(json.dumps(manifest, indent=2, ensure_ascii=False))
-    print(f"  Done: {out_path} ({manifest['duration_actual_hours']:.2f}h)")
-    print(f"  Manifest: {manifest_path}")
+    path = dirs["manifests"] / f"{name}.json"
+    path.write_text(json.dumps(manifest, indent=2, ensure_ascii=False))
+    print(f"  done: {v_dur / 3600:.2f}h, audio-video offset "
+          f"{a_dur - v_dur:+.3f}s -> {out}")
     return manifest
 
 
+# ------------------------------------------------------------------- main ---
+
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Stitch lifelog day videos by video_uid")
-    parser.add_argument(
-        "--lifelog",
-        type=Path,
-        default=None,
-        help="Full lifelog JSON (e.g. lifelog_egotailor_usa_enfp_21d.json)",
-    )
-    parser.add_argument(
-        "--day-json",
-        type=Path,
-        default=None,
-        help="Single-day JSON (legacy; same schema as lifelog['days'][i])",
-    )
-    parser.add_argument(
-        "--day",
-        type=int,
-        nargs="*",
-        default=None,
-        help="Day index/indices to stitch when using --lifelog (0-20)",
-    )
-    parser.add_argument(
-        "--all-days",
-        action="store_true",
-        help="Stitch every day in --lifelog",
-    )
-    parser.add_argument("--output-dir", type=Path, default=DEFAULT_OUTPUT_DIR)
-    parser.add_argument("--video-root", type=Path, default=DEFAULT_VIDEO_ROOT)
-    parser.add_argument(
-        "--mode",
-        choices=["safe", "copy", "reencode"],
-        default="safe",
-        help="safe=stream-copy concat (VP9->mkv, H264->mp4); copy=same fragile path; "
-             "reencode=libx264 mp4 (slow, most compatible)",
-    )
-    parser.add_argument(
-        "--keep-audio",
-        action="store_true",
-        help="Keep audio tracks (default: drop audio; stream 0:1 DTS issues are common)",
-    )
-    args = parser.parse_args()
+    p = argparse.ArgumentParser(description=__doc__.splitlines()[0])
+    p.add_argument("--lifelog", type=Path, default=DEFAULT_LIFELOG)
+    p.add_argument("--day", type=int, nargs="*", help="day index/indices (0-20)")
+    p.add_argument("--all-days", action="store_true")
+    p.add_argument("--video-root", type=Path, default=DEFAULT_VIDEO_ROOT)
+    p.add_argument("--output-dir", type=Path, default=DEFAULT_OUTPUT_DIR)
+    p.add_argument("--jobs", type=int, default=min(8, os.cpu_count() or 4),
+                   help="parallel clip encodes in pass 1")
+    p.add_argument("--size", default="960x720", help="normalized WxH (letterboxed)")
+    p.add_argument("--fps", type=int, default=30)
+    p.add_argument("--crf", type=int, default=23)
+    p.add_argument("--preset", default="veryfast")
+    p.add_argument("--mute", action="store_true", help="silent output")
+    p.add_argument("--overwrite", action="store_true", help="redo existing days")
+    p.add_argument("--clean-temp", action="store_true",
+                   help="delete the norm/ cache once all days are done "
+                        "(default: keep it, so reruns are cheap)")
+    p.add_argument("--dry-run", action="store_true", help="print ffmpeg only")
+    cfg = p.parse_args()
+    cfg.width, cfg.height = (int(x) for x in cfg.size.lower().split("x"))
 
-    # Backward-compatible defaults: if neither input given, use legacy day JSON
-    lifelog = args.lifelog
-    day_json = args.day_json
-    if lifelog is None and day_json is None:
-        if DEFAULT_LIFELOG.exists():
-            lifelog = DEFAULT_LIFELOG
-            if not args.all_days and args.day is None:
-                args.day = [0]
-        else:
-            day_json = DEFAULT_DAY
+    dirs = {n: cfg.output_dir / n
+            for n in ("videos", "manifests", "concat", "norm")}
+    for d in dirs.values():
+        d.mkdir(parents=True, exist_ok=True)
 
-    days = load_days(lifelog, day_json, args.day, args.all_days)
-    manifests = []
-    for day in days:
-        manifests.append(
-            stitch_one_day(
-                day,
-                args.output_dir,
-                args.video_root,
-                mode=args.mode,
-                keep_audio=args.keep_audio,
-            )
-        )
+    manifests = [m for day in load_days(cfg.lifelog, cfg.day, cfg.all_days)
+                 if (m := stitch_day(day, cfg, dirs))]
 
-    if len(manifests) > 1:
-        summary_path = args.output_dir / "stitch_all_days_summary.json"
-        summary = {
-            "n_days": len(manifests),
-            "mode": args.mode,
-            "keep_audio": args.keep_audio,
-            "days": [
-                {
-                    "day_index": m["day_index"],
-                    "calendar_date": m["calendar_date"],
-                    "output_video": m["output_video"],
-                    "clips_included": m["clips_included"],
-                    "clips_missing": m["clips_missing"],
-                    "duration_actual_hours": m["duration_actual_hours"],
-                }
-                for m in manifests
-            ],
-        }
-        summary_path.write_text(json.dumps(summary, indent=2, ensure_ascii=False))
-        print(f"Summary: {summary_path}")
+    if manifests:
+        summary = cfg.output_dir / "stitch_summary.json"
+        summary.write_text(json.dumps(
+            {"n_days": len(manifests),
+             "profile": manifests[0]["profile"],
+             "days": [{k: m[k] for k in
+                       ("day_index", "calendar_date", "output_video",
+                        "clips_included", "clips_missing", "duration_hours",
+                        "av_offset_seconds")} for m in manifests]},
+            indent=2, ensure_ascii=False))
+        print(f"summary: {summary}")
+
+    if cfg.clean_temp and not cfg.dry_run:
+        for f in dirs["norm"].glob("*.mkv"):
+            f.unlink()
+        print("norm cache cleaned")
 
 
 if __name__ == "__main__":
