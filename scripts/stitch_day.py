@@ -101,20 +101,30 @@ def probe_video_codec(path: Path) -> str:
     return out.lower()
 
 
+def choose_output_path(videos_dir: Path, day_name: str, mode: str, codecs: set[str]) -> Path:
+    """VP9 stream-copy cannot reliably mux into MP4; use MKV. Reencode -> MP4/H.264."""
+    if mode == "reencode":
+        return videos_dir / f"{day_name}.mp4"
+    if codecs == {"h264"} or codecs == {"avc1"}:
+        return videos_dir / f"{day_name}.mp4"
+    # vp9 / hevc / mixed-before-reencode-fallback → matroska is safe for copy
+    return videos_dir / f"{day_name}.mkv"
+
+
 def ffmpeg_concat(
     sources: list[Path],
-    out_mp4: Path,
+    out_path: Path,
     concat_list: Path,
     mode: str,
     keep_audio: bool,
-) -> None:
-    """Stitch sources into out_mp4.
+) -> str:
+    """Stitch sources into out_path. Returns the mode actually used.
 
     Modes:
-      safe     — video-only remux with reset timestamps, then concat copy
-                 (Ego4D full_scale is often VP9; h264_mp4toannexb does NOT apply)
-      copy     — direct concat demuxer + stream copy (fragile)
-      reencode — libx264 re-encode (slow, most compatible; use if codecs differ)
+      safe     — one-shot concat demuxer, stream copy, video-only by default.
+                 VP9 sources write .mkv (MP4 remux of VP9 often fails trailer).
+      copy     — same as safe but keeps requested container/path as-is
+      reencode — libx264 into .mp4 (slow, universally playable)
     """
     with open(concat_list, "w") as f:
         for src in sources:
@@ -126,19 +136,7 @@ def ffmpeg_concat(
     if mode != "reencode" and len(codecs) > 1:
         print("  Mixed codecs detected -> forcing mode=reencode")
         mode = "reencode"
-
-    if mode == "copy":
-        cmd = [
-            "ffmpeg", "-y", "-fflags", "+genpts",
-            "-f", "concat", "-safe", "0", "-i", str(concat_list),
-        ]
-        if keep_audio:
-            cmd += ["-c", "copy"]
-        else:
-            cmd += ["-map", "0:v:0", "-c", "copy", "-an"]
-        cmd += ["-avoid_negative_ts", "make_zero", str(out_mp4)]
-        run_ffmpeg(cmd)
-        return
+        out_path = out_path.with_suffix(".mp4")
 
     if mode == "reencode":
         cmd = [
@@ -150,54 +148,32 @@ def ffmpeg_concat(
             cmd += ["-c:a", "aac", "-b:a", "128k"]
         else:
             cmd += ["-an"]
-        cmd += ["-movflags", "+faststart", str(out_mp4)]
+        cmd += ["-movflags", "+faststart", str(out_path)]
         run_ffmpeg(cmd)
-        return
+        return mode
 
-    # mode == "safe":
-    # Remux each clip to a temp mp4 with regenerated timestamps (video-only by
-    # default). Do NOT use h264_mp4toannexb — Ego4D full_scale clips are often VP9.
-    tmp_root = Path(tempfile.mkdtemp(prefix="stitch_norm_", dir=str(out_mp4.parent)))
-    try:
-        norm_files: list[Path] = []
-        norm_list = tmp_root / "norm_concat.txt"
-        for i, src in enumerate(sources):
-            norm_path = tmp_root / f"{i:04d}.mp4"
-            remux = [
-                "ffmpeg", "-y", "-fflags", "+genpts+igndts",
-                "-i", str(src),
-                "-map", "0:v:0",
-            ]
-            if keep_audio:
-                remux += ["-map", "0:a:0?"]
-                remux += ["-c", "copy"]
-            else:
-                remux += ["-c", "copy", "-an"]
-            remux += [
-                "-avoid_negative_ts", "make_zero",
-                "-movflags", "+faststart",
-                str(norm_path),
-            ]
-            run_ffmpeg(remux)
-            norm_files.append(norm_path)
-
-        with open(norm_list, "w") as f:
-            for p in norm_files:
-                path = str(p).replace("'", "'\\''")
-                f.write(f"file '{path}'\n")
-
-        # Also keep a human-readable source concat list under concat/
-        merge = [
-            "ffmpeg", "-y", "-fflags", "+genpts",
-            "-f", "concat", "-safe", "0", "-i", str(norm_list),
+    # safe / copy: single-pass concat, NO per-clip remux (VP9->MP4 remux breaks trailer)
+    cmd = [
+        "ffmpeg", "-y",
+        "-f", "concat", "-safe", "0", "-i", str(concat_list),
+        "-map", "0:v:0",
+        "-c", "copy",
+    ]
+    if keep_audio:
+        # audio often causes Non-monotonous DTS; still allow if requested
+        cmd = [
+            "ffmpeg", "-y",
+            "-f", "concat", "-safe", "0", "-i", str(concat_list),
             "-c", "copy",
         ]
-        if not keep_audio:
-            merge += ["-an"]
-        merge += ["-avoid_negative_ts", "make_zero", "-movflags", "+faststart", str(out_mp4)]
-        run_ffmpeg(merge)
-    finally:
-        shutil.rmtree(tmp_root, ignore_errors=True)
+    else:
+        cmd += ["-an"]
+
+    if out_path.suffix.lower() == ".mp4":
+        cmd += ["-avoid_negative_ts", "make_zero", "-movflags", "+faststart"]
+    cmd += [str(out_path)]
+    run_ffmpeg(cmd)
+    return mode
 
 
 def stitch_one_day(
@@ -219,9 +195,8 @@ def stitch_one_day(
     for d in (videos_dir, manifests_dir, concat_dir):
         d.mkdir(parents=True, exist_ok=True)
 
-    out_mp4 = videos_dir / f"{day_name}.mp4"
-    manifest_path = manifests_dir / f"{day_name}.json"
     concat_list = concat_dir / f"{day_name}.txt"
+    manifest_path = manifests_dir / f"{day_name}.json"
 
     included: list[dict[str, Any]] = []
     missing: list[dict[str, Any]] = []
@@ -249,21 +224,33 @@ def stitch_one_day(
         raise SystemExit(f"Day {day_idx} ({date}): no local mp4 files found under {video_root}")
 
     sources = [Path(item["source_path"]) for item in included]
+    codecs = {probe_video_codec(s) for s in sources}
+    out_path = choose_output_path(videos_dir, day_name, mode, codecs)
+
     print(
         f"[day {day_idx:02d}] Stitching {len(included)}/{len(day['memory_content'])} clips "
-        f"(mode={mode}, audio={'on' if keep_audio else 'off'}) -> {out_mp4}"
+        f"(mode={mode}, audio={'on' if keep_audio else 'off'}) -> {out_path}"
     )
     if missing:
         print(f"  Warning: {len(missing)} clips missing locally (skipped)")
 
-    ffmpeg_concat(sources, out_mp4, concat_list, mode=mode, keep_audio=keep_audio)
+    used_mode = ffmpeg_concat(
+        sources, out_path, concat_list, mode=mode, keep_audio=keep_audio
+    )
+    # If mode was forced to reencode inside ffmpeg_concat, prefer .mp4 path
+    if used_mode == "reencode" and out_path.suffix != ".mp4":
+        # re-run already wrote to out_path; if suffix wrong, rename expectation
+        mp4_path = out_path.with_suffix(".mp4")
+        if mp4_path.exists():
+            out_path = mp4_path
 
     total_actual = sum(x["duration_actual"] for x in included)
     manifest = {
-        "output_video": str(out_mp4),
+        "output_video": str(out_path),
         "concat_list": str(concat_list),
-        "mode": mode,
+        "mode": used_mode,
         "keep_audio": keep_audio,
+        "codecs": sorted(codecs),
         "calendar_date": date,
         "day_index": day_idx,
         "day_theme": meta.get("day_theme"),
@@ -278,7 +265,7 @@ def stitch_one_day(
         "missing_clips": missing,
     }
     manifest_path.write_text(json.dumps(manifest, indent=2, ensure_ascii=False))
-    print(f"  Done: {out_mp4} ({manifest['duration_actual_hours']:.2f}h)")
+    print(f"  Done: {out_path} ({manifest['duration_actual_hours']:.2f}h)")
     print(f"  Manifest: {manifest_path}")
     return manifest
 
@@ -315,8 +302,8 @@ def main() -> None:
         "--mode",
         choices=["safe", "copy", "reencode"],
         default="safe",
-        help="safe=normalize timestamps then concat copy (default; works with VP9); "
-             "copy=fragile direct stream copy; reencode=libx264 (slow, most compatible)",
+        help="safe=stream-copy concat (VP9->mkv, H264->mp4); copy=same fragile path; "
+             "reencode=libx264 mp4 (slow, most compatible)",
     )
     parser.add_argument(
         "--keep-audio",
