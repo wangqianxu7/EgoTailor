@@ -14,10 +14,12 @@ so that plain alphabetical order == chronological order:
 
     index _ HHMM _ duration _ slot _ full video_uid
 
-Copying is the default and it is not cheap: ~1.4 GB per hour of Ego4D
-full_scale, so ~8.7 GB per day and ~183 GB for all 21 days. Free space is
-checked before each day starts. Use --mode symlink for a zero-byte layout that
-points back at the Ego4D mount instead.
+Copying is the default and it is not cheap: measured on this dataset the clips
+run ~2.1 GB per hour (1.0 GB/h for a day spent sitting indoors, 5.2 GB/h for a
+day of cycling -- egocentric motion drives the bitrate), so ~12.8 GB per day and
+~269 GB for all 21 days. Free space is checked before each day starts, copies
+run --jobs at a time, and an interrupted run resumes. Use --mode symlink for a
+zero-byte layout that points back at the Ego4D mount instead.
 
     python scripts/collect_day_clips.py --all-days \
       --video-root /mnt/data_oss/raw_data/Ego4d/v2/full_scale \
@@ -33,6 +35,7 @@ import re
 import shutil
 import subprocess
 import time
+from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 from typing import Any
 
@@ -111,15 +114,22 @@ def collect_day(day: dict[str, Any], cfg: argparse.Namespace) -> dict[str, Any]:
         if not src.exists():
             missing.append(entry)
             continue
-        # The real duration goes into the filename, so it must be probed before
-        # the name exists. --no-probe falls back to the lifelog's planned value.
-        entry["duration_actual"] = None if cfg.no_probe else probe_duration(src)
         entry["size_bytes"] = src.stat().st_size
-        secs = entry["duration_actual"] or entry["duration_lifelog"]
-        hhmm = start[11:16].replace(":", "") if len(start) >= 16 else f"{i:04d}"
-        entry["filename"] = (f"{i:02d}_{hhmm}_{dur_tag(secs)}_"
-                             f"{slug(clip.get('slot_id'))}_{uid}.mp4")
         entries.append(entry)
+
+    # The real duration goes into the filename, so it must be known before the
+    # name exists. ffprobe over a FUSE mount is slow enough to be worth running
+    # in parallel; --no-probe falls back to the lifelog's planned duration.
+    with ThreadPoolExecutor(max_workers=max(1, cfg.jobs)) as pool:
+        probed = [None] * len(entries) if cfg.no_probe else list(pool.map(
+            lambda e: probe_duration(Path(e["source_path"])), entries))
+    for e, secs in zip(entries, probed):
+        e["duration_actual"] = secs
+        start = e["start_timestamp"]
+        hhmm = start[11:16].replace(":", "") if len(start) >= 16 else f"{e['index']:04d}"
+        e["filename"] = (f"{e['index']:02d}_{hhmm}_"
+                         f"{dur_tag(secs or e['duration_lifelog'])}_"
+                         f"{slug(e['slot_id'])}_{e['video_uid']}.mp4")
 
     need = sum(e["size_bytes"] for e in entries)
     print(f"[day {day_idx:02d}] {date} {meta.get('day_theme', ''):<28} "
@@ -141,19 +151,30 @@ def collect_day(day: dict[str, Any], cfg: argparse.Namespace) -> dict[str, Any]:
                 f"{free / GB:.1f} GB free on {day_dir}. "
                 f"Free some up, or use --mode symlink.")
 
-    for n, e in enumerate(entries, 1):
+    def transfer(n: int, e: dict[str, Any]) -> int:
         src, dst = Path(e["source_path"]), day_dir / e["filename"]
         # Resume: a finished copy of the right size is left alone.
-        if dst.exists() and (cfg.mode != "copy" or dst.stat().st_size == e["size_bytes"]):
-            if not cfg.force:
-                print(f"  [{n:2d}/{len(entries)}] {e['filename']}  already there")
-                continue
+        if dst.exists() and not cfg.force and (
+                cfg.mode != "copy" or dst.stat().st_size == e["size_bytes"]):
+            print(f"  [{n:2d}/{len(entries)}] {e['filename']}  already there")
+            return 0
         t0 = time.monotonic()
         place(src, dst, cfg.mode)
-        dt = time.monotonic() - t0
-        rate = f", {e['size_bytes'] / GB / dt:.2f} GB/s" if dt > 0.5 else ""
+        dt = max(time.monotonic() - t0, 1e-9)
+        rate = f", {e['size_bytes'] / 1e6 / dt:.0f} MB/s" if dt > 0.5 else ""
         print(f"  [{n:2d}/{len(entries)}] {e['filename']}  "
               f"{e['size_bytes'] / GB:.2f} GB{rate}")
+        return e["size_bytes"]
+
+    # Object-storage mounts rarely saturate on one stream, so copies run
+    # concurrently. shutil releases the GIL on the read/write syscalls.
+    t_day = time.monotonic()
+    with ThreadPoolExecutor(max_workers=max(1, cfg.jobs)) as pool:
+        moved = sum(pool.map(lambda a: transfer(*a), enumerate(entries, 1)))
+    elapsed = time.monotonic() - t_day
+    if moved:
+        print(f"           {moved / GB:.1f} GB in {elapsed / 60:.1f} min "
+              f"= {moved / 1e6 / elapsed:.0f} MB/s aggregate ({cfg.jobs} jobs)")
 
     (day_dir / "_index.json").write_text(json.dumps({
         "day_index": day_idx,
@@ -194,6 +215,9 @@ def main() -> None:
     p.add_argument("--mode", choices=["copy", "symlink", "hardlink"],
                    default="copy", help="copy = real files (default); symlink = "
                                         "zero-byte pointers into --video-root")
+    p.add_argument("--jobs", type=int, default=4,
+                   help="parallel copies; object-storage mounts usually go "
+                        "several times faster with 4-8 (default: 4)")
     p.add_argument("--no-probe", action="store_true",
                    help="skip ffprobe; filename duration comes from the lifelog")
     p.add_argument("--force", action="store_true", help="re-copy files already there")
