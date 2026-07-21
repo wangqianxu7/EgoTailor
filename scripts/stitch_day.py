@@ -10,7 +10,8 @@ stitched in lifelog order.
 
 Default stitch mode drops audio and regenerates timestamps. Plain `-c copy`
 across Ego4D clips often hits Non-monotonous DTS and fails with
-"Error writing trailer: Invalid argument".
+"Error writing trailer: Invalid argument". Ego4D full_scale is often VP9
+(not H.264), so H.264-only bitstream filters must not be used.
 
 Examples (run on the server where Ego4D mp4s live):
 
@@ -81,9 +82,23 @@ def load_days(
     raise SystemExit("Provide --lifelog or --day-json")
 
 
-def run_ffmpeg(cmd: list[str]) -> None:
+def run_ffmpeg(cmd: list[str], quiet: bool = True) -> None:
     print("  $", " ".join(cmd[:8]), "..." if len(cmd) > 8 else "")
+    if quiet:
+        cmd = cmd[:1] + ["-hide_banner", "-loglevel", "error", "-stats"] + cmd[1:]
     subprocess.run(cmd, check=True)
+
+
+def probe_video_codec(path: Path) -> str:
+    out = subprocess.check_output(
+        [
+            "ffprobe", "-v", "error", "-select_streams", "v:0",
+            "-show_entries", "stream=codec_name",
+            "-of", "default=noprint_wrappers=1:nokey=1", str(path),
+        ],
+        text=True,
+    ).strip()
+    return out.lower()
 
 
 def ffmpeg_concat(
@@ -96,14 +111,21 @@ def ffmpeg_concat(
     """Stitch sources into out_mp4.
 
     Modes:
-      safe     — remux each clip to MPEG-TS (reset timestamps), then concat copy
-      copy     — direct concat demuxer + stream copy (fragile on Ego4D)
-      reencode — H.264/AAC re-encode (slow, most compatible)
+      safe     — video-only remux with reset timestamps, then concat copy
+                 (Ego4D full_scale is often VP9; h264_mp4toannexb does NOT apply)
+      copy     — direct concat demuxer + stream copy (fragile)
+      reencode — libx264 re-encode (slow, most compatible; use if codecs differ)
     """
     with open(concat_list, "w") as f:
         for src in sources:
             path = str(src).replace("'", "'\\''")
             f.write(f"file '{path}'\n")
+
+    codecs = {probe_video_codec(s) for s in sources}
+    print(f"  video codecs in day: {sorted(codecs)}")
+    if mode != "reencode" and len(codecs) > 1:
+        print("  Mixed codecs detected -> forcing mode=reencode")
+        mode = "reencode"
 
     if mode == "copy":
         cmd = [
@@ -132,43 +154,47 @@ def ffmpeg_concat(
         run_ffmpeg(cmd)
         return
 
-    # mode == "safe": MPEG-TS intermediates avoid Non-monotonous DTS trailer failures
-    tmp_root = Path(tempfile.mkdtemp(prefix="stitch_ts_", dir=str(out_mp4.parent)))
+    # mode == "safe":
+    # Remux each clip to a temp mp4 with regenerated timestamps (video-only by
+    # default). Do NOT use h264_mp4toannexb — Ego4D full_scale clips are often VP9.
+    tmp_root = Path(tempfile.mkdtemp(prefix="stitch_norm_", dir=str(out_mp4.parent)))
     try:
-        ts_files: list[Path] = []
-        ts_list = tmp_root / "ts_concat.txt"
+        norm_files: list[Path] = []
+        norm_list = tmp_root / "norm_concat.txt"
         for i, src in enumerate(sources):
-            ts_path = tmp_root / f"{i:04d}.ts"
+            norm_path = tmp_root / f"{i:04d}.mp4"
             remux = [
-                "ffmpeg", "-y", "-i", str(src),
+                "ffmpeg", "-y", "-fflags", "+genpts+igndts",
+                "-i", str(src),
                 "-map", "0:v:0",
             ]
             if keep_audio:
                 remux += ["-map", "0:a:0?"]
+                remux += ["-c", "copy"]
+            else:
+                remux += ["-c", "copy", "-an"]
             remux += [
-                "-c", "copy",
-                "-bsf:v", "h264_mp4toannexb",
-                "-f", "mpegts",
-                str(ts_path),
+                "-avoid_negative_ts", "make_zero",
+                "-movflags", "+faststart",
+                str(norm_path),
             ]
             run_ffmpeg(remux)
-            ts_files.append(ts_path)
+            norm_files.append(norm_path)
 
-        with open(ts_list, "w") as f:
-            for ts in ts_files:
-                path = str(ts).replace("'", "'\\''")
+        with open(norm_list, "w") as f:
+            for p in norm_files:
+                path = str(p).replace("'", "'\\''")
                 f.write(f"file '{path}'\n")
 
+        # Also keep a human-readable source concat list under concat/
         merge = [
-            "ffmpeg", "-y",
-            "-f", "concat", "-safe", "0", "-i", str(ts_list),
+            "ffmpeg", "-y", "-fflags", "+genpts",
+            "-f", "concat", "-safe", "0", "-i", str(norm_list),
             "-c", "copy",
         ]
-        if keep_audio:
-            merge += ["-bsf:a", "aac_adtstoasc"]
-        else:
+        if not keep_audio:
             merge += ["-an"]
-        merge += ["-movflags", "+faststart", str(out_mp4)]
+        merge += ["-avoid_negative_ts", "make_zero", "-movflags", "+faststart", str(out_mp4)]
         run_ffmpeg(merge)
     finally:
         shutil.rmtree(tmp_root, ignore_errors=True)
@@ -289,8 +315,8 @@ def main() -> None:
         "--mode",
         choices=["safe", "copy", "reencode"],
         default="safe",
-        help="safe=MPEG-TS remux then concat (default); copy=fragile stream copy; "
-             "reencode=libx264 (slow, most compatible)",
+        help="safe=normalize timestamps then concat copy (default; works with VP9); "
+             "copy=fragile direct stream copy; reencode=libx264 (slow, most compatible)",
     )
     parser.add_argument(
         "--keep-audio",
