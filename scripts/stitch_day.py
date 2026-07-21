@@ -90,11 +90,18 @@ def stitch_one_day(
     meta = day["metadata"]
     date = meta["calendar_date"]
     day_idx = int(meta["day_index"])
+    day_name = f"day_{day_idx:02d}_{date}"
 
-    output_dir.mkdir(parents=True, exist_ok=True)
-    out_mp4 = output_dir / f"day_{day_idx:02d}_{date}.mp4"
-    manifest_path = output_dir / f"day_{day_idx:02d}_{date}_manifest.json"
-    concat_list = output_dir / f"day_{day_idx:02d}_{date}_concat.txt"
+    # Group by file format: videos/  manifests/  concat/
+    videos_dir = output_dir / "videos"
+    manifests_dir = output_dir / "manifests"
+    concat_dir = output_dir / "concat"
+    for d in (videos_dir, manifests_dir, concat_dir):
+        d.mkdir(parents=True, exist_ok=True)
+
+    out_mp4 = videos_dir / f"{day_name}.mp4"
+    manifest_path = manifests_dir / f"{day_name}.json"
+    concat_list = concat_dir / f"{day_name}.txt"
 
     included: list[dict[str, Any]] = []
     missing: list[dict[str, Any]] = []
@@ -140,6 +147,7 @@ def stitch_one_day(
     total_actual = sum(x["duration_actual"] for x in included)
     manifest = {
         "output_video": str(out_mp4),
+        "concat_list": str(concat_list),
         "calendar_date": date,
         "day_index": day_idx,
         "day_theme": meta.get("day_theme"),
