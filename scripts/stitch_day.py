@@ -6,35 +6,34 @@ Input can be either:
   - single-day JSON: output/days/day_00_2026-01-05.json
 
 Each day uses memory_content[*].video_uid -> {video_root}/{video_uid}.mp4,
-stitched in lifelog order via ffmpeg concat demuxer (-c copy).
+stitched in lifelog order.
+
+Default stitch mode drops audio and regenerates timestamps. Plain `-c copy`
+across Ego4D clips often hits Non-monotonous DTS and fails with
+"Error writing trailer: Invalid argument".
 
 Examples (run on the server where Ego4D mp4s live):
 
-  # Stitch day 0 from full lifelog
-  python scripts/stitch_day.py \\
-    --lifelog output/lifelog/lifelog_egotailor_usa_enfp_21d.json \\
-    --day 0 \\
-    --video-root /mnt/data_oss/raw_data/Ego4d/v2/full_scale \\
+  python scripts/stitch_day.py \
+    --lifelog output/lifelog/lifelog_egotailor_usa_enfp_21d.json \
+    --day 0 \
+    --video-root /mnt/data_oss/raw_data/Ego4d/v2/full_scale \
     --output-dir /mnt/data/workspace/outputs/EgoTailor_21days_videos
 
-  # Stitch all 21 days
-  python scripts/stitch_day.py \\
-    --lifelog output/lifelog/lifelog_egotailor_usa_enfp_21d.json \\
-    --all-days \\
-    --video-root /mnt/data_oss/raw_data/Ego4d/v2/full_scale \\
+  python scripts/stitch_day.py \
+    --lifelog output/lifelog/lifelog_egotailor_usa_enfp_21d.json \
+    --all-days \
+    --video-root /mnt/data_oss/raw_data/Ego4d/v2/full_scale \
     --output-dir /mnt/data/workspace/outputs/EgoTailor_21days_videos
-
-  # Legacy: single day JSON
-  python scripts/stitch_day.py \\
-    --day-json output/days/day_00_2026-01-05.json
 """
 
 from __future__ import annotations
 
 import argparse
 import json
+import shutil
 import subprocess
-import sys
+import tempfile
 from pathlib import Path
 from typing import Any
 
@@ -82,10 +81,105 @@ def load_days(
     raise SystemExit("Provide --lifelog or --day-json")
 
 
+def run_ffmpeg(cmd: list[str]) -> None:
+    print("  $", " ".join(cmd[:8]), "..." if len(cmd) > 8 else "")
+    subprocess.run(cmd, check=True)
+
+
+def ffmpeg_concat(
+    sources: list[Path],
+    out_mp4: Path,
+    concat_list: Path,
+    mode: str,
+    keep_audio: bool,
+) -> None:
+    """Stitch sources into out_mp4.
+
+    Modes:
+      safe     — remux each clip to MPEG-TS (reset timestamps), then concat copy
+      copy     — direct concat demuxer + stream copy (fragile on Ego4D)
+      reencode — H.264/AAC re-encode (slow, most compatible)
+    """
+    with open(concat_list, "w") as f:
+        for src in sources:
+            path = str(src).replace("'", "'\\''")
+            f.write(f"file '{path}'\n")
+
+    if mode == "copy":
+        cmd = [
+            "ffmpeg", "-y", "-fflags", "+genpts",
+            "-f", "concat", "-safe", "0", "-i", str(concat_list),
+        ]
+        if keep_audio:
+            cmd += ["-c", "copy"]
+        else:
+            cmd += ["-map", "0:v:0", "-c", "copy", "-an"]
+        cmd += ["-avoid_negative_ts", "make_zero", str(out_mp4)]
+        run_ffmpeg(cmd)
+        return
+
+    if mode == "reencode":
+        cmd = [
+            "ffmpeg", "-y",
+            "-f", "concat", "-safe", "0", "-i", str(concat_list),
+            "-c:v", "libx264", "-preset", "veryfast", "-crf", "23",
+        ]
+        if keep_audio:
+            cmd += ["-c:a", "aac", "-b:a", "128k"]
+        else:
+            cmd += ["-an"]
+        cmd += ["-movflags", "+faststart", str(out_mp4)]
+        run_ffmpeg(cmd)
+        return
+
+    # mode == "safe": MPEG-TS intermediates avoid Non-monotonous DTS trailer failures
+    tmp_root = Path(tempfile.mkdtemp(prefix="stitch_ts_", dir=str(out_mp4.parent)))
+    try:
+        ts_files: list[Path] = []
+        ts_list = tmp_root / "ts_concat.txt"
+        for i, src in enumerate(sources):
+            ts_path = tmp_root / f"{i:04d}.ts"
+            remux = [
+                "ffmpeg", "-y", "-i", str(src),
+                "-map", "0:v:0",
+            ]
+            if keep_audio:
+                remux += ["-map", "0:a:0?"]
+            remux += [
+                "-c", "copy",
+                "-bsf:v", "h264_mp4toannexb",
+                "-f", "mpegts",
+                str(ts_path),
+            ]
+            run_ffmpeg(remux)
+            ts_files.append(ts_path)
+
+        with open(ts_list, "w") as f:
+            for ts in ts_files:
+                path = str(ts).replace("'", "'\\''")
+                f.write(f"file '{path}'\n")
+
+        merge = [
+            "ffmpeg", "-y",
+            "-f", "concat", "-safe", "0", "-i", str(ts_list),
+            "-c", "copy",
+        ]
+        if keep_audio:
+            merge += ["-bsf:a", "aac_adtstoasc"]
+        else:
+            merge += ["-an"]
+        merge += ["-movflags", "+faststart", str(out_mp4)]
+        run_ffmpeg(merge)
+    finally:
+        shutil.rmtree(tmp_root, ignore_errors=True)
+
+
 def stitch_one_day(
     day: dict[str, Any],
     output_dir: Path,
     video_root: Path,
+    mode: str,
+    keep_audio: bool,
 ) -> dict[str, Any]:
     meta = day["metadata"]
     date = meta["calendar_date"]
@@ -128,26 +222,22 @@ def stitch_one_day(
     if not included:
         raise SystemExit(f"Day {day_idx} ({date}): no local mp4 files found under {video_root}")
 
-    with open(concat_list, "w") as f:
-        for item in included:
-            # ffmpeg concat demuxer requires escaped single quotes in paths
-            path = item["source_path"].replace("'", "'\\''")
-            f.write(f"file '{path}'\n")
-
-    print(f"[day {day_idx:02d}] Stitching {len(included)}/{len(day['memory_content'])} clips -> {out_mp4}")
+    sources = [Path(item["source_path"]) for item in included]
+    print(
+        f"[day {day_idx:02d}] Stitching {len(included)}/{len(day['memory_content'])} clips "
+        f"(mode={mode}, audio={'on' if keep_audio else 'off'}) -> {out_mp4}"
+    )
     if missing:
         print(f"  Warning: {len(missing)} clips missing locally (skipped)")
 
-    cmd = [
-        "ffmpeg", "-y", "-f", "concat", "-safe", "0", "-i", str(concat_list),
-        "-c", "copy", str(out_mp4),
-    ]
-    subprocess.run(cmd, check=True)
+    ffmpeg_concat(sources, out_mp4, concat_list, mode=mode, keep_audio=keep_audio)
 
     total_actual = sum(x["duration_actual"] for x in included)
     manifest = {
         "output_video": str(out_mp4),
         "concat_list": str(concat_list),
+        "mode": mode,
+        "keep_audio": keep_audio,
         "calendar_date": date,
         "day_index": day_idx,
         "day_theme": meta.get("day_theme"),
@@ -195,6 +285,18 @@ def main() -> None:
     )
     parser.add_argument("--output-dir", type=Path, default=DEFAULT_OUTPUT_DIR)
     parser.add_argument("--video-root", type=Path, default=DEFAULT_VIDEO_ROOT)
+    parser.add_argument(
+        "--mode",
+        choices=["safe", "copy", "reencode"],
+        default="safe",
+        help="safe=MPEG-TS remux then concat (default); copy=fragile stream copy; "
+             "reencode=libx264 (slow, most compatible)",
+    )
+    parser.add_argument(
+        "--keep-audio",
+        action="store_true",
+        help="Keep audio tracks (default: drop audio; stream 0:1 DTS issues are common)",
+    )
     args = parser.parse_args()
 
     # Backward-compatible defaults: if neither input given, use legacy day JSON
@@ -211,12 +313,22 @@ def main() -> None:
     days = load_days(lifelog, day_json, args.day, args.all_days)
     manifests = []
     for day in days:
-        manifests.append(stitch_one_day(day, args.output_dir, args.video_root))
+        manifests.append(
+            stitch_one_day(
+                day,
+                args.output_dir,
+                args.video_root,
+                mode=args.mode,
+                keep_audio=args.keep_audio,
+            )
+        )
 
     if len(manifests) > 1:
         summary_path = args.output_dir / "stitch_all_days_summary.json"
         summary = {
             "n_days": len(manifests),
+            "mode": args.mode,
+            "keep_audio": args.keep_audio,
             "days": [
                 {
                     "day_index": m["day_index"],
