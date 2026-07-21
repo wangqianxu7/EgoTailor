@@ -32,9 +32,7 @@ from __future__ import annotations
 
 import argparse
 import json
-import shutil
 import subprocess
-import tempfile
 from pathlib import Path
 from typing import Any
 
@@ -117,15 +115,8 @@ def ffmpeg_concat(
     concat_list: Path,
     mode: str,
     keep_audio: bool,
-) -> str:
-    """Stitch sources into out_path. Returns the mode actually used.
-
-    Modes:
-      safe     — one-shot concat demuxer, stream copy, video-only by default.
-                 VP9 sources write .mkv (MP4 remux of VP9 often fails trailer).
-      copy     — same as safe but keeps requested container/path as-is
-      reencode — libx264 into .mp4 (slow, universally playable)
-    """
+) -> tuple[str, Path]:
+    """Stitch sources into out_path. Returns (mode_used, actual_out_path)."""
     with open(concat_list, "w") as f:
         for src in sources:
             path = str(src).replace("'", "'\\''")
@@ -139,6 +130,7 @@ def ffmpeg_concat(
         out_path = out_path.with_suffix(".mp4")
 
     if mode == "reencode":
+        out_path = out_path.with_suffix(".mp4")
         cmd = [
             "ffmpeg", "-y",
             "-f", "concat", "-safe", "0", "-i", str(concat_list),
@@ -150,30 +142,29 @@ def ffmpeg_concat(
             cmd += ["-an"]
         cmd += ["-movflags", "+faststart", str(out_path)]
         run_ffmpeg(cmd)
-        return mode
+        return mode, out_path
 
     # safe / copy: single-pass concat, NO per-clip remux (VP9->MP4 remux breaks trailer)
-    cmd = [
-        "ffmpeg", "-y",
-        "-f", "concat", "-safe", "0", "-i", str(concat_list),
-        "-map", "0:v:0",
-        "-c", "copy",
-    ]
     if keep_audio:
-        # audio often causes Non-monotonous DTS; still allow if requested
         cmd = [
             "ffmpeg", "-y",
             "-f", "concat", "-safe", "0", "-i", str(concat_list),
             "-c", "copy",
         ]
     else:
-        cmd += ["-an"]
+        cmd = [
+            "ffmpeg", "-y",
+            "-f", "concat", "-safe", "0", "-i", str(concat_list),
+            "-map", "0:v:0",
+            "-c", "copy",
+            "-an",
+        ]
 
     if out_path.suffix.lower() == ".mp4":
         cmd += ["-avoid_negative_ts", "make_zero", "-movflags", "+faststart"]
     cmd += [str(out_path)]
     run_ffmpeg(cmd)
-    return mode
+    return mode, out_path
 
 
 def stitch_one_day(
@@ -234,15 +225,9 @@ def stitch_one_day(
     if missing:
         print(f"  Warning: {len(missing)} clips missing locally (skipped)")
 
-    used_mode = ffmpeg_concat(
+    used_mode, out_path = ffmpeg_concat(
         sources, out_path, concat_list, mode=mode, keep_audio=keep_audio
     )
-    # If mode was forced to reencode inside ffmpeg_concat, prefer .mp4 path
-    if used_mode == "reencode" and out_path.suffix != ".mp4":
-        # re-run already wrote to out_path; if suffix wrong, rename expectation
-        mp4_path = out_path.with_suffix(".mp4")
-        if mp4_path.exists():
-            out_path = mp4_path
 
     total_actual = sum(x["duration_actual"] for x in included)
     manifest = {
