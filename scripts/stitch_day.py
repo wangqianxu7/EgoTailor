@@ -1,5 +1,33 @@
 #!/usr/bin/env python3
-"""Concatenate one day's lifelog Ego4D clips into a single MP4."""
+"""Concatenate Ego4D clips for one or more lifelog days into day-level MP4s.
+
+Input can be either:
+  - full 21-day lifelog JSON (recommended): output/lifelog/lifelog_egotailor_usa_enfp_21d.json
+  - single-day JSON: output/days/day_00_2026-01-05.json
+
+Each day uses memory_content[*].video_uid -> {video_root}/{video_uid}.mp4,
+stitched in lifelog order via ffmpeg concat demuxer (-c copy).
+
+Examples (run on the server where Ego4D mp4s live):
+
+  # Stitch day 0 from full lifelog
+  python scripts/stitch_day.py \\
+    --lifelog output/lifelog/lifelog_egotailor_usa_enfp_21d.json \\
+    --day 0 \\
+    --video-root /mnt/data_oss/raw_data/Ego4d/v2/full_scale \\
+    --output-dir /mnt/data/workspace/outputs/EgoTailor_21days_videos
+
+  # Stitch all 21 days
+  python scripts/stitch_day.py \\
+    --lifelog output/lifelog/lifelog_egotailor_usa_enfp_21d.json \\
+    --all-days \\
+    --video-root /mnt/data_oss/raw_data/Ego4d/v2/full_scale \\
+    --output-dir /mnt/data/workspace/outputs/EgoTailor_21days_videos
+
+  # Legacy: single day JSON
+  python scripts/stitch_day.py \\
+    --day-json output/days/day_00_2026-01-05.json
+"""
 
 from __future__ import annotations
 
@@ -8,10 +36,12 @@ import json
 import subprocess
 import sys
 from pathlib import Path
+from typing import Any
 
+DEFAULT_LIFELOG = Path("/root/EgoTailor/output/lifelog/lifelog_egotailor_usa_enfp_21d.json")
 DEFAULT_DAY = Path("/root/EgoTailor/output/days/day_00_2026-01-05.json")
 DEFAULT_VIDEO_ROOT = Path("/mnt/data_oss/raw_data/Ego4d/v2/full_scale")
-DEFAULT_OUTPUT_DIR = Path("/root/egodaily")
+DEFAULT_OUTPUT_DIR = Path("/mnt/data/workspace/outputs/EgoTailor_21days_videos")
 
 
 def probe_duration(path: Path) -> float:
@@ -25,24 +55,49 @@ def probe_duration(path: Path) -> float:
     return float(out)
 
 
-def stitch_day(
-    day_json: Path,
+def load_days(
+    lifelog: Path | None,
+    day_json: Path | None,
+    day_indices: list[int] | None,
+    all_days: bool,
+) -> list[dict[str, Any]]:
+    """Return list of day objects (each with metadata + memory_content)."""
+    if lifelog is not None:
+        data = json.loads(lifelog.read_text())
+        days = data["days"]
+        if all_days:
+            return days
+        if day_indices is None:
+            raise SystemExit("With --lifelog, pass --day N [N ...] or --all-days")
+        wanted = set(day_indices)
+        selected = [d for d in days if int(d["metadata"]["day_index"]) in wanted]
+        missing = wanted - {int(d["metadata"]["day_index"]) for d in selected}
+        if missing:
+            raise SystemExit(f"day_index not found in lifelog: {sorted(missing)}")
+        return selected
+
+    if day_json is not None:
+        return [json.loads(day_json.read_text())]
+
+    raise SystemExit("Provide --lifelog or --day-json")
+
+
+def stitch_one_day(
+    day: dict[str, Any],
     output_dir: Path,
     video_root: Path,
-    skip_missing: bool = True,
-) -> dict:
-    day = json.loads(day_json.read_text())
+) -> dict[str, Any]:
     meta = day["metadata"]
     date = meta["calendar_date"]
-    day_idx = meta["day_index"]
+    day_idx = int(meta["day_index"])
 
     output_dir.mkdir(parents=True, exist_ok=True)
     out_mp4 = output_dir / f"day_{day_idx:02d}_{date}.mp4"
     manifest_path = output_dir / f"day_{day_idx:02d}_{date}_manifest.json"
     concat_list = output_dir / f"day_{day_idx:02d}_{date}_concat.txt"
 
-    included = []
-    missing = []
+    included: list[dict[str, Any]] = []
+    missing: list[dict[str, Any]] = []
     for i, clip in enumerate(day["memory_content"]):
         uid = clip["video_uid"]
         src = video_root / f"{uid}.mp4"
@@ -64,15 +119,15 @@ def stitch_day(
             missing.append(entry)
 
     if not included:
-        raise SystemExit("No local mp4 files found for this day.")
+        raise SystemExit(f"Day {day_idx} ({date}): no local mp4 files found under {video_root}")
 
     with open(concat_list, "w") as f:
         for item in included:
-            # ffmpeg concat demuxer requires escaped paths
+            # ffmpeg concat demuxer requires escaped single quotes in paths
             path = item["source_path"].replace("'", "'\\''")
             f.write(f"file '{path}'\n")
 
-    print(f"Stitching {len(included)} clips -> {out_mp4}")
+    print(f"[day {day_idx:02d}] Stitching {len(included)}/{len(day['memory_content'])} clips -> {out_mp4}")
     if missing:
         print(f"  Warning: {len(missing)} clips missing locally (skipped)")
 
@@ -92,25 +147,82 @@ def stitch_day(
         "clips_included": len(included),
         "clips_missing": len(missing),
         "duration_lifelog_included_hours": round(
-            sum(x["duration_lifelog"] for x in included) / 3600, 3
+            sum(x["duration_lifelog"] or 0 for x in included) / 3600, 3
         ),
         "duration_actual_hours": round(total_actual / 3600, 3),
         "included_clips": included,
         "missing_clips": missing,
     }
     manifest_path.write_text(json.dumps(manifest, indent=2, ensure_ascii=False))
-    print(f"Done: {out_mp4} ({manifest['duration_actual_hours']:.2f}h)")
-    print(f"Manifest: {manifest_path}")
+    print(f"  Done: {out_mp4} ({manifest['duration_actual_hours']:.2f}h)")
+    print(f"  Manifest: {manifest_path}")
     return manifest
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Stitch lifelog day videos")
-    parser.add_argument("--day-json", type=Path, default=DEFAULT_DAY)
+    parser = argparse.ArgumentParser(description="Stitch lifelog day videos by video_uid")
+    parser.add_argument(
+        "--lifelog",
+        type=Path,
+        default=None,
+        help="Full lifelog JSON (e.g. lifelog_egotailor_usa_enfp_21d.json)",
+    )
+    parser.add_argument(
+        "--day-json",
+        type=Path,
+        default=None,
+        help="Single-day JSON (legacy; same schema as lifelog['days'][i])",
+    )
+    parser.add_argument(
+        "--day",
+        type=int,
+        nargs="*",
+        default=None,
+        help="Day index/indices to stitch when using --lifelog (0-20)",
+    )
+    parser.add_argument(
+        "--all-days",
+        action="store_true",
+        help="Stitch every day in --lifelog",
+    )
     parser.add_argument("--output-dir", type=Path, default=DEFAULT_OUTPUT_DIR)
     parser.add_argument("--video-root", type=Path, default=DEFAULT_VIDEO_ROOT)
     args = parser.parse_args()
-    stitch_day(args.day_json, args.output_dir, args.video_root)
+
+    # Backward-compatible defaults: if neither input given, use legacy day JSON
+    lifelog = args.lifelog
+    day_json = args.day_json
+    if lifelog is None and day_json is None:
+        if DEFAULT_LIFELOG.exists():
+            lifelog = DEFAULT_LIFELOG
+            if not args.all_days and args.day is None:
+                args.day = [0]
+        else:
+            day_json = DEFAULT_DAY
+
+    days = load_days(lifelog, day_json, args.day, args.all_days)
+    manifests = []
+    for day in days:
+        manifests.append(stitch_one_day(day, args.output_dir, args.video_root))
+
+    if len(manifests) > 1:
+        summary_path = args.output_dir / "stitch_all_days_summary.json"
+        summary = {
+            "n_days": len(manifests),
+            "days": [
+                {
+                    "day_index": m["day_index"],
+                    "calendar_date": m["calendar_date"],
+                    "output_video": m["output_video"],
+                    "clips_included": m["clips_included"],
+                    "clips_missing": m["clips_missing"],
+                    "duration_actual_hours": m["duration_actual_hours"],
+                }
+                for m in manifests
+            ],
+        }
+        summary_path.write_text(json.dumps(summary, indent=2, ensure_ascii=False))
+        print(f"Summary: {summary_path}")
 
 
 if __name__ == "__main__":
