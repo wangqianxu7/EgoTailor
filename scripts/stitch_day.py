@@ -299,7 +299,7 @@ def stitch_day(day: dict[str, Any], cfg: argparse.Namespace,
 def main() -> None:
     p = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     p.add_argument("--lifelog", type=Path, default=None)
-    p.add_argument("--day", type=int, nargs="*", help="day index/indices (0-20)")
+    p.add_argument("--day", type=int, nargs="*", help=f"day index/indices (0-{TOTAL_DAYS - 1})")
     p.add_argument("--all-days", action="store_true")
     p.add_argument("--video-root", type=Path, default=DEFAULT_VIDEO_ROOT)
     p.add_argument("--output-dir", type=Path, default=DEFAULT_OUTPUT_DIR)
