@@ -5,7 +5,7 @@ from __future__ import annotations
 import json
 from collections import Counter, defaultdict
 from dataclasses import asdict, dataclass, field
-from datetime import datetime, timedelta
+from datetime import datetime
 from pathlib import Path
 from typing import Any
 
@@ -200,10 +200,16 @@ def _build_period_nodes(
 ) -> list[PeriodNode]:
     periods: list[PeriodNode] = []
     days = lifelog["days"]
-    start_date = lifelog["metadata"]["start_date"]
 
-    # Week 1 / Week 2 / Week 3 windows
-    week_ranges = [(0, 6, "week1"), (7, 13, "week2"), (14, 20, "week3")]
+    # Week windows, derived from the run rather than fixed at three. Hard-coded
+    # ranges meant a 30-day lifelog silently indexed only its first 21 days:
+    # weeks 4 and 5 had no period node at all, so nothing above the day level
+    # could ever retrieve them.
+    n_days = len(days)
+    week_ranges = [
+        (lo, min(lo + 6, n_days - 1), f"week{i + 1}")
+        for i, lo in enumerate(range(0, n_days, 7))
+    ]
     for lo, hi, name in week_ranges:
         periods.append(_aggregate_period(name, lo, hi, days, day_nodes, clip_nodes))
 
@@ -217,8 +223,10 @@ def _build_period_nodes(
                 )
             )
 
-    # Full 21-day lifelog
-    periods.append(_aggregate_period("full_21d", 0, 20, days, day_nodes, clip_nodes))
+    # The whole run, however long it is.
+    periods.append(
+        _aggregate_period(f"full_{n_days}d", 0, n_days - 1, days, day_nodes, clip_nodes)
+    )
     return periods
 
 

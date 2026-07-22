@@ -1,0 +1,388 @@
+{
+  "persona_id": "egotailor_domestic_trade_making",
+  "seed": 42,
+  "country_filter": null,
+  "clusters": [
+    "domestic",
+    "trade",
+    "making"
+  ],
+  "narrative": {
+    "mbti_type": "ENFP",
+    "character_traits": [
+      "feeds people as a love language",
+      "works with tools and gets their hands dirty",
+      "makes things with their hands",
+      "sociable in the evening, solitary in the afternoon",
+      "winds down slowly rather than all at once"
+    ],
+    "hobbies": [
+      "cooking and keeping house",
+      "tinkering with machines",
+      "craft work, baking, an instrument",
+      "board games and long evenings with people",
+      "music, books, television"
+    ],
+    "lifestyle": "A life assembled from what the corpus can actually show: cooking and eating anchor the middle of the day, the working day is spent on the job, not at a desk, long stretches at the craft table, evenings are the social half of the day, the night ends quiet — music, a book, something on the screen. 67% of the day's slots fall in daylight, 3% at dusk, 30% after dark — thin twilight is a property of Ego4D, not a choice.",
+    "daily_routine": [
+      "cooking and eating anchor the middle of the day",
+      "the working day is spent on the job, not at a desk",
+      "long stretches at the craft table",
+      "evenings are the social half of the day",
+      "the night ends quiet — music, a book, something on the screen"
+    ]
+  },
+  "stats": {
+    "pool_clips": 1988,
+    "quota_rows": 34,
+    "total_slots": 783,
+    "slots_per_day": 26.1,
+    "hours_per_day": 7.85890537037037,
+    "scenario_count": 25,
+    "entropy_bits": 4.141318805158942,
+    "max_scenario_share": 0.1532567049808429,
+    "overdrawn_rows": 0
+  },
+  "quota": [
+    {
+      "scenario": "Cooking",
+      "location": "indoor",
+      "time_period": "daytime",
+      "times_per_week": 14,
+      "role": "cook",
+      "candidates": 309,
+      "ceiling_per_week": 61,
+      "median_minutes": 12.3
+    },
+    {
+      "scenario": "Crafting/knitting/sewing/drawing/painting",
+      "location": "indoor",
+      "time_period": "daytime",
+      "times_per_week": 14,
+      "role": "craft",
+      "candidates": 149,
+      "ceiling_per_week": 29,
+      "median_minutes": 19.2
+    },
+    {
+      "scenario": "jobs related to construction/renovation company\n(Director of work, tiler, plumber, Electrician, Handyman, etc)",
+      "location": "indoor",
+      "time_period": "daytime",
+      "times_per_week": 13,
+      "role": "trade",
+      "candidates": 68,
+      "ceiling_per_week": 13,
+      "median_minutes": 8.9
+    },
+    {
+      "scenario": "Cleaning / laundry",
+      "location": "indoor",
+      "time_period": "daytime",
+      "times_per_week": 13,
+      "role": "chore",
+      "candidates": 146,
+      "ceiling_per_week": 29,
+      "median_minutes": 20.3
+    },
+    {
+      "scenario": "Carpenter",
+      "location": "indoor",
+      "time_period": "daytime",
+      "times_per_week": 9,
+      "role": "trade",
+      "candidates": 49,
+      "ceiling_per_week": 9,
+      "median_minutes": 10.6
+    },
+    {
+      "scenario": "Baker",
+      "location": "indoor",
+      "time_period": "daytime",
+      "times_per_week": 8,
+      "role": "craft",
+      "candidates": 40,
+      "ceiling_per_week": 8,
+      "median_minutes": 8.6
+    },
+    {
+      "scenario": "Eating",
+      "location": "indoor",
+      "time_period": "daytime",
+      "times_per_week": 7,
+      "role": "meal",
+      "candidates": 53,
+      "ceiling_per_week": 10,
+      "median_minutes": 20.6
+    },
+    {
+      "scenario": "Household management - caring for kids",
+      "location": "outdoor",
+      "time_period": "daytime",
+      "times_per_week": 6,
+      "role": "kids",
+      "candidates": 31,
+      "ceiling_per_week": 6,
+      "median_minutes": 12.0
+    },
+    {
+      "scenario": "Walking on street",
+      "location": "outdoor",
+      "time_period": "daytime",
+      "times_per_week": 6,
+      "role": "move",
+      "candidates": 33,
+      "ceiling_per_week": 6,
+      "median_minutes": 21.4
+    },
+    {
+      "scenario": "Practicing a musical instrument",
+      "location": "indoor",
+      "time_period": "daytime",
+      "times_per_week": 5,
+      "role": "craft",
+      "candidates": 25,
+      "ceiling_per_week": 5,
+      "median_minutes": 20.5
+    },
+    {
+      "scenario": "Car - commuting, road trip",
+      "location": "outdoor",
+      "time_period": "daytime",
+      "times_per_week": 5,
+      "role": "errand",
+      "candidates": 25,
+      "ceiling_per_week": 5,
+      "median_minutes": 16.6
+    },
+    {
+      "scenario": "Indoor Navigation (walking)",
+      "location": "indoor",
+      "time_period": "daytime",
+      "times_per_week": 4,
+      "role": "move",
+      "candidates": 24,
+      "ceiling_per_week": 4,
+      "median_minutes": 20.5
+    },
+    {
+      "scenario": "Making coffee",
+      "location": "indoor",
+      "time_period": "daytime",
+      "times_per_week": 3,
+      "role": "coffee",
+      "candidates": 15,
+      "ceiling_per_week": 3,
+      "median_minutes": 30.8
+    },
+    {
+      "scenario": "Reading books",
+      "location": "indoor",
+      "time_period": "daytime",
+      "times_per_week": 3,
+      "role": "wind_down",
+      "candidates": 18,
+      "ceiling_per_week": 3,
+      "median_minutes": 25.0
+    },
+    {
+      "scenario": "Fixing something in the home",
+      "location": "indoor",
+      "time_period": "daytime",
+      "times_per_week": 2,
+      "role": "chore",
+      "candidates": 11,
+      "ceiling_per_week": 2,
+      "median_minutes": 28.4
+    },
+    {
+      "scenario": "Grocery shopping indoors",
+      "location": "indoor",
+      "time_period": "daytime",
+      "times_per_week": 2,
+      "role": "errand",
+      "candidates": 10,
+      "ceiling_per_week": 2,
+      "median_minutes": 21.2
+    },
+    {
+      "scenario": "Bike",
+      "location": "outdoor",
+      "time_period": "daytime",
+      "times_per_week": 2,
+      "role": "move",
+      "candidates": 13,
+      "ceiling_per_week": 2,
+      "median_minutes": 20.3
+    },
+    {
+      "scenario": "Daily hygiene",
+      "location": "indoor",
+      "time_period": "daytime",
+      "times_per_week": 2,
+      "role": "hygiene",
+      "candidates": 13,
+      "ceiling_per_week": 2,
+      "median_minutes": 14.8
+    },
+    {
+      "scenario": "Playing cards",
+      "location": "indoor",
+      "time_period": "daytime",
+      "times_per_week": 2,
+      "role": "game",
+      "candidates": 12,
+      "ceiling_per_week": 2,
+      "median_minutes": 33.5
+    },
+    {
+      "scenario": "Playing board games",
+      "location": "indoor",
+      "time_period": "daytime",
+      "times_per_week": 2,
+      "role": "game",
+      "candidates": 12,
+      "ceiling_per_week": 2,
+      "median_minutes": 32.5
+    },
+    {
+      "scenario": "Cooking",
+      "location": "indoor",
+      "time_period": "nighttime",
+      "times_per_week": 14,
+      "role": "cook",
+      "candidates": 189,
+      "ceiling_per_week": 37,
+      "median_minutes": 13.3
+    },
+    {
+      "scenario": "Cleaning / laundry",
+      "location": "indoor",
+      "time_period": "nighttime",
+      "times_per_week": 8,
+      "role": "chore",
+      "candidates": 78,
+      "ceiling_per_week": 15,
+      "median_minutes": 16.0
+    },
+    {
+      "scenario": "Crafting/knitting/sewing/drawing/painting",
+      "location": "indoor",
+      "time_period": "nighttime",
+      "times_per_week": 7,
+      "role": "craft",
+      "candidates": 80,
+      "ceiling_per_week": 16,
+      "median_minutes": 19.6
+    },
+    {
+      "scenario": "Talking with family members",
+      "location": "indoor",
+      "time_period": "nighttime",
+      "times_per_week": 5,
+      "role": "social",
+      "candidates": 32,
+      "ceiling_per_week": 6,
+      "median_minutes": 24.0
+    },
+    {
+      "scenario": "Watching tv",
+      "location": "indoor",
+      "time_period": "nighttime",
+      "times_per_week": 4,
+      "role": "wind_down",
+      "candidates": 27,
+      "ceiling_per_week": 5,
+      "median_minutes": 29.1
+    },
+    {
+      "scenario": "Talking with friends/housemates",
+      "location": "indoor",
+      "time_period": "nighttime",
+      "times_per_week": 4,
+      "role": "social",
+      "candidates": 25,
+      "ceiling_per_week": 5,
+      "median_minutes": 29.4
+    },
+    {
+      "scenario": "Reading books",
+      "location": "indoor",
+      "time_period": "nighttime",
+      "times_per_week": 4,
+      "role": "wind_down",
+      "candidates": 20,
+      "ceiling_per_week": 4,
+      "median_minutes": 23.4
+    },
+    {
+      "scenario": "Eating",
+      "location": "indoor",
+      "time_period": "nighttime",
+      "times_per_week": 4,
+      "role": "meal",
+      "candidates": 22,
+      "ceiling_per_week": 4,
+      "median_minutes": 19.8
+    },
+    {
+      "scenario": "Listening to music",
+      "location": "indoor",
+      "time_period": "nighttime",
+      "times_per_week": 2,
+      "role": "wind_down",
+      "candidates": 13,
+      "ceiling_per_week": 2,
+      "median_minutes": 20.6
+    },
+    {
+      "scenario": "Practicing a musical instrument",
+      "location": "indoor",
+      "time_period": "nighttime",
+      "times_per_week": 2,
+      "role": "craft",
+      "candidates": 10,
+      "ceiling_per_week": 2,
+      "median_minutes": 22.9
+    },
+    {
+      "scenario": "Preparing hopot",
+      "location": "indoor",
+      "time_period": "nighttime",
+      "times_per_week": 1,
+      "role": "cook",
+      "candidates": 6,
+      "ceiling_per_week": 1,
+      "median_minutes": 29.4
+    },
+    {
+      "scenario": "Walking on street",
+      "location": "outdoor",
+      "time_period": "twilight",
+      "times_per_week": 2,
+      "role": "move",
+      "candidates": 14,
+      "ceiling_per_week": 2,
+      "median_minutes": 28.3
+    },
+    {
+      "scenario": "Indoor Navigation (walking)",
+      "location": "indoor",
+      "time_period": "twilight",
+      "times_per_week": 2,
+      "role": "move",
+      "candidates": 12,
+      "ceiling_per_week": 2,
+      "median_minutes": 19.5
+    },
+    {
+      "scenario": "Car - commuting, road trip",
+      "location": "indoor",
+      "time_period": "twilight",
+      "times_per_week": 1,
+      "role": "errand",
+      "candidates": 8,
+      "ceiling_per_week": 1,
+      "median_minutes": 30.0
+    }
+  ]
+}

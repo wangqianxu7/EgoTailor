@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Stitch Ego4D clips into day-level videos, keeping audio in sync.
 
-Input: the 21-day lifelog JSON. Each day's memory_content[*].video_uid maps to
+Input: the lifelog JSON. Each day's memory_content[*].video_uid maps to
 {video_root}/{video_uid}.mp4; clips are concatenated in lifelog order.
 
 Why two passes (still only ONE video encode):
@@ -23,9 +23,8 @@ Why two passes (still only ONE video encode):
 Run on the server where the Ego4D mp4s live:
 
   python scripts/stitch_day.py --all-days \
-    --lifelog output/lifelog/lifelog_egotailor_usa_enfp_21d.json \
     --video-root /mnt/data_oss/raw_data/Ego4d/v2/full_scale \
-    --output-dir /mnt/data/workspace/outputs/EgoTailor_21days_videos \
+    --output-dir /mnt/data/workspace/outputs/EgoTailor_30days_videos \
     --jobs 8
 """
 
@@ -35,14 +34,23 @@ import argparse
 import json
 import os
 import subprocess
+import sys
 import time
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 from typing import Any
 
-DEFAULT_LIFELOG = Path("output/lifelog/lifelog_egotailor_usa_enfp_21d.json")
+# Allow `python scripts/<name>.py` from the EgoTailor root
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
+
+from generation.config import TOTAL_DAYS, resolve_lifelog  # noqa: E402
+
 DEFAULT_VIDEO_ROOT = Path("/mnt/data_oss/raw_data/Ego4d/v2/full_scale")
-DEFAULT_OUTPUT_DIR = Path("/mnt/data/workspace/outputs/EgoTailor_21days_videos")
+# Output dir carries the run length: a 30-day run must not overwrite the
+# 21-day results sitting next to it. These are expensive to recompute.
+DEFAULT_OUTPUT_DIR = Path(f"/mnt/data/workspace/outputs/EgoTailor_{TOTAL_DAYS}days_videos")
 
 
 # ---------------------------------------------------------------- ffprobe ---
@@ -290,7 +298,7 @@ def stitch_day(day: dict[str, Any], cfg: argparse.Namespace,
 
 def main() -> None:
     p = argparse.ArgumentParser(description=__doc__.splitlines()[0])
-    p.add_argument("--lifelog", type=Path, default=DEFAULT_LIFELOG)
+    p.add_argument("--lifelog", type=Path, default=None)
     p.add_argument("--day", type=int, nargs="*", help="day index/indices (0-20)")
     p.add_argument("--all-days", action="store_true")
     p.add_argument("--video-root", type=Path, default=DEFAULT_VIDEO_ROOT)
@@ -308,6 +316,7 @@ def main() -> None:
                         "(default: keep it, so reruns are cheap)")
     p.add_argument("--dry-run", action="store_true", help="print ffmpeg only")
     cfg = p.parse_args()
+    cfg.lifelog = resolve_lifelog(cfg.lifelog)
     cfg.width, cfg.height = (int(x) for x in cfg.size.lower().split("x"))
 
     dirs = {n: cfg.output_dir / n

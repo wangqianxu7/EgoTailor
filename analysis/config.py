@@ -9,8 +9,16 @@ ANALYSIS_DIR = Path(__file__).resolve().parent
 PROJECT_ROOT = ANALYSIS_DIR.parent
 GENERATION_CONFIG = PROJECT_ROOT / "generation" / "config.py"
 
-# Lifelog input
-DEFAULT_LIFELOG = PROJECT_ROOT / "output" / "lifelog" / "lifelog_egotailor_usa_enfp_21d.json"
+# Lifelog input. Resolved from generation.config so the persona id and run
+# length never have to be repeated here — see resolve_lifelog for why that
+# mattered. None means "work it out at run time"; call resolve_lifelog(arg).
+import sys  # noqa: E402
+
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
+from generation.config import resolve_lifelog  # noqa: E402,F401
+
+DEFAULT_LIFELOG = None
 
 # Ego4D local video root: {video_uid}.mp4
 EGO4D_VIDEO_ROOT = Path(os.getenv("EGO4D_VIDEO_ROOT", "/mnt/data_oss/raw_data/Ego4d/v2/full_scale"))

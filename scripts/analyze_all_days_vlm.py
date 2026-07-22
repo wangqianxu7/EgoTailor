@@ -51,8 +51,10 @@ PROJECT_ROOT = Path(__file__).resolve().parents[1]
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
+from generation.config import TOTAL_DAYS  # noqa: E402
 from analysis.config import (  # noqa: E402
     DEFAULT_LIFELOG,
+    resolve_lifelog,
     EGO4D_VIDEO_ROOT,
     OUTPUT_PATH,
     VLLM_API_BASE,
@@ -150,10 +152,12 @@ Return valid JSON only:
 }"""
 
 
-DEFAULT_OUT_DIR = OUTPUT_PATH / "full_21d_vlm"
+# Output dir carries the run length: a 30-day run must not overwrite the
+# 21-day results sitting next to it. These are expensive to recompute.
+DEFAULT_OUT_DIR = OUTPUT_PATH / f"full_{TOTAL_DAYS}d_vlm"
 DEFAULT_FRAMES_DIR = Path("/root/egodaily")
 CHECKPOINT_NAME = "clip_analyses_checkpoint.jsonl"
-REPORT_NAME = "full_21d_behavior_profile.json"
+REPORT_NAME = f"full_{TOTAL_DAYS}d_behavior_profile.json"
 
 
 def parse_args() -> argparse.Namespace:
@@ -618,6 +622,7 @@ def aggregate_from_rows(rows: list[dict[str, Any]]) -> dict[str, Any]:
 
 def main() -> None:
     args = parse_args()
+    args.lifelog = resolve_lifelog(args.lifelog)
     out_dir: Path = args.out_dir
     out_dir.mkdir(parents=True, exist_ok=True)
     checkpoint_path = out_dir / CHECKPOINT_NAME

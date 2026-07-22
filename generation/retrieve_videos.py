@@ -46,47 +46,70 @@ def classify_time_from_hhmm(time_str: str) -> str:
     return "nighttime"
 
 
+def requested_scenarios(chunk: dict[str, Any]) -> list[str]:
+    """Scenarios the daily plan asked for.
+
+    Falls back to the legacy ``matched_scenarios`` key so persona JSON written
+    before the rename still loads.
+    """
+    if "requested_scenarios" in chunk:
+        return chunk["requested_scenarios"]
+    return chunk.get("matched_scenarios", [])
+
+
+def tier_rank(tier_name: str) -> int:
+    for i, (name, _, _) in enumerate(config.RETRIEVAL_TIERS):
+        if name == tier_name:
+            return i
+    return len(config.RETRIEVAL_TIERS)
+
+
 def filter_candidates(
     videos: list[dict[str, Any]],
     chunk: dict[str, Any],
     used_uids: set[str],
     location: str,
-) -> list[dict[str, Any]]:
+) -> tuple[str, list[dict[str, Any]]]:
+    """Walk the fallback ladder; return the first rung that yields candidates.
+
+    Returns ``(tier_name, candidates)``. The tier name is what makes the
+    downgrade auditable downstream — anything past T1 means the plan's
+    requested scenarios were relaxed or dropped.
+    """
     target_scene = chunk.get("location", "indoor")
     target_time = chunk.get("time_period") or classify_time_from_hhmm(chunk["start_time"])
-    target_scenarios = chunk.get("matched_scenarios", [])
+    target_scenarios = requested_scenarios(chunk)
 
-    def passes(v: dict[str, Any], strict_location: bool, iou_thr: float) -> bool:
+    def passes(
+        v: dict[str, Any], strict_location: bool, iou_thr: float, strict_context: bool
+    ) -> bool:
         if v["video_uid"] in used_uids:
             return False
         dur = v["video_duration"]
         if dur < config.MIN_VIDEO_DURATION or dur > config.MAX_VIDEO_DURATION:
             return False
-        if strict_location and v["video_source"] != location:
+        # location=None means the persona is not pinned to one country, so the
+        # strict rung still applies scene/time/scenario but skips video_source.
+        if strict_location and location and v["video_source"] != location:
             return False
-        if v["main_scene"] not in (target_scene, "mixed"):
+        if strict_context and v["main_scene"] not in (target_scene, "mixed"):
             return False
-        if v["time_period"] not in (target_time, "not know"):
+        if strict_context and v["time_period"] not in (target_time, "not know"):
             return False
         if scenario_iou(target_scenarios, v["video_scenarios"]) < iou_thr:
             return False
         return True
 
-    for strict, thr in [(True, config.IOU_THRESHOLD), (True, 0.0), (False, 0.0)]:
-        cands = [v for v in videos if passes(v, strict, thr)]
+    for name, strict_loc, thr in config.RETRIEVAL_TIERS:
+        strict_context = name != "T4_unconstrained"
+        cands = [v for v in videos if passes(v, strict_loc, thr, strict_context)]
         if cands:
-            return cands
-    return [
-        v
-        for v in videos
-        if v["video_uid"] not in used_uids
-        and v["video_source"] == location
-        and config.MIN_VIDEO_DURATION <= v["video_duration"] <= config.MAX_VIDEO_DURATION
-    ]
+            return name, cands
+    return "none", []
 
 
 def score_candidate(video: dict[str, Any], chunk: dict[str, Any]) -> float:
-    iou = scenario_iou(chunk.get("matched_scenarios", []), video["video_scenarios"])
+    iou = scenario_iou(requested_scenarios(chunk), video["video_scenarios"])
     scene_bonus = 1.0 if video["main_scene"] == chunk.get("location") else 0.5
     dur = video["video_duration"]
     # Prefer clips that roughly fit the plan-slot duration when available
@@ -170,6 +193,9 @@ def build_day_lifelog(
     used_today: set[str] = set()
     memory_content: list[dict[str, Any]] = []
     scene_counts: dict[str, int] = defaultdict(int)
+    tier_counts: dict[str, int] = defaultdict(int)
+    unfilled: list[dict[str, Any]] = []
+    min_rank = tier_rank(config.MIN_RETRIEVAL_TIER)
 
     # Cursor = absolute end of last placed clip on this calendar day (HH:MM:SS), or None
     cursor_end: str | None = None
@@ -177,9 +203,23 @@ def build_day_lifelog(
     chrono_chunks = sorted(plan_chunks, key=lambda c: _to_hms(c["start_time"]))
 
     for chunk in chrono_chunks:
-        cands = filter_candidates(videos, chunk, used_today | global_used, persona["location"])
-        video = pick_video(cands, chunk, rng)
+        requested = requested_scenarios(chunk)
+        tier, cands = filter_candidates(
+            videos, chunk, used_today | global_used, persona["location"]
+        )
+        video = pick_video(cands, chunk, rng) if tier_rank(tier) <= min_rank else None
         if not video:
+            unfilled.append(
+                {
+                    "slot_id": chunk.get("slot_id"),
+                    "plan_chunk": chunk["plan_chunk"],
+                    "plan_start_time": _to_hms(chunk["start_time"]),
+                    "plan_end_time": _to_hms(chunk["end_time"]),
+                    "requested_scenarios": requested,
+                    "best_available_tier": tier,
+                    "reason": "no_candidates" if tier == "none" else "below_min_retrieval_tier",
+                }
+            )
             continue
 
         plan_start = _to_hms(chunk["start_time"])
@@ -206,7 +246,13 @@ def build_day_lifelog(
                 "video_uid": video["video_uid"],
                 "slot_id": chunk.get("slot_id"),
                 "plan_chunk": chunk["plan_chunk"],
-                "matched_scenarios": chunk.get("matched_scenarios", []),
+                # What the plan asked for vs. what the clip actually delivers.
+                # matched_scenarios is the intersection, so an empty list means
+                # the clip shares no scenario with the plan.
+                "requested_scenarios": requested,
+                "matched_scenarios": sorted(set(requested) & set(video["video_scenarios"])),
+                "scenario_iou": round(scenario_iou(requested, video["video_scenarios"]), 4),
+                "retrieval_tier": tier,
                 "video_scenarios": video["video_scenarios"],
                 "main_scene": video["main_scene"],
                 "consolidated_summary": video["consolidated_summary"].replace("C", "the character"),
@@ -225,6 +271,7 @@ def build_day_lifelog(
         if not config.ALLOW_CROSS_DAY_REUSE:
             global_used.add(video["video_uid"])
         scene_counts[video["main_scene"]] += 1
+        tier_counts[tier] += 1
 
     total_duration = sum(m["duration"] for m in memory_content)
     day_meta = day_meta or {}
@@ -241,12 +288,18 @@ def build_day_lifelog(
             "anomaly_events": day_meta.get("anomaly_events", []),
             "time_variations": day_meta.get("time_variations", {}),
             "placement_policy": "one_clip_per_plan_align_or_chain",
+            "min_retrieval_tier": config.MIN_RETRIEVAL_TIER,
         },
         "daily_plan": [f"{c['plan_chunk']} ({c['start_time']}-{c['end_time']})" for c in plan_chunks],
         "memory_content": memory_content,
         "statistics": {
             "clip_count": len(memory_content),
             "plan_slot_count": len(chrono_chunks),
+            "slot_fill_rate": round(len(memory_content) / len(chrono_chunks), 4)
+            if chrono_chunks
+            else 0.0,
+            "retrieval_tier_counts": dict(tier_counts),
+            "unfilled_slots": unfilled,
             "total_duration": total_duration,
             "total_duration_hours": round(total_duration / 3600, 2),
             "scene_distribution": dict(scene_counts),

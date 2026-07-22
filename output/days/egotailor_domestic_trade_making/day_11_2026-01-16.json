@@ -1,0 +1,652 @@
+{
+  "persona_id": "egotailor_domestic_trade_making",
+  "day_index": 11,
+  "date": "2026-01-16",
+  "day_of_week": "Friday",
+  "is_weekend": false,
+  "day_theme": "friday_wind_down",
+  "anomaly_events": [],
+  "summary": {
+    "slots_filled": "25/25",
+    "fill_rate": 1.0,
+    "hours": 7.26,
+    "retrieval_tiers": {
+      "T1_scenario_match": 25
+    },
+    "unfilled_slots": []
+  },
+  "plan": [
+    {
+      "slot_id": "making_coffee",
+      "activity": "Make coffee",
+      "planned": "07:04-07:34",
+      "actual": "07:04-07:40",
+      "minutes": 36.3,
+      "video_uid": "c0b5fd60-732b-4f5b-977b-6452a589974d",
+      "video_description": "the character and another person take a house tour, make coffee, and play Jenga.",
+      "video_scenarios": [
+        "Making coffee"
+      ],
+      "main_scene": "indoor",
+      "time_period": "daytime",
+      "video_source": "USA",
+      "requested_scenarios": [
+        "Making coffee"
+      ],
+      "matched_scenarios": [
+        "Making coffee"
+      ],
+      "scenario_iou": 1.0,
+      "retrieval_tier": "T1_scenario_match",
+      "start_timestamp": "2026-01-16T07:04:00",
+      "end_timestamp": "2026-01-16T07:40:15"
+    },
+    {
+      "slot_id": "cooking",
+      "activity": "Cook a meal at home",
+      "planned": "08:01-08:14",
+      "actual": "08:01-08:12",
+      "minutes": 11.8,
+      "video_uid": "304735ba-6bf5-4d39-bcb5-0dabddb11d68",
+      "video_description": "the character slices veggies and cooks food.",
+      "video_scenarios": [
+        "Cooking"
+      ],
+      "main_scene": "indoor",
+      "time_period": "daytime",
+      "video_source": "Japan",
+      "requested_scenarios": [
+        "Cooking"
+      ],
+      "matched_scenarios": [
+        "Cooking"
+      ],
+      "scenario_iou": 1.0,
+      "retrieval_tier": "T1_scenario_match",
+      "start_timestamp": "2026-01-16T08:01:00",
+      "end_timestamp": "2026-01-16T08:12:48"
+    },
+    {
+      "slot_id": "eating",
+      "activity": "Sit down for a meal",
+      "planned": "08:26-08:47",
+      "actual": "08:26-08:35",
+      "minutes": 9.1,
+      "video_uid": "9ce38d97-5285-4ea7-bc44-b385acabcf92",
+      "video_description": "the character sits at a restaurant with man X and woman Y, takes a walk with man X, and eats with man X.",
+      "video_scenarios": [
+        "Eating"
+      ],
+      "main_scene": "mixed",
+      "time_period": "daytime",
+      "video_source": "KSA",
+      "requested_scenarios": [
+        "Eating"
+      ],
+      "matched_scenarios": [
+        "Eating"
+      ],
+      "scenario_iou": 1.0,
+      "retrieval_tier": "T1_scenario_match",
+      "start_timestamp": "2026-01-16T08:26:00",
+      "end_timestamp": "2026-01-16T08:35:08"
+    },
+    {
+      "slot_id": "jobs_related_to_construc",
+      "activity": "Work on the renovation job",
+      "planned": "09:16-09:25",
+      "actual": "09:16-09:20",
+      "minutes": 4.5,
+      "video_uid": "df630387-82c6-4c90-95e8-6ba558c907a2",
+      "video_description": "the character paints a wall.",
+      "video_scenarios": [
+        "jobs related to construction/renovation company\n(Director of work, tiler, plumber, Electrician, Handyman, etc)"
+      ],
+      "main_scene": "indoor",
+      "time_period": "daytime",
+      "video_source": "USA",
+      "requested_scenarios": [
+        "jobs related to construction/renovation company\n(Director of work, tiler, plumber, Electrician, Handyman, etc)"
+      ],
+      "matched_scenarios": [
+        "jobs related to construction/renovation company\n(Director of work, tiler, plumber, Electrician, Handyman, etc)"
+      ],
+      "scenario_iou": 1.0,
+      "retrieval_tier": "T1_scenario_match",
+      "start_timestamp": "2026-01-16T09:16:00",
+      "end_timestamp": "2026-01-16T09:20:31"
+    },
+    {
+      "slot_id": "indoor_navigation",
+      "activity": "Move around the house",
+      "planned": "09:42-10:02",
+      "actual": "09:42-09:52",
+      "minutes": 10.5,
+      "video_uid": "f0776c0c-e50c-4e2d-a3f6-5a53b323829d",
+      "video_description": "the character walks in the house, cleans, makes the bed, prepares a drink, and sits at the dining table.",
+      "video_scenarios": [
+        "Cleaning / laundry",
+        "Eating",
+        "Indoor Navigation (walking)"
+      ],
+      "main_scene": "indoor",
+      "time_period": "not know",
+      "video_source": "KSA",
+      "requested_scenarios": [
+        "Indoor Navigation (walking)"
+      ],
+      "matched_scenarios": [
+        "Indoor Navigation (walking)"
+      ],
+      "scenario_iou": 0.3333,
+      "retrieval_tier": "T1_scenario_match",
+      "start_timestamp": "2026-01-16T09:42:00",
+      "end_timestamp": "2026-01-16T09:52:28"
+    },
+    {
+      "slot_id": "jobs_related_to_construc_2",
+      "activity": "Work on the renovation job",
+      "planned": "10:19-10:28",
+      "actual": "10:19-10:29",
+      "minutes": 10.9,
+      "video_uid": "0971527a-6cd3-4c82-9d94-09b3565f4505",
+      "video_description": "the character works on an electric junction box in a room, using tools like pliers and arranging wires.",
+      "video_scenarios": [
+        "jobs related to construction/renovation company\n(Director of work, tiler, plumber, Electrician, Handyman, etc)"
+      ],
+      "main_scene": "indoor",
+      "time_period": "daytime",
+      "video_source": "Italy",
+      "requested_scenarios": [
+        "jobs related to construction/renovation company\n(Director of work, tiler, plumber, Electrician, Handyman, etc)"
+      ],
+      "matched_scenarios": [
+        "jobs related to construction/renovation company\n(Director of work, tiler, plumber, Electrician, Handyman, etc)"
+      ],
+      "scenario_iou": 1.0,
+      "retrieval_tier": "T1_scenario_match",
+      "start_timestamp": "2026-01-16T10:19:00",
+      "end_timestamp": "2026-01-16T10:29:56"
+    },
+    {
+      "slot_id": "bike",
+      "activity": "Ride somewhere",
+      "planned": "10:45-11:05",
+      "actual": "10:45-11:02",
+      "minutes": 17.6,
+      "video_uid": "d752fc52-9592-4cb5-910b-d09bb39261fd",
+      "video_description": "the character and man Y cycle and move around a house, road, and building.",
+      "video_scenarios": [
+        "Bike",
+        "Working at desk"
+      ],
+      "main_scene": "mixed",
+      "time_period": "daytime",
+      "video_source": "KSA",
+      "requested_scenarios": [
+        "Bike"
+      ],
+      "matched_scenarios": [
+        "Bike"
+      ],
+      "scenario_iou": 0.5,
+      "retrieval_tier": "T1_scenario_match",
+      "start_timestamp": "2026-01-16T10:45:00",
+      "end_timestamp": "2026-01-16T11:02:34"
+    },
+    {
+      "slot_id": "cleaning",
+      "activity": "Tidy up and do laundry",
+      "planned": "11:22-11:42",
+      "actual": "11:22-11:45",
+      "minutes": 23.8,
+      "video_uid": "7c8a9c21-ba3c-41b8-a7e0-be7311fde0ee",
+      "video_description": "the character washes, arranges, and wipes utensils, cutlery, and a chopping board in a kitchen.",
+      "video_scenarios": [
+        "Cleaning / laundry"
+      ],
+      "main_scene": "indoor",
+      "time_period": "daytime",
+      "video_source": "UK",
+      "requested_scenarios": [
+        "Cleaning / laundry"
+      ],
+      "matched_scenarios": [
+        "Cleaning / laundry"
+      ],
+      "scenario_iou": 1.0,
+      "retrieval_tier": "T1_scenario_match",
+      "start_timestamp": "2026-01-16T11:22:00",
+      "end_timestamp": "2026-01-16T11:45:48"
+    },
+    {
+      "slot_id": "cooking_2",
+      "activity": "Cook a meal at home",
+      "planned": "12:16-12:28",
+      "actual": "12:16-12:27",
+      "minutes": 11.8,
+      "video_uid": "526a15e9-39a2-49a0-ba0b-83da2e276b09",
+      "video_description": "the character prepares ingredients and mixes them in a kitchen.",
+      "video_scenarios": [
+        "Cooking"
+      ],
+      "main_scene": "indoor",
+      "time_period": "daytime",
+      "video_source": "Japan",
+      "requested_scenarios": [
+        "Cooking"
+      ],
+      "matched_scenarios": [
+        "Cooking"
+      ],
+      "scenario_iou": 1.0,
+      "retrieval_tier": "T1_scenario_match",
+      "start_timestamp": "2026-01-16T12:16:00",
+      "end_timestamp": "2026-01-16T12:27:48"
+    },
+    {
+      "slot_id": "cooking_3",
+      "activity": "Cook a meal at home",
+      "planned": "12:45-12:57",
+      "actual": "12:45-12:56",
+      "minutes": 11.8,
+      "video_uid": "64f466e5-99c9-4ed5-89be-7ef74d0dfdd3",
+      "video_description": "the character prepares fruit, carrot, and meat in the kitchen.",
+      "video_scenarios": [
+        "Cooking"
+      ],
+      "main_scene": "indoor",
+      "time_period": "daytime",
+      "video_source": "Japan",
+      "requested_scenarios": [
+        "Cooking"
+      ],
+      "matched_scenarios": [
+        "Cooking"
+      ],
+      "scenario_iou": 1.0,
+      "retrieval_tier": "T1_scenario_match",
+      "start_timestamp": "2026-01-16T12:45:00",
+      "end_timestamp": "2026-01-16T12:56:48"
+    },
+    {
+      "slot_id": "carpenter",
+      "activity": "Work at the bench",
+      "planned": "13:28-13:39",
+      "actual": "13:28-13:33",
+      "minutes": 5.9,
+      "video_uid": "6b7263dd-0354-468b-a485-0471ace84f15",
+      "video_description": "the character works on wood, joins wood to a frame, and cuts wood.",
+      "video_scenarios": [
+        "Carpenter"
+      ],
+      "main_scene": "indoor",
+      "time_period": "daytime",
+      "video_source": "Italy",
+      "requested_scenarios": [
+        "Carpenter"
+      ],
+      "matched_scenarios": [
+        "Carpenter"
+      ],
+      "scenario_iou": 1.0,
+      "retrieval_tier": "T1_scenario_match",
+      "start_timestamp": "2026-01-16T13:28:00",
+      "end_timestamp": "2026-01-16T13:33:55"
+    },
+    {
+      "slot_id": "crafting",
+      "activity": "Work on a craft project",
+      "planned": "13:53-14:12",
+      "actual": "13:53-14:10",
+      "minutes": 17.6,
+      "video_uid": "d2f675c2-978a-44a4-b8b0-c7da921f5cc0",
+      "video_description": "the character weaves various items using different materials, both indoors and outdoors.",
+      "video_scenarios": [
+        "Crafting/knitting/sewing/drawing/painting"
+      ],
+      "main_scene": "indoor",
+      "time_period": "daytime",
+      "video_source": "India",
+      "requested_scenarios": [
+        "Crafting/knitting/sewing/drawing/painting"
+      ],
+      "matched_scenarios": [
+        "Crafting/knitting/sewing/drawing/painting"
+      ],
+      "scenario_iou": 1.0,
+      "retrieval_tier": "T1_scenario_match",
+      "start_timestamp": "2026-01-16T13:53:00",
+      "end_timestamp": "2026-01-16T14:10:38"
+    },
+    {
+      "slot_id": "baker",
+      "activity": "Bake bread or pastries",
+      "planned": "14:27-14:35",
+      "actual": "14:27-14:33",
+      "minutes": 6.6,
+      "video_uid": "fe452f9c-d389-4f2a-82e8-ee87d6ee94a9",
+      "video_description": "the character mixes ingredients and kneads dough in a room.",
+      "video_scenarios": [
+        "Baker"
+      ],
+      "main_scene": "indoor",
+      "time_period": "daytime",
+      "video_source": "Rwanda",
+      "requested_scenarios": [
+        "Baker"
+      ],
+      "matched_scenarios": [
+        "Baker"
+      ],
+      "scenario_iou": 1.0,
+      "retrieval_tier": "T1_scenario_match",
+      "start_timestamp": "2026-01-16T14:27:00",
+      "end_timestamp": "2026-01-16T14:33:37"
+    },
+    {
+      "slot_id": "practicing_a_musical_ins",
+      "activity": "Practice an instrument",
+      "planned": "14:50-15:10",
+      "actual": "14:50-15:21",
+      "minutes": 31.8,
+      "video_uid": "a788c026-f465-4367-8d27-ef601fa157f6",
+      "video_description": "the character plays the piano and interacts with music-related materials in a house.",
+      "video_scenarios": [
+        "Practicing a musical instrument"
+      ],
+      "main_scene": "indoor",
+      "time_period": "daytime",
+      "video_source": "UK",
+      "requested_scenarios": [
+        "Practicing a musical instrument"
+      ],
+      "matched_scenarios": [
+        "Practicing a musical instrument"
+      ],
+      "scenario_iou": 1.0,
+      "retrieval_tier": "T1_scenario_match",
+      "start_timestamp": "2026-01-16T14:50:00",
+      "end_timestamp": "2026-01-16T15:21:48"
+    },
+    {
+      "slot_id": "crafting_2",
+      "activity": "Work on a craft project",
+      "planned": "15:25-15:44",
+      "actual": "15:25-15:41",
+      "minutes": 16.9,
+      "video_uid": "de7c6c45-031b-4706-9068-02f44de692d3",
+      "video_description": "the character makes a sketch in a room.",
+      "video_scenarios": [
+        "Crafting/knitting/sewing/drawing/painting"
+      ],
+      "main_scene": "indoor",
+      "time_period": "daytime",
+      "video_source": "UK",
+      "requested_scenarios": [
+        "Crafting/knitting/sewing/drawing/painting"
+      ],
+      "matched_scenarios": [
+        "Crafting/knitting/sewing/drawing/painting"
+      ],
+      "scenario_iou": 1.0,
+      "retrieval_tier": "T1_scenario_match",
+      "start_timestamp": "2026-01-16T15:25:00",
+      "end_timestamp": "2026-01-16T15:41:52"
+    },
+    {
+      "slot_id": "cleaning_2",
+      "activity": "Tidy up and do laundry",
+      "planned": "15:58-16:18",
+      "actual": "15:58-16:23",
+      "minutes": 26.0,
+      "video_uid": "52b42c33-ac42-435a-aef0-2b00d43516ec",
+      "video_description": "the character cleans and organizes a refrigerator in the kitchen.",
+      "video_scenarios": [
+        "Cleaning / laundry"
+      ],
+      "main_scene": "indoor",
+      "time_period": "not know",
+      "video_source": "UK",
+      "requested_scenarios": [
+        "Cleaning / laundry"
+      ],
+      "matched_scenarios": [
+        "Cleaning / laundry"
+      ],
+      "scenario_iou": 1.0,
+      "retrieval_tier": "T1_scenario_match",
+      "start_timestamp": "2026-01-16T15:58:00",
+      "end_timestamp": "2026-01-16T16:23:59"
+    },
+    {
+      "slot_id": "household_management_car",
+      "activity": "Look after the kids",
+      "planned": "16:33-16:45",
+      "actual": "16:33-16:41",
+      "minutes": 8.7,
+      "video_uid": "3b609b23-f91d-43da-9918-ce928181f53f",
+      "video_description": "the character rubs a brush on a wooden frame in a compound.",
+      "video_scenarios": [
+        "Household management - caring for kids"
+      ],
+      "main_scene": "outdoor",
+      "time_period": "daytime",
+      "video_source": "Italy",
+      "requested_scenarios": [
+        "Household management - caring for kids"
+      ],
+      "matched_scenarios": [
+        "Household management - caring for kids"
+      ],
+      "scenario_iou": 1.0,
+      "retrieval_tier": "T1_scenario_match",
+      "start_timestamp": "2026-01-16T16:33:00",
+      "end_timestamp": "2026-01-16T16:41:44"
+    },
+    {
+      "slot_id": "indoor_navigation_2",
+      "activity": "Move around the house",
+      "planned": "17:49-18:09",
+      "actual": "17:49-18:19",
+      "minutes": 30.0,
+      "video_uid": "e65cdb37-b00c-44b1-909f-068022d804cb",
+      "video_description": "the character walks around buildings, including a university and a hospital, drives a car, and uses a phone.",
+      "video_scenarios": [
+        "Car - commuting, road trip",
+        "Indoor Navigation (walking)",
+        "On a screen (phone/laptop)"
+      ],
+      "main_scene": "mixed",
+      "time_period": "twilight",
+      "video_source": "USA",
+      "requested_scenarios": [
+        "Indoor Navigation (walking)"
+      ],
+      "matched_scenarios": [
+        "Indoor Navigation (walking)"
+      ],
+      "scenario_iou": 0.3333,
+      "retrieval_tier": "T1_scenario_match",
+      "start_timestamp": "2026-01-16T17:49:00",
+      "end_timestamp": "2026-01-16T18:19:00"
+    },
+    {
+      "slot_id": "cooking_4",
+      "activity": "Cook dinner",
+      "planned": "19:15-19:28",
+      "actual": "19:15-19:25",
+      "minutes": 10.1,
+      "video_uid": "aca158eb-1f37-4745-ae18-a2fb6777015a",
+      "video_description": "the character cooks, washes dishes, and arranges a tray in a kitchen.",
+      "video_scenarios": [
+        "Cooking"
+      ],
+      "main_scene": "indoor",
+      "time_period": "not know",
+      "video_source": "Japan",
+      "requested_scenarios": [
+        "Cooking"
+      ],
+      "matched_scenarios": [
+        "Cooking"
+      ],
+      "scenario_iou": 1.0,
+      "retrieval_tier": "T1_scenario_match",
+      "start_timestamp": "2026-01-16T19:15:00",
+      "end_timestamp": "2026-01-16T19:25:07"
+    },
+    {
+      "slot_id": "cooking_5",
+      "activity": "Cook dinner",
+      "planned": "19:45-19:58",
+      "actual": "19:45-19:56",
+      "minutes": 11.3,
+      "video_uid": "216e3f0e-ccb9-4d54-ba56-d275fedbf52f",
+      "video_description": "the character fries an egg, cooks meat, and washes dishes in a kitchen.",
+      "video_scenarios": [
+        "Cooking"
+      ],
+      "main_scene": "indoor",
+      "time_period": "not know",
+      "video_source": "Japan",
+      "requested_scenarios": [
+        "Cooking"
+      ],
+      "matched_scenarios": [
+        "Cooking"
+      ],
+      "scenario_iou": 1.0,
+      "retrieval_tier": "T1_scenario_match",
+      "start_timestamp": "2026-01-16T19:45:00",
+      "end_timestamp": "2026-01-16T19:56:20"
+    },
+    {
+      "slot_id": "watching_tv",
+      "activity": "Watch TV",
+      "planned": "20:26-20:55",
+      "actual": "20:26-20:57",
+      "minutes": 31.6,
+      "video_uid": "5edf133c-24e2-44c7-a751-0d0d2aabed8c",
+      "video_description": "the character reads a novel in a bedroom, drinks coffee, and manipulates the book.",
+      "video_scenarios": [
+        "Reading books",
+        "Watching tv"
+      ],
+      "main_scene": "indoor",
+      "time_period": "nighttime",
+      "video_source": "KSA",
+      "requested_scenarios": [
+        "Watching tv"
+      ],
+      "matched_scenarios": [
+        "Watching tv"
+      ],
+      "scenario_iou": 0.5,
+      "retrieval_tier": "T1_scenario_match",
+      "start_timestamp": "2026-01-16T20:26:00",
+      "end_timestamp": "2026-01-16T20:57:36"
+    },
+    {
+      "slot_id": "listening_to_music",
+      "activity": "Listen to music",
+      "planned": "21:07-21:28",
+      "actual": "21:07-21:27",
+      "minutes": 20.6,
+      "video_uid": "57ee481e-2386-4a28-8d4c-ed8c9bdf08d8",
+      "video_description": "the character exercises on a yoga mat in a room.",
+      "video_scenarios": [
+        "Listening to music",
+        "Working out at home"
+      ],
+      "main_scene": "indoor",
+      "time_period": "nighttime",
+      "video_source": "KSA",
+      "requested_scenarios": [
+        "Listening to music"
+      ],
+      "matched_scenarios": [
+        "Listening to music"
+      ],
+      "scenario_iou": 0.5,
+      "retrieval_tier": "T1_scenario_match",
+      "start_timestamp": "2026-01-16T21:07:00",
+      "end_timestamp": "2026-01-16T21:27:34"
+    },
+    {
+      "slot_id": "practicing_a_musical_ins_2",
+      "activity": "Practice an instrument",
+      "planned": "21:40-22:02",
+      "actual": "21:40-22:18",
+      "minutes": 38.4,
+      "video_uid": "efd052ce-4af1-48f4-8546-c13428ee92ec",
+      "video_description": "the character plays and operates a turntable, adjusting settings and mixing music in the house.",
+      "video_scenarios": [
+        "Practicing a musical instrument"
+      ],
+      "main_scene": "indoor",
+      "time_period": "nighttime",
+      "video_source": "UK",
+      "requested_scenarios": [
+        "Practicing a musical instrument"
+      ],
+      "matched_scenarios": [
+        "Practicing a musical instrument"
+      ],
+      "scenario_iou": 1.0,
+      "retrieval_tier": "T1_scenario_match",
+      "start_timestamp": "2026-01-16T21:40:00",
+      "end_timestamp": "2026-01-16T22:18:21"
+    },
+    {
+      "slot_id": "crafting_3",
+      "activity": "Wind down with handwork",
+      "planned": "22:14-22:34",
+      "actual": "22:18-22:42",
+      "minutes": 23.9,
+      "video_uid": "e1ef793e-19b5-420b-b0ce-e114e2e8153d",
+      "video_description": "the character sits on a couch in a room and weaves.",
+      "video_scenarios": [
+        "Crafting/knitting/sewing/drawing/painting"
+      ],
+      "main_scene": "indoor",
+      "time_period": "nighttime",
+      "video_source": "UK",
+      "requested_scenarios": [
+        "Crafting/knitting/sewing/drawing/painting"
+      ],
+      "matched_scenarios": [
+        "Crafting/knitting/sewing/drawing/painting"
+      ],
+      "scenario_iou": 1.0,
+      "retrieval_tier": "T1_scenario_match",
+      "start_timestamp": "2026-01-16T22:18:21",
+      "end_timestamp": "2026-01-16T22:42:14"
+    },
+    {
+      "slot_id": "cleaning_3",
+      "activity": "Evening tidy-up",
+      "planned": "22:46-23:02",
+      "actual": "22:46-22:53",
+      "minutes": 8.0,
+      "video_uid": "36224c74-dfb0-44c0-a59e-e35d874f39e7",
+      "video_description": "the character cleans the kitchen and a room.",
+      "video_scenarios": [
+        "Cleaning / laundry"
+      ],
+      "main_scene": "indoor",
+      "time_period": "not know",
+      "video_source": "UK",
+      "requested_scenarios": [
+        "Cleaning / laundry"
+      ],
+      "matched_scenarios": [
+        "Cleaning / laundry"
+      ],
+      "scenario_iou": 1.0,
+      "retrieval_tier": "T1_scenario_match",
+      "start_timestamp": "2026-01-16T22:46:00",
+      "end_timestamp": "2026-01-16T22:53:59"
+    }
+  ]
+}

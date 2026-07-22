@@ -22,7 +22,7 @@ Examples:
   python scripts/extract_day_frames.py --all-days --frames 32 \\
     --lifelog output/lifelog/lifelog_egotailor_usa_enfp_21d.json \\
     --video-root /mnt/data_oss/raw_data/Ego4d/v2/full_scale \\
-    --output-dir /mnt/data/workspace/outputs/EgoTailor_21days_frames
+    --output-dir /mnt/data/workspace/outputs/EgoTailor_30days_frames
 """
 
 from __future__ import annotations
@@ -43,14 +43,17 @@ if str(PROJECT_ROOT) not in sys.path:
 
 from analysis.video_loader import extract_frames, resolve_video_path  # noqa: E402
 
-DEFAULT_LIFELOG = PROJECT_ROOT / "output/lifelog/lifelog_egotailor_usa_enfp_21d.json"
+from generation.config import TOTAL_DAYS, resolve_lifelog  # noqa: E402
+
 DEFAULT_VIDEO_ROOT = Path("/mnt/data_oss/raw_data/Ego4d/v2/full_scale")
-DEFAULT_OUTPUT_DIR = Path("/mnt/data/workspace/outputs/EgoTailor_21days_frames")
+# Output dir carries the run length: a 30-day run must not overwrite the
+# 21-day results sitting next to it. These are expensive to recompute.
+DEFAULT_OUTPUT_DIR = Path(f"/mnt/data/workspace/outputs/EgoTailor_{TOTAL_DAYS}days_frames")
 
 
 def parse_args() -> argparse.Namespace:
     p = argparse.ArgumentParser(description="Extract day-ordered frames from lifelog videos")
-    p.add_argument("--lifelog", type=Path, default=DEFAULT_LIFELOG)
+    p.add_argument("--lifelog", type=Path, default=None)
     p.add_argument("--video-root", type=Path, default=DEFAULT_VIDEO_ROOT)
     p.add_argument("--output-dir", type=Path, default=DEFAULT_OUTPUT_DIR)
     p.add_argument("--day", type=int, nargs="*", default=None, help="Day indices (0-20)")
@@ -231,6 +234,7 @@ def extract_day_frames(
 
 def main() -> None:
     args = parse_args()
+    args.lifelog = resolve_lifelog(args.lifelog)
     if not args.all_days and args.day is None:
         args.day = [0]
 

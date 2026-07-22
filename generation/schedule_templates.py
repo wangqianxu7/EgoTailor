@@ -18,7 +18,7 @@ EVENING_LEISURE_OPTIONS: list[Slot] = [
     {
         "slot_id": "leisure_tv",
         "plan_chunk": "Watch TV series episodes and relax on the couch",
-        "matched_scenarios": ["Watching tv"],
+        "requested_scenarios": ["Watching tv"],
         "location": "indoor",
         "time_period": "nighttime",
         "duration_min": 75,
@@ -26,7 +26,7 @@ EVENING_LEISURE_OPTIONS: list[Slot] = [
     {
         "slot_id": "leisure_games",
         "plan_chunk": "Play video games at home",
-        "matched_scenarios": ["Playing games / video games"],
+        "requested_scenarios": ["Playing games / video games"],
         "location": "indoor",
         "time_period": "nighttime",
         "duration_min": 60,
@@ -34,7 +34,7 @@ EVENING_LEISURE_OPTIONS: list[Slot] = [
     {
         "slot_id": "leisure_read",
         "plan_chunk": "Read books and tech articles before bed",
-        "matched_scenarios": ["Reading books", "On a screen (phone/laptop)"],
+        "requested_scenarios": ["Reading books", "On a screen (phone/laptop)"],
         "location": "indoor",
         "time_period": "nighttime",
         "duration_min": 50,
@@ -42,7 +42,7 @@ EVENING_LEISURE_OPTIONS: list[Slot] = [
     {
         "slot_id": "leisure_early_sleep",
         "plan_chunk": "Wind down early: light hygiene and prepare for sleep",
-        "matched_scenarios": ["Daily hygiene", "Sleeping"],
+        "requested_scenarios": ["Daily hygiene", "Sleeping"],
         "location": "indoor",
         "time_period": "nighttime",
         "duration_min": 40,
@@ -50,7 +50,7 @@ EVENING_LEISURE_OPTIONS: list[Slot] = [
     {
         "slot_id": "leisure_video_call",
         "plan_chunk": "Video call with a close friend",
-        "matched_scenarios": ["Video call", "Talking on the phone"],
+        "requested_scenarios": ["Video call", "Talking on the phone"],
         "location": "indoor",
         "time_period": "nighttime",
         "duration_min": 45,
@@ -58,7 +58,7 @@ EVENING_LEISURE_OPTIONS: list[Slot] = [
     {
         "slot_id": "leisure_music",
         "plan_chunk": "Listen to music and browse social media",
-        "matched_scenarios": ["Listening to music", "On a screen (phone/laptop)"],
+        "requested_scenarios": ["Listening to music", "On a screen (phone/laptop)"],
         "location": "indoor",
         "time_period": "nighttime",
         "duration_min": 55,
@@ -69,7 +69,7 @@ EXERCISE_OPTIONS: list[Slot] = [
     {
         "slot_id": "exercise_gym",
         "plan_chunk": "Gym workout: weights and cardio machines",
-        "matched_scenarios": ["Going to the gym - exercise machine, class, weights"],
+        "requested_scenarios": ["Going to the gym - exercise machine, class, weights"],
         "location": "indoor",
         "time_period": "nighttime",
         "duration_min": 60,
@@ -77,7 +77,7 @@ EXERCISE_OPTIONS: list[Slot] = [
     {
         "slot_id": "exercise_home",
         "plan_chunk": "Home workout: bodyweight exercises and stretching",
-        "matched_scenarios": ["Working out at home"],
+        "requested_scenarios": ["Working out at home"],
         "location": "indoor",
         "time_period": "nighttime",
         "duration_min": 45,
@@ -85,7 +85,7 @@ EXERCISE_OPTIONS: list[Slot] = [
     {
         "slot_id": "exercise_run",
         "plan_chunk": "Evening jog or cycling around the neighborhood",
-        "matched_scenarios": ["Cycling / jogging", "Working out outside"],
+        "requested_scenarios": ["Cycling / jogging", "Working out outside"],
         "location": "outdoor",
         "time_period": "nighttime",
         "duration_min": 50,
@@ -137,7 +137,7 @@ def _slot(
     start: str,
     end: str,
     plan_chunk: str,
-    matched_scenarios: list[str],
+    requested_scenarios: list[str],
     location: str,
     time_period: str,
 ) -> Slot:
@@ -146,7 +146,7 @@ def _slot(
         "start": start,
         "end": end,
         "plan_chunk": plan_chunk,
-        "matched_scenarios": matched_scenarios,
+        "requested_scenarios": requested_scenarios,
         "location": location,
         "time_period": time_period,
         "duration_min": _parse_t(end) - _parse_t(start),
@@ -327,19 +327,19 @@ def _weekday_base(day_index: int, rng: random.Random) -> tuple[list[Slot], str, 
                                    _fmt_t(_parse_t(ex_start) + 15),
                                    _fmt_t(_parse_t(ex_start) + exercise.get("duration_min", 60)),
                                    "Gym workout: weights and cardio machines",
-                                   exercise["matched_scenarios"],
+                                   exercise["requested_scenarios"],
                                    exercise["location"], exercise["time_period"]))
                 lv_start = _fmt_t(_parse_t(ex_start) + exercise.get("duration_min", 60) + 15)
             elif exercise["slot_id"] == "exercise_run":
                 slots.append(_slot("exercise_run", ex_start,
                                    _fmt_t(_parse_t(ex_start) + exercise.get("duration_min", 50)),
-                                   exercise["plan_chunk"], exercise["matched_scenarios"],
+                                   exercise["plan_chunk"], exercise["requested_scenarios"],
                                    exercise["location"], exercise["time_period"]))
                 lv_start = _fmt_t(_parse_t(ex_start) + exercise.get("duration_min", 50) + 15)
             else:
                 slots.append(_slot(exercise["slot_id"], ex_start,
                                    _fmt_t(_parse_t(ex_start) + exercise.get("duration_min", 45)),
-                                   exercise["plan_chunk"], exercise["matched_scenarios"],
+                                   exercise["plan_chunk"], exercise["requested_scenarios"],
                                    exercise["location"], exercise["time_period"]))
                 lv_start = _fmt_t(_parse_t(ex_start) + exercise.get("duration_min", 45) + 15)
         else:
@@ -351,16 +351,16 @@ def _weekday_base(day_index: int, rng: random.Random) -> tuple[list[Slot], str, 
             lv_end = _fmt_t(_parse_t(lv_start) + lv_dur)
             slots.append(_slot(leisure["slot_id"] + "_1", lv_start, mid,
                                leisure["plan_chunk"] + " (first half)",
-                               leisure["matched_scenarios"],
+                               leisure["requested_scenarios"],
                                leisure["location"], leisure["time_period"]))
             slots.append(_slot(leisure["slot_id"] + "_2", mid, lv_end,
                                leisure["plan_chunk"] + " (second half)",
-                               leisure["matched_scenarios"],
+                               leisure["requested_scenarios"],
                                leisure["location"], leisure["time_period"]))
         else:
             lv_end = _fmt_t(_parse_t(lv_start) + lv_dur)
             slots.append(_slot(leisure["slot_id"], lv_start, lv_end,
-                               leisure["plan_chunk"], leisure["matched_scenarios"],
+                               leisure["plan_chunk"], leisure["requested_scenarios"],
                                leisure["location"], leisure["time_period"]))
 
     slots.sort(key=lambda s: _parse_t(s["start"]))
@@ -1020,7 +1020,7 @@ def build_daily_plan_chunks(day_index: int, rng: random.Random | None = None) ->
             "start_time": s["start"],
             "end_time": s["end"],
             "plan_chunk": s["plan_chunk"],
-            "matched_scenarios": s["matched_scenarios"],
+            "requested_scenarios": s["requested_scenarios"],
             "location": s["location"],
             "time_period": s["time_period"],
             "day_theme": sched["day_theme"],
