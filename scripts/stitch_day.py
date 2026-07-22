@@ -57,7 +57,11 @@ def ffprobe(path: Path, *args: str) -> str:
 
 
 def probe_duration(path: Path) -> float:
-    return float(ffprobe(path, "-show_entries", "format=duration") or 0.0)
+    """Seconds, or 0.0 if the file is too broken to answer."""
+    try:
+        return float(ffprobe(path, "-show_entries", "format=duration"))
+    except (subprocess.CalledProcessError, ValueError):
+        return 0.0
 
 
 def has_audio(path: Path) -> bool:
@@ -89,9 +93,6 @@ def run(cmd: list[str], dry_run: bool = False) -> None:
 def normalize(src: Path, dst: Path, cfg: argparse.Namespace,
               tag: str = "") -> Path:
     """Encode one clip to the common format. Cached; atomic via .part file."""
-    if dst.exists():
-        print(f"  {tag} {dst.stem[:8]} cached")
-        return dst
     started = time.monotonic()
     tmp = dst.with_suffix(".part.mkv")
     w, h = cfg.width, cfg.height
@@ -103,6 +104,16 @@ def normalize(src: Path, dst: Path, cfg: argparse.Namespace,
     n_frames = max(1, round((stream_duration(src, "v:0") or probe_duration(src))
                             * cfg.fps))
     dur = n_frames / cfg.fps
+
+    # A cache hit is only a hit if the file is actually whole: earlier runs
+    # muxed straight onto object storage, which cannot seek back to write a
+    # trailer, so the cache holds truncated clips that look fine by name.
+    if dst.exists():
+        if abs(probe_duration(dst) - dur) <= 1.0:
+            print(f"  {tag} {dst.stem[:8]} cached")
+            return dst
+        print(f"  {tag} {dst.stem[:8]} cached copy is truncated, re-encoding")
+        dst.unlink()
     vf = (
         f"fps={cfg.fps},"
         f"scale={w}:{h}:force_original_aspect_ratio=decrease,"
@@ -135,6 +146,17 @@ def normalize(src: Path, dst: Path, cfg: argparse.Namespace,
 
     run(cmd, cfg.dry_run)
     if not cfg.dry_run:
+        # ffmpeg here can log "Error writing trailer" and still exit 0, so the
+        # exit code is not evidence. Ask the file. A clip whose trailer never
+        # landed has no usable duration, and letting it into the cache poisons
+        # every day that uses this uid -- silently, forever, because the cache
+        # check only looks at the filename.
+        got = probe_duration(tmp)
+        if abs(got - dur) > 1.0:
+            tmp.unlink(missing_ok=True)
+            raise RuntimeError(
+                f"{src.name}: normalized file is {got:.1f}s, expected "
+                f"{dur:.1f}s -- encode failed (disk full? check df -h)")
         tmp.rename(dst)
         print(f"  {tag} {dst.stem[:8]} {dur / 60:5.1f}min clip, "
               f"{'silent, ' if not audio_from_source else ''}"
@@ -144,12 +166,24 @@ def normalize(src: Path, dst: Path, cfg: argparse.Namespace,
 
 def concat(parts: list[Path], listfile: Path, out: Path,
            cfg: argparse.Namespace) -> None:
+    """Concat the normalized parts. Atomic via .part file, like normalize().
+
+    An mp4's moov index is written last, so a killed ffmpeg leaves a file that
+    no player can open. Under the final name that corpse also looks "done" to
+    the skip check below, and every rerun would step over it. No +faststart:
+    it rewrites the whole multi-GB file at the end just to move moov to the
+    front, which only pays off for HTTP streaming. Add it later on a finished
+    file with `ffmpeg -i in.mp4 -c copy -movflags +faststart out.mp4`.
+    """
     listfile.write_text(
         "".join(f"file '{str(p.resolve())}'\n" for p in parts)
     )
+    tmp = out.with_suffix(".part.mp4")
     run(["ffmpeg", "-y", "-f", "concat", "-safe", "0", "-i", str(listfile),
          "-c:v", "copy", "-c:a", "aac", "-b:a", "160k", "-ar", "48000",
-         "-movflags", "+faststart", str(out)], cfg.dry_run)
+         str(tmp)], cfg.dry_run)
+    if not cfg.dry_run:
+        tmp.rename(out)
 
 
 # -------------------------------------------------------------------- day ---
@@ -222,6 +256,13 @@ def stitch_day(day: dict[str, Any], cfg: argparse.Namespace,
     v_dur, a_dur = stream_duration(out, "v:0"), stream_duration(out, "a:0")
     for c, (_, dst) in zip(clips, todo):
         c["duration_normalized"] = probe_duration(dst)
+    # The parts are the ground truth: the day must be as long as its clips.
+    expected = sum(c["duration_normalized"] for c in clips)
+    complete = abs(v_dur - expected) <= 1.0
+    if not complete:
+        print(f"  !! WARNING {out.name} is {v_dur / 3600:.2f}h but its clips "
+              f"sum to {expected / 3600:.2f}h -- output is truncated, "
+              f"rerun this day with --overwrite")
     manifest = {
         "output_video": str(out),
         "day_index": day_idx,
@@ -230,6 +271,8 @@ def stitch_day(day: dict[str, Any], cfg: argparse.Namespace,
         "clips_included": len(clips),
         "clips_missing": len(missing),
         "duration_hours": round(v_dur / 3600, 3),
+        "duration_hours_expected": round(expected / 3600, 3),
+        "complete": complete,
         "av_offset_seconds": round(a_dur - v_dur, 3),
         "profile": {"width": cfg.width, "height": cfg.height, "fps": cfg.fps,
                     "crf": cfg.crf, "muted": cfg.mute},
@@ -283,7 +326,7 @@ def main() -> None:
              "days": [{k: m[k] for k in
                        ("day_index", "calendar_date", "output_video",
                         "clips_included", "clips_missing", "duration_hours",
-                        "av_offset_seconds")} for m in manifests]},
+                        "complete", "av_offset_seconds")} for m in manifests]},
             indent=2, ensure_ascii=False))
         print(f"summary: {summary}")
 
