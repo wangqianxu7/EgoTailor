@@ -33,6 +33,7 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import shutil
 import subprocess
 import sys
 import time
@@ -98,10 +99,45 @@ def run(cmd: list[str], dry_run: bool = False) -> None:
     )
 
 
+def stage_source(src: Path, cfg: argparse.Namespace) -> tuple[Path, bool]:
+    """Pull one source clip onto local disk before ffmpeg reads it.
+
+    An mp4 usually carries its `moov` atom at the *end*, so opening one makes
+    ffmpeg seek to the tail for the index and then back to the first frame.
+    On an object-storage FUSE mount every one of those backward seeks is a
+    fresh ranged GET: slow at best, stalled or failed at worst, and ffprobe
+    pays the same toll again. A plain sequential copy is the one access
+    pattern such mounts are good at, so copy first and let ffmpeg work against
+    local disk.
+
+    Returns (path_to_use, is_temporary). Only `--jobs` files exist at a time —
+    each is deleted as soon as its clip is encoded.
+    """
+    if not cfg.stage_dir:
+        return src, False
+    staged = Path(cfg.stage_dir) / src.name
+    if not staged.exists():
+        tmp = staged.with_name(staged.name + ".part")
+        with open(src, "rb") as fsrc, open(tmp, "wb") as fdst:
+            shutil.copyfileobj(fsrc, fdst, length=8 * 1024 * 1024)
+        tmp.rename(staged)
+    return staged, True
+
+
 def normalize(src: Path, dst: Path, cfg: argparse.Namespace,
               tag: str = "") -> Path:
     """Encode one clip to the common format. Cached; atomic via .part file."""
     started = time.monotonic()
+    src, staged = stage_source(src, cfg)
+    try:
+        return _normalize(src, dst, cfg, tag, started)
+    finally:
+        if staged:
+            src.unlink(missing_ok=True)
+
+
+def _normalize(src: Path, dst: Path, cfg: argparse.Namespace,
+               tag: str, started: float) -> Path:
     tmp = dst.with_suffix(".part.mkv")
     w, h = cfg.width, cfg.height
     # Both streams are made endless (tpad clones the last frame, apad appends
@@ -314,10 +350,17 @@ def main() -> None:
     p.add_argument("--clean-temp", action="store_true",
                    help="delete the norm/ cache once all days are done "
                         "(default: keep it, so reruns are cheap)")
+    p.add_argument("--stage-dir", type=Path, default=None,
+                   help="copy each source clip here before encoding it. Use when "
+                        "--video-root is an object-storage mount: ffmpeg seeking "
+                        "back to frame 0 over FUSE is slow and flaky. Holds at "
+                        "most --jobs files at once.")
     p.add_argument("--dry-run", action="store_true", help="print ffmpeg only")
     cfg = p.parse_args()
     cfg.lifelog = resolve_lifelog(cfg.lifelog)
     cfg.width, cfg.height = (int(x) for x in cfg.size.lower().split("x"))
+    if cfg.stage_dir:
+        cfg.stage_dir.mkdir(parents=True, exist_ok=True)
 
     dirs = {n: cfg.output_dir / n
             for n in ("videos", "manifests", "concat", "norm")}
