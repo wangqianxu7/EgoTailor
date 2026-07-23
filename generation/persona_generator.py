@@ -112,6 +112,15 @@ MIN_CELLS_PER_PERIOD = {"daytime": 0, "twilight": 3, "nighttime": 8}
 # what a day looks like.
 MAX_TIMES_PER_WEEK = 14
 
+# The same ceiling, summed across a scenario's time-period rows. MAX_TIMES_PER_WEEK
+# alone is per-(scenario, period), so a scenario viable in two periods — Cooking,
+# Cleaning, Crafting all run daytime *and* nighttime — quietly reaches 2x it: two
+# 14-row cells deal out to ~4 sessions a day, the very thing the per-row cap was
+# written to stop. This binds the scenario's total, so no single activity exceeds
+# ~2/day however many periods it spans. schedule_from_quota's per-day cap is the
+# downstream safety net; this is where the count is actually sized.
+MAX_TIMES_PER_WEEK_PER_SCENARIO = 14
+
 # Stop growing once a day is this full, even if the hour target is unmet. The
 # day shapes in schedule_from_quota can seat ~27 slots; quota beyond that is
 # dealt out and then dropped on the floor, which reads as a fill-rate bug
@@ -691,10 +700,14 @@ def allocate(cells: list[Cell], target_minutes: float) -> list[Cell]:
         if total_slots >= slot_budget:
             break
         step = max(1, round(week_span()))  # slots one +1/week actually adds
+        scen_week: dict[str, int] = defaultdict(int)
+        for c in cells:
+            scen_week[c.scenario] += c.times_per_week
         options = [
             c
             for c in cells
             if c.times_per_week < min(c.ceiling, MAX_TIMES_PER_WEEK)
+            and scen_week[c.scenario] < MAX_TIMES_PER_WEEK_PER_SCENARIO
             and (slots[c.scenario] + step) / (total_slots + step)
             <= MAX_SINGLE_SCENARIO_SHARE
         ]

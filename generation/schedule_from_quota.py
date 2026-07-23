@@ -49,6 +49,14 @@ def _m(h: int, m: int = 0) -> int:
     return h * 60 + m
 
 
+# Per-band ceiling on how many of a role a single band may seat. A meal band can
+# cook several things but a person sits down to eat once per meal — without this
+# a band holding two Eating clips reads as "sit down to brunch" twice. Cooking
+# stays uncapped here (prep, mains, a bake all in one sitting is fine); roles not
+# listed are unlimited and bounded only by the band's max_slots.
+_BAND_ROLE_CAP: dict[str, int] = {"meal": 1}
+
+
 WEEKDAY_SHAPE: list[Band] = [
     ("morning_rise", _m(6, 50), _m(7, 50), "daytime", ("hygiene", "coffee"), 2),
     ("breakfast", _m(7, 50), _m(9, 0), "daytime", ("cook", "meal"), 2),
@@ -64,11 +72,13 @@ WEEKDAY_SHAPE: list[Band] = [
 
 WEEKEND_SHAPE: list[Band] = [
     ("morning_rise", _m(8, 0), _m(9, 0), "daytime", ("hygiene", "coffee"), 2),
+    # Weekend brunch stands in for both breakfast and lunch — no separate lunch
+    # band, so a slow Sunday cooks brunch and dinner, not brunch and lunch and
+    # dinner. The afternoon reclaims the freed midday hour.
     ("brunch", _m(9, 0), _m(10, 30), "daytime", ("cook", "meal"), 3),
     ("midday", _m(10, 30), _m(13, 0), "daytime", ("craft", "outdoor", "kids", "chore", "exercise", "game"), 6),
-    ("lunch", _m(13, 0), _m(14, 15), "daytime", ("cook", "meal"), 2),
-    ("afternoon", _m(14, 15), _m(17, 0), "daytime",
-     ("craft", "outdoor", "errand", "kids", "move", "desk", "trade", "chore", "exercise", "game"), 8),
+    ("afternoon", _m(13, 0), _m(17, 0), "daytime",
+     ("craft", "outdoor", "errand", "kids", "move", "desk", "trade", "chore", "exercise", "game"), 10),
     ("dusk", _m(17, 0), _m(19, 0), "twilight", ("move", "errand", "outdoor", "exercise"), 2),
     ("dinner", _m(19, 0), _m(20, 30), "nighttime", ("cook", "meal"), 3),
     ("evening", _m(20, 30), _m(23, 30), "nighttime",
@@ -169,6 +179,69 @@ WEEKEND_THEMES = {5: "saturday_garden_and_making", 6: "sunday_slow_and_social"}
 def _slug(scenario: str) -> str:
     head = scenario.split("(")[0].split("/")[0].strip().lower()
     return "_".join(head.replace("-", " ").split())[:24]
+
+
+# Which meal a band is, so the two daytime cooking slots a busy day carries
+# (breakfast and lunch) don't both come back as the scenario's generic daytime
+# phrase and read as one activity copy-pasted. SEMANTICS phrases by time period
+# alone — daytime/nighttime — which is the right grain for every scenario except
+# the meals, where the band already knows breakfast from lunch and the phrase
+# should too. Bands not listed here keep the time-period phrase.
+_BAND_MEAL: dict[str, str] = {
+    "breakfast": "breakfast",
+    "light_breakfast": "breakfast",
+    "brunch": "brunch",
+    "lunch": "lunch",
+    "lunch_out": "lunch",
+    "dinner": "dinner",
+    "late_dinner": "dinner",
+    "dinner_party": "dinner",
+}
+# Only the generic meal scenarios collapse; hotpot, salad, eating-out and the
+# like already phrase distinctly, so they keep their SEMANTICS wording.
+_MEAL_PHRASE: dict[tuple[str, str], str] = {
+    ("Cooking", "breakfast"): "Make breakfast",
+    ("Cooking", "brunch"): "Cook brunch",
+    ("Cooking", "lunch"): "Cook lunch",
+    ("Cooking", "dinner"): "Cook dinner",
+    ("Eating", "breakfast"): "Have breakfast",
+    ("Eating", "brunch"): "Sit down to brunch",
+    ("Eating", "lunch"): "Have lunch",
+    ("Eating", "dinner"): "Have dinner",
+}
+
+
+def _dedupe_phrases(chunks: list[dict[str, Any]]) -> None:
+    """Mark a repeated activity as a second session rather than a copy.
+
+    Two daytime work or craft sessions land on the same time-period phrase — the
+    meal fix does not reach them because they are genuinely the same task, done
+    twice. Appending a light qualifier to the later one (chronological order, so
+    morning stays plain and the afternoon reads as a return) keeps the plan
+    truthful without the stiff "renovation, afternoon" a period suffix would give.
+    Expects ``chunks`` already sorted by start time.
+    """
+    seen: dict[str, int] = defaultdict(int)
+    for c in chunks:
+        base = c["plan_chunk"]
+        seen[base] += 1
+        if seen[base] == 2:
+            c["plan_chunk"] = f"{base} again"
+        elif seen[base] >= 3:
+            c["plan_chunk"] = f"{base} once more"
+
+
+def meal_phrase(spec: Any, scenario: str, band_name: str, band_period: str) -> str:
+    """Phrase a slot, distinguishing meals by band so two daily cooks differ.
+
+    Falls back to the scenario's time-period phrase whenever the band is not a
+    meal band or the scenario is not one that collapses — i.e. everything the
+    old ``spec.phrase`` already got right stays exactly as it was.
+    """
+    meal = _BAND_MEAL.get(band_name)
+    if meal is not None and (scenario, meal) in _MEAL_PHRASE:
+        return _MEAL_PHRASE[(scenario, meal)]
+    return spec.phrase(scenario, band_period)
 
 
 def seatable_role_periods() -> set[tuple[str, str]]:
@@ -285,49 +358,113 @@ def median_durations(spec: Any) -> dict[tuple[str, str, str], float]:
     return out
 
 
+def _spill_cells(spec: Any) -> list[Any]:
+    """Cells a capped scenario's overflow may spill onto, ranked live in pass 2.
+
+    Same-cluster first would read best (Cooking -> more Cleaning, a repair), but
+    this persona's domestic and making anchors already run at the daily cap on
+    their own quota, so a cluster-local pool just drops the overflow. Opening it
+    to every cell lets a busy domestic day bleed into the making/trade the
+    persona also does — pass 2 ranks by live weekly headroom, so no clip is
+    reused. The hand-written baseline carries no cells and drops overflow.
+    """
+    return list(getattr(spec, "cells", None) or [])
+
+
 def deal_week(
     spec: Any, rng: random.Random, medians: dict[tuple[str, str, str], float]
 ) -> list[list[dict[str, Any]]]:
     """Deal one week of quota across 7 days, weighted by each role's day bias.
 
     Weekday index 0-4 = Mon-Fri, 5-6 = Sat/Sun (START_DATE is a Monday).
+
+    A per-scenario daily cap (``config.MAX_TIMES_PER_DAY``) keeps a deep-supply
+    scenario from flooding every day: Cooking is sized to ~28/week across its
+    daytime and nighttime cells, which without a cap deals out ~4 cooking
+    sessions a day. Instances that cannot fit under the cap spill to a
+    same-cluster sibling with weekly candidate headroom (so no clip is reused),
+    and are dropped only when the whole cluster is saturated.
     """
+    cap = config.MAX_TIMES_PER_DAY
     week: list[list[dict[str, Any]]] = [[] for _ in range(7)]
-    for scenarios, location, time_period, per_week in spec.week_quota:
-        role = spec.role_of(scenarios[0])
-        bias = spec.weekday_bias.get(role, 0.5)
+    day_count: list[dict[str, int]] = [defaultdict(int) for _ in range(7)]
+    week_used: dict[str, int] = defaultdict(int)
+    ceiling = {c.scenario: c.ceiling for c in getattr(spec, "cells", None) or []}
+    spill_pool = _spill_cells(spec)
+
+    def day_weights(role: str) -> list[float]:
         # Per-day preference, not a weekday/weekend mass split. Splitting mass
         # made 0.5 mean "half the instances into two weekend days", i.e. each
         # weekend day 2.5x likelier than each weekday — so every nominally
         # neutral role (meals, chores, cooking) quietly piled onto Saturday and
         # Sunday. As a per-day weight, 0.5 is genuinely uniform.
-        weights = [bias] * 5 + [1.0 - bias] * 2
+        bias = spec.weekday_bias.get(role, 0.5)
+        return [bias] * 5 + [1.0 - bias] * 2
+
+    def place(scenarios, location, time_period, role) -> bool:
+        """Seat one instance under the daily cap; return False if no day has room."""
+        scenario = scenarios[0]
+        weights = day_weights(role)
+        # Prefer the lightest day among a weighted sample, so a scenario never
+        # piles onto one day by chance; fall back to every under-cap day when the
+        # sample is saturated. Balancing on (role, period) as well as scenario
+        # matters because the bands consume that pair: `Cooking daytime` and
+        # `Cooking nighttime` are separate rows, and counting scenarios alone
+        # gave one day three dinners to cook and no breakfast.
+        picks = [d for d in rng.choices(range(7), weights=weights, k=3)
+                 if day_count[d][scenario] < cap]
+        if not picks:
+            picks = [d for d in range(7) if day_count[d][scenario] < cap]
+        if not picks:
+            return False
+        day = min(picks, key=lambda d: (
+            day_count[d][scenario],
+            sum(1 for i in week[d] if i["role"] == role and i["time_period"] == time_period),
+            len(week[d]),
+        ))
+        week[day].append(
+            {
+                "scenarios": scenarios,
+                "location": location,
+                "time_period": time_period,
+                "role": role,
+                "duration_min": medians.get((scenario, location, time_period), 15.0),
+            }
+        )
+        day_count[day][scenario] += 1
+        week_used[scenario] += 1
+        return True
+
+    # Pass 1: base quota. Each row's per_week is <= its weekly ceiling by
+    # construction, so anything that overflows here is the daily cap biting, not
+    # a supply problem. Overflow is collected and spilled in pass 2 — placing all
+    # base instances first means week_used is complete before any spill, so a
+    # sibling's own quota can never be squeezed out by another scenario's spill.
+    overflow: list[str] = []
+    for scenarios, location, time_period, per_week in spec.week_quota:
+        role = spec.role_of(scenarios[0])
         for _ in range(per_week):
-            # Prefer the lightest day among a weighted sample, so a scenario
-            # never piles three instances onto one day by chance. Balancing on
-            # (role, period) as well as scenario matters because the bands
-            # consume that pair: `Cooking daytime` and `Cooking nighttime` are
-            # separate quota rows, so counting scenarios alone happily gave one
-            # day three dinners to cook and no breakfast.
-            picks = rng.choices(range(7), weights=weights, k=3)
-            day = min(picks, key=lambda d: (
-                sum(1 for i in week[d] if i["scenarios"][0] == scenarios[0]),
-                sum(
-                    1
-                    for i in week[d]
-                    if i["role"] == role and i["time_period"] == time_period
-                ),
-                len(week[d]),
-            ))
-            week[day].append(
-                {
-                    "scenarios": scenarios,
-                    "location": location,
-                    "time_period": time_period,
-                    "role": role,
-                    "duration_min": medians.get((scenarios[0], location, time_period), 15.0),
-                }
-            )
+            if not place(scenarios, location, time_period, role):
+                overflow.append(scenarios[0])
+
+    # Pass 2: spill overflow onto any cell that still has weekly candidate
+    # headroom (week_used < ceiling), richest headroom first so the load spreads
+    # across the persona's scenarios and stays clear of any one cell's no-reuse
+    # ceiling. Re-ranked per instance, so as one cell fills the next overflow
+    # moves on rather than piling — this is what turns a dropped fourth dinner
+    # into the varied making/trade the persona actually does.
+    for scenario in overflow:
+        for cell in sorted(
+            (c for c in spill_pool if c.scenario != scenario),
+            key=lambda c: ceiling.get(c.scenario, 0) - week_used[c.scenario],
+            reverse=True,
+        ):
+            if week_used[cell.scenario] >= ceiling.get(cell.scenario, 0):
+                continue
+            if place([cell.scenario], cell.location, cell.time_period,
+                     spec.role_of(cell.scenario)):
+                break
+        # else: every cell saturated — drop, reported as a gap by main().
     return week
 
 
@@ -359,7 +496,13 @@ def _next_for_band(
     used: dict[str, int] = defaultdict(int)
     for inst in taken:
         used[inst["role"]] += 1
-    cands = [i for i in pool if i["time_period"] == period and i["role"] in rank]
+    cands = [
+        i
+        for i in pool
+        if i["time_period"] == period
+        and i["role"] in rank
+        and used[i["role"]] < _BAND_ROLE_CAP.get(i["role"], 1 << 30)
+    ]
     if not cands:
         return None
     return min(cands, key=lambda i: (used[i["role"]], rank[i["role"]]))
@@ -481,7 +624,7 @@ def build_day_chunks(
                     "slot_id": f"{_slug(scenario)}_{n}" if n > 1 else _slug(scenario),
                     "start_time": f"{s // 60:02d}:{s % 60:02d}",
                     "end_time": f"{e // 60:02d}:{e % 60:02d}",
-                    "plan_chunk": spec.phrase(scenario, band_period),
+                    "plan_chunk": meal_phrase(spec, scenario, name, band_period),
                     "requested_scenarios": item["scenarios"],
                     "location": item["location"],
                     "time_period": band_period,
@@ -491,6 +634,7 @@ def build_day_chunks(
                 }
             )
     chunks.sort(key=lambda c: c["start_time"])
+    _dedupe_phrases(chunks)
     return chunks, theme, events
 
 

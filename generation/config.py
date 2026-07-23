@@ -22,6 +22,14 @@ TOTAL_DAYS = 30
 HOURS_PER_DAY = 8  # soft reference; actual hours = sum of 1 clip per plan slot
 TARGET_SECONDS_PER_DAY = HOURS_PER_DAY * 3600  # 28,800 (metadata only)
 
+# Human-plausibility cap the weekly quota cannot see. A corpus-faithful quota
+# sizes Cooking to ~28/week (two cells, daytime + nighttime, each at the weekly
+# ceiling), which deals out to ~4 cooking sessions a day — nobody cooks four
+# separate meals. This caps any one scenario per day; overflow spills to a
+# same-cluster sibling (Cooking -> Cleaning/laundry, etc.) that still has weekly
+# candidate headroom, so the no-reuse guarantee holds. See schedule_from_quota.deal_week.
+MAX_TIMES_PER_DAY = 3
+
 # Calendar anchor (Day 1)
 START_DATE = "2026-01-05"  # Monday
 DAY_START_TIME = "07:00:00"
