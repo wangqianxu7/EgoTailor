@@ -322,7 +322,7 @@ def caption_one_video(
     segments: list[dict[str, Any]] = []
     for lo, hi in batch_ranges(len(b64), batch):
         window = f"{_mmss(times[lo])}-{_mmss(times[hi - 1])}"
-        system = SEGMENT_SYSTEM.format(window=window)
+        system = SEGMENT_SYSTEM.replace("{window}", window)
         seg = _vision_json(client, model, system, hint, b64[lo:hi], max_tokens)
         seg["time_window"] = window
         segments.append(seg)
