@@ -175,11 +175,14 @@ def place_video(src: Path, dst: Path, mode: str, overwrite: bool) -> None:
     """Put the source mp4 next to its caption for side-by-side review.
 
     symlink (default) is instant and free; copy is a real duplicate for when the
-    folder will be moved off this machine. Existing links/copies are left alone
-    unless --overwrite, so re-runs don't re-copy gigabytes.
+    folder will be moved off this machine. A same-mode placement is left alone so
+    re-runs don't re-copy gigabytes — but switching mode (a symlink where a copy
+    is now wanted, or vice versa) replaces it, so `--copy` upgrades earlier
+    symlinks without forcing a full `--overwrite` re-caption.
     """
     if dst.exists() or dst.is_symlink():
-        if not overwrite:
+        already_matches = dst.is_symlink() == (mode == "symlink")
+        if already_matches and not overwrite:
             return
         dst.unlink()
     if mode == "copy":
