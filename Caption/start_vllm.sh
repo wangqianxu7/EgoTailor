@@ -27,7 +27,7 @@ nohup python -m vllm.entrypoints.openai.api_server \
     --tensor-parallel-size 2 \
     --gpu-memory-utilization 0.92 \
     --max-model-len 32768 \
-    --limit-mm-per-prompt 'image=32' \
+    --limit-mm-per-prompt '{"image": 32}' \
     --dtype bfloat16 \
     --enforce-eager \
     --trust-remote-code \

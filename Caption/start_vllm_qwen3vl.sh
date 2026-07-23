@@ -22,7 +22,7 @@ nohup python -m vllm.entrypoints.openai.api_server \
     --tensor-parallel-size 1 \
     --gpu-memory-utilization 0.5 \
     --max-model-len 32768 \
-    --limit-mm-per-prompt 'image=32' \
+    --limit-mm-per-prompt '{"image": 32}' \
     --enforce-eager \
     --trust-remote-code \
     > "${LOG_FILE}" 2>&1 &
