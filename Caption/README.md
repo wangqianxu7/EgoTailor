@@ -11,6 +11,9 @@ For now the video set is **day 0**; `--day N` captions any other day.
   use it when you want the bigger model.
 - `caption_videos.py` — sample frames per clip, caption them in temporal
   batches, merge into one fine-grained narrative, write per-video JSON.
+- `caption_frames.py` — the quick per-frame variant: 3 random frames per clip,
+  each gets one line of important content + a gender judgement; frames and a
+  single `frames.json` land together for easy image-by-image checking.
 - `day_NN/` — output: `<video_uid>.json` per clip + `_index.json` summary.
 
 Both servers serve on port 8080, so run only one at a time. `--model` must match
@@ -64,6 +67,25 @@ focus fields:
 
 Secondary, kept only when the model actually reports them: `people_present`,
 `food_and_consumables`. They are not a focus.
+
+## Quick per-frame check (`caption_frames.py`)
+
+When you just want to spot-check what the model sees per image and whether gender
+is judgeable — not a full clip narrative:
+
+```bash
+python Caption/caption_frames.py --model Qwen3-VL-8B-Instruct
+```
+
+Day 0 by default, **3 random frames per clip**, all into `/root/caption_frames/`:
+
+- `<video_uid>_1.jpg`, `_2.jpg`, `_3.jpg` — the saved frames.
+- `frames.json` — keyed by those exact filenames, each with `description`
+  (1-2 sentences), `gender` (`male`/`female`/`unknown`), `gender_basis`,
+  `frame_time`, and `activity`. Open an image, look up its name in the json.
+
+`--frames N` changes frames per clip, `--seed` the random selection, `--limit N`
+caps videos for a smoke test, `--dry-run` saves frames without calling the model.
 
 ## Frames, not native video
 
